@@ -129,7 +129,6 @@
                                 <descriptor>mvn:org.apache.karaf.features/enterprise/${karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/enterprise-legacy/${karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.jclouds.karaf/jclouds-karaf/${jclouds.version}/xml/features</descriptor>
-<!--                                <descriptor>mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features</descriptor> -->
                                 <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features-core</descriptor>
                                 <descriptor>mvn:org.apache.karaf.decanter/apache-karaf-decanter/${decanter.tesb.version}/xml/features</descriptor>
@@ -137,6 +136,7 @@
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.features.tesb.version}/xml/features</descriptor>
 <!--                                <descriptor>file:${basedir}/target/dependencies/apache-camel-${camel.version}-features.xml</descriptor> -->
                                 <descriptor>mvn:org.apache.karaf.features/standard/${standard.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.ops4j.pax.web/pax-web-features/${pax-web.features.tesb.version}/xml/features</descriptor>
                             </descriptors>
                             <features>
                                 <!-- Core Features -->
@@ -594,6 +594,15 @@
                                     <classifier>features</classifier>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>standard-${karaf.version}-features.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.ops4j.pax.web</groupId>
+                                    <artifactId>pax-web-features</artifactId>
+                                    <version>${pax-web.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>pax-web-${pax-web.features.tesb.version}-features.xml</destFileName>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.ops4j.pax.logging</groupId>
