@@ -95,12 +95,13 @@
         <cxf.version>3.3.7</cxf.version>
         <cxf.tesb.version>3.3.7.tesb1</cxf.tesb.version>
         <camel.version>2.25.2</camel.version>
-        <camel.features.tesb.version>2.25.2.tesb2</camel.features.tesb.version>
+        <camel.features.tesb.version>2.25.2.tesb3</camel.features.tesb.version>
         <activemq.version>5.15.13</activemq.version>
         <spring.version>5.2.9.RELEASE</spring.version>
         <karaf.version>4.2.10</karaf.version>
-        <standard.features.tesb.version>4.2.10.tesb1</standard.features.tesb.version>
+        <standard.features.tesb.version>4.2.10.tesb2</standard.features.tesb.version>
         <framework.features.tesb.version>4.2.10.tesb1</framework.features.tesb.version>
+        <pax-web.features.tesb.version>7.2.19.tesb1</pax-web.features.tesb.version>
         <decanter.version>2.5.0</decanter.version>
         <decanter.tesb.version>2.5.0.tesb1</decanter.tesb.version>
         <zookeeper.version>3.4.14</zookeeper.version>
@@ -122,7 +123,7 @@
         <jdom.bundle.version>1.1_4</jdom.bundle.version>
         <osgi.core.version>6.0.0</osgi.core.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
-        <jetty.version>9.4.31.v20200723</jetty.version>
+        <jetty.version>9.4.35.v20201120</jetty.version>
         <pax.web.version>7.2.19</pax.web.version>
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
         <cglib.bundle.version>3.2.9_1</cglib.bundle.version>
