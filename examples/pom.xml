@@ -126,6 +126,10 @@
                         <groupId>org.apache.activemq</groupId>
                         <artifactId>activemq-leveldb-store</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
             <!-- Override the OpenSAML dependency for a security fix -->
