@@ -128,6 +128,10 @@
                         <artifactId>activemq-leveldb-store</artifactId>
                     </exclusion>
                     <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                    </exclusion>
+                    <exclusion>
                         <groupId>com.thoughtworks.xstream</groupId>
                         <artifactId>xstream</artifactId>
                     </exclusion>
