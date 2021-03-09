@@ -241,6 +241,19 @@
                 <version>${jetty.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.eclipse.jetty.aggregate</groupId>
+                <artifactId>jetty-all</artifactId>
+                <classifier>uber</classifier>
+                <version>${jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-server</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+
             <!-- Override the OpenSAML dependency for a security fix -->
             <dependency>
                 <groupId>org.cryptacular</groupId>
