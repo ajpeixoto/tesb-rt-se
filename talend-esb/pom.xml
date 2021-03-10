@@ -602,7 +602,7 @@
                                     <type>xml</type>
                                     <classifier>features</classifier>
                                     <outputDirectory>target/dependencies</outputDirectory>
-                                    <destFileName>pax-web-${pax-web.features.tesb.version}-features.xml</destFileName>
+                                    <destFileName>pax-web-${pax-web.version}-features.xml</destFileName>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.ops4j.pax.logging</groupId>
