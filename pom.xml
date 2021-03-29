@@ -158,6 +158,9 @@
         <fastjson.version>1.2.37_1</fastjson.version>
         <sparkjava-core.version>2.6.0_1</sparkjava-core.version>
         <mustache-compiler.version>0.9.5_1</mustache-compiler.version>
+        <guava.version>30.1.1-jre</guava.version>
+        <guava.failureaccess.version>1.0.1</guava.failureaccess.version>
+        <groovy.version>2.5.5</groovy.version>
 
         <cxf.build-utils.version>3.4.3</cxf.build-utils.version>
         <cxf.xjc-utils.version>3.3.0</cxf.xjc-utils.version>
