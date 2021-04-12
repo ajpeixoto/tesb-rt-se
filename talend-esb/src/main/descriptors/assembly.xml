@@ -511,6 +511,13 @@
             <lineEnding>unix</lineEnding>
         </file>
         <file>
+            <source>${basedir}/target/dependencies/pax-web-features-${pax-web.version}-features.xml</source>
+            <outputDirectory>./container/system/org/ops4j/pax/web/pax-web-features/${pax-web.version}/</outputDirectory>
+            <destName>pax-web-features-${pax-web.version}-features.xml</destName>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
             <source>${basedir}/target/dependencies/pax-logging-log4j2-${pax-logging.tesb.version}.jar</source>
             <outputDirectory>./container/system/org/ops4j/pax/logging/pax-logging-log4j2/${pax-logging.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
