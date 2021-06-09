@@ -39,16 +39,17 @@
   </feature>
 
   <feature name='tesb-sam-agent' version='${original.version}'>
-    <configfile finalname="/etc/org.talend.esb.sam.agent.cfg">mvn:org.talend.esb/sam-agent/${original.version}/cfg/org.talend.esb.sam.agent</configfile>
-    <configfile finalname="/etc/org.talend.esb.sam.agent.client.ut.policy">mvn:org.talend.esb/sam-agent/${original.version}/policy/org.talend.esb.sam.agent.client.ut</configfile>
-    <configfile finalname="/etc/org.talend.esb.sam.agent.client.saml.policy">mvn:org.talend.esb/sam-agent/${original.version}/policy/org.talend.esb.sam.agent.client.saml</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.agent.cfg">mvn:org.talend.esb/sam-agent/${sam-agent.version}/cfg/org.talend.esb.sam.agent</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.agent.client.ut.policy">mvn:org.talend.esb/sam-agent/${sam-agent.version}/policy/org.talend.esb.sam.agent.client.ut</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.agent.client.saml.policy">mvn:org.talend.esb/sam-agent/${sam-agent.version}/policy/org.talend.esb.sam.agent.client.saml</configfile>
     <feature version='${cxf.version}'>cxf</feature>
     <feature>tesb-sam-common</feature>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/1_2</bundle>
     <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/1.2</bundle>
     <bundle dependency="true">mvn:javax.enterprise/cdi-api/1.2</bundle>
     <bundle dependency="true">mvn:org.ops4j.pax.cdi/pax-cdi-api/${pax-cdi.version}</bundle>
-    <bundle>mvn:org.talend.esb/sam-agent/${original.version}</bundle>
+    <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
+    <bundle>mvn:org.talend.esb/sam-agent/${sam-agent.version}</bundle>
   </feature>
 
   <feature name='tesb-datasource-derby' version='${original.version}'>
@@ -150,18 +151,20 @@
   </feature>
 
   <feature name='tesb-sam-service-soap' version='${original.version}'>
-    <configfile finalname="/etc/org.talend.esb.sam.service.soap.cfg">mvn:org.talend.esb.sam.service/sam-service-soap/${original.version}/cfg/org.talend.esb.sam.service.soap</configfile>
-    <configfile finalname="/etc/org.talend.esb.sam.service.soap.ut.policy">mvn:org.talend.esb.sam.service/sam-service-soap/${original.version}/policy/org.talend.esb.sam.service.soap.ut</configfile>
-    <configfile finalname="/etc/org.talend.esb.sam.service.soap.saml.policy">mvn:org.talend.esb.sam.service/sam-service-soap/${original.version}/policy/org.talend.esb.sam.service.soap.saml</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.soap.cfg">mvn:org.talend.esb.sam.service/sam-service-soap/${sam-service-soap.version}/cfg/org.talend.esb.sam.service.soap</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.soap.ut.policy">mvn:org.talend.esb.sam.service/sam-service-soap/${sam-service-soap.version}/policy/org.talend.esb.sam.service.soap.ut</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.soap.saml.policy">mvn:org.talend.esb.sam.service/sam-service-soap/${sam-service-soap.version}/policy/org.talend.esb.sam.service.soap.saml</configfile>
     <feature>tesb-sam-server</feature>
-    <bundle>mvn:org.talend.esb.sam.service/sam-service-soap/${original.version}</bundle>
+    <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
+    <bundle>mvn:org.talend.esb.sam.service/sam-service-soap/${sam-service-soap.version}</bundle>
   </feature>
 
   <feature name='tesb-sam-service-rest' version='${original.version}'>
-    <configfile finalname="/etc/org.talend.esb.sam.service.rest.cfg">mvn:org.talend.esb.sam.service/sam-service-rest/${original.version}/cfg/org.talend.esb.sam.service.rest</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.rest.cfg">mvn:org.talend.esb.sam.service/sam-service-rest/${sam-service-rest.version}/cfg/org.talend.esb.sam.service.rest</configfile>
     <feature>tesb-sam-server</feature>
     <feature>cxf-rs-security-xml</feature>
-    <bundle>mvn:org.talend.esb.sam.service/sam-service-rest/${original.version}</bundle>
+    <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
+    <bundle>mvn:org.talend.esb.sam.service/sam-service-rest/${sam-service-rest.version}</bundle>
   </feature>
 
   <feature name='tesb-sam-server' version='${original.version}'>
@@ -235,7 +238,8 @@
     <feature>cxf-rs-security-xml</feature>
     <feature>jasypt-encryption</feature>
     <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>
-    <bundle start-level='50'>mvn:org.talend.esb/security-common/${original.version}</bundle>
+    <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
+    <bundle start-level='50'>mvn:org.talend.esb/security-common/${security-common.version}</bundle>
   </feature>
 
   <feature name="tesb-encryptor-command" version="${original.version}">
@@ -286,6 +290,7 @@
     <configfile finalname="/etc/keystores/stsKeystore.properties">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${sts-config.version}/properties/stsKeystore</configfile>
     <configfile finalname="/etc/keystores/stsstore.jks">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${sts-config.version}/jks/stsstore</configfile>
     <feature version="${cxf.version}">cxf-sts</feature>
+    <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
     <bundle>mvn:org.talend.esb.sts/org.talend.esb.sts.config/${sts-config.version}</bundle>
   </feature>
 
@@ -391,6 +396,19 @@
     <bundle dependency="true">mvn:org.codehaus.groovy/groovy-test-junit5/${groovy.version}</bundle>
     <bundle dependency="true">mvn:org.codehaus.groovy/groovy-testng/${groovy.version}</bundle>
     <bundle dependency="true">mvn:org.codehaus.groovy/groovy-xml/${groovy.version}</bundle>
+  </feature>
+
+  <feature name='tesb-keystore-configs' version='${original.version}'>
+    <configfile finalname="/etc/org.talend.esb.auxiliary.storage.client.keystore.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-client-rest/${auxiliary-storage-client.version}/cfg/org.talend.esb.auxiliary.storage.client.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.auxiliary.storage.client.enc.keystore.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-client-rest/${auxiliary-storage-client.version}/cfg/org.talend.esb.auxiliary.storage.client.enc.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.auxiliary.storage.service.sig.keystore.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-service-rest/${auxiliary-storage-service-rest.version}/cfg/org.talend.esb.auxiliary.storage.service.sig.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.job.client.keystore.cfg">mvn:org.talend.esb.job/org.talend.esb.job.controller/${job-controller.version}/cfg/org.talend.esb.job.client.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.job.client.enc.keystore.cfg">mvn:org.talend.esb.job/org.talend.esb.job.controller/${job-controller.version}/cfg/org.talend.esb.job.client.enc.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.job.client.sig.keystore.cfg">mvn:org.talend.esb.job/org.talend.esb.job.controller/${job-controller.version}/cfg/org.talend.esb.job.client.sig.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.rest.keystore.cfg">mvn:org.talend.esb.sam.service/sam-service-rest/${sam-service-rest.version}/cfg/org.talend.esb.sam.service.rest.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.soap.keystore.cfg">mvn:org.talend.esb.sam.service/sam-service-soap/${sam-service-soap.version}/cfg/org.talend.esb.sam.service.soap.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.agent.keystore.cfg">mvn:org.talend.esb/sam-agent/${sam-agent.version}/cfg/org.talend.esb.sam.agent.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sts.server.keystore.cfg">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${sts-config.version}/cfg/org.talend.esb.sts.server.keystore</configfile>
   </feature>
 
 </features>

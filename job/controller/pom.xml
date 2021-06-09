@@ -35,7 +35,7 @@
         <dependency>
             <groupId>org.talend.esb</groupId>
             <artifactId>sam-agent</artifactId>
-            <version>${original.version}</version>
+            <version>${sam-agent.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.talend.esb</groupId>
             <artifactId>security-common</artifactId>
-            <version>${original.version}</version>
+            <version>${security-common.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -191,6 +191,21 @@
                                     <file>etc/org.talend.esb.job.client.sts.cfg</file>
                                     <type>cfg</type>
                                     <classifier>org.talend.esb.job.client.sts</classifier>
+                                </artifact>
+                                <artifact>
+                                    <file>etc/org.talend.esb.job.client.keystore.cfg</file>
+                                    <type>cfg</type>
+                                    <classifier>org.talend.esb.job.client.keystore</classifier>
+                                </artifact>
+                                <artifact>
+                                    <file>etc/org.talend.esb.job.client.enc.keystore.cfg</file>
+                                    <type>cfg</type>
+                                    <classifier>org.talend.esb.job.client.enc.keystore</classifier>
+                                </artifact>
+                                <artifact>
+                                    <file>etc/org.talend.esb.job.client.sig.keystore.cfg</file>
+                                    <type>cfg</type>
+                                    <classifier>org.talend.esb.job.client.sig.keystore</classifier>
                                 </artifact>
                                 <artifact>
                                     <file>etc/org.talend.esb.job.oidc.cfg</file>
