@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
- Copyright (c) 2014 Talend Inc. - www.talend.com
+ Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  All rights reserved.
 
  This program and the accompanying materials are made available
@@ -22,19 +22,50 @@
         <groupId>org.talend.esb.examples.tomcat</groupId>
         <artifactId>tomcat-examples-parent</artifactId>
         <version>7.4.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
-    
+
     <properties>
     	<endpoint.http.prefix>http://${tomcat.host}:${tomcat.http.port}/reservationservice-service</endpoint.http.prefix>
     	<endpoint.https.prefix>https://${tomcat.host}:${tomcat.https.port}/reservationservice-service</endpoint.https.prefix>
     	<endpoint.prefix>${endpoint.http.prefix}</endpoint.prefix>
     </properties>
-    
+
     <modules>
         <module>common</module>
         <module>client</module>
         <module>service</module>
         <module>service-endpoint</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.talend.esb.examples.tomcat</groupId>
+                <artifactId>reservationservice-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.tomcat</groupId>
+                <artifactId>crmservice-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.tomcat</groupId>
+                <artifactId>reservationservice-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.tomcat</groupId>
+                <artifactId>reservationservice-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.tomcat</groupId>
+                <artifactId>reservationservice-service-endpoint</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

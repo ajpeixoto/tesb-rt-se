@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
- Copyright (c) 2011 Talend Inc. - www.talend.com
+ Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  All rights reserved.
 
  This program and the accompanying materials are made available
@@ -29,19 +29,20 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
-            <version>${cxf.version}</version>
             <scope>provided</scope>
         </dependency>
 	    <dependency>
             <groupId>org.ops4j.pax.cdi</groupId>
             <artifactId>pax-cdi-api</artifactId>
-            <version>1.0.0.RC1</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
-            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.talend.cxf</groupId>
+            <artifactId>crypto-config</artifactId>
         </dependency>
 
         <!-- Test dependencies -->
@@ -83,6 +84,11 @@
                         </goals>
                         <configuration>
                             <artifacts>
+                                <artifact>
+                                    <file>etc/org.talend.esb.sts.server.keystore.cfg</file>
+                                    <type>cfg</type>
+                                    <classifier>org.talend.esb.sts.server.keystore</classifier>
+                                </artifact>
                                 <artifact>
                                     <file>etc/keystores/stsKeystore.properties</file>
                                     <type>properties</type>

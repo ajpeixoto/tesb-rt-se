@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
- Copyright (c) 2011 Talend Inc. - www.talend.com
+ Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  All rights reserved.
 
  This program and the accompanying materials are made available
@@ -30,5 +30,30 @@
         <module>service</module>
         <module>war</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.talend.esb.examples.locator.service</groupId>
+                <artifactId>locator-soap-example-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.locator.service</groupId>
+                <artifactId>locator-soap-example-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.locator.service</groupId>
+                <artifactId>locator-soap-example-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.locator.service</groupId>
+                <artifactId>locator-soap-example-war</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

@@ -2,7 +2,7 @@
  * #%L
  * Camel :: Example :: Management :: TESB container
  * %%
- * Copyright (C) 2011-2019 Talend Inc.
+ * Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.camel.language.XPath;
+import org.apache.camel.language.xpath.XPath;
 
 
 /**

@@ -1,6 +1,6 @@
 <!--
 
- Copyright (c) 2014 Talend Inc. - www.talend.com
+ Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  All rights reserved.
 
  This program and the accompanying materials are made available
@@ -24,45 +24,39 @@
         <version>7.4.1-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
-    
+
     <dependencies>
     	<dependency>
             <groupId>org.talend.esb.examples.tomcat</groupId>
             <artifactId>reservationservice-service</artifactId>
-            <version>${project.version}</version>
         </dependency>
-        
+
     	<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${cxf.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-management</artifactId>
-			<version>${cxf.version}</version>
 		</dependency>
 
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-features-metrics</artifactId>
-            <version>${cxf.version}</version>
         </dependency>
     </dependencies>
-    
+
     <profiles>
 		<profile>
 			<id>slsam</id>
@@ -73,19 +67,16 @@
 				<dependency>
 					<groupId>org.talend.esb</groupId>
 					<artifactId>sam-common</artifactId>
-					<version>${project.version}</version>
 				</dependency>
-		
+
 				<dependency>
 					<groupId>org.talend.esb</groupId>
 					<artifactId>sam-agent</artifactId>
-					<version>${project.version}</version>
 				</dependency>
-		
+
 				<dependency>
 					<groupId>org.talend.esb</groupId>
 					<artifactId>locator</artifactId>
-					<version>${project.version}</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -95,31 +86,26 @@
 				<dependency>
 		            <groupId>org.talend.esb.registry</groupId>
 		            <artifactId>registry-wsdl-client</artifactId>
-		            <version>${project.version}</version>
 		        </dependency>
-		        
+
 		        <dependency>
 		            <groupId>org.talend.esb.registry</groupId>
 		            <artifactId>registry-policy-client</artifactId>
-		            <version>${project.version}</version>
 		        </dependency>
-		        
+
 		        <dependency>
 					<groupId>org.talend.esb</groupId>
 					<artifactId>sam-common</artifactId>
-					<version>${project.version}</version>
 				</dependency>
-		
+
 				<dependency>
 					<groupId>org.talend.esb</groupId>
 					<artifactId>sam-agent</artifactId>
-					<version>${project.version}</version>
 				</dependency>
-		
+
 				<dependency>
 					<groupId>org.talend.esb</groupId>
 					<artifactId>locator</artifactId>
-					<version>${project.version}</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -131,7 +117,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>tomcat-maven-plugin</artifactId>
-                <version>1.1</version>
                 <configuration>
                     <server>myTomcat</server>
                     <url>${tomcat.url}</url>

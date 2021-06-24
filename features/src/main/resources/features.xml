@@ -3,7 +3,7 @@
   #%L
   TESB :. Features
   %%
-  Copyright (C) 2011-2019 Talend Inc.
+  Copyright (c) 2006-2021 Talend Inc. - www.talend.com
   %%
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -20,19 +20,48 @@
   -->
 <features name="tesb-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0">
 
-  <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
-  <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
-  <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
-  <repository>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${project.version}/xml</repository>
+  <!-- forces latest bundle to be installed to avoid conflicts between versions -->
+  <feature name='talend-common-dependencies' version='${project.version}'>
+    <bundle start-level="30">mvn:com.google.code.gson/gson/${gson.version}</bundle>
+    <bundle start-level="30">mvn:com.google.guava/guava/${guava.version}</bundle>
+    <bundle start-level="30">mvn:io.zipkin.brave/brave/${brave.version}</bundle>
+    <bundle start-level="30">mvn:io.zipkin.reporter2/zipkin-reporter-brave/${zipkin-reporter.version}</bundle>
+    <bundle start-level="30">mvn:io.zipkin.reporter2/zipkin-reporter/${zipkin-reporter.version}</bundle>
+    <bundle start-level="30">mvn:io.zipkin.zipkin2/zipkin/${zipkin.version}</bundle>
+    <bundle start-level="30">mvn:javax.annotation/javax.annotation-api/${javax.annotation-api.version}</bundle>
+    <bundle start-level="30">mvn:joda-time/joda-time/${joda-time.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.aries.spifly/org.apache.aries.spifly.dynamic.bundle/${org.apache.aries.spifly.dynamic.bundle.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.commons/commons-collections4/${commons-collections4.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.commons/commons-lang3/${commons-lang3.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.james/apache-mime4j-core/${apache-mime4j-core.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.mina/mina-core/${mina-core.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/${org.apache.servicemix.bundles.aopalliance.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aspectj/${org.apache.servicemix.bundles.aspectj.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.c3p0/${org.apache.servicemix.bundles.c3p0.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/${org.apache.servicemix.bundles.cglib.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsch/${org.apache.servicemix.bundles.jsch.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jzlib/${org.apache.servicemix.bundles.jzlib.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.reflections/${org.apache.servicemix.bundles.reflections.version}</bundle>
+    <bundle start-level="30">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxrs-api-2.1/${org.apache.servicemix.specs.jaxrs-api-2.1.version}</bundle>
+    <bundle start-level="30">mvn:org.bouncycastle/bcpkix-jdk15on/${bcp.version}</bundle>
+    <bundle start-level="30">mvn:org.bouncycastle/bcprov-jdk15on/${bcp.version}</bundle>
+    <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-api/${websocket.version}</bundle>
+    <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-client/${websocket.version}</bundle>
+    <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-common/${websocket.version}</bundle>
+    <bundle start-level="30">mvn:org.eclipse.persistence/javax.persistence/${javax.persistence.version}</bundle>
+    <bundle start-level="30">mvn:org.javassist/javassist/${javassist.version}</bundle>
+    <bundle start-level="30">mvn:org.jboss.logging/jboss-logging/${jboss-logging.version}</bundle>
+    <bundle start-level="30">mvn:org.yaml/snakeyaml/${snakeyaml.version}</bundle>
+  </feature>
 
   <feature name='tesb-sam-common' version='${project.version}'>
     <bundle dependency="true">mvn:org.apache.commons/commons-lang3/${commons-lang3.version}</bundle>
-    <!-- All those bundles should be optional I think, but the commons-jxpath osgi metadata is not really good -->
     <bundle dependency="true" start-level="30">mvn:commons-collections/commons-collections/${commons-collections.version}</bundle>
     <bundle dependency="true" start-level="30">mvn:commons-beanutils/commons-beanutils/${commons-beanutils.version}</bundle>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.bundle.version}</bundle>
     <bundle start-level="30" dependency="true">mvn:org.eclipse.jdt.core.compiler/ecj/4.5.1</bundle>
-    <bundle start-level="30" dependency="true">mvn:org.glassfish/javax.el/${javax.el.version}</bundle>
+    <bundle start-level="30" dependency="true">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
     <bundle dependency="true">mvn:org.ops4j.pax.web/pax-web-jsp/${pax-web.version}</bundle>
     <bundle dependency="true">mvn:commons-jxpath/commons-jxpath/${commons-jxpath.version}</bundle>
     <bundle>mvn:org.talend.esb/sam-common/${project.version}</bundle>
@@ -44,17 +73,17 @@
     <configfile finalname="/etc/org.talend.esb.sam.agent.client.saml.policy">mvn:org.talend.esb/sam-agent/${project.version}/policy/org.talend.esb.sam.agent.client.saml</configfile>
     <feature version='${cxf.version}'>cxf</feature>
     <feature>tesb-sam-common</feature>
-    <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/1_2</bundle>
-    <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/1.2</bundle>
+    <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
+    <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
     <bundle dependency="true">mvn:javax.enterprise/cdi-api/1.2</bundle>
     <bundle dependency="true">mvn:org.ops4j.pax.cdi/pax-cdi-api/${pax-cdi.version}</bundle>
+    <bundle>mvn:org.talend.cxf/crypto-config/${project.version}</bundle>
     <bundle>mvn:org.talend.esb/sam-agent/${project.version}</bundle>
   </feature>
 
   <feature name='tesb-datasource-derby' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.datasource.derby.cfg">mvn:org.talend.esb/ds-service-derby/${project.version}/cfg/org.talend.esb.datasource.derby</configfile>
-    <feature version="[4.3,6)">spring-jdbc</feature>
-<!--    <bundle>mvn:org.apache.derby/derbyclient/${derby.version}</bundle> -->
+    <feature version="[5.2,6)">spring-jdbc</feature>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/${derby.servicemix.version}</bundle>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
     <bundle>mvn:org.talend.esb/ds-service-derby/${project.version}</bundle>
@@ -66,7 +95,7 @@
   -->
   <feature name='tesb-datasource-h2' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.datasource.h2.cfg">mvn:org.talend.esb/ds-service-h2/${project.version}/cfg/org.talend.esb.datasource.h2</configfile>
-    <feature version="[4.3,6)">spring-jdbc</feature>
+    <feature version="[5.2,6)">spring-jdbc</feature>
     <bundle>mvn:org.talend.esb/ds-service-h2/${project.version}</bundle>
   </feature>
 
@@ -76,7 +105,7 @@
   -->
   <feature name='tesb-datasource-mysql' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.datasource.mysql.cfg">mvn:org.talend.esb/ds-service-mysql/${project.version}/cfg/org.talend.esb.datasource.mysql</configfile>
-    <feature version="[4.3,6)">spring-jdbc</feature>
+    <feature version="[5.2,6)">spring-jdbc</feature>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
     <bundle>mvn:org.talend.esb/ds-service-mysql/${project.version}</bundle>
   </feature>
@@ -94,7 +123,7 @@
   -->
   <feature name='tesb-datasource-oracle' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.datasource.oracle.cfg">mvn:org.talend.esb/ds-service-oracle/${project.version}/cfg/org.talend.esb.datasource.oracle</configfile>
-    <feature version="[4.3,6)">spring-jdbc</feature>
+    <feature version="[5.2,6)">spring-jdbc</feature>
     <bundle>mvn:org.talend.esb/ds-service-oracle/${project.version}</bundle>
   </feature>
 
@@ -108,7 +137,7 @@
   -->
   <feature name='tesb-datasource-postgresql' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.datasource.postgresql.cfg">mvn:org.talend.esb/ds-service-postgresql/${project.version}/cfg/org.talend.esb.datasource.postgresql</configfile>
-    <feature version="[4.3,6)">spring-jdbc</feature>
+    <feature version="[5.2,6)">spring-jdbc</feature>
     <bundle>mvn:org.talend.esb/ds-service-postgresql/${project.version}</bundle>
   </feature>
 
@@ -126,7 +155,7 @@
   -->
   <feature name='tesb-datasource-db2' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.datasource.db2.cfg">mvn:org.talend.esb/ds-service-db2/${project.version}/cfg/org.talend.esb.datasource.db2</configfile>
-    <feature version="[4.3,6)">spring-jdbc</feature>
+    <feature version="[5.2,6)">spring-jdbc</feature>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
     <bundle>mvn:org.talend.esb/ds-service-db2/${project.version}</bundle>
   </feature>
@@ -144,7 +173,7 @@
   -->
   <feature name='tesb-datasource-sqlserver' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.datasource.sqlserver.cfg">mvn:org.talend.esb/ds-service-sqlserver/${project.version}/cfg/org.talend.esb.datasource.sqlserver</configfile>
-    <feature version="[4.3,6)">spring-jdbc</feature>
+    <feature version="[5.2,6)">spring-jdbc</feature>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
     <bundle>mvn:org.talend.esb/ds-service-sqlserver/${project.version}</bundle>
   </feature>
@@ -154,6 +183,7 @@
     <configfile finalname="/etc/org.talend.esb.sam.service.soap.ut.policy">mvn:org.talend.esb.sam.service/sam-service-soap/${project.version}/policy/org.talend.esb.sam.service.soap.ut</configfile>
     <configfile finalname="/etc/org.talend.esb.sam.service.soap.saml.policy">mvn:org.talend.esb.sam.service/sam-service-soap/${project.version}/policy/org.talend.esb.sam.service.soap.saml</configfile>
     <feature>tesb-sam-server</feature>
+    <bundle>mvn:org.talend.cxf/crypto-config/${project.version}</bundle>
     <bundle>mvn:org.talend.esb.sam.service/sam-service-soap/${project.version}</bundle>
   </feature>
 
@@ -161,6 +191,7 @@
     <configfile finalname="/etc/org.talend.esb.sam.service.rest.cfg">mvn:org.talend.esb.sam.service/sam-service-rest/${project.version}/cfg/org.talend.esb.sam.service.rest</configfile>
     <feature>tesb-sam-server</feature>
     <feature>cxf-rs-security-xml</feature>
+    <bundle>mvn:org.talend.cxf/crypto-config/${project.version}</bundle>
     <bundle>mvn:org.talend.esb.sam.service/sam-service-rest/${project.version}</bundle>
   </feature>
 
@@ -168,7 +199,7 @@
     <configfile finalname="/etc/org.talend.esb.sam.server.cfg">mvn:org.talend.esb/sam-server/${project.version}/cfg/org.talend.esb.sam.server</configfile>
     <feature version='${cxf.version}'>cxf</feature>
     <feature>tesb-sam-common</feature>
-    <feature version='[4.3,6)'>spring-jdbc</feature>
+    <feature version='[5.2,6)'>spring-jdbc</feature>
     <bundle dependency="true">mvn:commons-pool/commons-pool/${commons-pool.version}</bundle>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscache/${oscache.bundle.version}</bundle>
@@ -179,21 +210,21 @@
 
   <feature name='tesb-derby-starter' version='${project.version}'>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/${derby.servicemix.version}</bundle>
-<!--     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derbynet/${derbynet.bundle.version}</bundle> -->
     <bundle>mvn:org.talend.esb/derby-starter/${project.version}</bundle>
   </feature>
 
   <feature name='tesb-zookeeper' version='${project.version}'>
     <configfile finalname="/etc/org.talend.esb.locator.server.cfg">mvn:org.talend.esb/org.talend.esb.locator.server/${project.version}/cfg</configfile>
     <bundle start-level='50'>mvn:org.talend.esb/org.talend.esb.locator.auth/${project.version}</bundle>
-    <bundle start-level='50'>mvn:org.apache.zookeeper/zookeeper/${zookeeper.version}</bundle>
+    <bundle dependency='true'>wrap:mvn:org.apache.zookeeper/zookeeper/${zookeeper.version}$Bundle-SymbolicName=org.apache.zookeeper&amp;Export-Package=org.apache.zookeeper;version=${zookeeper.version},org.apache.zookeeper.*;version=${zookeeper.version}</bundle>
+    <bundle dependency='true'>wrap:mvn:org.apache.zookeeper/zookeeper-jute/${zookeeper.version}$Bundle-SymbolicName=org.apache.zookeeper-jute&amp;Export-Package=org.apache.jute;version=${zookeeper.version},org.apache.zookeeper.*;version=${zookeeper.version}</bundle>
   </feature>
 
   <feature name='tesb-locator-client' version='${project.version}'>
     <feature version='${cxf.version}'>cxf</feature>
     <feature prerequisite='true'>tesb-zookeeper</feature>
-    <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/1_2</bundle>
-    <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/1.2</bundle>
+    <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
+    <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
     <bundle dependency="true">mvn:javax.enterprise/cdi-api/1.2</bundle>
     <bundle dependency="true">mvn:org.ops4j.pax.cdi/pax-cdi-api/${pax-cdi.version}</bundle>
     <bundle>mvn:org.apache.cxf/cxf-rt-features-clustering/${cxf.version}</bundle>
@@ -235,6 +266,7 @@
     <feature>cxf-rs-security-xml</feature>
     <feature>jasypt-encryption</feature>
     <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>
+    <bundle>mvn:org.talend.cxf/crypto-config/${project.version}</bundle>
     <bundle start-level='50'>mvn:org.talend.esb/security-common/${project.version}</bundle>
   </feature>
 
@@ -286,6 +318,7 @@
     <configfile finalname="/etc/keystores/stsKeystore.properties">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${project.version}/properties/stsKeystore</configfile>
     <configfile finalname="/etc/keystores/stsstore.jks">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${project.version}/jks/stsstore</configfile>
     <feature version="${cxf.version}">cxf-sts</feature>
+    <bundle>mvn:org.talend.cxf/crypto-config/${project.version}</bundle>
     <bundle>mvn:org.talend.esb.sts/org.talend.esb.sts.config/${project.version}</bundle>
   </feature>
 
@@ -309,7 +342,7 @@
     <bundle dependency="true" start-level="30">mvn:commons-beanutils/commons-beanutils/${commons-beanutils.version}</bundle>
     <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.bundle.version}</bundle>
     <bundle start-level="30" dependency="true">mvn:org.eclipse.jdt.core.compiler/ecj/4.5.1</bundle>
-    <bundle start-level="30" dependency="true">mvn:org.glassfish/javax.el/${javax.el.version}</bundle>
+    <bundle start-level="30" dependency="true">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
     <bundle dependency="true">mvn:org.ops4j.pax.web/pax-web-jsp/${pax-web.version}</bundle>
     <bundle dependency="true">mvn:commons-jxpath/commons-jxpath/${commons-jxpath.version}</bundle>
     <bundle>mvn:org.talend.esb.policies/correlationid-policy/${project.version}</bundle>
@@ -354,45 +387,17 @@
     <bundle>mvn:org.talend.camel/camel-core-talend/${project.version}</bundle>
   </feature>
 
-  <!-- Bundles defined in this feature will be pre-installed into the Container,
-       to avoid unnecessary bundles refresh problem e.g APPINT-32247.
-  -->
-  <feature name='talend-common-dependencies' version='${original.version}'>
-    <!-- for camel-bean-validator -->
-    <bundle>mvn:javax.validation/validation-api/2.0.1.Final</bundle>
-
-    <!-- the newest guava version -->
-    <bundle>mvn:com.google.guava/failureaccess/${guava.failureaccess.version}</bundle>
-    <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
-
-	<!-- the guava version for cxf-rs-description-swagger2 -->
-	<bundle>mvn:com.google.guava/guava/27.0-jre</bundle>
-    
-    <bundle>mvn:commons-codec/commons-codec/${commons-codec.version}</bundle>
-
-	<!-- the groovy version -->
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-ant/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-cli-commons/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-cli-picocli/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-console/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-datetime/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-docgenerator/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-groovydoc/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-groovysh/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-jmx/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-json/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-jsr223/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-macro/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-nio/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-servlet/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-sql/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-swing/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-templates/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-test/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-test-junit5/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-testng/${groovy.version}</bundle>
-    <bundle dependency="true">mvn:org.codehaus.groovy/groovy-xml/${groovy.version}</bundle>
+  <feature name='tesb-keystore-configs' version='${project.version}'>
+    <configfile finalname="/etc/org.talend.esb.auxiliary.storage.client.keystore.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-client-rest/${project.version}/cfg/org.talend.esb.auxiliary.storage.client.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.auxiliary.storage.client.enc.keystore.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-client-rest/${project.version}/cfg/org.talend.esb.auxiliary.storage.client.enc.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.auxiliary.storage.service.sig.keystore.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-service-rest/${project.version}/cfg/org.talend.esb.auxiliary.storage.service.sig.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.job.client.keystore.cfg">mvn:org.talend.esb.job/org.talend.esb.job.controller/${project.version}/cfg/org.talend.esb.job.client.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.job.client.enc.keystore.cfg">mvn:org.talend.esb.job/org.talend.esb.job.controller/${project.version}/cfg/org.talend.esb.job.client.enc.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.job.client.sig.keystore.cfg">mvn:org.talend.esb.job/org.talend.esb.job.controller/${project.version}/cfg/org.talend.esb.job.client.sig.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.rest.keystore.cfg">mvn:org.talend.esb.sam.service/sam-service-rest/${project.version}/cfg/org.talend.esb.sam.service.rest.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.service.soap.keystore.cfg">mvn:org.talend.esb.sam.service/sam-service-soap/${project.version}/cfg/org.talend.esb.sam.service.soap.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sam.agent.keystore.cfg">mvn:org.talend.esb/sam-agent/${project.version}/cfg/org.talend.esb.sam.agent.keystore</configfile>
+    <configfile finalname="/etc/org.talend.esb.sts.server.keystore.cfg">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${project.version}/cfg/org.talend.esb.sts.server.keystore</configfile>
   </feature>
 
 </features>

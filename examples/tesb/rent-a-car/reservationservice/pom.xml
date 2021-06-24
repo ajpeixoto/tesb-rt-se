@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
- Copyright (c) 2011 Talend Inc. - www.talend.com
+ Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  All rights reserved.
 
  This program and the accompanying materials are made available
@@ -23,12 +23,28 @@
         <groupId>org.talend.esb.examples</groupId>
         <artifactId>rent-a-car</artifactId>
         <version>7.4.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
-    
+
     <modules>
         <module>common</module>
         <module>service</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.talend.esb.examples.rent-a-car</groupId>
+                <artifactId>reservationservice-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.esb.examples.rent-a-car</groupId>
+                <artifactId>reservationservice-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <profiles>
         <profile>

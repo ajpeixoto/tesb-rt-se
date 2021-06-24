@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
- Copyright (c) 2011 Talend Inc. - www.talend.com
+ Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  All rights reserved.
 
  This program and the accompanying materials are made available
@@ -17,8 +17,9 @@
 
     <parent>
         <groupId>org.talend.esb</groupId>
-        <artifactId>esb-parent</artifactId>
+        <artifactId>bom</artifactId>
         <version>7.4.1-SNAPSHOT</version>
+        <relativePath>../bom</relativePath>
     </parent>
 
     <groupId>org.talend.esb.examples</groupId>
@@ -43,215 +44,12 @@
         </license>
     </licenses>
 
-    <prerequisites>
-        <maven>3.0.0</maven>
-    </prerequisites>
-
     <modules>
         <module>tesb</module>
     </modules>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <endpoint.prefix>http://localhost:8040/services</endpoint.prefix>
         <sts.endpoint.prefix>${endpoint.prefix}</sts.endpoint.prefix>
-
-        <cxf.xjc.version>3.3.1</cxf.xjc.version>
-        <httpclient.version>4.5.13</httpclient.version>
-        <xstream.version>1.4.17</xstream.version>
-        <osgi.version>6.0.0</osgi.version>
-        <eclipse.osgi.version>3.12.100</eclipse.osgi.version>
-        <aries.version>1.0.0</aries.version>
-
-        <!-- Test dependencies -->
-        <junit.version>4.13.1</junit.version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>jakarta.xml.bind</groupId>
-                <artifactId>jakarta.xml.bind-api</artifactId>
-                <version>2.3.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.geronimo.specs</groupId>
-                <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-                <version>1.1.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.servicemix.specs</groupId>
-                <artifactId>org.apache.servicemix.specs.jaxws-api-2.2</artifactId>
-                <version>2.9.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk15on</artifactId>
-                <version>${bouncycastle.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.activemq</groupId>
-                <artifactId>activemq-osgi</artifactId>
-                <version>${activemq.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>*</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.hadoop</groupId>
-                        <artifactId>*</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.activemq</groupId>
-                        <artifactId>activemq-leveldb-store</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.fasterxml.jackson.core</groupId>
-                        <artifactId>jackson-databind</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>com.thoughtworks.xstream</groupId>
-                        <artifactId>xstream</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.linkedin</groupId>
-                        <artifactId>org.linkedin.zookeeper-impl</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <!-- Override the OpenSAML dependency for a security fix -->
-            <dependency>
-                <groupId>org.cryptacular</groupId>
-                <artifactId>cryptacular</artifactId>
-                <version>1.2.4</version>
-            </dependency>
-
-            <!-- Override commons-codec dependency for a security fix -->
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>${commons-codec.version}</version>
-            </dependency>
-
-            <!-- Override httpclient dependency for a security fix -->
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>${httpclient.version}</version>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <defaultGoal>install</defaultGoal>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-                    <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.4.0</version>
-                    <extensions>true</extensions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.cxf</groupId>
-                    <artifactId>cxf-codegen-plugin</artifactId>
-                    <version>${cxf.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>1.8</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.2.1</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>license-maven-plugin</artifactId>
-                    <version>1.4</version>
-                    <configuration>
-                        <licenseName>apache_v2</licenseName>
-                        <licenseFile>${project.build.directory}/LICENSE.txt</licenseFile>
-                        <thirdPartyFilename>TESBDEPENDENCIES.txt</thirdPartyFilename>
-                        <groupByLicense>true</groupByLicense>
-                        <licenseMerges>
-                            <licenseMerge>The Apache Software License, Version 2.0|Apache
-                                Software License - Version 2.0|Apache License|Apache 2</licenseMerge>
-                            <licenseMerge>BSD License|BSD|BSD license|The BSD License</licenseMerge>
-                            <licenseMerge>COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)
-                                Version 1.0|CDDL License|CDDL 1.0|Common Development and
-                                Distribution License (CDDL) v1.0</licenseMerge>
-                            <licenseMerge>Common Public License Version 1.0|CPL</licenseMerge>
-                        </licenseMerges>
-                        <excludedGroups>org.talend.esb|org.codehaus.jettison</excludedGroups>
-                        <missingFile>./THIRD-PARTY.properties</missingFile>
-                        <useMissingFile>true</useMissingFile>
-                        <canUpdateCopyright>true</canUpdateCopyright>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>update-project-license</goal>
-                                <!-- goal>aggregate-add-third-party</goal -->
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.6</version>
-                    <configuration>
-                       <encoding>UTF-8</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-maven-plugin</artifactId>
-                    <version>${jetty.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.3</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>3.2</version>
-                    <configuration>
-                        <generateReports>false</generateReports>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.1</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 </project>

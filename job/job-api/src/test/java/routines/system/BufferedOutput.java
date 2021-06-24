@@ -2,7 +2,7 @@
  * #%L
  * Talend :: ESB :: Job :: API
  * %%
- * Copyright (C) 2011-2019 Talend Inc.
+ * Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
  */
 // ============================================================================
 //
-// Copyright (C) 2006-2019 Talend Inc. - www.talend.com
+// Copyright (c) 2006-2021 Talend Inc. - www.talend.com
 //
 // This source code is available under agreement available at
 // %InstallDIR%\features\org.talend.rcp.branding.%PRODUCTNAME%\%PRODUCTNAME%license.txt
 //
 // You should have received a copy of the agreement
 // along with this program; if not, write to Talend SA
-// 9 rue Pages 92150 Suresnes, France
+// 5/7 rue Salomon De Rothschild, 92150 Suresnes, France
 //
 // ============================================================================
 package routines.system;
@@ -83,8 +83,7 @@ public class BufferedOutput extends java.io.Writer {
         nChars = sz;
         nextChar = 0;
 
-        lineSeparator = (String) java.security.AccessController.doPrivileged(new sun.security.action.GetPropertyAction(
-                "line.separator")); //$NON-NLS-1$
+        lineSeparator = System.getProperty("line.separator"); //$NON-NLS-1$
     }
 
     /** Check to make sure that the stream has not been closed */

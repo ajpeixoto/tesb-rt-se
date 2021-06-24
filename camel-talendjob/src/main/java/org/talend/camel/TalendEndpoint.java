@@ -2,7 +2,7 @@
  * #%L
  * Talend ESB :: Camel Talend Job Component
  * %%
- * Copyright (C) 2011-2019 Talend Inc.
+ * Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
 import org.apache.camel.Producer;
 import org.apache.camel.RuntimeCamelException;
-import org.apache.camel.impl.DefaultEndpoint;
+import org.apache.camel.support.DefaultEndpoint;
 
 import routines.system.api.TalendESBJobFactory;
 import routines.system.api.TalendJob;

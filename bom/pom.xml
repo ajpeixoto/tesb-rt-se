@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--
+        Copyright (c) 2006-2021 Talend Inc. - www.talend.com
+    -->
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>bom</artifactId>
+    <packaging>pom</packaging>
+    <version>7.4.1-SNAPSHOT</version>
+    <name>Talend ESB :: BOM</name>
+    
+    <parent>
+        <groupId>org.talend.esb</groupId>
+        <artifactId>bom-common</artifactId>
+        <relativePath>../bom-common</relativePath>
+        <version>7.4.1-SNAPSHOT</version>
+    </parent>
+
+</project>
+

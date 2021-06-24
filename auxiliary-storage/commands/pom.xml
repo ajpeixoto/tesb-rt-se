@@ -2,14 +2,14 @@
 <!--
 // ============================================================================
 //
-// Copyright (C) 2011-2019 Talend Inc. - www.talend.com
+// Copyright (c) 2006-2021 Talend Inc. - www.talend.com
 //
 // This source code is available under agreement available at
 // %InstallDIR%\license.txt
 //
 // You should have received a copy of the agreement
 // along with this program; if not, write to Talend SA
-// 9 rue Pages 92150 Suresnes, France
+// 5/7 rue Salomon De Rothschild, 92150 Suresnes, France
 //
 // ============================================================================
 -->
@@ -28,35 +28,26 @@
         <version>7.4.1-SNAPSHOT</version>
     </parent>
 
-
-    <prerequisites>
-        <maven>${maven.version}</maven>
-    </prerequisites>
-
     <dependencies>
 
         <dependency>
             <groupId>org.apache.karaf.shell</groupId>
             <artifactId>org.apache.karaf.shell.console</artifactId>
-            <version>${karaf.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
             <artifactId>org.apache.karaf.features.core</artifactId>
-            <version>${karaf.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
             <artifactId>org.apache.karaf.features.command</artifactId>
-            <version>${karaf.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
-            <version>${osgi.core.version}</version>
         </dependency>
 
         <!-- Test dependencies -->
@@ -78,7 +69,6 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>${bundle.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>

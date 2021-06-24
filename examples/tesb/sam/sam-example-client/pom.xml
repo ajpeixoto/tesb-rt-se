@@ -18,24 +18,19 @@
         <dependency>
             <groupId>org.talend.esb</groupId>
             <artifactId>sam-agent</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf.xjc-utils</groupId>
             <artifactId>cxf-xjc-runtime</artifactId>
-            <version>${cxf.xjc.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -52,7 +47,6 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>${cxf.version}</version>
                 <executions>
                     <execution>
                         <configuration>

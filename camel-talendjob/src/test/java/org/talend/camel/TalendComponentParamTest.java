@@ -2,7 +2,7 @@
  * #%L
  * Talend ESB :: Camel Talend Job Component
  * %%
- * Copyright (C) 2011-2019 Talend Inc.
+ * Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ public class TalendComponentParamTest extends CamelTestSupport {
     @Test
     public void testJobParamFromContext() throws Exception {
         resultEndpoint.expectedBodiesReceived("--context_param property=context");
-        context.getProperties().put("property", "context");
+        context.getGlobalOptions().put("property", "context");
         sendBody("direct:test", "propagateHeader=false");
         resultEndpoint.assertIsSatisfied();
     }

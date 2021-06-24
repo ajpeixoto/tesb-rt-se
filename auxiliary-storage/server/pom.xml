@@ -1,9 +1,17 @@
-<!-- // ============================================================================
-    // // Copyright (C) 2011-2019 Talend Inc. - www.talend.com // // This source
-    code is available under agreement available at // %InstallDIR%\license.txt
-    // // You should have received a copy of the agreement // along with this
-    program; if not, write to Talend SA // 9 rue Pages 92150 Suresnes, France
-    // // ============================================================================ -->
+<!--
+// ============================================================================
+//
+// Copyright (c) 2006-2021 Talend Inc. - www.talend.com
+//
+// This source code is available under agreement available at
+// %InstallDIR%\license.txt
+//
+// You should have received a copy of the agreement
+// along with this program; if not, write to Talend SA
+// 5/7 rue Salomon De Rothschild, 92150 Suresnes, France
+//
+// ============================================================================
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -19,41 +27,31 @@
         <version>7.4.1-SNAPSHOT</version>
     </parent>
 
-    <prerequisites>
-        <maven>${maven.version}</maven>
-    </prerequisites>
-
-
     <dependencies>
 
         <dependency>
             <groupId>org.talend.esb.auxiliary.storage</groupId>
             <artifactId>auxiliary-storage-common</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.talend.esb.auxiliary.storage</groupId>
             <artifactId>auxiliary-storage-persistence</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.talend.esb.auxiliary.storage</groupId>
             <artifactId>auxiliary-storage-persistence-file</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.talend.esb.auxiliary.storage</groupId>
             <artifactId>auxiliary-storage-persistence-jcr</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-            <version>${cxf.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -73,35 +71,30 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -112,13 +105,11 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>${bundle.plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>${build.helper.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-artifacts</id>

@@ -2,7 +2,7 @@
  * #%L
  * Talend :: ESB :: Job :: Controller
  * %%
- * Copyright (C) 2011-2019 Talend Inc.
+ * Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ public class RuntimeESBConsumerTest {
 		String username = "";
 		String password = "";
 		String alias = "";
-		Map<String, String> clientProperties = new HashMap<String, String>();
+		Map<String, Object> clientProperties = new HashMap<String, Object>();
 		String roleName = "";
 		Object securityToken = null;
 		Crypto cryptoProvider = null;

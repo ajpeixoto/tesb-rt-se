@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
- Copyright (c) 2011 Talend Inc. - www.talend.com
+ Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  All rights reserved.
 
  This program and the accompanying materials are made available
@@ -23,23 +23,21 @@
 		<groupId>org.talend.esb.examples.locator.service</groupId>
 		<artifactId>locator-rest-service-demo</artifactId>
 		<version>7.4.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
 
 	<dependencies>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-client</artifactId>
-            <version>${cxf.version}</version>
         </dependency>
 		<dependency>
 			<groupId>org.talend.esb.locator.service</groupId>
 			<artifactId>locator-service-common</artifactId>
-			<version>${project.version}</version>
 		</dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
         </dependency>
 	</dependencies>
 

@@ -1,14 +1,14 @@
 /*
  * ============================================================================
  *
- * Copyright (C) 2011-2019 Talend Inc. - www.talend.com
+ * Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  *
  * This source code is available under agreement available at
  * %InstallDIR%\license.txt
  *
  * You should have received a copy of the agreement
  * along with this program; if not, write to Talend SA
- * 9 rue Pages 92150 Suresnes, France
+ * 5/7 rue Salomon De Rothschild, 92150 Suresnes, France
  *
  * ============================================================================
  */
@@ -32,7 +32,7 @@ import org.apache.cxf.ws.security.SecurityConstants;
 @NoJSR250Annotations(unlessNull = "bus")
 public class AuxiliaryStorageRestServiceSecurityProvider extends AbstractRestSecurityProvider {
 
-    private String signatureProperties;
+    private Object signatureProperties;
     private String signatureUsername;
     private String signaturePassword;
 
@@ -97,7 +97,7 @@ public class AuxiliaryStorageRestServiceSecurityProvider extends AbstractRestSec
         server.create();
     }
 
-    public void setSignatureProperties(String signatureProperties) {
+    public void setSignatureProperties(Object signatureProperties) {
         this.signatureProperties = signatureProperties;
     }
 

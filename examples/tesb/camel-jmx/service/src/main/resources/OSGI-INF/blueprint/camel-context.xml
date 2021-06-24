@@ -3,7 +3,7 @@
   #%L
   Talend ESB Runtime::Camel JMX OSGI Example
   %%
-  Copyright (C) 2011-2019 Talend Inc.
+  Copyright (c) 2006-2021 Talend Inc. - www.talend.com
   %%
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -22,13 +22,13 @@
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
         default-activation="eager">
 
-    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
-        <property name="brokerURL" value="vm://localhost?broker.persistent=false"/>
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="vm://localhost?broker.persistent=false" />
     </bean>
 
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/blueprint">
         <!-- Default JMX connector url: "service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi/camel" -->
-        <jmxAgent id="agent" createConnector="true"/>
+        <jmxAgent id="agent"/>
 
         <route>
             <from uri="timer://inbox?period=5000"/>
@@ -41,14 +41,16 @@
             <split>
                 <xpath>/stocks/stock</xpath>
                 <throttle timePeriodMillis="1000">
-                    <constant>3</constant>
-                    <to uri="activemq:queue:stock"/>
+                    <correlationExpression>
+                        <constant>3</constant>
+                    </correlationExpression>
+                    <to uri="jms:queue:stock"/>
                 </throttle>
             </split>
         </route>
 
         <route>
-            <from uri="activemq:queue:stock"/>
+            <from uri="jms:queue:stock"/>
             <delay><constant>100</constant></delay>
             <bean beanType="org.talend.esb.camel.example.management.StockService" method="transform"/>
             <to uri="log:stocks?groupSize=100"/>

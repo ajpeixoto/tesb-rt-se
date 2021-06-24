@@ -2,7 +2,7 @@
  * #%L
  * Camel :: Example :: Management :: TESB container
  * %%
- * Copyright (C) 2011-2019 Talend Inc.
+ * Copyright (c) 2006-2021 Talend Inc. - www.talend.com
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@
 package org.talend.esb.camel.example.management;
 
 import java.util.Set;
+
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
 
@@ -30,19 +31,22 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version
+ *
  */
 public class ManagementExampleTest extends CamelSpringTestSupport {
 
+    @Override
+    protected boolean useJmx() {
+        return true;
+    }
+
+    @Override
     protected AbstractXmlApplicationContext createApplicationContext() {
         return new ClassPathXmlApplicationContext("META-INF/spring/camel-context.xml");
     }
 
     @Test
     public void testManagementExample() throws Exception {
-        // Give it a bit of time to run
-        //Thread.sleep(2000);
-
         MBeanServer mbeanServer = context.getManagementStrategy().getManagementAgent().getMBeanServer();
 
         // Find the endpoints
