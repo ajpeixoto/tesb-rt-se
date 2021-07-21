@@ -21,8 +21,20 @@
 <features name="tesb-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0">
 
     <!-- install specific bundles being optional dependencies, to avoid cascading refreshes -->
+    <!-- don't declare jboss-logging, as it's provided already by pax-logging-api -->
     <feature name='talend-common-optionals' version='${project.version}'>
+        <bundle start-level="30">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
+        <bundle start-level="30">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
+        <bundle start-level="30">mvn:jakarta.validation/jakarta.validation-api/${jakarta.validation-api.version}</bundle>
+        <bundle start-level="30">mvn:jakarta.annotation/jakarta.annotation-api/${jakarta.annotation-api.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.tika/tika-core/${tika.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/${org.apache.servicemix.bundles.ant.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/${derby.servicemix.version}</bundle>
+        <bundle start-level="30">mvn:commons-pool/commons-pool/${commons-pool.version}</bundle>
         <bundle start-level="30">mvn:org.apache.commons/commons-pool2/${commons-pool2.version}</bundle>
+        <bundle start-level="30">mvn:com.zaxxer/HikariCP-java7/${hikaricp.version}</bundle>
+        <bundle start-level="30">mvn:org.quartz-scheduler/quartz/${quartz.version}</bundle>
+        <bundle start-level="30">mvn:net.sf.ehcache/ehcache/${ehcache.version}</bundle>
     </feature>
 
     <!-- forces latest bundle to be installed to avoid conflicts between versions -->
@@ -43,7 +55,6 @@
         <bundle start-level="30">mvn:io.zipkin.reporter2/zipkin-reporter-brave/${zipkin-reporter.version}</bundle>
         <bundle start-level="30">mvn:io.zipkin.reporter2/zipkin-reporter/${zipkin-reporter.version}</bundle>
         <bundle start-level="30">mvn:io.zipkin.zipkin2/zipkin/${zipkin.version}</bundle>
-        <bundle start-level="30">mvn:javax.annotation/javax.annotation-api/${javax.annotation-api.version}</bundle>
         <bundle start-level="30">mvn:joda-time/joda-time/${joda-time.version}</bundle>
         <bundle start-level="30">mvn:org.apache.aries.spifly/org.apache.aries.spifly.dynamic.bundle/${org.apache.aries.spifly.dynamic.bundle.version}</bundle>
         <bundle start-level="30">mvn:org.apache.commons/commons-collections4/${commons-collections4.version}</bundle>
@@ -69,7 +80,6 @@
         <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-common/${websocket.version}</bundle>
         <bundle start-level="30">mvn:org.eclipse.persistence/javax.persistence/${javax.persistence.version}</bundle>
         <bundle start-level="30">mvn:org.javassist/javassist/${javassist.version}</bundle>
-        <bundle start-level="30">mvn:org.jboss.logging/jboss-logging/${jboss-logging.version}</bundle>
         <bundle start-level="30">mvn:org.yaml/snakeyaml/${snakeyaml.version}</bundle>
     </feature>
 
