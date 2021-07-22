@@ -23,6 +23,7 @@
     <!-- install specific bundles being optional dependencies, to avoid cascading refreshes -->
     <!-- don't declare jboss-logging, as it's provided already by pax-logging-api -->
     <feature name='talend-common-optionals' version='${project.version}'>
+        <bundle start-level="30">mvn:commons-cli/commons-cli/${commons-cli.version}</bundle>
         <bundle start-level="30">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
         <bundle start-level="30">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
         <bundle start-level="30">mvn:jakarta.validation/jakarta.validation-api/${jakarta.validation-api.version}</bundle>
