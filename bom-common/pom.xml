@@ -43,7 +43,7 @@
 
         <!-- karaf version -->
         <karaf.version>4.2.11</karaf.version>
-        <standard.features.tesb.version>${karaf.version}</standard.features.tesb.version>
+        <standard.features.tesb.version>4.2.11.tesb1</standard.features.tesb.version>
         <framework.features.tesb.version>${karaf.version}</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.2.11.tesb1</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.11.tesb1</enterprise-legacy.features.tesb.version>
