@@ -55,7 +55,8 @@
         <camel.features.tesb.version>3.9.0.tesb1</camel.features.tesb.version>
         <cxf.version>3.4.3</cxf.version>
         <cxf.features.tesb.version>3.4.3.tesb1</cxf.features.tesb.version>
-        <spring.version>5.2.9.RELEASE</spring.version>
+        <spring.version>5.2.15.RELEASE</spring.version>
+        <spring.security.version>5.2.10.RELEASE</spring.security.version>
         <pax-web.version>7.2.23</pax-web.version>
         <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
         <activemq.version>5.16.3-SNAPSHOT</activemq.version>
@@ -69,12 +70,12 @@
         <zookeeper.version>3.5.9</zookeeper.version>
 
         <abdera.version>1.1.3</abdera.version>
-        <ant.version>1.10.9</ant.version>
+        <ant.version>1.10.11</ant.version>
         <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
         <aries.blueprint.cm.version>1.3.2</aries.blueprint.cm.version>
         <aries.blueprint.core.version>1.10.3</aries.blueprint.core.version>
         <aries.version>1.0.0</aries.version>
-        <bouncycastle.version>1.68</bouncycastle.version>
+        <bouncycastle.version>1.69</bouncycastle.version>
         <bundle.plugin.version>2.4.0</bundle.plugin.version>
         <c3p0.bundle.version>0.9.5.5_1</c3p0.bundle.version>
         <cglib.bundle.version>3.2.9_1</cglib.bundle.version>
@@ -103,7 +104,7 @@
         <geronimo-jms_1.1_spec.version>1.1.1</geronimo-jms_1.1_spec.version>
         <geronimo-servlet_3.0_spec.version>1.0</geronimo-servlet_3.0_spec.version>
         <geronimo-ws-metadata_2.0_spec.version>1.1.3</geronimo-ws-metadata_2.0_spec.version>
-        <groovy.version>3.0.3</groovy.version>
+        <groovy.version>3.0.7</groovy.version>
         <h2database.version>1.3.165</h2database.version>
         <h2.version>1.4.200</h2.version>
         <hapi-fhir.features.tesb.version>3.5.0</hapi-fhir.features.tesb.version>
@@ -174,7 +175,7 @@
         <rome.version>1.15.0</rome.version>
         <slf4j.version>1.7.30</slf4j.version>
         <sparkjava-core.version>2.6.0_1</sparkjava-core.version>
-        <syncope.version>2.1.7</syncope.version>
+        <syncope.version>2.1.9</syncope.version>
         <taglibs.version>1.2.5</taglibs.version>
         <tika.version>1.25</tika.version>
         <velocity.version>2.3</velocity.version>
@@ -1273,6 +1274,36 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring.security.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.cxf</groupId>
