@@ -59,7 +59,7 @@
         <spring.security.version>5.2.10.RELEASE</spring.security.version>
         <pax-web.version>7.2.23</pax-web.version>
         <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
-        <activemq.version>5.16.3-SNAPSHOT</activemq.version>
+        <activemq.version>5.16.3</activemq.version>
         <activemq.features.tesb.version>${activemq.version}</activemq.features.tesb.version>
         <decanter.version>2.7.0</decanter.version>
         <decanter.features.tesb.version>${decanter.version}</decanter.features.tesb.version>
