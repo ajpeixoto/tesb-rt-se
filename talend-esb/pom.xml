@@ -106,6 +106,7 @@
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.features.tesb.version}/xml/features</descriptor>
 
                                 <descriptor>mvn:org.hibernate.validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/xml/features</descriptor>
+<!--                                <descriptor>mvn:org.ops4j.pax.cdi/pax-cdi-features/${pax-cdi-features.features.tesb.version}/xml/features</descriptor>-->
                                 <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.jms/pax-jms-features/${pax-jms-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.transx/pax-transx-features/${pax-transx-features.tesb.version}/xml/features</descriptor>
@@ -135,7 +136,7 @@
                             <resolveDefinedRepositoriesRecursively>false</resolveDefinedRepositoriesRecursively>
                             <features>
                                 <!-- list of features to ignore -->
-                                <feature>^(?!(camel-cdi|cxf-jaxrs-cdi|camel-ignite|camel-json-validator|camel-zookeeper-master|pax-jms-artemis|activemq-camel)$).*</feature>
+                                <feature>^(?!(camel-cdi|cxf-jaxrs-cdi|camel-ignite|camel-json-validator|camel-zookeeper-master|pax-jms-artemis|activemq-camel|pax-cdi)$).*</feature>
                             </features>
                         </configuration>
                     </execution>
