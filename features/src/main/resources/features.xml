@@ -71,6 +71,7 @@
         <bundle start-level="30">mvn:io.zipkin.zipkin2/zipkin/${zipkin.version}</bundle>
         <bundle start-level="30">mvn:org.apache.aries.spifly/org.apache.aries.spifly.dynamic.bundle/${org.apache.aries.spifly.dynamic.bundle.version}</bundle>
         <bundle start-level="30">mvn:org.apache.commons/commons-collections4/${commons-collections4.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.commons/commons-compress/${commons-compress.version}</bundle>
         <bundle start-level="30">mvn:org.apache.commons/commons-lang3/${commons-lang3.version}</bundle>
         <bundle start-level="30">mvn:org.apache.commons/commons-pool2/${commons-pool2.version}</bundle>
         <bundle start-level="30">mvn:org.apache.james/apache-mime4j-core/${apache-mime4j-core.version}</bundle>
