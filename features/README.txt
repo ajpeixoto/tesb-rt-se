@@ -78,7 +78,3 @@ install cxf-sts and configuration into the Talend ESB container.
 camel-talendjob
 ---------------
 install camel-talendjob bundle into the Talend ESB container.
-
-tesb-jmx-http-agent
--------------------
-install jolokia OSGi agent into the Talend ESB container.
