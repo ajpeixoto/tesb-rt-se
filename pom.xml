@@ -91,6 +91,14 @@
     </developers>
 
     <properties>
+        <!-- properties used for standard build, overriden using the specific patch profile
+        patch profile declares proper "release" patched versions
+        used in proper updated PATCH_MVN_MODULES in Jenkinsfile.build, this allows jenkins deploy specific artifacts, ie.:
+        mvn clean deploy -Pdev -pl :event-logging-sender-jms,:event-logging-features
+        -->
+        <original.version>${project.parent.version}</original.version>
+        <features.version>${project.parent.version}</features.version>
+        
         <packages.version>${project.version}</packages.version>
         <cxf.version>3.3.1</cxf.version>
         <cxf-rt-rs-service-description-swagger.tesb.version>3.3.1.tesb1</cxf-rt-rs-service-description-swagger.tesb.version>
@@ -123,7 +131,6 @@
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
         <cglib.bundle.version>3.2.4_1</cglib.bundle.version>
         <ibatis-sqlmap.bundle.version>2.3.4.726_4</ibatis-sqlmap.bundle.version>
-        <jolokia.version>1.6.0</jolokia.version>
         <h2database.version>1.3.165</h2database.version>
         <jettison.version>1.3.8</jettison.version>
         <jasypt.version>1.9.2_1</jasypt.version>
@@ -569,6 +576,13 @@
             <modules>
                 <module>examples</module>
             </modules>
+        </profile>
+        <profile>
+            <id>patch</id>
+            <properties>
+                <original.version>7.2.1</original.version>
+                <features.version>7.2.1.20210908</features.version>
+            </properties>
         </profile>
     </profiles>
 
