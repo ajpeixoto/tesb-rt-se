@@ -40,23 +40,35 @@
 
     <!-- forces latest bundle to be installed to avoid conflicts between versions -->
     <feature name='talend-common-dependencies' version='${project.version}'>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}</bundle>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson-dataformat-yaml.version}</bundle>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson-datatype-jsr310.version}</bundle>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson-jaxrs.version}</bundle>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson-jaxrs.version}</bundle>
         <bundle start-level="30">mvn:com.google.code.gson/gson/${gson.version}</bundle>
         <bundle start-level="30">mvn:com.google.guava/guava/${guava.version}</bundle>
+        <bundle start-level="30">mvn:commons-io/commons-io/${commons-io.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-buffer/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-codec-http/${netty.version}</bundle>
+        <bundle start-level="30">mvn:io.netty/netty-codec-socks/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-codec/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-common/${netty.version}</bundle>
+        <bundle start-level="30">mvn:io.netty/netty-handler-proxy/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-handler/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-resolver/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-transport-native-epoll/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-transport-native-kqueue/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-transport-native-unix-common/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-transport/${netty.version}</bundle>
+        <bundle start-level="30">mvn:io.swagger.core.v3/swagger-annotations/${swagger.version}</bundle>
+        <bundle start-level="30">mvn:io.swagger.core.v3/swagger-core/${swagger.version}</bundle>
+        <bundle start-level="30">mvn:io.swagger.core.v3/swagger-models/${swagger.version}</bundle>
         <bundle start-level="30">mvn:io.zipkin.brave/brave/${brave.version}</bundle>
         <bundle start-level="30">mvn:io.zipkin.reporter2/zipkin-reporter-brave/${zipkin-reporter.version}</bundle>
         <bundle start-level="30">mvn:io.zipkin.reporter2/zipkin-reporter/${zipkin-reporter.version}</bundle>
         <bundle start-level="30">mvn:io.zipkin.zipkin2/zipkin/${zipkin.version}</bundle>
-        <bundle start-level="30">mvn:joda-time/joda-time/${joda-time.version}</bundle>
         <bundle start-level="30">mvn:org.apache.aries.spifly/org.apache.aries.spifly.dynamic.bundle/${org.apache.aries.spifly.dynamic.bundle.version}</bundle>
         <bundle start-level="30">mvn:org.apache.commons/commons-collections4/${commons-collections4.version}</bundle>
         <bundle start-level="30">mvn:org.apache.commons/commons-compress/${commons-compress.version}</bundle>
@@ -74,14 +86,12 @@
         <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.reflections/${org.apache.servicemix.bundles.reflections.version}</bundle>
         <bundle start-level="30">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxrs-api-2.1/${org.apache.servicemix.specs.jaxrs-api-2.1.version}</bundle>
         <bundle start-level="30">mvn:org.apache.sshd/sshd-osgi/${sshd-osgi.version}</bundle>
-        <bundle start-level="30">mvn:org.bouncycastle/bcpkix-jdk15on/${bcp.version}</bundle>
-        <bundle start-level="30">mvn:org.bouncycastle/bcprov-jdk15on/${bcp.version}</bundle>
         <bundle start-level="30">mvn:org.codehaus.woodstox/stax2-api/${stax2-api.version}</bundle>
         <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-api/${websocket.version}</bundle>
         <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-client/${websocket.version}</bundle>
         <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-common/${websocket.version}</bundle>
         <bundle start-level="30">mvn:org.eclipse.persistence/javax.persistence/${javax.persistence.version}</bundle>
-        <bundle start-level="30">mvn:org.javassist/javassist/${javassist.version}</bundle>
+        <bundle start-level="30">mvn:org.jvnet.jaxb2_commons/jaxb2-basics-runtime/${jaxb2-basics-runtime.version}</bundle>
         <bundle start-level="30">mvn:org.yaml/snakeyaml/${snakeyaml.version}</bundle>
     </feature>
 
@@ -356,10 +366,6 @@
         <feature version="${camel.version}">camel-core</feature>
         <feature version='${project.version}'>talend-job-api</feature>
         <bundle>mvn:org.talend.camel/camel-talendjob/${project.version}</bundle>
-    </feature>
-
-    <feature name='tesb-jmx-http-agent' version='${project.version}'>
-        <bundle>mvn:org.jolokia/jolokia-osgi/${jolokia.version}</bundle>
     </feature>
 
     <feature name='tesb-policy-compression' version='${project.version}'>

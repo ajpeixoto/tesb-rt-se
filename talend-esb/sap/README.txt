@@ -6,8 +6,9 @@ Installing SAP Java Connector 3.0
 For Windows OS: 
 After installing SAP Java Connector, ensure that the installation path <sapjco3_home> is added to your PATH environment variable.
 
-For Linux OS (installation of ESB as a Service): 
-Copy the file libsapjco3.so into <Talend-ESB>/container/lib/wrapper/
+For installation of ESB as a Service, additional steps:
+- for Linux OS: copy the file libsapjco3.so into <Talend-ESB>/container/lib/wrapper/
+- for Windows OS: copy the file sapjco3.dll into <Talend-ESB>/container/lib/wrapper/
 
 Deploying sapjco3 jar in Talend Runtime
 =======================================

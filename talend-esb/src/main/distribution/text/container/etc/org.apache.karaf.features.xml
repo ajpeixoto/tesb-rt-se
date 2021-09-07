@@ -26,6 +26,9 @@
         <repository>mvn:org.apache.karaf.features/enterprise-legacy/4.3.0-SNAPSHOT/xml/features</repository>
         <repository>mvn:org.apache.karaf.features/spring/4.3.0-SNAPSHOT/xml/features</repository>
         <repository>mvn:org.apache.karaf.features/spring-legacy/4.3.0-SNAPSHOT/xml/features</repository>
+        
+        <!-- blacklisted because declared as repository in a repository feature, and already fork exists -->
+        <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.4.4/xml/features</repository>
     </blacklistedRepositories>
 
     <blacklistedFeatures>
