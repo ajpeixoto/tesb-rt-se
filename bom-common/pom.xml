@@ -147,6 +147,7 @@
         <jettison.version>1.4.0</jettison.version>
         <jetty.version>9.4.39.v20210325</jetty.version>
         <jlibs.version>2.2.3</jlibs.version>
+        <joda-time.version>2.10.6</joda-time.version>
         <jolokia.version>1.6.2</jolokia.version>
         <jquery.version>3.5.0</jquery.version>
         <json-api.version>1.1</json-api.version>
