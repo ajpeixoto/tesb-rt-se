@@ -36,10 +36,7 @@
         <bundle start-level="30">mvn:com.zaxxer/HikariCP-java7/${hikaricp.version}</bundle>
         <bundle start-level="30">mvn:org.quartz-scheduler/quartz/${quartz.version}</bundle>
         <bundle start-level="30">mvn:net.sf.ehcache/ehcache/${ehcache.version}</bundle>
-    </feature>
-
-    <!-- forces latest bundle to be installed to avoid conflicts between versions -->
-    <feature name='talend-common-dependencies' version='${project.version}'>
+        <bundle start-level="30">mvn:jaxen/jaxen/${jaxen.bundle.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
@@ -47,6 +44,10 @@
         <bundle start-level="30">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson-datatype-jsr310.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson-jaxrs.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson-jaxrs.version}</bundle>
+    </feature>
+
+    <!-- forces latest bundle to be installed to avoid conflicts between versions -->
+    <feature name='talend-common-dependencies' version='${project.version}'>
         <bundle start-level="30">mvn:com.google.code.gson/gson/${gson.version}</bundle>
         <bundle start-level="30">mvn:com.google.guava/guava/${guava.version}</bundle>
         <bundle start-level="30">mvn:commons-io/commons-io/${commons-io.version}</bundle>
@@ -92,7 +93,6 @@
         <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-common/${websocket.version}</bundle>
         <bundle start-level="30">mvn:org.eclipse.persistence/javax.persistence/${javax.persistence.version}</bundle>
         <bundle start-level="30">mvn:org.jvnet.jaxb2_commons/jaxb2-basics-runtime/${jaxb2-basics-runtime.version}</bundle>
-        <bundle start-level="30">mvn:org.yaml/snakeyaml/${snakeyaml.version}</bundle>
     </feature>
 
     <feature name='tesb-sam-common' version='${project.version}'>
