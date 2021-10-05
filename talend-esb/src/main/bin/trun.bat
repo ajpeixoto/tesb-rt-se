@@ -32,6 +32,9 @@ if "%KARAF_SCRIPT%" == "" (
 if exist "%DIRNAME%setenv.bat" (
   call "%DIRNAME%setenv.bat"
 )
+if exist "%DIRNAME%setsecenv.bat" (
+  call "%DIRNAME%setsecenv.bat"
+)
 
 rem Check console window title. Set to Karaf by default
 if not "%KARAF_TITLE%" == "" (

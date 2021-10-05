@@ -76,6 +76,9 @@ fi
 if [ -f "${DIRNAME}/setenv" ]; then
   . "${DIRNAME}/setenv"
 fi
+if [ -f "${DIRNAME}/setsecenv" ]; then
+  . "${DIRNAME}/setsecenv"
+fi
 
 forceNoRoot() {
     # If configured, prevent execution as root

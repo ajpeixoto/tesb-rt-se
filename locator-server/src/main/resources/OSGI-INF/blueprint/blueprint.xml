@@ -30,6 +30,7 @@
       <cm:property name="maxClientCnxns" value="0" />
       <cm:property name="clientPort" value="2181" />
       <cm:property name="authentication" value="false" />
+      <cm:property name="zookeeper.admin.enable" value="false" />
     </cm:default-properties>
   </cm:property-placeholder>
 

@@ -1,0 +1,83 @@
+#!/bin/sh
+#
+#    Licensed to the Apache Software Foundation (ASF) under one or more
+#    contributor license agreements.  See the NOTICE file distributed with
+#    this work for additional information regarding copyright ownership.
+#    The ASF licenses this file to You under the Apache License, Version 2.0
+#    (the "License"); you may not use this file except in compliance with
+#    the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+#
+
+#
+# User names and passwords used in the configurations in the "etc" directory.
+# It is recommended to replace the default passwords as soon as the Talend
+# ESB runtime installation is not just used for testing.
+# Furthermore, it is recommended not to keep the passwords as cleartext
+# passwords in this script but retrieve them from the credential vault
+# (keyring, kwallet, ...) of your system by calls like the ones sketched
+# at the end of the present script.
+#
+
+export TESB_AMQ_GUI_USER_NAME=${org.talend.script.ctesb}
+export TESB_AUXSTORE_AUTHENTICATION_USERNAME=${org.talend.script.ckar}
+export TESB_AUXSTORE_SAML_USERNAME=${org.talend.script.ctad}
+export TESB_EVENTLOGGING_JMS_USERNAME=${org.talend.script.ctad}
+export TESB_EVENTLOGGING_REST_USERNAME=${org.talend.script.ctad}
+export TESB_LOCATOR_AUTHENTICATION_USERNAME=${org.talend.script.ctesb}
+export TESB_REGISTRY_AUTHENTICATION_USERNAME=${org.talend.script.ckar}
+export TESB_REGISTRY_SAML_USERNAME=${org.talend.script.ctad}
+export TESB_SAML_SECURITY_USERNAME=${org.talend.script.ctad}
+export TESB_SAM_SERVICE_SECURITY_USERNAME=${org.talend.script.ctesb}
+export TESB_TIDM_USERNAME=${org.talend.script.cadm}
+
+export TESB_AMQ_GUI_USER_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctesb}
+export TESB_AUXSTORE_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ckar}
+export TESB_AUXSTORE_SAML_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
+export TESB_EVENTLOGGING_JMS_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
+export TESB_EVENTLOGGING_REST_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
+export TESB_LOCATOR_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctesb}
+export TESB_REGISTRY_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ckar}
+export TESB_REGISTRY_SAML_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
+export TESB_SAML_SECURITY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
+export TESB_SAM_SERVICE_SECURITY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctesb}
+export TESB_TIDM_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.cps}${org.talend.script.cwd}
+
+export TESB_TLS_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.cps}${org.talend.script.cwd}
+export TESB_TLS_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.cps}${org.talend.script.cwd}
+export TESB_STS_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=st${org.talend.script.csrvs}${org.talend.script.cps}
+export TESB_CLIENT_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.cclis}${org.talend.script.cps}
+export TESB_CLIENT_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.cclik}${org.talend.script.cps}
+export TESB_SERVICE_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.csrvs}${org.talend.script.cps}
+export TESB_SERVICE_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.csrvk}${org.talend.script.cps}
+export TESB_EVENTLOGGING_AGENT_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.canf}
+export TESB_EVENTLOGGING_AGENT_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.canf}
+
+#export TESB_AMQ_GUI_USER_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_AMQ_GUI_USER_NAME`
+#export TESB_AUXSTORE_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_AUXSTORE_AUTHENTICATION_USERNAME`
+#export TESB_AUXSTORE_SAML_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_AUXSTORE_SAML_USERNAME`
+#export TESB_EVENTLOGGING_JMS_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_EVENTLOGGING_JMS_USERNAME`
+#export TESB_EVENTLOGGING_REST_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_EVENTLOGGING_REST_USERNAME`
+#export TESB_LOCATOR_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_LOCATOR_AUTHENTICATION_USERNAME`
+#export TESB_REGISTRY_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_REGISTRY_AUTHENTICATION_USERNAME`
+#export TESB_REGISTRY_SAML_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_REGISTRY_SAML_USERNAME`
+#export TESB_SAML_SECURITY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_SAML_SECURITY_USERNAME`
+#export TESB_SAM_SERVICE_SECURITY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} trun-user $TESB_SAM_SERVICE_SECURITY_USERNAME`
+#export TESB_TIDM_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} tidm-user $TESB_TIDM_USERNAME`
+
+#export TESB_TLS_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd tls`
+#export TESB_TLS_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd tlskey`
+#export TESB_STS_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd sts`
+#export TESB_CLIENT_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd client`
+#export TESB_CLIENT_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd clientkey`
+#export TESB_SERVICE_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd service`
+#export TESB_SERVICE_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd servicekey`
+#export TESB_EVENTLOGGING_AGENT_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd el`
+#export TESB_EVENTLOGGING_AGENT_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=`${org.talend.script.cstl} keystore-pwd elkey`

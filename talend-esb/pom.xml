@@ -40,6 +40,21 @@
         <!-- used for assembly & dependency type, overwritten by dev-unix-assembly-only & dev-win-assembly-only profiles -->
         <assembly.formats>tar.gz,zip</assembly.formats>
         <file-extensions.to-clean>xml|cfg|war</file-extensions.to-clean>
+        <org.talend.script.cadm>admin</org.talend.script.cadm>
+        <org.talend.script.canf>anfang</org.talend.script.canf>
+        <org.talend.script.cclik>ck</org.talend.script.cclik>
+        <org.talend.script.cclis>cs</org.talend.script.cclis>
+        <org.talend.script.cinfix>SSW</org.talend.script.cinfix>
+        <org.talend.script.ckar>karaf</org.talend.script.ckar>
+        <org.talend.script.cpostfix>ORD</org.talend.script.cpostfix>
+        <org.talend.script.cprefix>PA</org.talend.script.cprefix>
+        <org.talend.script.cps>pass</org.talend.script.cps>
+        <org.talend.script.csrvk>sk</org.talend.script.csrvk>
+        <org.talend.script.csrvs>ss</org.talend.script.csrvs>
+        <org.talend.script.cstl>secret-tool lookup</org.talend.script.cstl>
+        <org.talend.script.ctad>tadmin</org.talend.script.ctad>
+        <org.talend.script.ctesb>tesb</org.talend.script.ctesb>
+        <org.talend.script.cwd>word</org.talend.script.cwd>
     </properties>
 
     <dependencies>

@@ -48,7 +48,16 @@ public class ZookeeperServerManager implements ZookeeperServer {
         Properties props = new Properties();
         for (Enumeration<?> e = dict.keys(); e.hasMoreElements(); ) {
             Object key = e.nextElement();
-            props.put(key, dict.get(key));
+            if (key instanceof String) {
+                String skey = (String) key;
+                if (skey.startsWith("zookeeper.admin.")) {
+                    System.setProperty(skey, dict.get(skey).toString());
+                } else {
+                    props.put(skey, dict.get(skey));
+                }
+            } else {
+                props.put(key, dict.get(key));
+            }
         }
 
         try {

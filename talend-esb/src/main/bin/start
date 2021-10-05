@@ -75,6 +75,9 @@ fi
 if [ -f "${DIRNAME}/setenv" ]; then
   . "${DIRNAME}/setenv"
 fi
+if [ -f "${DIRNAME}/setsecenv" ]; then
+  . "${DIRNAME}/setsecenv"
+fi
 
 init() {
     # Determine if there is special OS handling we must perform

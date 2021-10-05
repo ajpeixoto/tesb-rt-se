@@ -31,6 +31,9 @@ if "%KARAF_SCRIPT%" == "" (
 if exist "%DIRNAME%setenv.bat" (
   call "%DIRNAME%setenv.bat"
 )
+if exist "%DIRNAME%setsecenv.bat" (
+  call "%DIRNAME%setsecenv.bat"
+)
 
 goto BEGIN
 
