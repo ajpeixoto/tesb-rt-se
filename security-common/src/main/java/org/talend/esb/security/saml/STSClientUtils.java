@@ -29,7 +29,7 @@ import org.apache.cxf.Bus;
 import org.apache.cxf.ws.security.SecurityConstants;
 import org.apache.cxf.ws.security.trust.STSClient;
 
-public class STSClientUtils {
+public class STSClientUtils implements STSClientCreator {
 
     private static final String STS_WSDL_LOCATION = "sts.wsdl.location";
     private static final String STS_X509_WSDL_LOCATION = "sts.x509.wsdl.location";
@@ -42,10 +42,10 @@ public class STSClientUtils {
     private static final String STS_KEY_TYPE = "sts.keytype";
     private static final String STS_ALLOW_RENEWING = "sts.allow.renewing";
 
-    private static Map<String, Object> stsProperties;
+    private Map<String, Object> stsProperties;
 
     public STSClientUtils(Map<String, Object> stsProperties) {
-        STSClientUtils.stsProperties = stsProperties;
+        this.stsProperties = stsProperties;
     }
 
     public STSClientUtils(Map<String, Object> stsProperties, Map<String, Object> stsPropertiesOverride) {
@@ -57,7 +57,7 @@ public class STSClientUtils {
                 props.putAll(stsPropertiesOverride);
             }
         }
-        STSClientUtils.stsProperties = props;
+        this.stsProperties = props;
     }
 
     // for registry
@@ -71,7 +71,8 @@ public class STSClientUtils {
         return stsClient;
     }
 
-    public static STSClient createSTSClient(Bus bus, String username, String password) {
+    @Override
+    public STSClient createSTSClient(Bus bus, String username, String password) {
         final Map<String, Object> stsProps = new HashMap<String, Object>(stsProperties);
         stsProps.put(SecurityConstants.USERNAME, username);
         stsProps.put(SecurityConstants.PASSWORD, password);
@@ -90,7 +91,8 @@ public class STSClientUtils {
         return stsClient;
     }
 
-    public static STSClient createSTSX509Client(Bus bus, String alias) {
+    @Override
+    public STSClient createSTSX509Client(Bus bus, String alias) {
         Map<String, Object> stsProps = new HashMap<String, Object>(stsProperties);
         stsProps.put(SecurityConstants.STS_TOKEN_USERNAME, alias);
 

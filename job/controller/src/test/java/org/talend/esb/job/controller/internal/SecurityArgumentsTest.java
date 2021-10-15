@@ -34,9 +34,10 @@ public class SecurityArgumentsTest {
 		String roleName = "roleName";
 		Object securityToken = new Object();
 		Crypto cryptoProvider = createNiceMock(Crypto.class);
+		STSClientUtils stsClientUtils = new STSClientUtils(new HashMap<>());
 
 		SecurityArguments sa = new SecurityArguments(esbSecurity, policy, username, password, alias, clientProperties,
-				roleName, securityToken, cryptoProvider);
+				roleName, securityToken, cryptoProvider, stsClientUtils);
 
 		assertSame(sa.getEsbSecurity(), esbSecurity);
 		assertSame(sa.getPolicy(), policy);
@@ -47,6 +48,7 @@ public class SecurityArgumentsTest {
 		assertSame(sa.getRoleName(), roleName);
 		assertSame(sa.getSecurityToken(), securityToken);
 		assertSame(sa.getCryptoProvider(), cryptoProvider);
+        assertSame(sa.getStsClientCreator(), stsClientUtils);
 	}
 
 	@Test
@@ -56,9 +58,10 @@ public class SecurityArgumentsTest {
 		String username = "username";
 		String password = "password";
 		String alias = "alias";
+        STSClientUtils stsClientUtils = new STSClientUtils(new HashMap<>());
 
 		SecurityArguments sa = new SecurityArguments(esbSecurity, null, username, password, alias, null, null, null,
-				null);
+				null, stsClientUtils);
 
 		AuthorizationPolicy p = sa.buildAuthorizationPolicy();
 		assertSame(p.getPassword(), password);
@@ -74,9 +77,10 @@ public class SecurityArgumentsTest {
 		String username = "username";
 		String password = "password";
 		String alias = "alias";
+        STSClientUtils stsClientUtils = new STSClientUtils(new HashMap<>());
 
 		SecurityArguments sa = new SecurityArguments(esbSecurity, null, username, password, alias, null, null, null,
-				null);
+				null, stsClientUtils);
 
 		AuthorizationPolicy p = sa.buildAuthorizationPolicy();
 		assertSame(p.getPassword(), password);
@@ -87,8 +91,6 @@ public class SecurityArgumentsTest {
 
 	@Test
 	public void buildClientConfig() throws Exception {
-
-		initSTSClientUtils();
 
 		EsbSecurity esbSecurity = EsbSecurity.fromString("DIGEST");
 		Policy policy = createNiceMock(Policy.class);
@@ -104,9 +106,10 @@ public class SecurityArgumentsTest {
 		String roleName = "roleName";
 		Object securityToken = new Object();
 		Crypto cryptoProvider = createNiceMock(Crypto.class);
+        STSClientUtils stsClientUtils = initSTSClientUtils();
 
 		SecurityArguments sa = new SecurityArguments(esbSecurity, policy, username, password, alias, clientProperties,
-				roleName, securityToken, cryptoProvider);
+				roleName, securityToken, cryptoProvider, stsClientUtils);
 
 		Bus bus = createNiceMock(Bus.class);
 		boolean useServiceRegistry = true;
@@ -123,8 +126,6 @@ public class SecurityArgumentsTest {
 	@Test
 	public void buildClientConfigWithoutAlias() throws Exception {
 
-		initSTSClientUtils();
-
 		EsbSecurity esbSecurity = EsbSecurity.fromString("DIGEST");
 		Policy policy = createNiceMock(Policy.class);
 		String username = "username";
@@ -137,9 +138,10 @@ public class SecurityArgumentsTest {
 		String roleName = "roleName";
 		Object securityToken = new Object();
 		Crypto cryptoProvider = createNiceMock(Crypto.class);
+        STSClientUtils stsClientUtils = initSTSClientUtils();
 
 		SecurityArguments sa = new SecurityArguments(esbSecurity, policy, username, password, alias, clientProperties,
-				roleName, securityToken, cryptoProvider);
+				roleName, securityToken, cryptoProvider, stsClientUtils);
 
 		Bus bus = createNiceMock(Bus.class);
 		boolean useServiceRegistry = true;
@@ -153,14 +155,14 @@ public class SecurityArgumentsTest {
 		assertSame(config.get("security.encryption.crypto"), cryptoProvider);
 	}
 
-	private void initSTSClientUtils() {
+	private STSClientUtils initSTSClientUtils() {
 		Map<String, Object> m = new HashMap<>();
 		m.put("sts.namespace", "test");
 		m.put("sts.service.name", "test");
 		m.put("sts.endpoint.name", "test");
 		m.put("sts.x509.endpoint.name", "test");
 
-		new STSClientUtils(m);
+		return new STSClientUtils(m);
 	}
 
 	@After

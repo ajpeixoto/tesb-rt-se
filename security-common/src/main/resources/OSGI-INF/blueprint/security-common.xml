@@ -59,7 +59,7 @@
 
     <bean id="encCryptoProperties" factory-ref="encCryptoPropertiesFactory" factory-method="createProperties"/>
 
-    <bean class="org.talend.esb.security.saml.STSClientUtils" >
+    <bean id="stsClientUtils" class="org.talend.esb.security.saml.STSClientUtils">
         <argument ref="org.talend.esb.job.client.sts" />
         <argument>
             <map>
@@ -68,6 +68,7 @@
             </map>
         </argument>
     </bean>
+    <service interface="org.talend.esb.security.saml.STSClientCreator" ref="stsClientUtils" />
 
     <cm:cm-properties persistent-id="org.talend.esb.job.oidc" id="org.talend.esb.job.oidc" />
     <bean class="org.talend.esb.security.oidc.OidcClientUtils" >

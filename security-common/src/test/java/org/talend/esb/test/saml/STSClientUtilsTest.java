@@ -6,6 +6,7 @@ import org.apache.cxf.ws.security.trust.STSClient;
 import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.talend.esb.security.saml.STSClientUtils;
 import static org.easymock.EasyMock.createMock;
 import java.util.HashMap;
@@ -61,8 +62,13 @@ public class STSClientUtilsTest {
 		String username = "username";
 		String password = "password";
 
-		STSClient client = STSClientUtils.createSTSClient(BUS, username, password);
-
+		try {
+		    STSClient client = new STSClientUtils(new HashMap<String, Object>()).createSTSClient(BUS, username, password);
+		    assertTrue("STS client creation should have failed for " + client, false);
+		} catch (IllegalArgumentException e) {
+		    assertTrue(e.getMessage().startsWith("local part cannot be \"null\""));
+		}
+        STSClient client = new STSClientUtils(getSTSProperties()).createSTSClient(BUS, username, password);
 		assertNotNull(client);
 		assertEquals(client.getProperties().get(SecurityConstants.USERNAME), username);
 		assertEquals(client.getProperties().get(SecurityConstants.PASSWORD), password);

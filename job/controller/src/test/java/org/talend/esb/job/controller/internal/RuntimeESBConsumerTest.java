@@ -25,6 +25,7 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.talend.esb.job.controller.ESBEndpointConstants.EsbSecurity;
 import org.talend.esb.sam.agent.feature.EventFeature;
+import org.talend.esb.security.saml.STSClientUtils;
 import org.talend.esb.servicelocator.cxf.LocatorFeature;
 import org.xml.sax.ErrorHandler;
 import java.io.StringReader;
@@ -87,9 +88,10 @@ public class RuntimeESBConsumerTest {
 		String roleName = "";
 		Object securityToken = null;
 		Crypto cryptoProvider = null;
+		STSClientUtils stsClientUtils = new STSClientUtils(new HashMap<>());
 
 		SecurityArguments securityArguments = new SecurityArguments(esbSecurity, policy, username, password, alias,
-				clientProperties, roleName, securityToken, cryptoProvider);
+				clientProperties, roleName, securityToken, cryptoProvider, stsClientUtils);
 		Bus bus = null;
 		boolean logging = false;
 		List<Header> soapHeaders = new ArrayList<Header>();

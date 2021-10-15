@@ -32,6 +32,7 @@ import org.apache.cxf.ws.security.trust.STSClient;
 import org.apache.neethi.Policy;
 import org.apache.wss4j.common.crypto.Crypto;
 import org.talend.esb.job.controller.ESBEndpointConstants.EsbSecurity;
+import org.talend.esb.security.saml.STSClientCreator;
 // import org.talend.esb.security.saml.SAMLRESTUtils;
 import org.talend.esb.security.saml.STSClientUtils;
 import org.talend.esb.security.saml.WSPasswordCallbackHandler;
@@ -47,6 +48,7 @@ public class SecurityArguments {
     private final String roleName;
     private final Object securityToken;
     private final Crypto cryptoProvider;
+    private final STSClientCreator stsClientCreator;
 
     public SecurityArguments(final EsbSecurity esbSecurity,
             final Policy policy,
@@ -56,7 +58,8 @@ public class SecurityArguments {
             Map<String, Object> clientProperties,
             String roleName,
             Object securityToken,
-            Crypto cryptoProvider) {
+            Crypto cryptoProvider,
+            STSClientCreator stsClientCreator) {
         this.esbSecurity = esbSecurity;
         this.policy = policy;
         this.username = username;
@@ -66,6 +69,7 @@ public class SecurityArguments {
         this.roleName = roleName;
         this.securityToken = securityToken;
         this.cryptoProvider = cryptoProvider;
+        this.stsClientCreator = stsClientCreator;
     }
 
     public EsbSecurity getEsbSecurity() {
@@ -102,6 +106,10 @@ public class SecurityArguments {
 
     public Crypto getCryptoProvider() {
         return cryptoProvider;
+    }
+
+    public STSClientCreator getStsClientCreator() {
+        return stsClientCreator;
     }
 
     public AuthorizationPolicy buildAuthorizationPolicy() {
@@ -166,9 +174,9 @@ public class SecurityArguments {
     private STSClient configureSTSClient(final Bus bus) {
         final STSClient stsClient;
         if (null == alias) {
-            stsClient = STSClientUtils.createSTSClient(bus, username, password);
+            stsClient = stsClientCreator.createSTSClient(bus, username, password);
         } else {
-            stsClient = STSClientUtils.createSTSX509Client(bus, alias);
+            stsClient = stsClientCreator.createSTSX509Client(bus, alias);
         }
 
         if (null != roleName && roleName.length() != 0) {

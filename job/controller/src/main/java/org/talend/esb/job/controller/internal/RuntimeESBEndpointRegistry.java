@@ -48,6 +48,7 @@ import org.talend.esb.job.controller.ESBEndpointConstants.EsbSecurity;
 import org.talend.esb.policy.correlation.feature.CorrelationIDFeature;
 import org.talend.esb.sam.agent.feature.EventFeature;
 import org.talend.esb.security.policy.PolicyProvider;
+import org.talend.esb.security.saml.STSClientCreator;
 import org.talend.esb.servicelocator.cxf.LocatorFeature;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -73,6 +74,7 @@ public class RuntimeESBEndpointRegistry implements ESBEndpointRegistry {
     private Map<String, Object> clientProperties;
     private Map<String, Object> clientPropertiesOverride;
     private Crypto cryptoProvider;
+    private STSClientCreator stsClientCreator;
 
     public void setBus(Bus bus) {
         this.bus = bus;
@@ -100,6 +102,10 @@ public class RuntimeESBEndpointRegistry implements ESBEndpointRegistry {
 
     public void setCryptoProvider(Crypto cryptoProvider) {
         this.cryptoProvider = cryptoProvider;
+    }
+
+    public void setStsClientCreator(STSClientCreator stsClientCreator) {
+        this.stsClientCreator = stsClientCreator;
     }
 
     @SuppressWarnings("unchecked")
@@ -131,7 +137,8 @@ public class RuntimeESBEndpointRegistry implements ESBEndpointRegistry {
                 effectiveClientProperties,
                 authorizationRole,
                 props.get(ESBEndpointConstants.SECURITY_TOKEN),
-                (useCrypto || useServiceRegistry) ? cryptoProvider : null);
+                (useCrypto || useServiceRegistry) ? cryptoProvider : null,
+                stsClientCreator);
 
         List<Header> soapHeaders = listSoapHeaders(props.get(ESBEndpointConstants.SOAP_HEADERS));
 

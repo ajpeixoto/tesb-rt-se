@@ -59,6 +59,7 @@ public class RuntimeESBEndpointRegistryTest {
 		STSClientUtils u = new STSClientUtils(m);
 		
 		RuntimeESBEndpointRegistry registry = new RuntimeESBEndpointRegistry();
+		registry.setStsClientCreator(u);
 		Map<String, Object> ep = getDefaultEndpointProperties();
 		ep.put(ESBEndpointConstants.USE_SERVICE_REGISTRY, true);
 		ESBEndpointInfo i = getMockEndpointInfo(ep);
