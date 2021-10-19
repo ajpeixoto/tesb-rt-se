@@ -174,9 +174,9 @@ public class SecurityArguments {
     private STSClient configureSTSClient(final Bus bus) {
         final STSClient stsClient;
         if (null == alias) {
-            stsClient = stsClientCreator.createSTSClient(bus, username, password);
+            stsClient = stsClientCreator.newSTSClient(bus, username, password);
         } else {
-            stsClient = stsClientCreator.createSTSX509Client(bus, alias);
+            stsClient = stsClientCreator.newSTSX509Client(bus, alias);
         }
 
         if (null != roleName && roleName.length() != 0) {

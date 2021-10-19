@@ -48,7 +48,7 @@ public class STSClientUtilsTest {
 
 		String alias = "alias";
 
-		STSClient client = u.createSTSX509Client(BUS, alias);
+		STSClient client = u.newSTSX509Client(BUS, alias);
 
 		assertNotNull(client);
 
@@ -63,12 +63,12 @@ public class STSClientUtilsTest {
 		String password = "password";
 
 		try {
-		    STSClient client = new STSClientUtils(new HashMap<String, Object>()).createSTSClient(BUS, username, password);
+		    STSClient client = new STSClientUtils(new HashMap<String, Object>()).newSTSClient(BUS, username, password);
 		    assertTrue("STS client creation should have failed for " + client, false);
 		} catch (IllegalArgumentException e) {
 		    assertTrue(e.getMessage().startsWith("local part cannot be \"null\""));
 		}
-        STSClient client = new STSClientUtils(getSTSProperties()).createSTSClient(BUS, username, password);
+        STSClient client = new STSClientUtils(getSTSProperties()).newSTSClient(BUS, username, password);
 		assertNotNull(client);
 		assertEquals(client.getProperties().get(SecurityConstants.USERNAME), username);
 		assertEquals(client.getProperties().get(SecurityConstants.PASSWORD), password);

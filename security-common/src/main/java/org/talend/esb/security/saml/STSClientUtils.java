@@ -42,10 +42,13 @@ public class STSClientUtils implements STSClientCreator {
     private static final String STS_KEY_TYPE = "sts.keytype";
     private static final String STS_ALLOW_RENEWING = "sts.allow.renewing";
 
+    private static STSClientUtils instance;
+
     private Map<String, Object> stsProperties;
 
     public STSClientUtils(Map<String, Object> stsProperties) {
         this.stsProperties = stsProperties;
+        instance = this;
     }
 
     public STSClientUtils(Map<String, Object> stsProperties, Map<String, Object> stsPropertiesOverride) {
@@ -58,6 +61,7 @@ public class STSClientUtils implements STSClientCreator {
             }
         }
         this.stsProperties = props;
+        instance = this;
     }
 
     // for registry
@@ -72,12 +76,20 @@ public class STSClientUtils implements STSClientCreator {
     }
 
     @Override
-    public STSClient createSTSClient(Bus bus, String username, String password) {
+    public STSClient newSTSClient(Bus bus, String username, String password) {
         final Map<String, Object> stsProps = new HashMap<String, Object>(stsProperties);
         stsProps.put(SecurityConstants.USERNAME, username);
         stsProps.put(SecurityConstants.PASSWORD, password);
 
         return createSTSClient(bus, stsProps);
+    }
+
+    public static STSClient createSTSClient(Bus bus, String username, String password) {
+        STSClientUtils creator = instance;
+        if (creator == null) {
+            throw new IllegalStateException("STSClientUtils is not initialized. ");
+        }
+        return creator.newSTSClient(bus, username, password);
     }
 
     // for bpm connector
@@ -92,11 +104,19 @@ public class STSClientUtils implements STSClientCreator {
     }
 
     @Override
-    public STSClient createSTSX509Client(Bus bus, String alias) {
+    public STSClient newSTSX509Client(Bus bus, String alias) {
         Map<String, Object> stsProps = new HashMap<String, Object>(stsProperties);
         stsProps.put(SecurityConstants.STS_TOKEN_USERNAME, alias);
 
         return createSTSX509Client(bus, stsProps);
+    }
+
+    public static STSClient createSTSX509Client(Bus bus, String alias) {
+        STSClientUtils creator = instance;
+        if (creator == null) {
+            throw new IllegalStateException("STSClientUtils is not initialized. ");
+        }
+        return creator.newSTSX509Client(bus, alias);        
     }
 
     public static void applyAuthorization(final STSClient stsClient, String role) {

@@ -22,6 +22,6 @@ import org.apache.cxf.Bus;
 import org.apache.cxf.ws.security.trust.STSClient;
 
 public interface STSClientCreator {
-    STSClient createSTSClient(Bus bus, String username, String password);
-    STSClient createSTSX509Client(Bus bus, String alias);
+    STSClient newSTSClient(Bus bus, String username, String password);
+    STSClient newSTSX509Client(Bus bus, String alias);
 }
