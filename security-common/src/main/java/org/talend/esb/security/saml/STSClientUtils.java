@@ -45,22 +45,15 @@ public class STSClientUtils implements STSClientCreator {
     private static STSClientUtils instance;
 
     private Map<String, Object> stsProperties;
+    private Map<String, Object> stsPropertiesOverride;
 
     public STSClientUtils(Map<String, Object> stsProperties) {
-        this.stsProperties = stsProperties;
-        instance = this;
+        this(stsProperties, null);
     }
 
     public STSClientUtils(Map<String, Object> stsProperties, Map<String, Object> stsPropertiesOverride) {
-        Map<String, Object> props = stsProperties == null ? null : new HashMap<String, Object>(stsProperties);
-        if (stsPropertiesOverride != null) {
-            if (props == null) {
-                props = new HashMap<String, Object>(stsPropertiesOverride);
-            } else {
-                props.putAll(stsPropertiesOverride);
-            }
-        }
-        this.stsProperties = props;
+        this.stsProperties = stsProperties;
+        this.stsPropertiesOverride = stsPropertiesOverride;
         instance = this;
     }
 
@@ -77,7 +70,7 @@ public class STSClientUtils implements STSClientCreator {
 
     @Override
     public STSClient newSTSClient(Bus bus, String username, String password) {
-        final Map<String, Object> stsProps = new HashMap<String, Object>(stsProperties);
+        final Map<String, Object> stsProps = getMergedStsProperties();
         stsProps.put(SecurityConstants.USERNAME, username);
         stsProps.put(SecurityConstants.PASSWORD, password);
 
@@ -105,7 +98,7 @@ public class STSClientUtils implements STSClientCreator {
 
     @Override
     public STSClient newSTSX509Client(Bus bus, String alias) {
-        Map<String, Object> stsProps = new HashMap<String, Object>(stsProperties);
+        Map<String, Object> stsProps = getMergedStsProperties();
         stsProps.put(SecurityConstants.STS_TOKEN_USERNAME, alias);
 
         return createSTSX509Client(bus, stsProps);
@@ -172,4 +165,18 @@ public class STSClientUtils implements STSClientCreator {
         return fileURI;
     }
 
+    private Map<String, Object> getMergedStsProperties() {
+        if (stsPropertiesOverride == null) {
+            if (stsProperties == null) {
+                return new HashMap<String, Object>();
+            }
+            return new HashMap<String, Object>(stsProperties);
+        }
+        if (stsProperties == null) {
+            return new HashMap<String, Object>(stsPropertiesOverride);
+        }
+        Map<String, Object> props = new HashMap<String, Object>(stsProperties);
+        props.putAll(stsPropertiesOverride);
+        return props;
+    }
 }
