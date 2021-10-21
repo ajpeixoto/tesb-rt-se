@@ -1,11 +1,120 @@
-@Library('esb') _
+GString POD_LABEL = "tesb-maven-deploy-${UUID.randomUUID().toString()}"
+def gitCredentials = usernamePassword(
+    credentialsId: 'github-credentials',
+    passwordVariable: 'GIT_PASSWORD',
+    usernameVariable: 'GIT_LOGIN')
 
-Build(
-        DOWNSTREAM_PROJECT: 'tesb-rt-ee',
-        CRON_MASTER: '0 23 * * 1-6',
-        CRON_SCAN_MASTER: '0 10 * * 0',
-        ARTIFACTS: '**/target/*.zip,**/target/*.tar.gz',
-        NEXUS_PUBLIC: true,
-        SCAN_EXCLUDES: '**/*-sources.jar,**/ds-service-*.jar,**/examples.jar,**/examples/**',
-        MAVEN_GOAL: 'deploy'
-)
+AGENT_YAML = """
+        apiVersion: v1
+        kind: Pod
+        spec:
+          containers:
+          - name: maven
+            image: jenkinsxio/builder-maven:0.1.211
+            tty: true
+            command:
+            - cat
+            volumeMounts:
+            - name: docker
+              mountPath: /var/run/docker.sock
+            - name: efs-jenkins-esb-m2
+              mountPath: /root/.m2/repository
+          volumes:
+            - name: docker
+              hostPath:
+                path: /var/run/docker.sock
+            - name: efs-jenkins-esb-m2
+              persistentVolumeClaim:
+                claimName: efs-jenkins-esb-m2
+        """
+
+pipeline {
+  agent {
+            kubernetes {
+                label POD_LABEL
+                yaml "${AGENT_YAML}"
+            }
+        }
+
+  options {
+    buildDiscarder(logRotator(artifactNumToKeepStr: '5', numToKeepStr: env.BRANCH_NAME == 'master' ? '10' : '2'))
+    timeout(time: 60, unit: 'MINUTES')
+    skipStagesAfterUnstable()
+  }
+
+  stages {
+    stage('Check git connectivity') {
+      steps {
+        container('maven') {
+            withCredentials([
+                            file(credentialsId: 'sonatype-nexus-staging-signing-key', variable: 'SIGNING_KEY'),
+                ]){
+                sh """
+                        gpg --version
+                        gpg --import "$SIGNING_KEY"
+                """
+            }
+            withCredentials([gitCredentials]) {
+                sh """
+                        mkdir ${WORKSPACE}/workspaces
+                        cd ${WORKSPACE}/workspaces
+                        git clone https://${GIT_LOGIN}:${GIT_PASSWORD}@github.com/Talend/tesb-rt-se.git
+                        cd ${WORKSPACE}/workspaces/tesb-rt-se
+                        git checkout release/8.0.1
+                        cd ${WORKSPACE}/workspaces
+                        git clone https://${GIT_LOGIN}:${GIT_PASSWORD}@github.com/Talend/tesb-rt-ee.git
+                        cd ${WORKSPACE}/workspaces/tesb-rt-ee
+                        git checkout release/8.0.1
+                        cd ${WORKSPACE}/workspaces
+                        git clone https://${GIT_LOGIN}:${GIT_PASSWORD}@github.com/Talend/tesb-registry.git
+                        cd ${WORKSPACE}/workspaces/tesb-registry
+                        git checkout release/8.0.1
+                        cd ${WORKSPACE}/workspaces
+                        git clone https://${GIT_LOGIN}:${GIT_PASSWORD}@github.com/Talend/tesb-authorization.git
+                        cd ${WORKSPACE}/workspaces/tesb-authorization
+                        git checkout release/8.0.1
+                        cd ${WORKSPACE}/workspaces
+                        git clone https://${GIT_LOGIN}:${GIT_PASSWORD}@github.com/Talend/tesb-eventlogging.git
+                        cd ${WORKSPACE}/workspaces/tesb-eventlogging
+                        git checkout release/8.0.1
+                        cd ${WORKSPACE}/workspaces
+                        git clone https://${GIT_LOGIN}:${GIT_PASSWORD}@github.com/Talend/tesb-provisioning.git
+                        cd ${WORKSPACE}/workspaces/tesb-provisioning
+                        git checkout release/8.0.1
+                """
+            }
+            configFileProvider([configFile(fileId: 'maven-settings-nexus-zl', variable: 'MAVEN_SETTINGS')]) {
+                sh '''
+                        cd ${WORKSPACE}
+                        rm $WORKSPACE/pom.xml
+                        chmod -R 755 $WORKSPACE/tmp_deploy_maven_central
+                        mvn -B -s "$MAVEN_SETTINGS" dependency:get \
+                        -DremoteRepositories=thirdparty-releases::::https://artifacts-zl.talend.com/nexus/content/repositories/thirdparty-releases/ \
+                        -Dartifact=xalan:xalan-command-line:1.0:jar \
+                        -Dtransitive=false \
+                        -Ddest="$WORKSPACE/tmp_deploy_maven_central/commonScripts/xsl/xalan-command-line.jar"
+                '''
+
+                withCredentials([string(credentialsId: 'sonatype-nexus-staging-signing-passphrase', variable: 'SIGNING_PASS')]) {
+                    sh '''
+                        mkdir -p "$WORKSPACE/prepared/temp"
+                        $WORKSPACE/tmp_deploy_maven_central/commonScripts/prepareReleaseArtifacts.sh "$WORKSPACE/prepared/temp" "$SIGNING_PASS" "$MAVEN_SETTINGS"
+                    '''
+                }
+                sh '''
+                        echo "*** CONTENTS OF $WORKSPACE/prepared/temp/deploy.sh ***"
+                        cat $WORKSPACE/prepared/temp/deploy.sh
+                        echo "*** CONTENTS OF $WORKSPACE/prepared/temp/artifacts.list ***"
+                        cat $WORKSPACE/prepared/temp/artifacts.list
+                        echo "*** RUNNING $WORKSPACE/prepared/temp/deploy.sh ***"
+                        chmod 755 $WORKSPACE/prepared/temp/deploy.sh
+                        $WORKSPACE/prepared/temp/deploy.sh
+                '''
+            }
+
+            archiveArtifacts artifacts: 'prepared/temp/artifacts.list, prepared/temp/deploy.sh', fingerprint: true, onlyIfSuccessful: true, allowEmptyArchive: true
+        }
+      }
+    }
+  }
+}
