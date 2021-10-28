@@ -10,6 +10,19 @@
     <packaging>pom</packaging>
     <version>8.0.1-SNAPSHOT</version>
     <name>Talend ESB :: BOM Common</name>
+    <description>
+        Talend ESB SE bundles Service Factory and Integration Factory,
+        Service Locator, Service Activity Monitoring and a demo application
+        to a stable, production ready distribution based on the industry leading
+        open source frameworks Apache CXF and Apache Camel.
+        It includes Web Service support based on JAX-WS and enables simple and scalable
+        message based systems using well known Enterprise Integration Patterns.
+        The Service Locator maintains a repository of service endpoints which
+        can be used by Service Consumers to support simple failover and load
+        balancing scenarios. Service Activity Monitoring allows to log and
+        monitor service calls. A documented Car Rental demo application illustrates
+        how to use these features.
+    </description>
 
     <organization>
         <name>Talend Inc.</name>
@@ -26,6 +39,57 @@
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:Talend/tesb-rt-se.git</connection>
+        <developerConnection>scm:git:git@github.com:Talend/tesb-rt-se.git</developerConnection>
+        <url>https://github.com/Talend/tesb-rt-se</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>jgreffe</id>
+            <name>Julien Greffe</name>
+            <email>jgreffe@talend.com</email>
+            <timezone>GMT+1</timezone>
+        </developer>
+        <developer>
+            <id>amattes</id>
+            <name>Andreas Mattes</name>
+            <email>amattes@talend.com</email>
+            <timezone>GMT+1</timezone>
+        </developer>
+        <developer>
+            <id>xldai</id>
+            <name>Xilai Dai</name>
+            <email>xldai@talend.com</email>
+            <timezone>GMT+8</timezone>
+        </developer>
+        <developer>
+            <id>vromaniuk</id>
+            <name>Volodymyr Romaniuk</name>
+            <email>vromaniuk@talend.com</email>
+            <timezone>GMT+2</timezone>
+        </developer>
+        <developer>
+            <id>mirom</id>
+            <name>Roman Minko</name>
+            <email>rnminko@gmail.com</email>
+            <timezone>GMT+2</timezone>
+        </developer>
+        <developer>
+            <id>aosadchiy</id>
+            <name>Alexander Osadchiy</name>
+            <email>Alexander.G.Osadchiy@gmail.com</email>
+            <timezone>GMT+2</timezone>
+        </developer>
+        <developer>
+            <id>ilazebny</id>
+            <name>Igor Lazebny</name>
+            <email>ilazebny@talend.com</email>
+            <timezone>GMT+2</timezone>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
