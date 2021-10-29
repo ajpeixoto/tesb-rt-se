@@ -63,10 +63,10 @@
         <aries.version>1.0.0</aries.version>
         <pax-jdbc.version>1.3.4</pax-jdbc.version>
 
-        <xstream.version>1.4.17</xstream.version>
+        <xstream.version>1.4.18</xstream.version>
         <cryptacular.version>1.2.4</cryptacular.version>
         <commons-codec.version>1.15</commons-codec.version>
-        <ant.version>1.9.15</ant.version>
+        <ant.version>1.9.16</ant.version>
 
         <!-- Test dependencies -->
         <junit.version>4.13.1</junit.version>
