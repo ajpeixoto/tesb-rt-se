@@ -47,6 +47,12 @@
            <artifactId>org.apache.servicemix.bundles.javax.mail</artifactId>
            <type>bundle</type>
         </dependency>
+        <dependency>
+            <groupId>javax.interceptor</groupId>
+            <artifactId>javax.interceptor-api</artifactId>
+            <version>1.2.2</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
