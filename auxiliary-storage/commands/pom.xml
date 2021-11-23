@@ -40,6 +40,11 @@
             <artifactId>org.apache.karaf.shell.console</artifactId>
             <version>${karaf.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.sshd</groupId>
+            <artifactId>sshd-core</artifactId>
+            <version>${sshd-core.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.karaf.features</groupId>

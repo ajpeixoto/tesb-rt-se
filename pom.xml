@@ -172,6 +172,7 @@
         <guava.version>30.1.1-jre</guava.version>
         <guava.failureaccess.version>1.0.1</guava.failureaccess.version>
         <groovy.version>2.5.5</groovy.version>
+        <sshd-core.version>2.7.0</sshd-core.version>
 
         <cxf.build-utils.version>3.4.3</cxf.build-utils.version>
         <cxf.xjc-utils.version>3.3.0</cxf.xjc-utils.version>
