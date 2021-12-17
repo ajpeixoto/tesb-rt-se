@@ -108,14 +108,14 @@
         <!-- karaf version -->
         <karaf.version>4.2.11</karaf.version>
         <standard.features.tesb.version>4.2.11.tesb1</standard.features.tesb.version>
-        <framework.features.tesb.version>${karaf.version}</framework.features.tesb.version>
+        <framework.features.tesb.version>4.2.11.20211217</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.2.11.tesb2</enterprise.features.tesb.version>
         <spring.features.tesb.version>4.2.11.tesb2</spring.features.tesb.version>
         <spring-legacy.features.tesb.version>4.2.11.tesb2</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
-        <camel.features.tesb.version>3.11.1.tesb2</camel.features.tesb.version>
+        <camel.features.tesb.version>3.11.1.20211217</camel.features.tesb.version>
         <cxf.version>3.4.4</cxf.version>
         <cxf.features.tesb.version>3.4.4.tesb1</cxf.features.tesb.version>
         <spring.version>5.2.15.RELEASE</spring.version>
@@ -248,7 +248,7 @@
         <osgi.core.version>6.0.0</osgi.core.version>
         <pax-cdi.version>1.0.0.RC2</pax-cdi.version>
         <pax-exam.version>4.13.1</pax-exam.version>
-        <pax-logging.version>1.11.9</pax-logging.version>
+        <pax-logging.version>1.11.11</pax-logging.version>
         <pax-url.version>2.6.2</pax-url.version>
         <quartz.version>2.3.2</quartz.version>
         <rome.version>1.15.0</rome.version>
