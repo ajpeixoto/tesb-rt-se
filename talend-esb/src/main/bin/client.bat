@@ -26,6 +26,9 @@ set TERM=windows
 set ARGS=%*
 
 rem Sourcing environment settings for karaf similar to tomcats setenv
+
+set JAVA_TOOL_OPTIONS=%JAVA_TOOL_OPTIONS% -Dlog4j2.formatMsgNoLookups=true
+
 SET KARAF_SCRIPT="client.bat"
 if exist "%DIRNAME%setenv.bat" (
   call "%DIRNAME%setenv.bat"

@@ -16,6 +16,9 @@
 #    limitations under the License.
 #
 
+JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Dlog4j2.formatMsgNoLookups=true"
+export JAVA_TOOL_OPTIONS
+
 realpath() {
   # Use in priority xpg4 awk or nawk on SunOS as standard awk is outdated
   AWK=awk
