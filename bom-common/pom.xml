@@ -115,7 +115,7 @@
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
-        <camel.features.tesb.version>3.11.1.20211217</camel.features.tesb.version>
+        <camel.features.tesb.version>3.11.1.20220121</camel.features.tesb.version>
         <cxf.version>3.4.4</cxf.version>
         <cxf.features.tesb.version>3.4.4.tesb1</cxf.features.tesb.version>
         <spring.version>5.2.15.RELEASE</spring.version>
