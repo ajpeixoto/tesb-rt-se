@@ -108,7 +108,7 @@
         <!-- karaf version -->
         <karaf.version>4.2.11</karaf.version>
         <standard.features.tesb.version>4.2.11.tesb1</standard.features.tesb.version>
-        <framework.features.tesb.version>4.2.11.20211217</framework.features.tesb.version>
+        <framework.features.tesb.version>4.2.11.20220121</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.2.11.tesb2</enterprise.features.tesb.version>
         <spring.features.tesb.version>4.2.11.tesb2</spring.features.tesb.version>
         <spring-legacy.features.tesb.version>4.2.11.tesb2</spring-legacy.features.tesb.version>
