@@ -125,6 +125,7 @@
                                 <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.jms/pax-jms-features/${pax-jms-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.transx/pax-transx-features/${pax-transx-features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.decanter/apache-karaf-decanter/${decanter.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.aries.jpa/jpa-features/${jpa-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.openjpa/openjpa-features/${openjpa-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/enterprise/${enterprise.features.tesb.version}/xml/features</descriptor>
