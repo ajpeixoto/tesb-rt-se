@@ -4,6 +4,7 @@ Build(
         DOWNSTREAM_PROJECT: 'tesb-rt-ee',
         CRON_MASTER: '0 23 * * 1-6',
         CRON_SCAN_MASTER: '0 10 * * 0',
+        CRON_SCAN_MAINTENANCE: '0 10 * * 0',
         ARTIFACTS: '**/target/*.zip,**/target/*.tar.gz',
         NEXUS_PUBLIC: true,
         SCAN_EXCLUDES: '**/*-sources.jar,**/ds-service-*.jar,**/examples.jar,**/examples/**',
