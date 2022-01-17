@@ -117,7 +117,7 @@
         <camel.version>3.11.1</camel.version>
         <camel.features.tesb.version>3.11.1.20220121</camel.features.tesb.version>
         <cxf.version>3.4.4</cxf.version>
-        <cxf.features.tesb.version>3.4.4.tesb1</cxf.features.tesb.version>
+        <cxf.features.tesb.version>3.4.4.20220121</cxf.features.tesb.version>
         <spring.version>5.2.15.RELEASE</spring.version>
         <spring.security.version>5.2.10.RELEASE</spring.security.version>
         <pax-web.version>7.2.23</pax-web.version>
@@ -220,7 +220,7 @@
         <jsonevent-layout.version>1.7</jsonevent-layout.version>
         <jstl-api.version>1.2</jstl-api.version>
         <jstl-impl.version>1.2</jstl-impl.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <metrics-core.version>3.2.6</metrics-core.version>
         <mina-core.version>2.1.4</mina-core.version>
@@ -267,6 +267,7 @@
         <xmlParserAPIs.version>2.0.2</xmlParserAPIs.version>
         <zipkin-reporter.version>2.16.3</zipkin-reporter.version>
         <zipkin.version>2.23.2</zipkin.version>
+        <apache-xmlsec.version>2.2.3</apache-xmlsec.version>
     </properties>
 
     <dependencyManagement>
@@ -1490,7 +1491,11 @@
                 <artifactId>xmlParserAPIs</artifactId>
                 <version>${xmlParserAPIs.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.apache.santuario</groupId>
+                <artifactId>xmlsec</artifactId>
+                <version>${apache-xmlsec.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
