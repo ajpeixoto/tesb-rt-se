@@ -19,12 +19,19 @@
 package org.talend.sap.connection;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 public class SAPJCo3Connector {
 
+    private static final String ENDPOINT_PREFIX = "endpoint.";
+    private static final int ENDPOINT_PREFIX_LENGTH = ENDPOINT_PREFIX.length();
     private String connectionPoolName;
     private Properties properties;
+    private List<String> endpointNames;
 
     public void setProperties(Properties properties) {
         this.properties = properties;
@@ -35,15 +42,54 @@ public class SAPJCo3Connector {
     }
 
     public void init() throws Exception {
-        Class cls = Class.forName("org.hibersap.execution.jco.JCoEnvironment");
+        endpointNames = new ArrayList<>();
+        Map<String, Properties> endpoints = evaluateProperties();
+        if (endpoints == null) {
+            return;
+        }
+        Class<?> cls = Class.forName("org.hibersap.execution.jco.JCoEnvironment");
         Method regMethod = cls.getMethod("registerDestination", String.class, Properties.class);
-        regMethod.invoke(cls, connectionPoolName, properties);
+        for (Map.Entry<String, Properties> e : endpoints.entrySet()) {
+            String ep = e.getKey();
+            regMethod.invoke(cls, ep, e.getValue());
+            endpointNames.add(ep);
+        }
     }
 
     public void destroy() throws Exception {
-        Class cls = Class.forName("org.hibersap.execution.jco.JCoEnvironment");
+        if (endpointNames.isEmpty()) {
+            return;
+        }
+        Class<?> cls = Class.forName("org.hibersap.execution.jco.JCoEnvironment");
         Method regMethod = cls.getMethod("unregisterDestination", String.class);
-        regMethod.invoke(cls, connectionPoolName);
+        for (String ep : endpointNames) { 
+            regMethod.invoke(cls, ep);
+        }
     }
 
+    private Map<String, Properties> evaluateProperties() {
+        if (properties == null) {
+            return null;
+        }
+        Map<String, Properties> result = new LinkedHashMap<>();
+        for (Map.Entry<Object, Object> e : properties.entrySet()) {
+            String propName = (String) e.getKey();
+            String propValue = (String) e.getValue();
+            String endpointName = connectionPoolName;
+            if (propName.startsWith(ENDPOINT_PREFIX)) {
+                int ndx = propName.indexOf('.', ENDPOINT_PREFIX_LENGTH);
+                if (ndx > 0) {
+                    endpointName = propName.substring(ENDPOINT_PREFIX_LENGTH, ndx);
+                    propName = propName.substring(ndx + 1);
+                }
+            }
+            Properties endpointProps = result.get(endpointName);
+            if (endpointProps == null) {
+                endpointProps = new Properties();
+                result.put(endpointName, endpointProps);
+            }
+            endpointProps.setProperty(propName, propValue);
+        }
+        return result;
+    }
 }
