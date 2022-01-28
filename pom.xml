@@ -692,9 +692,9 @@
             <properties>
                 <original.version>7.3.1</original.version>
                 <features.version>7.3.1.20210924</features.version>
-                <auxiliary-storage-features.version>7.3.1.20210723</auxiliary-storage-features.version>
+                <auxiliary-storage-features.version>7.3.1.20220211</auxiliary-storage-features.version>
                 <auxiliary-storage-client.version>7.3.1.20210618</auxiliary-storage-client.version>
-                <auxiliary-storage-service-rest.version>7.3.1.20210618</auxiliary-storage-service-rest.version>
+                <auxiliary-storage-service-rest.version>7.3.1.20220211</auxiliary-storage-service-rest.version>
                 <auxiliary-storage-rest-security.version>7.3.1.20210618</auxiliary-storage-rest-security.version>
                 <sts-config.version>7.3.1.20210618</sts-config.version>
                 <job-controller.version>7.3.1.20210618</job-controller.version>
