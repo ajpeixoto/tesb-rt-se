@@ -96,11 +96,13 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <targetJdk>1.8</targetJdk>
 
+        <original.version>8.0.1-SNAPSHOT</original.version>
+        
         <!-- final packages version -->
-        <packages.version>${project.version}</packages.version>
+        <packages.version>${original.version}</packages.version>
 
         <!-- esb features versions -->
-        <esb.features.version>${project.version}</esb.features.version>
+        <esb.features.version>${original.version}</esb.features.version>
 
         <!-- eclipse osgi version -->
         <eclipse.osgi.version>3.13.300</eclipse.osgi.version>
@@ -1369,129 +1371,129 @@
             <dependency>
                 <groupId>org.talend.cxf</groupId>
                 <artifactId>crypto-config</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-client-common</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-client-rest</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-commands</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-common</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-examples</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-features</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-persistence-file</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-persistence-jcr</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-persistence</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-rest-security</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-server</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.auxiliary.storage</groupId>
                 <artifactId>auxiliary-storage-service-rest</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.job</groupId>
                 <artifactId>org.talend.esb.job.api</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.locator.service</groupId>
                 <artifactId>locator-service-common</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.policies</groupId>
                 <artifactId>correlationid-policy</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.sam.service</groupId>
                 <artifactId>sam-service-rest</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.sam.service</groupId>
                 <artifactId>sam-service-soap</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.sts</groupId>
                 <artifactId>cxf-sts-war</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
                 <type>war</type>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>features</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>locator</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>sam-agent</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>sam-common</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>sam-server</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>security-common</artifactId>
-                <version>${project.version}</version>
+                <version>${original.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.webjars</groupId>
@@ -1936,5 +1938,14 @@
             </plugin>
         </plugins>
     </reporting>
+    
+    <profiles>
+        <profile>
+            <id>patch</id>
+            <properties>
+                <original.version>8.0.1</original.version>
+            </properties>
+        </profile>
+    </profiles>
 </project>
 
