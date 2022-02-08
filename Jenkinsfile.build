@@ -7,5 +7,6 @@ Build(
         CRON_SCAN_MAINTENANCE: '0 10 * * 0',
         ARTIFACTS: '**/target/*.zip,**/target/*.tar.gz',
         NEXUS_PUBLIC: true,
-        SCAN_EXCLUDES: '**/*-sources.jar,**/ds-service-*.jar,**/examples.jar,**/examples/**'
+        SCAN_EXCLUDES: '**/*-sources.jar,**/ds-service-*.jar,**/examples.jar,**/examples/**',
+        PATCH_MVN_MODULES: ':bom-common,:bom,org.talend.esb:features'
 )

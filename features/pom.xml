@@ -17,6 +17,7 @@
     <artifactId>features</artifactId>
     <packaging>pom</packaging>
     <name>Talend ESB :. Features</name>
+    <version>${revision}</version>
 
      <parent>
         <groupId>org.talend.esb</groupId>
@@ -24,6 +25,10 @@
         <version>8.0.1-SNAPSHOT</version>
          <relativePath>../bom</relativePath>
     </parent>
+    
+    <properties>
+        <revision>${esb.features.version}</revision>
+    </properties>
 
     <build>
         <resources>
