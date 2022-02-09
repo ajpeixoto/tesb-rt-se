@@ -44,8 +44,8 @@
                             *
                         </DynamicImport-Package>
                         <Import-Package>
+                            org.hibersap.execution.jco,
                             *
-                            ,org.hibersap.execution.jco
                         </Import-Package>
                     </instructions>
                 </configuration>
