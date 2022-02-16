@@ -267,7 +267,7 @@
         <taglibs.version>1.2.5</taglibs.version>
         <tika.version>1.27</tika.version>
         <velocity.version>2.3</velocity.version>
-        <websocket.version>9.4.38.v20210224</websocket.version>
+        <websocket.version>${jetty.version}</websocket.version>
         <woodstox.version>4.1.5</woodstox.version>
         <xbean-blueprint.version>4.18</xbean-blueprint.version>
         <xmlParserAPIs.version>2.0.2</xmlParserAPIs.version>
