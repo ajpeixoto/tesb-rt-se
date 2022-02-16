@@ -207,10 +207,11 @@
         <jaxb2-basics-runtime.version>0.12.0</jaxb2-basics-runtime.version>
         <jaxen.bundle.version>1.2.0</jaxen.bundle.version>
         <jcr.version>2.0</jcr.version>
+        <jdom.version>2.0.6.1</jdom.version>
         <jdom.bundle.version>2.0.6_1</jdom.bundle.version>
         <jest.version>2.0.3</jest.version>
         <jettison.version>1.4.0</jettison.version>
-        <jetty.version>9.4.39.v20210325</jetty.version>
+        <jetty.version>9.4.43.v20210629</jetty.version>
         <jlibs.version>2.2.3</jlibs.version>
         <joda-time.version>2.10.6</joda-time.version>
         <jolokia.version>1.6.2</jolokia.version>
@@ -223,6 +224,7 @@
         <jstl-impl.version>1.2</jstl-impl.version>
         <junit.version>4.13.1</junit.version>
         <log4j.version>1.2.17</log4j.version>
+        <reload4j.version>1.2.19</reload4j.version>
         <lombok.version>1.18.22</lombok.version>
         <metrics-core.version>3.2.6</metrics-core.version>
         <mina-core.version>2.1.4</mina-core.version>
@@ -254,7 +256,7 @@
         <pax-url.version>2.6.2</pax-url.version>
         <quartz.version>2.3.2</quartz.version>
         <rome.version>1.15.0</rome.version>
-        <slf4j.version>1.7.30</slf4j.version>
+        <slf4j.version>1.7.36</slf4j.version>
         <snakeyaml.version>1.29</snakeyaml.version>
         <sshd-osgi.version>2.5.1</sshd-osgi.version>
         <stax2-api.version>4.2.1</stax2-api.version>
@@ -483,6 +485,11 @@
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.reload4j</groupId>
+                <artifactId>reload4j</artifactId>
+                <version>${reload4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.logstash.log4j</groupId>
@@ -1293,6 +1300,11 @@
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-reload4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
@@ -1507,6 +1519,11 @@
                 <groupId>org.apache.santuario</groupId>
                 <artifactId>xmlsec</artifactId>
                 <version>${apache-xmlsec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jdom</groupId>
+                <artifactId>jdom2</artifactId>
+                <version>${jdom.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
