@@ -88,9 +88,6 @@
         <bundle start-level="30">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxrs-api-2.1/${org.apache.servicemix.specs.jaxrs-api-2.1.version}</bundle>
         <bundle start-level="30">mvn:org.apache.sshd/sshd-osgi/${sshd-osgi.version}</bundle>
         <bundle start-level="30">mvn:org.codehaus.woodstox/stax2-api/${stax2-api.version}</bundle>
-        <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-api/${websocket.version}</bundle>
-        <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-client/${websocket.version}</bundle>
-        <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-common/${websocket.version}</bundle>
         <bundle start-level="30">mvn:org.eclipse.persistence/javax.persistence/${javax.persistence.version}</bundle>
         <bundle start-level="30">mvn:org.jvnet.jaxb2_commons/jaxb2-basics-runtime/${jaxb2-basics-runtime.version}</bundle>
     </feature>
@@ -254,10 +251,10 @@
     </feature>
 
     <feature name='tesb-zookeeper' version='${project.version}'>
+        <!-- fork additional feature -->
+        <feature>camel-zookeeper-core</feature>
         <configfile finalname="/etc/org.talend.esb.locator.server.cfg">mvn:org.talend.esb/org.talend.esb.locator.server/${project.version}/cfg</configfile>
         <bundle start-level='50'>mvn:org.talend.esb/org.talend.esb.locator.auth/${project.version}</bundle>
-        <bundle dependency='true'>wrap:mvn:org.apache.zookeeper/zookeeper/${zookeeper.version}$Bundle-SymbolicName=org.apache.zookeeper&amp;Export-Package=org.apache.zookeeper;version=${zookeeper.version},org.apache.zookeeper.*;version=${zookeeper.version}</bundle>
-        <bundle dependency='true'>wrap:mvn:org.apache.zookeeper/zookeeper-jute/${zookeeper.version}$Bundle-SymbolicName=org.apache.zookeeper-jute&amp;Export-Package=org.apache.jute;version=${zookeeper.version},org.apache.zookeeper.*;version=${zookeeper.version}</bundle>
     </feature>
 
     <feature name='tesb-locator-client' version='${project.version}'>
