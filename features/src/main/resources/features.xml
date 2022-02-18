@@ -251,10 +251,10 @@
     </feature>
 
     <feature name='tesb-zookeeper' version='${original.version}'>
+        <!-- fork additional feature -->
+        <feature>camel-zookeeper-core</feature>
         <configfile finalname="/etc/org.talend.esb.locator.server.cfg">mvn:org.talend.esb/org.talend.esb.locator.server/${original.version}/cfg</configfile>
         <bundle start-level='50'>mvn:org.talend.esb/org.talend.esb.locator.auth/${original.version}</bundle>
-        <bundle dependency='true'>wrap:mvn:org.apache.zookeeper/zookeeper/${zookeeper.version}$Bundle-SymbolicName=org.apache.zookeeper&amp;Export-Package=org.apache.zookeeper;version=${zookeeper.version},org.apache.zookeeper.*;version=${zookeeper.version}</bundle>
-        <bundle dependency='true'>wrap:mvn:org.apache.zookeeper/zookeeper-jute/${zookeeper.version}$Bundle-SymbolicName=org.apache.zookeeper-jute&amp;Export-Package=org.apache.jute;version=${zookeeper.version},org.apache.zookeeper.*;version=${zookeeper.version}</bundle>
     </feature>
 
     <feature name='tesb-locator-client' version='${original.version}'>
