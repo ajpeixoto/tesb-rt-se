@@ -12,6 +12,11 @@
 	<packaging>bundle</packaging>
 	<name>Talend ESB :: Policies :: Correlation ID</name>
 	<description>Custom policy for correlation id implementation</description>
+	<version>${revision}</version>
+	
+	<properties>
+		<revision>${correlationid-policy.version}</revision>
+	</properties>
 
 	<dependencies>
 		<dependency>

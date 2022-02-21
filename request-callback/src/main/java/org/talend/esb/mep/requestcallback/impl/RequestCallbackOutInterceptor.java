@@ -33,7 +33,7 @@ import org.talend.esb.sam.agent.message.FlowIdHelper;
  */
 public class RequestCallbackOutInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
 
-
+private JAXBDataBinding jaxbDataBinding;
 
 	public RequestCallbackOutInterceptor() {
 		super(Phase.PRE_LOGICAL);
@@ -143,15 +143,19 @@ public class RequestCallbackOutInterceptor extends AbstractPhaseInterceptor<Soap
 		}*/
 	}
 
-	private static Header createHeader(QName headerName, String value) throws Fault {
+	private Header createHeader(QName headerName, String value) throws Fault {
 		try {
-			return new Header(headerName, value, new JAXBDataBinding(String.class));
+			if (jaxbDataBinding == null) {
+				jaxbDataBinding = new JAXBDataBinding(String.class);
+			}
+			
+			return new Header(headerName, value, jaxbDataBinding);
 		} catch (JAXBException e) {
 			throw new Fault(e);
 		}
 	}
 
-	private static AddressingProperties initAddressingProperties(SoapMessage message) {
+	private AddressingProperties initAddressingProperties(SoapMessage message) {
 		AddressingProperties maps = (AddressingProperties) message.getContextualProperty(
 				JAXWSAConstants.CLIENT_ADDRESSING_PROPERTIES);
 		if (maps == null) {
@@ -162,12 +166,12 @@ public class RequestCallbackOutInterceptor extends AbstractPhaseInterceptor<Soap
 	}
 
 	@SuppressWarnings("unchecked")
-	private static Map<String, Object> getCallInfo(SoapMessage message) {
+	private Map<String, Object> getCallInfo(SoapMessage message) {
 		return (Map<String, Object>) message.getContextualProperty(
 				RequestCallbackFeature.CALL_INFO_PROPERTY_NAME);
 	}
 
-    private static void propagateRequestorCertificate(Message message, CallContext callContext) {
+    private void propagateRequestorCertificate(Message message, CallContext callContext) {
     	if (callContext.getRequestorSignatureCertificate() != null) {
             message.put(SecurityConstants.ENCRYPT_CERT, callContext.getRequestorSignatureCertificate());
     	}

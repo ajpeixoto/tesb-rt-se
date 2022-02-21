@@ -41,6 +41,8 @@ public final class CorrelationIdSoapCodec {
 
     public static final QName CORRELATION_ID_QNAME = new QName(
             "http://www.talend.com/esb/sam/correlationId/v1", "correlationId");
+    
+    private static JAXBDataBinding jaxbDataBinding;
 
     /**
      * Instantiates a new correlation id soap codec.
@@ -101,8 +103,11 @@ public final class CorrelationIdSoapCodec {
         }
 
         try {
+            if (jaxbDataBinding == null) {
+                jaxbDataBinding = new JAXBDataBinding(String.class);
+            }
             soapMessage.getHeaders().add(
-                    new Header(CORRELATION_ID_QNAME, correlationId, new JAXBDataBinding(String.class)));
+                    new Header(CORRELATION_ID_QNAME, correlationId, jaxbDataBinding));
             if (LOG.isLoggable(Level.FINE)) {
                 LOG.fine("Stored correlationId '" + correlationId + "' in soap header: "
                         + CORRELATION_ID_QNAME);

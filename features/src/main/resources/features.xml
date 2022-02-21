@@ -313,7 +313,7 @@
     <bundle start-level="30" dependency="true">mvn:org.glassfish/javax.el/${javax.el.version}</bundle>
     <bundle dependency="true">mvn:org.ops4j.pax.web/pax-web-jsp/${pax-web.version}</bundle>
     <bundle dependency="true">mvn:commons-jxpath/commons-jxpath/${commons-jxpath.version}</bundle>
-    <bundle>mvn:org.talend.esb.policies/correlationid-policy/${original.version}</bundle>
+    <bundle>mvn:org.talend.esb.policies/correlationid-policy/${correlationid-policy.version}</bundle>
   </feature>
 
   <feature name='tesb-policy-transformation' version='${original.version}'>

@@ -40,6 +40,8 @@ public final class FlowIdSoapCodec {
 
     public static final QName FLOW_ID_QNAME = new QName(
             "http://www.talend.com/esb/sam/flowId/v1", "flowId");
+    
+    private static JAXBDataBinding jaxbDataBinding;
     /**
      * Instantiates a new flow id soap codec.
      */
@@ -90,8 +92,11 @@ public final class FlowIdSoapCodec {
         }
 
         try {
+            if (jaxbDataBinding == null) {
+                jaxbDataBinding = new JAXBDataBinding(String.class);
+            }
             soapMessage.getHeaders().add(
-                    new Header(FLOW_ID_QNAME, flowId, new JAXBDataBinding(String.class)));
+                    new Header(FLOW_ID_QNAME, flowId, jaxbDataBinding));
             if (LOG.isLoggable(Level.FINE)) {
                 LOG.fine("Stored flowId '" + flowId + "' in soap header: " + FLOW_ID_QNAME);
             }
