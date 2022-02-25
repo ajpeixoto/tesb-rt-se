@@ -19,6 +19,7 @@
         <module>derby</module>
         <module>h2</module>
         <module>mysql</module>
+        <module>mysql-8</module>
         <module>oracle</module>
         <module>db2</module>
         <module>sqlserver</module>

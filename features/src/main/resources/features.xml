@@ -123,7 +123,7 @@
         <feature version="[5.2,6)">spring-jdbc</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/${derby.servicemix.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
-        <bundle>mvn:org.talend.esb/ds-service-derby/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-derby/${ds-service-derby.version}</bundle>
     </feature>
 
     <!-- H2 JDBC driver should be installed into container before installing H2 DataSource.
@@ -133,10 +133,11 @@
     <feature name='tesb-datasource-h2' version='${original.version}'>
         <configfile finalname="/etc/org.talend.esb.datasource.h2.cfg">mvn:org.talend.esb/ds-service-h2/${original.version}/cfg/org.talend.esb.datasource.h2</configfile>
         <feature version="[5.2,6)">spring-jdbc</feature>
-        <bundle>mvn:org.talend.esb/ds-service-h2/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-h2/${ds-service-h2.version}</bundle>
     </feature>
 
     <!-- MySQL JDBC driver should be installed into container before installing MySQL DataSource.
+         This feature is intended to work with MySQL 5.x
          You will have eventually have to adjust the version.
              bundle:install mvn:mysql/mysql-connector-java/5.1.18
     -->
@@ -144,8 +145,20 @@
         <configfile finalname="/etc/org.talend.esb.datasource.mysql.cfg">mvn:org.talend.esb/ds-service-mysql/${original.version}/cfg/org.talend.esb.datasource.mysql</configfile>
         <feature version="[5.2,6)">spring-jdbc</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
-        <bundle>mvn:org.talend.esb/ds-service-mysql/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-mysql/${ds-service-mysql.version}</bundle>
     </feature>
+
+    <!-- MySQL JDBC driver should be installed into container before installing MySQL DataSource.
+         This feature is intended to work with MySQL 8.x
+         You will have eventually have to adjust the version.
+             bundle:install mvn:mysql/mysql-connector-java/8.0.27
+    -->
+    <feature name='tesb-datasource-mysql-8' version='${original.version}'>
+        <configfile finalname="/etc/org.talend.esb.datasource.mysql8.cfg">mvn:org.talend.esb/ds-service-mysql-8/${ds-service-mysql-8.version}/cfg/org.talend.esb.datasource.mysql</configfile>
+        <feature version="[5.2,6)">spring-jdbc</feature>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-mysql-8/${ds-service-mysql-8.version}</bundle>
+    </feature>    
 
     <!-- Oracle JDBC driver should be installed into container before installing Oracle DataSource.
          You will have eventually have to adjust the path and version. The commands below is for windows and Oracle 11 Express.
@@ -161,7 +174,7 @@
     <feature name='tesb-datasource-oracle' version='${original.version}'>
         <configfile finalname="/etc/org.talend.esb.datasource.oracle.cfg">mvn:org.talend.esb/ds-service-oracle/${original.version}/cfg/org.talend.esb.datasource.oracle</configfile>
         <feature version="[5.2,6)">spring-jdbc</feature>
-        <bundle>mvn:org.talend.esb/ds-service-oracle/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-oracle/${ds-service-oracle.version}</bundle>
     </feature>
 
     <!-- PostgreSQL JDBC driver should be installed into container before installing PostgreSQL DataSource.
@@ -175,7 +188,7 @@
     <feature name='tesb-datasource-postgresql' version='${original.version}'>
         <configfile finalname="/etc/org.talend.esb.datasource.postgresql.cfg">mvn:org.talend.esb/ds-service-postgresql/${original.version}/cfg/org.talend.esb.datasource.postgresql</configfile>
         <feature version="[5.2,6)">spring-jdbc</feature>
-        <bundle>mvn:org.talend.esb/ds-service-postgresql/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-postgresql/${ds-service-postgresql.version}</bundle>
     </feature>
 
 
@@ -194,7 +207,7 @@
         <configfile finalname="/etc/org.talend.esb.datasource.db2.cfg">mvn:org.talend.esb/ds-service-db2/${original.version}/cfg/org.talend.esb.datasource.db2</configfile>
         <feature version="[5.2,6)">spring-jdbc</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
-        <bundle>mvn:org.talend.esb/ds-service-db2/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-db2/${ds-service-db2.version}</bundle>
     </feature>
 
     <!-- SQLServer JDBC driver should be installed into container before installing SQLServer DataSource.
@@ -212,7 +225,7 @@
         <configfile finalname="/etc/org.talend.esb.datasource.sqlserver.cfg">mvn:org.talend.esb/ds-service-sqlserver/${original.version}/cfg/org.talend.esb.datasource.sqlserver</configfile>
         <feature version="[5.2,6)">spring-jdbc</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
-        <bundle>mvn:org.talend.esb/ds-service-sqlserver/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-sqlserver/${ds-service-sqlserver.version}</bundle>
     </feature>
 
     <feature name='tesb-sam-service-soap' version='${original.version}'>

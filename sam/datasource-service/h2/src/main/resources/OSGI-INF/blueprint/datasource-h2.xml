@@ -29,6 +29,7 @@
             <cm:property name="datasource.password" value=""/>
             <cm:property name="datasource.pool.maxConnections" value="20"/>
             <cm:property name="datasource.pool.loginTimeout" value="30"/>
+            <cm:property name="datasource.jndi" value="ds-h2" />
         </cm:default-properties>
     </cm:property-placeholder>
 
@@ -43,7 +44,7 @@
     <service ref="dataSource" interface="javax.sql.DataSource">
         <service-properties>
             <entry key="org.talend.esb.datasource.name" value="ds-h2"/>
-            <entry key="osgi.jndi.service.name" value="jdbc/sam"/>
+            <entry key="osgi.jndi.service.name" value="${datasource.jndi}"/>
         </service-properties>
     </service>
 

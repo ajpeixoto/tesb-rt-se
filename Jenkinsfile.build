@@ -8,5 +8,5 @@ Build(
         ARTIFACTS: '**/target/*.zip,**/target/*.tar.gz',
         NEXUS_PUBLIC: true,
         SCAN_EXCLUDES: '**/*-sources.jar,**/ds-service-*.jar,**/examples.jar,**/examples/**',
-        PATCH_MVN_MODULES: ':bom-common,:bom,org.talend.esb:features'
+        PATCH_MVN_MODULES: ':bom-common,:bom,org.talend.esb:features,:ds-service-db2,:ds-service-derby,:ds-service-h2,:ds-service-mysql,:ds-service-mysql-8,:ds-service-oracle,:ds-service-postgresql,:ds-service-sqlserver'
 )

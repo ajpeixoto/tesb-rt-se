@@ -103,6 +103,14 @@
 
         <!-- esb features versions -->
         <esb.features.version>${original.version}</esb.features.version>
+        <ds-service-db2.version>${original.version}</ds-service-db2.version>
+        <ds-service-derby.version>${original.version}</ds-service-derby.version>
+        <ds-service-h2.version>${original.version}</ds-service-h2.version>
+        <ds-service-mysql.version>${original.version}</ds-service-mysql.version>
+        <ds-service-mysql-8.version>${original.version}</ds-service-mysql-8.version>
+        <ds-service-oracle.version>${original.version}</ds-service-oracle.version>
+        <ds-service-postgresql.version>${original.version}</ds-service-postgresql.version>
+        <ds-service-sqlserver.version>${original.version}</ds-service-sqlserver.version>
 
         <!-- eclipse osgi version -->
         <eclipse.osgi.version>3.13.300</eclipse.osgi.version>
@@ -1968,7 +1976,15 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1</original.version>
-                <esb.features.version>8.0.1.20220222</esb.features.version>
+                <esb.features.version>8.0.1.20220318</esb.features.version>
+                <ds-service-db2.version>8.0.1.20220318</ds-service-db2.version>
+                <ds-service-derby.version>8.0.1.20220318</ds-service-derby.version>
+                <ds-service-h2.version>8.0.1.20220318</ds-service-h2.version>
+                <ds-service-mysql.version>8.0.1.20220318</ds-service-mysql.version>
+                <ds-service-mysql-8.version>8.0.1.20220318</ds-service-mysql-8.version>
+                <ds-service-oracle.version>8.0.1.20220318</ds-service-oracle.version>
+                <ds-service-postgresql.version>8.0.1.20220318</ds-service-postgresql.version>
+                <ds-service-sqlserver.version>8.0.1.20220318</ds-service-sqlserver.version>
             </properties>
         </profile>
     </profiles>
