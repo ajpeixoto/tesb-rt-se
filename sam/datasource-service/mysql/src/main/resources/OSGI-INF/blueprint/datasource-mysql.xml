@@ -31,6 +31,7 @@
             <cm:property name="datasource.pool.maxActive" value="20"/>
             <cm:property name="datasource.pool.maxIdle" value="5"/>
             <cm:property name="datasource.pool.maxWait" value="30000"/>
+            <cm:property name="datasource.jndi" value="ds-mysql" />
         </cm:default-properties>
     </cm:property-placeholder>
 
@@ -49,8 +50,8 @@
 
     <service ref="dataSource" interface="javax.sql.DataSource">
         <service-properties>
-             <entry key="org.talend.esb.datasource.name" value="ds-mysql"/>
-             <entry key="osgi.jndi.service.name" value="jdbc/sam"/>
+            <entry key="org.talend.esb.datasource.name" value="ds-mysql"/>
+            <entry key="osgi.jndi.service.name" value="${datasource.jndi}"/>
         </service-properties>
     </service>
 </blueprint>

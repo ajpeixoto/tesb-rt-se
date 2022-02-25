@@ -32,6 +32,7 @@
             <cm:property name="datasource.password" value="postgres"/>
             <cm:property name="datasource.port" value="5432"/>
             <cm:property name="datasource.pool.maxActive" value="10"/>
+            <cm:property name="datasource.jndi" value="ds-postgresql" />
         </cm:default-properties>
     </cm:property-placeholder>
 
@@ -48,7 +49,7 @@
     <service ref="dataSource" interface="javax.sql.DataSource">
         <service-properties>
              <entry key="org.talend.esb.datasource.name" value="ds-postgresql"/>
-             <entry key="osgi.jndi.service.name" value="jdbc/sam"/>
+            <entry key="osgi.jndi.service.name" value="${datasource.jndi}"/>
         </service-properties>
     </service>
 </blueprint>

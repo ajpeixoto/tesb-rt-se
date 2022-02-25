@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.talend.esb</groupId>
-    <artifactId>ds-service-mysql</artifactId>
+    <artifactId>ds-service-mysql-8</artifactId>
     <packaging>bundle</packaging>
 
     <parent>
@@ -14,8 +14,8 @@
         <version>8.8.8-SNAPSHOT</version>
     </parent>
 
-    <name>Talend ESB :: SAM :: Datasource :: MySQL</name>
-
+    <name>Talend ESB :: SAM :: Datasource :: MySQL8</name>
+    
     <build>
         <plugins>
             <plugin>
@@ -24,7 +24,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>com.mysql.jdbc.jdbc2.optional;version="[5.0.0,6.0.0)",javax.sql,org.apache.commons.dbcp.datasources,org.osgi.service.blueprint;version="[1.0.0,2.0.0)"</Import-Package>
+                        <Import-Package>com.mysql.cj.jdbc;version="6.0.0",javax.sql,org.apache.commons.dbcp.datasources,org.osgi.service.blueprint;version="[1.0.0,2.0.0)"</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

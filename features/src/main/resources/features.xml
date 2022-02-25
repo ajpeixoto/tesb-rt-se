@@ -137,6 +137,7 @@
     </feature>
 
     <!-- MySQL JDBC driver should be installed into container before installing MySQL DataSource.
+         This feature is intended to work with MySQL 5.x
          You will have eventually have to adjust the version.
              bundle:install mvn:mysql/mysql-connector-java/5.1.18
     -->
@@ -146,6 +147,18 @@
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
         <bundle>mvn:org.talend.esb/ds-service-mysql/${project.version}</bundle>
     </feature>
+
+    <!-- MySQL JDBC driver should be installed into container before installing MySQL DataSource.
+         This feature is intended to work with MySQL 8.x
+         You will have eventually have to adjust the version.
+             bundle:install mvn:mysql/mysql-connector-java/8.0.27
+    -->
+    <feature name='tesb-datasource-mysql-8' version='${project.version}'>
+        <configfile finalname="/etc/org.talend.esb.datasource.mysql8.cfg">mvn:org.talend.esb/ds-service-mysql-8/${project.version}/cfg/org.talend.esb.datasource.mysql</configfile>
+        <feature version="[5.2,6)">spring-jdbc</feature>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.bundle.version}</bundle>
+        <bundle>mvn:org.talend.esb/ds-service-mysql-8/${project.version}</bundle>
+    </feature>    
 
     <!-- Oracle JDBC driver should be installed into container before installing Oracle DataSource.
          You will have eventually have to adjust the path and version. The commands below is for windows and Oracle 11 Express.
