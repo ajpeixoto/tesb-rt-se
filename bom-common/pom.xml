@@ -129,7 +129,7 @@
         <camel.features.tesb.version>3.11.1.20220222</camel.features.tesb.version>
         <cxf.version>3.4.4</cxf.version>
         <cxf.features.tesb.version>3.4.4.20220121</cxf.features.tesb.version>
-        <spring.version>5.2.15.RELEASE</spring.version>
+        <spring.version>5.2.18.RELEASE</spring.version>
         <spring.security.version>5.2.10.RELEASE</spring.security.version>
         <pax-web.version>7.2.29</pax-web.version>
         <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
@@ -255,7 +255,7 @@
         <org.apache.servicemix.bundles.okio.version>1.15.0_1</org.apache.servicemix.bundles.okio.version>
         <org.apache.servicemix.bundles.reflections.version>0.9.12_1</org.apache.servicemix.bundles.reflections.version>
         <org.apache.servicemix.bundles.wsdl4j.version>1.6.3_1</org.apache.servicemix.bundles.wsdl4j.version>
-        <org.apache.servicemix.bundles.xstream.version>1.4.15_1</org.apache.servicemix.bundles.xstream.version>
+        <org.apache.servicemix.bundles.xstream.version>1.4.19_1</org.apache.servicemix.bundles.xstream.version>
         <org.apache.servicemix.specs.jaxrs-api-2.1.version>2.9.1</org.apache.servicemix.specs.jaxrs-api-2.1.version>
         <org.json>20090211</org.json>
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
@@ -264,7 +264,7 @@
         <pax-cdi.version>1.0.0.RC2</pax-cdi.version>
         <pax-exam.version>4.13.1</pax-exam.version>
         <pax-logging.version>1.11.13</pax-logging.version>
-        <pax-url.version>2.6.2</pax-url.version>
+        <pax-url.version>2.6.11</pax-url.version>
         <quartz.version>2.3.2</quartz.version>
         <rome.version>1.15.0</rome.version>
         <slf4j.version>1.7.36</slf4j.version>
@@ -282,6 +282,7 @@
         <zipkin-reporter.version>2.16.3</zipkin-reporter.version>
         <zipkin.version>2.23.2</zipkin.version>
         <apache-xmlsec.version>2.2.3</apache-xmlsec.version>
+        <xerces.version>2.12.2</xerces.version>
     </properties>
 
     <dependencyManagement>
@@ -1541,6 +1542,21 @@
                 <groupId>org.jdom</groupId>
                 <artifactId>jdom2</artifactId>
                 <version>${jdom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-handler</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-codec</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>${xerces.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

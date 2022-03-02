@@ -31,7 +31,6 @@ import java.util.concurrent.TimeUnit;
 
 import javax.xml.namespace.QName;
 
-import org.apache.log4j.MDC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
@@ -42,6 +41,16 @@ import org.talend.esb.servicelocator.client.ServiceLocator;
 import org.talend.esb.servicelocator.client.ServiceLocatorException;
 
 public class LocatorMonitor {
+
+    private static class MDC {
+        public static void put(String key, Object value) {
+            org.slf4j.MDC.put(key, value.toString());
+        }
+
+        public static void remove(String key) {
+            org.slf4j.MDC.remove(key);
+        }
+    }
 
     public static final String MONITORING = "Monitoring";
 
