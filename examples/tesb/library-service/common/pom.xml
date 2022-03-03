@@ -28,9 +28,9 @@
 		<use.service.registry>false</use.service.registry>
 	</properties>
 
-	<dependencies>
+    <dependencies>
 
-		<!-- CXF -->
+        <!-- CXF -->
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.jaxws-api-2.2</artifactId>
@@ -50,20 +50,20 @@
             <artifactId>cxf-xjc-runtime</artifactId>
         </dependency>
 
-		<!-- logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-		</dependency>
-	</dependencies>
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-reload4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.reload4j</groupId>
+            <artifactId>reload4j</artifactId>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<finalName>tesb-library-tutorial</finalName>
