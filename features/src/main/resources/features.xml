@@ -220,12 +220,12 @@
   </feature>
 
   <feature name='tesb-locator-soap-service' version='${original.version}'>
-    <configfile finalname="/etc/org.talend.esb.locator.token.policy">mvn:org.talend.esb.locator.service/locator-soap-service/${original.version}/policy/org.talend.esb.locator.token</configfile>
-    <configfile finalname="/etc/org.talend.esb.locator.saml.policy">mvn:org.talend.esb.locator.service/locator-soap-service/${original.version}/policy/org.talend.esb.locator.saml</configfile>
-    <configfile finalname="/etc/org.talend.esb.locator.service.cfg">mvn:org.talend.esb.locator.service/locator-soap-service/${original.version}/cfg/org.talend.esb.locator.service</configfile>
+    <configfile finalname="/etc/org.talend.esb.locator.token.policy">mvn:org.talend.esb.locator.service/locator-soap-service/${locator-soap-service.version}/policy/org.talend.esb.locator.token</configfile>
+    <configfile finalname="/etc/org.talend.esb.locator.saml.policy">mvn:org.talend.esb.locator.service/locator-soap-service/${locator-soap-service.version}/policy/org.talend.esb.locator.saml</configfile>
+    <configfile finalname="/etc/org.talend.esb.locator.service.cfg">mvn:org.talend.esb.locator.service/locator-soap-service/${locator-soap-service.version}/cfg/org.talend.esb.locator.service</configfile>
     <feature>tesb-locator-client</feature>
     <bundle>mvn:org.talend.esb.locator.service/locator-service-common/${original.version}</bundle>
-    <bundle>mvn:org.talend.esb.locator.service/locator-soap-service/${original.version}</bundle>
+    <bundle>mvn:org.talend.esb.locator.service/locator-soap-service/${locator-soap-service.version}</bundle>
   </feature>
 
   <feature name='tesb-locator-rest-service' version='${original.version}'>

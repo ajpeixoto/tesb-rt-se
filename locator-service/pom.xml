@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.talend.esb</groupId>
             <artifactId>locator</artifactId>
-            <version>${project.version}</version>
+            <version>${original.version}</version>
         </dependency>
     </dependencies>
 
