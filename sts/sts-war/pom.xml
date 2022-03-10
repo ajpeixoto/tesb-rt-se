@@ -18,12 +18,17 @@
     <artifactId>cxf-sts-war</artifactId>
     <packaging>war</packaging>
     <name>Talend ESB :: STS :: War</name>
+    <version>${revision}</version>
 
     <parent>
         <groupId>org.talend.esb</groupId>
         <artifactId>sts</artifactId>
         <version>8.0.1-SNAPSHOT</version>
     </parent>
+    
+    <properties>
+        <revision>${cxf-sts-war.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>

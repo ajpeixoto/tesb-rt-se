@@ -111,6 +111,12 @@
         <ds-service-oracle.version>${original.version}</ds-service-oracle.version>
         <ds-service-postgresql.version>${original.version}</ds-service-postgresql.version>
         <ds-service-sqlserver.version>${original.version}</ds-service-sqlserver.version>
+        <org.talend.esb.job.controller.version>${original.version}</org.talend.esb.job.controller.version>
+        <locator-soap-service.version>${original.version}</locator-soap-service.version>
+        <sam-agent.version>${original.version}</sam-agent.version>
+        <sam-service-soap.version>${original.version}</sam-service-soap.version>
+        <org.talend.esb.sts.config.version>${original.version}</org.talend.esb.sts.config.version>
+        <cxf-sts-war.version>${original.version}</cxf-sts-war.version>
 
         <!-- eclipse osgi version -->
         <eclipse.osgi.version>3.13.300</eclipse.osgi.version>
@@ -1484,12 +1490,12 @@
             <dependency>
                 <groupId>org.talend.esb.sam.service</groupId>
                 <artifactId>sam-service-soap</artifactId>
-                <version>${original.version}</version>
+                <version>${sam-service-soap.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb.sts</groupId>
                 <artifactId>cxf-sts-war</artifactId>
-                <version>${original.version}</version>
+                <version>${cxf-sts-war.version}</version>
                 <type>war</type>
             </dependency>
             <dependency>
@@ -1506,7 +1512,7 @@
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>sam-agent</artifactId>
-                <version>${original.version}</version>
+                <version>${sam-agent.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.talend.esb</groupId>
@@ -2001,6 +2007,12 @@
                 <ds-service-oracle.version>8.0.1.20220318</ds-service-oracle.version>
                 <ds-service-postgresql.version>8.0.1.20220318</ds-service-postgresql.version>
                 <ds-service-sqlserver.version>8.0.1.20220318</ds-service-sqlserver.version>
+                <org.talend.esb.job.controller.version>8.0.1.20220318</org.talend.esb.job.controller.version>
+                <locator-soap-service.version>8.0.1.20220318</locator-soap-service.version>
+                <sam-agent.version>8.0.1.20220318</sam-agent.version>
+                <sam-service-soap.version>8.0.1.20220318</sam-service-soap.version>
+                <org.talend.esb.sts.config.version>8.0.1.20220318</org.talend.esb.sts.config.version>
+                <cxf-sts-war.version>8.0.1.20220318</cxf-sts-war.version>
             </properties>
         </profile>
     </profiles>
