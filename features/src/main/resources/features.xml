@@ -245,7 +245,7 @@
   <feature name="tesb-encryptor-command" version="${original.version}">
     <feature>jasypt-encryption</feature>
     <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>
-    <bundle start-level='50'>mvn:org.talend.esb/text-encryptor/${original.version}</bundle>
+    <bundle start-level='50'>mvn:org.talend.esb/text-encryptor/${text-encryptor.version}</bundle>
   </feature>
 
   <feature name="talend-job-api" version="${original.version}">

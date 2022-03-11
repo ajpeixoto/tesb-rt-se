@@ -114,6 +114,7 @@
         <correlationid-policy.version>${project.parent.version}</correlationid-policy.version>
         <locator-soap-service.version>${project.parent.version}</locator-soap-service.version>
         <cxf-sts-war.version>${project.parent.version}</cxf-sts-war.version>
+        <text-encryptor.version>${project.parent.version}</text-encryptor.version>
 
         <org.apache.karaf.config.core.tesb.version>4.2.7.tesb1</org.apache.karaf.config.core.tesb.version>
         <cxf-rt-rs-service-description-swagger.tesb.version>3.3.11.tesb1</cxf-rt-rs-service-description-swagger.tesb.version>
@@ -726,11 +727,12 @@
                 <sam-server.version>7.3.1.20210723</sam-server.version>
                 <sam-service-rest.version>7.3.1.20210723</sam-service-rest.version>
                 <sam-service-soap.version>7.3.1.20220408</sam-service-soap.version>
-                <security-common.version>7.3.1.20210618</security-common.version>
+                <security-common.version>7.3.1.20220408</security-common.version>
                 <cxf-crypto-config.version>7.3.1.20210618</cxf-crypto-config.version>
                 <correlationid-policy.version>7.3.1.20220304</correlationid-policy.version>
                 <locator-soap-service.version>7.3.1.20220408</locator-soap-service.version>
                 <cxf-sts-war.version>7.3.1.20220408</cxf-sts-war.version>
+                <text-encryptor.version>7.3.1.20220408</text-encryptor.version>
             </properties>
         </profile>
     </profiles>

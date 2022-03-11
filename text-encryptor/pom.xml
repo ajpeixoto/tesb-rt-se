@@ -8,7 +8,7 @@
     <artifactId>text-encryptor</artifactId>
     <name>Talend ESB :: Encryptor :: Commands</name>
     <description>Encryptor Commands</description>
-    <version>7.3.2-SNAPSHOT</version>
+    <version>${revision}</version>
     
 
     <parent>
@@ -16,6 +16,10 @@
         <groupId>org.talend.esb</groupId>
         <version>7.3.2-SNAPSHOT</version>
     </parent>
+    
+    <properties>
+        <revision>${text-encryptor.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>
