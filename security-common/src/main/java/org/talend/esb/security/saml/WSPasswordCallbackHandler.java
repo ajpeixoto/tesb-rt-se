@@ -35,7 +35,8 @@ import org.slf4j.LoggerFactory;
 public class WSPasswordCallbackHandler implements CallbackHandler {
     
     private static final transient Logger LOG = LoggerFactory.getLogger(WSPasswordCallbackHandler.class);
-    private static final String ALGORITHM = "PBEWITHSHA256AND128BITAES-CBC-BC";
+    private static final String ALGORITHM = "PBEWITHSHA256AND256BITAES-CBC-BC";
+    private static final String ALGORITH_ENV_NAME = "TESB_ENV_ALGORITHM";
     private static final String PASSWORD_ENV_NAME = "TESB_ENV_PASSWORD";
     private static final String PROVIDER_NAME = "BC";
 
@@ -48,7 +49,10 @@ public class WSPasswordCallbackHandler implements CallbackHandler {
             EnvironmentStringPBEConfig env = new EnvironmentStringPBEConfig();
             env.setProvider(new BouncyCastleProvider());
             env.setProviderName(PROVIDER_NAME);
-            env.setAlgorithm(ALGORITHM);
+            env.setAlgorithmEnvName(ALGORITH_ENV_NAME);
+            if (env.getAlgorithm() == null) {
+                env.setAlgorithm(ALGORITHM);
+            }
             env.setPasswordEnvName(PASSWORD_ENV_NAME);
             enc.setConfig(env);
             pass = PropertyValueEncryptionUtils.decrypt(password, enc);

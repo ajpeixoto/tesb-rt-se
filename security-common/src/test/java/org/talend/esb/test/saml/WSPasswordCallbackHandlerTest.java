@@ -21,18 +21,9 @@ import javax.security.auth.callback.Callback;
 
 public class WSPasswordCallbackHandlerTest {
 
-	private static final String ALGORITHM = "PBEWITHSHA256AND128BITAES-CBC-BC";
+	private static final String ALGORITHM = "PBEWITHSHA256AND256BITAES-CBC-BC";
 	private static final String PASSWORD_ENV_NAME = "TESB_ENV_PASSWORD";
 	private static final String PROVIDER_NAME = "BC";
-
-	static {
-		try {
-			setEnvironmentVariable(PASSWORD_ENV_NAME, "pwd");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
 
 	@Test
 	public void handleNotEncryptedPasswordTest() throws Exception {
@@ -68,9 +59,12 @@ public class WSPasswordCallbackHandlerTest {
 
 	}
 
-	@Ignore
+	@Test
 	public void handleEncryptedPasswordTest() throws Exception {
-
+		Map<String, String> newEnv = new HashMap<>();
+		newEnv.put(PASSWORD_ENV_NAME, "pwd");
+		setEnv(newEnv);
+		
 		String username = "username";
 		String password = PropertyValueEncryptionUtils.encrypt("password", getEncryptor());
 
@@ -97,29 +91,32 @@ public class WSPasswordCallbackHandlerTest {
 
 		return enc;
 	}
-
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static void setEnvironmentVariable(String key, String value) throws Exception {
-
-		System.getProperties().put(key, value);
-
-		Map<String, String> env = System.getenv();
-
-		Map<String, String> newenv = new HashMap<String, String>();
-		newenv.put(key, value);
-		for (Map.Entry<String, String> entry : env.entrySet()) {
-			newenv.put(entry.getKey(), entry.getValue());
-		}
-
-		Class[] classes = Collections.class.getDeclaredClasses();
-		for (Class cl : classes) {
-			if ("java.util.Collections$UnmodifiableMap".equals(cl.getName())) {
-				Field field = cl.getDeclaredField("m");
-				field.setAccessible(true);
-				Object obj = field.get(env);
-				Map<String, String> map = (Map<String, String>) obj;
-				map.clear();
-				map.putAll(newenv);
+	
+	@SuppressWarnings({"unchecked"})
+	protected static void setEnv(Map<String, String> newenv) throws Exception {
+		try {
+			Class<?> processEnvironmentClass = Class.forName("java.lang.ProcessEnvironment");
+			Field theEnvironmentField = processEnvironmentClass.getDeclaredField("theEnvironment");
+			theEnvironmentField.setAccessible(true);
+			Map<String, String> env = (Map<String, String>) theEnvironmentField.get(null);
+			env.putAll(newenv);
+			Field theCaseInsensitiveEnvironmentField = processEnvironmentClass.getDeclaredField(
+					"theCaseInsensitiveEnvironment");
+			theCaseInsensitiveEnvironmentField.setAccessible(true);
+			Map<String, String> cienv = (Map<String, String>) theCaseInsensitiveEnvironmentField.get(null);
+			cienv.putAll(newenv);
+		} catch (NoSuchFieldException e) {
+			Class[] classes = Collections.class.getDeclaredClasses();
+			Map<String, String> env = System.getenv();
+			for (Class cl : classes) {
+				if ("java.util.Collections$UnmodifiableMap".equals(cl.getName())) {
+					Field field = cl.getDeclaredField("m");
+					field.setAccessible(true);
+					Object obj = field.get(env);
+					Map<String, String> map = (Map<String, String>) obj;
+					map.clear();
+					map.putAll(newenv);
+				}
 			}
 		}
 	}
