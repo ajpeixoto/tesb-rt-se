@@ -117,6 +117,8 @@
         <sam-service-soap.version>${original.version}</sam-service-soap.version>
         <org.talend.esb.sts.config.version>${original.version}</org.talend.esb.sts.config.version>
         <cxf-sts-war.version>${original.version}</cxf-sts-war.version>
+        <security-common.version>${original.version}</security-common.version>
+        <text-encryptor.version>${original.version}</text-encryptor.version>
 
         <!-- eclipse osgi version -->
         <eclipse.osgi.version>3.13.300</eclipse.osgi.version>
@@ -2013,6 +2015,8 @@
                 <sam-service-soap.version>8.0.1.20220318</sam-service-soap.version>
                 <org.talend.esb.sts.config.version>8.0.1.20220318</org.talend.esb.sts.config.version>
                 <cxf-sts-war.version>8.0.1.20220318</cxf-sts-war.version>
+                <security-common.version>8.0.1.20220318</security-common.version>
+                <text-encryptor.version>8.0.1.20220318</text-encryptor.version>
             </properties>
         </profile>
     </profiles>

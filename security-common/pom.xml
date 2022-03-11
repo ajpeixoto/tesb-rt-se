@@ -14,7 +14,12 @@
     <artifactId>security-common</artifactId>
     <packaging>bundle</packaging>
     <name>Talend ESB :: Security :: Common</name>
+    <version>${revision}</version>
 
+    <properties>
+        <revision>${security-common.version}</revision>
+    </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.apache.cxf</groupId>

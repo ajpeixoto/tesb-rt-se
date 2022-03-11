@@ -14,7 +14,8 @@ import org.jasypt.properties.PropertyValueEncryptionUtils;
 @Service
 public class TextEncryptor implements Action {
 
-    private static final String ALGORITHM = "PBEWITHSHA256AND128BITAES-CBC-BC";
+    private static final String ALGORITHM = "PBEWITHSHA256AND256BITAES-CBC-BC";
+    private static final String ALGORITHM_ENV_NAME = "TESB_ENV_ALGORITHM";
     private static final String PASSWORD_ENV_NAME = "TESB_ENV_PASSWORD";
     private static final String PROVIDER_NAME = "BC";
 
@@ -41,7 +42,10 @@ public class TextEncryptor implements Action {
         EnvironmentStringPBEConfig env = new EnvironmentStringPBEConfig();
         env.setProvider(new BouncyCastleProvider());
         env.setProviderName(PROVIDER_NAME);
-        env.setAlgorithm(ALGORITHM);
+        env.setAlgorithmEnvName(ALGORITHM_ENV_NAME);
+        if (env.getAlgorithm() == null) {
+            env.setAlgorithm(ALGORITHM);
+        }
         if (encryptionPassword != null) {
             env.setPassword(encryptionPassword);
             System.out.println("Specified password for decryption should be set to " + PASSWORD_ENV_NAME + " env variable");
