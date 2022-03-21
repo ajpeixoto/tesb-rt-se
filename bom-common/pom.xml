@@ -99,6 +99,10 @@
         <!-- final packages version -->
         <packages.version>${project.version}</packages.version>
 
+        <!-- zookeeper configuration -->
+        <zookeeper.admin.enableServer>false</zookeeper.admin.enableServer>
+        <zookeeper.admin.serverPort>9090</zookeeper.admin.serverPort>
+
         <!-- esb features versions -->
         <esb.features.version>${project.version}</esb.features.version>
 

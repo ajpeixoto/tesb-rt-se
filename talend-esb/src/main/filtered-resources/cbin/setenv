@@ -37,7 +37,7 @@
 #
 # export JAVA_HOME # Location of Java installation
 # export JAVA_MIN_MEM # Minimum memory for the JVM
-export JAVA_MAX_MEM=1024M # Maximum memory for the JVM
+export JAVA_MAX_MEM=2048M # Maximum memory for the JVM
 # export JAVA_PERM_MEM # Minimum perm memory for the JVM
 # export JAVA_MAX_PERM_MEM # Maximum perm memory for the JVM
 # export EXTRA_JAVA_OPTS # Additional JVM options
@@ -51,3 +51,6 @@ export JAVA_MAX_MEM=1024M # Maximum memory for the JVM
 # export KARAF_DEBUG # Enable debug mode
 # export KARAF_REDIRECT # Enable/set the std/err redirection when using bin/start
 # export KARAF_NOROOT # Prevent execution as root if set to true
+
+export "JAVA_TOOL_OPTIONS=-Dlog4j2.formatMsgNoLookups=true"
+export "EXTRA_JAVA_OPTS=$EXTRA_JAVA_OPTS -Dzookeeper.admin.enableServer=${zookeeper.admin.enableServer} -Dzookeeper.admin.serverPort=${zookeeper.admin.serverPort}"
