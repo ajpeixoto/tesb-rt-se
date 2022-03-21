@@ -43,7 +43,7 @@ rem SET JAVA_HOME
 rem Minimum memory for the JVM
 rem SET JAVA_MIN_MEM
 rem Maximum memory for the JVM
-SET JAVA_MAX_MEM=1024M
+SET JAVA_MAX_MEM=2048M
 rem Minimum perm memory for the JVM
 rem SET JAVA_PERM_MEM
 rem Maximum perm memory for the JVM
@@ -65,3 +65,5 @@ rem SET KARAF_OPTS
 rem Enable debug mode
 rem SET KARAF_DEBUG
 
+SET "JAVA_TOOL_OPTIONS=-Dlog4j2.formatMsgNoLookups=true"
+SET "EXTRA_JAVA_OPTS=%EXTRA_JAVA_OPTS% -Dzookeeper.admin.enableServer=${zookeeper.admin.enableServer} -Dzookeeper.admin.serverPort=${zookeeper.admin.serverPort}"
