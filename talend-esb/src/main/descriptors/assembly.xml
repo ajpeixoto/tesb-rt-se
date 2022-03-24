@@ -203,7 +203,6 @@
                 <exclude>etc/jre.properties</exclude>
                 <!-- fix TESB-29223 -->
                 <exclude>etc/org.apache.karaf.features.xml</exclude>
-                <exclude>lib/endorsed/**</exclude>
                 <!-- Patch jackson version (TESB-24693) -->
                 <exclude>system/org/apache/karaf/features/enterprise/${karaf.version}/enterprise-${karaf.version}-features.xml</exclude>
                 <exclude>system/org/apache/karaf/features/spring/${karaf.version}/spring-${karaf.version}-features.xml</exclude>
@@ -359,6 +358,14 @@
             <lineEnding>unix</lineEnding>
             <fileMode>0644</fileMode>
             <directoryMode>777</directoryMode>
+        </fileSet>
+        
+        <!-- Copy additional libs endorsed & jdk9plus -->
+        <fileSet>
+            <directory>target/container/lib</directory>
+            <outputDirectory>./container/lib</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>755</directoryMode>
         </fileSet>
 
         <fileSet>
