@@ -327,6 +327,14 @@
             <fileMode>0644</fileMode>
             <directoryMode>777</directoryMode>
         </fileSet>
+        
+        <!-- Copy additional libs endorsed & jdk9plus -->
+        <fileSet>
+            <directory>target/container/lib</directory>
+            <outputDirectory>./container/lib</outputDirectory>
+            <fileMode>0644</fileMode>
+            <directoryMode>755</directoryMode>
+        </fileSet>
 
         <!-- Copy Add-ons -->
         <fileSet>
