@@ -39,18 +39,21 @@
         <!-- used for assembly & dependency type, overwritten by dev-unix-assembly-only & dev-win-assembly-only profiles -->
         <assembly.formats>tar.gz,zip</assembly.formats>
         <activemq.tesb.version>5.15.15</activemq.tesb.version>
-        <pax-logging.tesb.version>1.11.2.tesb1</pax-logging.tesb.version>
+        <pax-logging.tesb.version>1.11.15</pax-logging.tesb.version>
         <!-- version updates from the patch -->
-        <standard.features.tesb.version>4.2.7.tesb5</standard.features.tesb.version>
+        <standard.features.tesb.version>4.2.7.tesb11</standard.features.tesb.version>
         <enterprise.features.tesb.version>4.2.7.tesb2</enterprise.features.tesb.version>
+        <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
+        <framework.features.tesb.version>4.2.7.tesb4</framework.features.tesb.version>
         <spring.features.tesb.version>4.2.7.tesb2</spring.features.tesb.version>
-        <apache-cxf.features.tesb.version>3.3.4.tesb4</apache-cxf.features.tesb.version>
-        <apache-camel.features.tesb.version>2.24.2.tesb10</apache-camel.features.tesb.version>
-        <pax-web.features.tesb.version>7.2.12.tesb2</pax-web.features.tesb.version>
-        <activemq.features.tesb.version>5.15.10.tesb4</activemq.features.tesb.version>
+        <apache-cxf.features.tesb.version>3.3.11.tesb2</apache-cxf.features.tesb.version>
+        <apache-cxf-xkms.features.tesb.version>3.3.11.tesb2</apache-cxf-xkms.features.tesb.version>
+        <apache-camel.features.tesb.version>2.24.2.tesb20</apache-camel.features.tesb.version>
+        <pax-web.features.tesb.version>7.2.21.tesb2</pax-web.features.tesb.version>
+        <activemq.features.tesb.version>5.15.15.tesb3</activemq.features.tesb.version>
         <hibernate-validator.features.tesb.version>6.0.17.Final.tesb2</hibernate-validator.features.tesb.version>
-        <jobserver.version>7.3.1.20210225_1645_patch</jobserver.version>
-        <tdm.version>7.3.1.20210423</tdm.version>
+        <jobserver.version>7.3.1.20220207_1020_patch</jobserver.version>
+        <tdm.version>7.3.1.20220408</tdm.version>
     </properties>
 
     <dependencies>
@@ -128,19 +131,18 @@
                         <configuration>
                             <descriptors>
                                 <descriptor>mvn:org.apache.karaf.features/standard/${standard.features.tesb.version}/xml/features</descriptor>
-                                <!-- <descriptor>file:${basedir}/target/dependencies/standard-${karaf.version}-features.xml</descriptor> -->
                                 <descriptor>mvn:org.apache.karaf.features/spring/${spring.features.tesb.version}/xml/features</descriptor>
-                                <!-- <descriptor>mvn:org.apache.karaf.features/spring-legacy/${karaf.version}/xml/features</descriptor>-->
                                 <descriptor>file:${basedir}/target/dependencies/spring-legacy-${karaf.version}-features.xml</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/enterprise/${enterprise.features.tesb.version}/xml/features</descriptor>
-                                <descriptor>mvn:org.apache.karaf.features/enterprise-legacy/${karaf.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.features/enterprise-legacy/${enterprise-legacy.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.features/framework/${framework.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.jclouds.karaf/jclouds-karaf/${jclouds.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.decanter/apache-karaf-decanter/${decanter.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.web/pax-web-features/${pax-web.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.cxf.karaf/apache-cxf/${apache-cxf.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.cxf.services.xkms/cxf-services-xkms-features/${apache-cxf-xkms.features.tesb.version}/xml</descriptor>
                                 <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${apache-camel.features.tesb.version}/xml/features</descriptor>
-<!--                                 <descriptor>file:${basedir}/target/dependencies/apache-camel-${camel.version}-features.xml</descriptor> -->
                                 <descriptor>mvn:org.talend.esb/features/${project.version}/xml</descriptor>
                                 <descriptor>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${project.version}/xml</descriptor>
                             </descriptors>
