@@ -129,12 +129,12 @@
 
         <!-- karaf version -->
         <karaf.version>4.2.11</karaf.version>
-        <standard.features.tesb.version>4.2.11.20220222</standard.features.tesb.version>
-        <framework.features.tesb.version>4.2.11.20220318</framework.features.tesb.version>
+        <standard.features.tesb.version>4.2.11.20220422</standard.features.tesb.version>
+        <framework.features.tesb.version>4.2.11.20220422</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.2.11.20220318</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.11.20220318</enterprise-legacy.features.tesb.version>
         <spring.features.tesb.version>4.2.11.20220318</spring.features.tesb.version>
-        <spring-legacy.features.tesb.version>4.2.11.20220318</spring-legacy.features.tesb.version>
+        <spring-legacy.features.tesb.version>4.2.11.20220422</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
