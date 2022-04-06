@@ -122,8 +122,9 @@
         <cxf.version>3.3.11</cxf.version>
         <camel.version>2.24.2</camel.version>
         <activemq.version>5.15.15</activemq.version>
-        <spring.version>5.2.18.RELEASE</spring.version>
-        <spring.bundle.version>5.2.13.RELEASE_1</spring.bundle.version>
+        <spring.version>5.3.18</spring.version>
+        <spring.bundle.version>5.3.18_1</spring.bundle.version>
+        <spring.version.range>[5.2,6)</spring.version.range>
         <karaf.version>4.2.7</karaf.version>
         <decanter.version>2.2.0</decanter.version>
         <zookeeper.version>3.4.14</zookeeper.version>
@@ -171,7 +172,7 @@
         <reload4j.version>1.2.19</reload4j.version>
         <log4j2.version>2.17.1</log4j2.version>
         <javax-annotation.version>1.3.1</javax-annotation.version>
-        <jackson.version>2.11.4</jackson.version>
+        <jackson.version>2.13.2</jackson.version>
         <qpid-jms.version>0.11.1</qpid-jms.version>
         <fastjson.version>1.2.37_1</fastjson.version>
         <sparkjava-core.version>2.6.0_1</sparkjava-core.version>
@@ -716,7 +717,7 @@
             <properties>
                 <original.version>7.3.1</original.version>
                 <features.version>7.3.1.20220408</features.version>
-                <auxiliary-storage-features.version>7.3.1.20220211</auxiliary-storage-features.version>
+                <auxiliary-storage-features.version>7.3.1.20220408</auxiliary-storage-features.version>
                 <auxiliary-storage-client.version>7.3.1.20210618</auxiliary-storage-client.version>
                 <auxiliary-storage-service-rest.version>7.3.1.20220211</auxiliary-storage-service-rest.version>
                 <auxiliary-storage-rest-security.version>7.3.1.20210618</auxiliary-storage-rest-security.version>

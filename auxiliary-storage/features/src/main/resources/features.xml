@@ -49,7 +49,7 @@
         <configfile finalname="/etc/org.talend.esb.auxiliary.storage.client.rest.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-client-rest/${auxiliary-storage-client.version}/cfg/org.talend.esb.auxiliary.storage.client.rest</configfile>
         <!-- Common dependency -->
         <feature version="${original.version}">tesb-aux-common</feature>
-        <feature version="[4.3,6)">spring</feature>
+        <feature version="${spring.version.range}">spring</feature>
         <!--Provided bundles  -->
         <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
         <bundle>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-client-common/${original.version}</bundle>
@@ -80,7 +80,7 @@
         <configfile finalname="/etc/org.talend.esb.auxiliary.storage.service.cfg">mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-service-rest/${auxiliary-storage-service-rest.version}/cfg/org.talend.esb.auxiliary.storage.service</configfile>
         <!-- Common dependency -->
         <feature version="${original.version}">tesb-aux-common</feature>
-        <feature version="[4.3,6)">spring</feature>
+        <feature version="${spring.version.range}">spring</feature>
         <!--Provided bundles  -->
         <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
         <bundle>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-service-rest/${auxiliary-storage-service-rest.version}</bundle>

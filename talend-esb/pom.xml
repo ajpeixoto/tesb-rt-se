@@ -42,15 +42,15 @@
         <pax-logging.tesb.version>1.11.15</pax-logging.tesb.version>
         <!-- version updates from the patch -->
         <standard.features.tesb.version>4.2.7.tesb11</standard.features.tesb.version>
-        <enterprise.features.tesb.version>4.2.7.tesb2</enterprise.features.tesb.version>
+        <enterprise.features.tesb.version>4.2.7.tesb3</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
         <framework.features.tesb.version>4.2.7.tesb4</framework.features.tesb.version>
-        <spring.features.tesb.version>4.2.7.tesb2</spring.features.tesb.version>
+        <spring.features.tesb.version>4.2.7.tesb3</spring.features.tesb.version>
         <apache-cxf.features.tesb.version>3.3.11.tesb2</apache-cxf.features.tesb.version>
         <apache-cxf-xkms.features.tesb.version>3.3.11.tesb2</apache-cxf-xkms.features.tesb.version>
-        <apache-camel.features.tesb.version>2.24.2.tesb20</apache-camel.features.tesb.version>
+        <apache-camel.features.tesb.version>2.24.2.tesb21</apache-camel.features.tesb.version>
         <pax-web.features.tesb.version>7.2.21.tesb2</pax-web.features.tesb.version>
-        <activemq.features.tesb.version>5.15.15.tesb3</activemq.features.tesb.version>
+        <activemq.features.tesb.version>5.15.15.tesb4</activemq.features.tesb.version>
         <hibernate-validator.features.tesb.version>6.0.17.Final.tesb2</hibernate-validator.features.tesb.version>
         <jobserver.version>7.3.1.20220207_1020_patch</jobserver.version>
         <tdm.version>7.3.1.20220408</tdm.version>
