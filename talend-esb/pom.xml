@@ -148,6 +148,8 @@
                             </descriptors>
                             <features>
                                 <!-- Core Features -->
+                                <feature>framework</feature>
+                                <feature>framework-logback</feature>
                                 <feature>spring-aspects/5.1.9.RELEASE_1</feature>
                                 <feature>spring-instrument/5.1.9.RELEASE_1</feature>
                                 <feature>spring-messaging/5.1.9.RELEASE_1</feature>
@@ -649,7 +651,7 @@
                                 <artifactItem>
                                     <groupId>org.apache.activemq</groupId>
                                     <artifactId>activemq-karaf</artifactId>
-                                    <version>${activemq.version}</version>
+                                    <version>${activemq.features.tesb.version}</version>
                                     <type>xml</type>
                                     <classifier>features-core</classifier>
                                     <outputDirectory>target/dependencies</outputDirectory>
@@ -920,6 +922,13 @@
                                 <artifactItem>
                                     <groupId>org.ops4j.pax.logging</groupId>
                                     <artifactId>pax-logging-log4j2</artifactId>
+                                    <version>${pax-logging.tesb.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.ops4j.pax.logging</groupId>
+                                    <artifactId>pax-logging-log4j2-extra</artifactId>
                                     <version>${pax-logging.tesb.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>target/dependencies</outputDirectory>
@@ -1394,9 +1403,9 @@
                                     <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/7.2.11/xml/features&lt;"
                                                    value="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features&lt;"/>
                                 </replace>
-                                 <!-- patch for pax-logging-log4j2-->
+                                 <!-- patch for pax-logging-*-->
                                  <replaceregexp byline="true"
-                                        match="^(\s*mvn\\:org\.ops4j\.pax\.logging/pax-logging-log4j2/)1.11.2(\s*=.*)$"
+                                        match="^(\s*mvn\\:org\.ops4j\.pax\.logging/pax-logging-\w+/)[-._0-9]+(\s*=.*)$"
                                         replace="\1${pax-logging.tesb.version}\2">
                                     <fileset dir="target/dependencies/apache-karaf/apache-karaf-${karaf.version}/etc/">
                                         <include name="startup.properties"/>
@@ -1591,7 +1600,7 @@
                                     </replacefilter>
                                     <replacefilter>
                                         <replacetoken>mvn:org.apache.activemq/activemq-osgi/5.15.10&lt;</replacetoken>
-                                        <replacevalue>mvn:org.apache.activemq/activemq-osgi/${activemq.tesb.version}&lt;</replacevalue>
+                                        <replacevalue>mvn:org.apache.activemq/activemq-osgi/${activemq.features.tesb.version}&lt;</replacevalue>
                                     </replacefilter>
                                     <!-- Patch the TESB-24618 Upgrade CXF 3.3.1 -->
                                     <replacefilter>
@@ -1752,6 +1761,51 @@
                                     <fileset dir="target/features-repo"/>
                                     <mapper type="regexp" from="^(.*)-[0-9]{8}\.[0-9]{6}-[0-9]*(.*)$$" to="\1-SNAPSHOT\2"/>
                                 </move>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>copy-needed-bin-scripts</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <target>
+                                <echo message="Copy all bin/* files" />
+                                <copy todir="target/container/bin" overwrite="true">
+                                    <fileset dir="target/dependencies/apache-karaf/apache-karaf-${karaf.version}/bin">
+                                        <include name="contrib/*" />
+                                        <include name="client" />
+                                        <include name="client.bat" />
+                                        <include name="inc" />
+                                        <include name="karaf" />
+                                        <include name="karaf.bat" />
+                                        <include name="setenv" />
+                                        <include name="setenv.bat" />
+                                        <include name="start" />
+                                        <include name="start.bat" />
+                                        <include name="stop" />
+                                        <include name="stop.bat" />
+                                    </fileset>
+                                </copy>
+                                <echo message="Rename karaf* to trun*" />
+                                <move file="target/container/bin/karaf" tofile="target/container/bin/trun" />
+                                <move file="target/container/bin/karaf.bat" tofile="target/container/bin/trun.bat" />
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>update-bin-scripts</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <target>
+                                <ant antfile="src/main/descriptors/bin-build.xml">
+                                    <target name="process-bin"/>
+                                </ant>
                             </target>
                         </configuration>
                         <goals>
