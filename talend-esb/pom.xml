@@ -529,6 +529,51 @@
                             <goal>run</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>copy-needed-bin-scripts</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <target>
+                                <echo message="Copy all bin/* files" />
+                                <copy todir="target/container/bin" overwrite="true">
+                                    <fileset dir="target/dependencies/apache-karaf/apache-karaf-${karaf.version}/bin">
+                                        <include name="contrib/*" />
+                                        <include name="client" />
+                                        <include name="client.bat" />
+                                        <include name="inc" />
+                                        <include name="karaf" />
+                                        <include name="karaf.bat" />
+                                        <include name="setenv" />
+                                        <include name="setenv.bat" />
+                                        <include name="start" />
+                                        <include name="start.bat" />
+                                        <include name="stop" />
+                                        <include name="stop.bat" />
+                                    </fileset>
+                                </copy>
+                                <echo message="Rename karaf* to trun*" />
+                                <move file="target/container/bin/karaf" tofile="target/container/bin/trun" />
+                                <move file="target/container/bin/karaf.bat" tofile="target/container/bin/trun.bat" />
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>update-bin-scripts</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <target>
+                                <ant antfile="src/main/descriptors/bin-build.xml">
+                                    <target name="process-bin"/>
+                                </ant>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

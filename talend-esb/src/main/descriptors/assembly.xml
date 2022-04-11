@@ -193,18 +193,7 @@
 
         <!-- Copy over win bin/* separately to get the correct file mode -->
         <fileSet>
-            <directory>target/dependencies/apache-karaf/apache-karaf-${karaf.version}/bin</directory>
-            <outputDirectory>./container/bin</outputDirectory>
-            <includes>
-                <include>setenv.bat</include>
-                <include>client.bat</include>
-            </includes>
-            <lineEnding>dos</lineEnding>
-            <fileMode>0644</fileMode>
-            <directoryMode>777</directoryMode>
-        </fileSet>
-        <fileSet>
-            <directory>${basedir}/src/main/bin</directory>
+            <directory>target/container/bin</directory>
             <outputDirectory>./container/bin</outputDirectory>
             <includes>
                 <include>*.bat</include>
@@ -216,18 +205,7 @@
 
         <!-- Copy over bin/* separately to get the correct file mode -->
         <fileSet>
-            <directory>target/dependencies/apache-karaf/apache-karaf-${karaf.version}/bin</directory>
-            <outputDirectory>./container/bin</outputDirectory>
-            <includes>
-                <include>setenv</include>
-                <include>client</include>
-            </includes>
-            <lineEnding>unix</lineEnding>
-            <fileMode>0755</fileMode>
-            <directoryMode>777</directoryMode>
-        </fileSet>
-        <fileSet>
-            <directory>${basedir}/src/main/bin</directory>
+            <directory>target/container/bin</directory>
             <outputDirectory>./container/bin</outputDirectory>
             <excludes>
                 <exclude>*.bat</exclude>

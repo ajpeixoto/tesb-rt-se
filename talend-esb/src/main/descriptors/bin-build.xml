@@ -1,0 +1,95 @@
+<project>
+    <description>Process all container/bin</description>
+
+    <target name="process-bin">
+        <echo message="Files start*, stop*: call trun instead of karaf" />
+        <replaceregexp byline="false" flags="gim"
+                       match="(bin[/\\])karaf"
+                       replace="\1trun">
+            <fileset dir="target/container/bin">
+                <include name="start*" />
+                <include name="stop*" />
+            </fileset>
+        </replaceregexp>
+        <echo message="File start.bat: remove start to avoid opening a new window" />
+        <replaceregexp byline="false" flags="gim"
+                       match="start &quot;%KARAF_TITLE%&quot; /MIN "
+                       replace="">
+            <fileset dir="target/container/bin">
+                <include name="start.bat" />
+            </fileset>
+        </replaceregexp>
+        <echo message="File setenv*: update JAVA_MAX_MEM" />
+        <replaceregexp byline="false" flags="gim"
+                       match="(#|rem) (export|SET) JAVA_MAX_MEM(.*)"
+                       replace="\2 JAVA_MAX_MEM=2048M\3">
+            <fileset dir="target/container/bin">
+                <include name="setenv*" />
+            </fileset>
+        </replaceregexp>
+        <echo message="File setenv: add JAVA_TOOL_OPTIONS" />
+        <echo message="&#10;export &quot;JAVA_TOOL_OPTIONS=-Dlog4j2.formatMsgNoLookups=true&quot;"
+              file="target/container/bin/setenv"
+              append="true" />
+        <echo message="&#10;SET &quot;JAVA_TOOL_OPTIONS=-Dlog4j2.formatMsgNoLookups=true&quot;"
+              file="target/container/bin/setenv.bat"
+              append="true" />
+
+        <!-- specific to this version -->
+        <echo message="File setenv: add EXTRA_JAVA_OPTS" />
+        <echo message="&#10;export &quot;EXTRA_JAVA_OPTS=&#36;{EXTRA_JAVA_OPTS} -Dzookeeper.admin.enableServer=${zookeeper.admin.enableServer} -Dzookeeper.admin.serverPort=${zookeeper.admin.serverPort}&quot;"
+              file="target/container/bin/setenv"
+              append="true" />
+        <echo message="&#10;SET &quot;EXTRA_JAVA_OPTS=%EXTRA_JAVA_OPTS% -Dzookeeper.admin.enableServer=${zookeeper.admin.enableServer} -Dzookeeper.admin.serverPort=${zookeeper.admin.serverPort}&quot;"
+              file="target/container/bin/setenv.bat"
+              append="true" />
+        <echo message="File inc: add default JAVA_MIN_MEM and JAVA_MAX_MEM" />
+        <replaceregexp byline="false" flags="gim"
+                       match="setupDefaults\(\) \{"
+                       replace="\0&#10;
+    #&#10;
+    # Set up some easily accessible MIN/MAX params for JVM mem usage&#10;
+    #&#10;
+    if [ &quot;x&#36;{JAVA_MIN_MEM}&quot; = &quot;x&quot; ]; then&#10;
+        JAVA_MIN_MEM=128M&#10;
+        export JAVA_MIN_MEM&#10;
+    fi&#10;
+    if [ &quot;x&#36;{JAVA_MAX_MEM}&quot; = &quot;x&quot; ]; then&#10;
+        JAVA_MAX_MEM=512M&#10;
+        export JAVA_MAX_MEM&#10;
+    fi&#10;">
+            <fileset dir="target/container/bin">
+                <include name="inc" />
+            </fileset>
+        </replaceregexp>
+        <echo message="File trun: add -Xms and -Xmx" />
+        <replaceregexp byline="false" flags="gim"
+                       match="(run\(\) \{)"
+                       replace="\1&#10;export &quot;JAVA_OPTS=-Xms&#36;{JAVA_MIN_MEM} -Xmx&#36;{JAVA_MAX_MEM} &#36;{JAVA_OPTS}&quot;">
+            <fileset dir="target/container/bin">
+                <include name="trun" />
+            </fileset>
+        </replaceregexp>
+        <echo message="Files trun, start, stop: add setsecenv execution" />
+        <replaceregexp byline="false" flags="is"
+                       match=".+if.+?setenv.+?fi"
+                       replace="\0&#10;if [ -f &quot;&#36;{DIRNAME}/setsecenv&quot; ]; then&#10;. &quot;&#36;{DIRNAME}/setsecenv&quot;&#10;fi">
+            <fileset dir="target/container/bin">
+                <include name="trun" />
+                <include name="start" />
+                <include name="stop" />
+            </fileset>
+        </replaceregexp>
+        <echo message="Files trun.bat, start.bat, stop.bat: add setsecenv execution" />
+        <replaceregexp byline="false" flags="is"
+                       match=".+if.+?setenv.bat.+?\)"
+                       replace="\0&#10;if exist &quot;%DIRNAME%setsecenv.bat&quot; (&#10;call &quot;%DIRNAME%setsecenv.bat&quot;&#10;)">
+            <fileset dir="target/container/bin">
+                <include name="trun.bat" />
+                <include name="start.bat" />
+                <include name="stop.bat" />
+            </fileset>
+        </replaceregexp>
+
+    </target>
+</project>
