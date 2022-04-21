@@ -39,7 +39,7 @@
         <bundle start-level="30">mvn:jaxen/jaxen/${jaxen.bundle.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
+        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson-dataformat-yaml.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson-datatype-jsr310.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson-jaxrs.version}</bundle>
