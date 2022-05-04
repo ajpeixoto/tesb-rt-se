@@ -180,6 +180,7 @@
         <guava.version>30.1.1-jre</guava.version>
         <guava.failureaccess.version>1.0.1</guava.failureaccess.version>
         <groovy.version>2.5.14</groovy.version>
+        <groovy-json.version>${groovy.version}.tmp</groovy-json.version>
         <sshd-core.version>2.7.0</sshd-core.version>
         <apache-xmlsec.version>2.1.7</apache-xmlsec.version>
         <xstream.version>1.4.19</xstream.version>
@@ -714,6 +715,9 @@
         </profile>
         <profile>
             <id>patch</id>
+            <modules>
+                <module>groovy</module>
+            </modules>
             <properties>
                 <original.version>7.3.1</original.version>
                 <features.version>7.3.1.20220513</features.version>
@@ -734,6 +738,7 @@
                 <locator-soap-service.version>7.3.1.20220408</locator-soap-service.version>
                 <cxf-sts-war.version>7.3.1.20220408</cxf-sts-war.version>
                 <text-encryptor.version>7.3.1.20220408</text-encryptor.version>
+                <groovy-json.version>${groovy.version}.20220513</groovy-json.version>
             </properties>
         </profile>
     </profiles>

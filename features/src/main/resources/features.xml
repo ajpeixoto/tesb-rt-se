@@ -381,7 +381,7 @@
     <bundle start-level="50">mvn:org.codehaus.groovy/groovy-groovydoc/${groovy.version}</bundle>
     <bundle start-level="50">mvn:org.codehaus.groovy/groovy-groovysh/${groovy.version}</bundle>
     <bundle start-level="50">mvn:org.codehaus.groovy/groovy-jmx/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-json/${groovy.version}</bundle>
+    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-json/${groovy-json.version}</bundle>
     <bundle start-level="50">mvn:org.codehaus.groovy/groovy-jsr223/${groovy.version}</bundle>
     <bundle start-level="50">mvn:org.codehaus.groovy/groovy-macro/${groovy.version}</bundle>
     <bundle start-level="50">mvn:org.codehaus.groovy/groovy-nio/${groovy.version}</bundle>
