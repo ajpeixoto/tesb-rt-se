@@ -35,7 +35,6 @@
         implementor="#libraryServerImpl">
         <jaxws:features>
             <bean class="org.apache.cxf.ws.addressing.WSAddressingFeature" />
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
         <!-- for spring SAM definition (without using samenabling policy) -->
         <!-- <ref bean="eventFeature"/> -->
         </jaxws:features>
@@ -55,7 +54,6 @@
         implementor="#libraryServerImpl">
         <jaxws:features>
             <bean class="org.talend.esb.mep.requestcallback.feature.RequestCallbackFeature" />
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
         <!-- for spring SAM definition (without using samenabling policy) -->
         <!-- <ref bean="eventFeature"/> -->
         </jaxws:features>
@@ -74,7 +72,6 @@
         endpointName="library:LibraryConsumerPort" address="jms://"
         serviceClass="org.talend.services.demos.library._1_0.LibraryConsumer">
         <jaxws:features>
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <!-- for spring SAM definition (without using samenabling policy) -->
             <!-- <ref bean="eventFeature"/> -->
         </jaxws:features>
@@ -121,7 +118,6 @@
         serviceClass="org.talend.services.demos.library._1_0.Library">
         <jaxws:features>
             <bean class="org.apache.cxf.ws.addressing.WSAddressingFeature" />
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <!-- for spring SAM definition (without using samenabling policy) -->
             <!-- <ref bean="eventFeature"/> -->
         </jaxws:features>

@@ -43,7 +43,6 @@
         address="http://localhost:18888/tesb-library-tutorial/services/LibraryHttpPort"
         serviceClass="org.talend.services.demos.library._1_0.Library">
         <jaxws:features>
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <bean class="org.apache.cxf.ws.addressing.WSAddressingFeature" />
             <!-- for spring SAM definition (without using samenabling policy) -->
             <!-- <ref component-id="eventFeature"/> -->
@@ -98,7 +97,6 @@
         <jaxws:features>
             <bean
                 class="org.talend.esb.mep.requestcallback.feature.RequestCallbackFeature" />
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <!-- for spring SAM definition (without using samenabling policy) -->
             <!-- <ref component-id="eventFeature"/> -->
         </jaxws:features>
@@ -119,7 +117,6 @@
         <jaxws:features>
             <bean
                 class="org.talend.esb.mep.requestcallback.feature.RequestCallbackFeature" />
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <!-- for spring SAM definition (without using samenabling policy) -->
             <!-- <ref component-id="eventFeature"/> -->
         </jaxws:features>
@@ -168,7 +165,6 @@
         implementor="org.talend.services.demos.client.LibraryNotificationReceiverImpl">
         <jaxws:features>
             <bean class="org.apache.cxf.ws.addressing.WSAddressingFeature" />
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <!-- for spring SAM definition (without using samenabling policy) -->
             <!-- <ref component-id="eventFeature"/> -->
         </jaxws:features>

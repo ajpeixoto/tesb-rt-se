@@ -313,6 +313,7 @@
     </feature>
 
     <feature name="tesb-security-common" version="${original.version}">
+        <configfile finalname="/etc/org.apache.cxf.features.logging.cfg">mvn:org.talend.esb/security-common/${security-common.version}/cfg/org.apache.cxf.features.logging</configfile>
         <feature>cxf-rs-security-xml</feature>
         <feature>jasypt-encryption</feature>
         <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>
@@ -414,7 +415,7 @@
         <feature version='${cxf.version}'>cxf</feature>
         <feature version='${original.version}'>tesb-aux-common</feature>
         <feature version='${original.version}'>tesb-aux-client-rest</feature>
-        <bundle>mvn:org.talend.esb.mep/request-callback/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb.mep/request-callback/${request-callback.version}</bundle>
     </feature>
 
     <feature name="transport-jms" version='${original.version}'>

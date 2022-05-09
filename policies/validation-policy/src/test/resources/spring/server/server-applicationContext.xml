@@ -11,9 +11,6 @@
 		id="CustomerServiceHTTP" address="http://localhost:8080/CustomerServicePort"
 		serviceName="customer:CustomerServiceService" endpointName="customer:CustomerServiceEndpoint"
 		implementor="org.talend.esb.policy.schemavalidate.testservice.server.CustomerServiceImpl">
-		<jaxws:features>
-			<bean class="org.apache.cxf.feature.LoggingFeature" />
-		</jaxws:features>
 	</jaxws:endpoint>
 
 </beans>

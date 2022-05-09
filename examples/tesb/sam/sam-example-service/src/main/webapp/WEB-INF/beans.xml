@@ -56,7 +56,6 @@
 	<jaxws:endpoint id="customerService" implementor="#customerServiceImpl"
 		address="/CustomerServicePort">
 		<jaxws:features>
-			<!-- <bean class="org.apache.cxf.feature.LoggingFeature" /> -->
 			<ref bean="eventFeature"/>
 		</jaxws:features>
 	</jaxws:endpoint>
@@ -65,7 +64,6 @@
         address="http://localhost:8080/sam-example-service2/services/CustomerServicePort"
 		serviceClass="com.example.customerservice.CustomerService">
 		<jaxws:features>
-			<!-- <bean class="org.apache.cxf.feature.LoggingFeature" />-->
 			<ref bean="eventFeature"/>
 		</jaxws:features>
 	</jaxws:client>

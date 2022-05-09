@@ -1,7 +1,12 @@
 package org.talend.esb.job.controller.internal;
 
+import org.apache.cxf.Bus;
 import org.apache.wss4j.common.crypto.Crypto;
+import org.easymock.EasyMock;
 import org.junit.After;
+
+import static org.easymock.EasyMock.anyString;
+import static org.easymock.EasyMock.niceMock;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +22,7 @@ import static org.easymock.EasyMock.createNiceMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,7 +70,10 @@ public class RuntimeESBEndpointRegistryTest {
 		ep.put(ESBEndpointConstants.USE_SERVICE_REGISTRY, true);
 		ESBEndpointInfo i = getMockEndpointInfo(ep);
 
-		registry.setBus(createNiceMock(org.apache.cxf.Bus.class));
+		Bus bus = createNiceMock(Bus.class);
+		replay(bus);
+		
+		registry.setBus(bus);
 		registry.setClientProperties(new HashMap<String, Object>());
 		
 		assertNotNull(registry.createConsumer(i));

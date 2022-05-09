@@ -123,6 +123,8 @@
         <cxf-sts-war.version>${original.version}</cxf-sts-war.version>
         <security-common.version>${original.version}</security-common.version>
         <text-encryptor.version>${original.version}</text-encryptor.version>
+        <atom-rest-client.version>${original.version}</atom-rest-client.version>
+        <request-callback.version>${original.version}</request-callback.version>
 
         <!-- eclipse osgi version -->
         <eclipse.osgi.version>3.13.300</eclipse.osgi.version>
@@ -140,7 +142,8 @@
         <camel.version>3.11.1</camel.version>
         <camel.features.tesb.version>3.11.1.20220422</camel.features.tesb.version>
         <cxf.version>3.4.4</cxf.version>
-        <cxf.features.tesb.version>3.4.4.20220422</cxf.features.tesb.version>
+        <cxf-rt-features-logging.tesb.version>3.4.4.20220520</cxf-rt-features-logging.tesb.version>
+        <cxf.features.tesb.version>3.4.4.20220520</cxf.features.tesb.version>
         <spring.version>5.3.18</spring.version>
         <spring.security.version>5.6.2</spring.security.version>
         <pax-web.version>7.2.29</pax-web.version>
@@ -725,7 +728,7 @@
             <dependency>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-rt-features-logging</artifactId>
-                <version>${cxf.version}</version>
+                <version>${cxf-rt-features-logging.tesb.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.cxf</groupId>
@@ -1534,7 +1537,7 @@
             <dependency>
                 <groupId>org.talend.esb</groupId>
                 <artifactId>security-common</artifactId>
-                <version>${original.version}</version>
+                <version>${security-common.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.webjars</groupId>
@@ -2005,7 +2008,7 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1</original.version>
-                <esb.features.version>8.0.1.20220422</esb.features.version>
+                <esb.features.version>8.0.1.20220520</esb.features.version>
                 <ds-service-db2.version>8.0.1.20220318</ds-service-db2.version>
                 <ds-service-derby.version>8.0.1.20220318</ds-service-derby.version>
                 <ds-service-h2.version>8.0.1.20220318</ds-service-h2.version>
@@ -2014,14 +2017,16 @@
                 <ds-service-oracle.version>8.0.1.20220318</ds-service-oracle.version>
                 <ds-service-postgresql.version>8.0.1.20220318</ds-service-postgresql.version>
                 <ds-service-sqlserver.version>8.0.1.20220318</ds-service-sqlserver.version>
-                <org.talend.esb.job.controller.version>8.0.1.20220318</org.talend.esb.job.controller.version>
+                <org.talend.esb.job.controller.version>8.0.1.20220520</org.talend.esb.job.controller.version>
                 <locator-soap-service.version>8.0.1.20220318</locator-soap-service.version>
                 <sam-agent.version>8.0.1.20220318</sam-agent.version>
-                <sam-service-soap.version>8.0.1.20220318</sam-service-soap.version>
-                <org.talend.esb.sts.config.version>8.0.1.20220318</org.talend.esb.sts.config.version>
+                <sam-service-soap.version>8.0.1.20220520</sam-service-soap.version>
+                <org.talend.esb.sts.config.version>8.0.1.20220520</org.talend.esb.sts.config.version>
                 <cxf-sts-war.version>8.0.1.20220318</cxf-sts-war.version>
-                <security-common.version>8.0.1.20220318</security-common.version>
+                <security-common.version>8.0.1.20220520</security-common.version>
                 <text-encryptor.version>8.0.1.20220318</text-encryptor.version>
+                <atom-rest-client.version>8.0.1.20220520</atom-rest-client.version>
+                <request-callback.version>8.0.1.20220520</request-callback.version>
             </properties>
         </profile>
     </profiles>

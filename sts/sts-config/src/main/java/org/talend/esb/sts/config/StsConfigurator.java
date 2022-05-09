@@ -26,6 +26,7 @@ import org.apache.cxf.feature.LoggingFeature;
 import org.apache.cxf.interceptor.Interceptor;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
+import org.talend.esb.security.logging.SensitiveLoggingFeatureUtils;
 
 public class StsConfigurator {
 
@@ -46,68 +47,7 @@ public class StsConfigurator {
 	}
 
 	private void setMessageLogging(boolean logMessages) {
-		setMessageLogging(logMessages, bus);
-	}
-
-	private void setMessageLogging(boolean logMessages, Bus bus) {
-		if (logMessages) {
-			if (!hasLoggingFeature(bus))
-				addMessageLogging(bus);
-		} else {
-			if (hasLoggingFeature(bus))
-				removeMessageLogging(bus);
-		}
-	}
-
-	private boolean hasLoggingFeature(Bus bus) {
-		Collection<Feature> features = bus.getFeatures();
-		for (Feature feature: features) {
-			if (feature instanceof LoggingFeature)
-				return true;
-		}
-		return false;
-	}
-
-	private void addMessageLogging(Bus bus) {
-		LoggingFeature logFeature = new LoggingFeature();
-		logFeature.initialize(bus);
-		bus.getFeatures().add(logFeature);
-	}
-
-	private void removeMessageLogging(Bus bus) {
-		Collection<Feature> features = bus.getFeatures();
-		Feature logFeature = null;
-		Interceptor inLogInterceptor = null;
-		Interceptor outLogInterceptor = null;
-		for (Feature feature: features) {
-			if (feature instanceof LoggingFeature) {
-				logFeature = feature;
-				break;
-			}
-		}
-		if (logFeature != null) {
-			features.remove(logFeature);
-		}
-		for (Interceptor interceptor: bus.getInInterceptors()) {
-			if (interceptor instanceof LoggingInInterceptor) {
-				inLogInterceptor = interceptor;
-				break;
-			}
-		}
-		for (Interceptor interceptor: bus.getOutInterceptors()) {
-			if (interceptor instanceof LoggingOutInterceptor) {
-				outLogInterceptor = interceptor;
-				break;
-			}
-		}
-		if (inLogInterceptor != null) {
-			bus.getInInterceptors().remove(inLogInterceptor);
-			//System.out.println("\nRemove in Interceptor = " + inLogInterceptor.getClass().getName());
-		}
-		if (outLogInterceptor != null) {
-			bus.getOutInterceptors().remove(outLogInterceptor);
-			//System.out.println("\nRemove out Interceptor = " + inLogInterceptor.getClass().getName());
-		}
+		SensitiveLoggingFeatureUtils.setMessageLogging(logMessages, bus);
 	}
 
 }
