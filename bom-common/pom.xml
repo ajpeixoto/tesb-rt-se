@@ -122,7 +122,8 @@
         <camel.version>3.11.1</camel.version>
         <camel.features.tesb.version>3.11.1.20220422</camel.features.tesb.version>
         <cxf.version>3.4.4</cxf.version>
-        <cxf.features.tesb.version>3.4.4.20220422</cxf.features.tesb.version>
+        <cxf-rt-features-logging.tesb.version>3.4.4.20220520</cxf-rt-features-logging.tesb.version>
+        <cxf.features.tesb.version>3.4.4.20220520</cxf.features.tesb.version>
         <spring.version>5.3.18</spring.version>
         <spring.security.version>5.6.2</spring.security.version>
         <pax-web.version>7.2.29</pax-web.version>
@@ -708,7 +709,7 @@
             <dependency>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-rt-features-logging</artifactId>
-                <version>${cxf.version}</version>
+                <version>${cxf-rt-features-logging.tesb.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.cxf</groupId>

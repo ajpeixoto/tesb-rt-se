@@ -57,6 +57,14 @@
             <artifactId>cxf-rt-wsdl</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-features-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.talend.esb</groupId>
+            <artifactId>security-common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.talend.esb.auxiliary.storage</groupId>
             <artifactId>auxiliary-storage-common</artifactId>
         </dependency>

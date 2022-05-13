@@ -313,6 +313,7 @@
     </feature>
 
     <feature name="tesb-security-common" version="${project.version}">
+        <configfile finalname="/etc/org.apache.cxf.features.logging.cfg">mvn:org.talend.esb/security-common/${project.version}/cfg/org.apache.cxf.features.logging</configfile>
         <feature>cxf-rs-security-xml</feature>
         <feature>jasypt-encryption</feature>
         <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>

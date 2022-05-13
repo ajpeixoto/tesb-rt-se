@@ -43,9 +43,6 @@
         <jaxws:properties>
             <entry key="mtom-enabled" value="true"/>
         </jaxws:properties>
-        <jaxws:features>
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
-        </jaxws:features>
     </jaxws:endpoint>
 
 </beans>

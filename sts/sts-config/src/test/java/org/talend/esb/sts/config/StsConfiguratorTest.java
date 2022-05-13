@@ -6,10 +6,10 @@ import java.util.List;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.feature.Feature;
-import org.apache.cxf.feature.LoggingFeature;
+import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.interceptor.Interceptor;
-import org.apache.cxf.interceptor.LoggingInInterceptor;
-import org.apache.cxf.interceptor.LoggingOutInterceptor;
+import org.apache.cxf.ext.logging.LoggingInInterceptor;
+import org.apache.cxf.ext.logging.LoggingOutInterceptor;
 import org.apache.cxf.message.Message;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;

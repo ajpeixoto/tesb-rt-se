@@ -35,7 +35,6 @@
             </entry>
         </jaxws:properties>
 		<jaxws:features>
-			<!-- <bean class="org.apache.cxf.feature.LoggingFeature" />-->
 			<ref component-id="eventFeature"/>
 		</jaxws:features>
 	</jaxws:endpoint>

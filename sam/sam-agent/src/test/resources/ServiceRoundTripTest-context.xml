@@ -54,7 +54,6 @@
     <jaxws:client id="customerService" address="local://CustomerServicePort"
         serviceClass="com.example.customerservice.CustomerService">
         <jaxws:features>
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <!-- wsa:addressing xmlns:wsa="http://cxf.apache.org/ws/addressing"/-->
             <ref bean="eventFeature" />
         </jaxws:features>
@@ -63,7 +62,6 @@
     <jaxws:endpoint address="local://CustomerServicePort"
         implementor="org.talend.esb.sam.agent.eventproducer.CustomerServiceImpl">
         <jaxws:features>
-            <bean class="org.apache.cxf.feature.LoggingFeature" />
             <!-- wsa:addressing xmlns:wsa="http://cxf.apache.org/ws/addressing"/-->
             <ref bean="eventFeature" />
         </jaxws:features>

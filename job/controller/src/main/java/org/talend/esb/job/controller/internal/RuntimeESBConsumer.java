@@ -47,6 +47,7 @@ import org.talend.esb.job.controller.ESBEndpointConstants;
 import org.talend.esb.job.controller.internal.util.DOM4JMarshaller;
 import org.talend.esb.policy.correlation.feature.CorrelationIDFeature;
 import org.talend.esb.sam.agent.feature.EventFeature;
+import org.talend.esb.security.logging.SensitiveLoggingFeatureUtils;
 import org.talend.esb.servicelocator.cxf.LocatorFeature;
 
 import routines.system.api.ESBConsumer;
@@ -142,9 +143,9 @@ public class RuntimeESBConsumer implements ESBConsumer {
         if (null != httpHeadersFeature){
         	features.add(httpHeadersFeature);
         }
-        if (logging) {
-            features.add(new org.apache.cxf.feature.LoggingFeature());
-        }
+        
+        SensitiveLoggingFeatureUtils.setMessageLogging(logging, bus);
+        
         clientFactory.setFeatures(features);
 
         authorizationPolicy = securityArguments.buildAuthorizationPolicy();
