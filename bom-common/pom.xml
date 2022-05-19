@@ -277,6 +277,7 @@
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
         <osgi.core.version>6.0.0</osgi.core.version>
+        <osgi.util.version>1.2.0</osgi.util.version>
         <pax-cdi.version>1.0.0.RC2</pax-cdi.version>
         <pax-exam.version>4.13.1</pax-exam.version>
         <pax-logging.version>1.11.15</pax-logging.version>
