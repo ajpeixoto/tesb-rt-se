@@ -19,7 +19,7 @@
     </parent>
 
     <modules>
-        <module>json</module>
+        <module>all</module>
     </modules>
 
 </project>

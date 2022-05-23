@@ -6,15 +6,15 @@
     -->
     
     <description>
-        groovy-json with overwritten FastStringUtils to use proper classloader in OSGi context
+        Package groovy-all in one uber-jar to avoid any host / fragment leading to overhead with JDK11 and OSGi Classloading
     </description>
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.codehaus.groovy</groupId>
-    <artifactId>groovy-json</artifactId>
-    <packaging>jar</packaging>
-    <name>Talend ESB :: Groovy :: Parent</name>
+    <groupId>org.talend.esb</groupId>
+    <artifactId>groovy-all</artifactId>
+    <packaging>bundle</packaging>
+    <name>Talend ESB :: Groovy :: all</name>
     <version>${revision}</version>
 
     <parent>
@@ -24,14 +24,15 @@
     </parent>
     
     <properties>
-        <revision>${groovy-json.version}</revision>
+        <revision>${groovy-all.version}</revision>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-json</artifactId>
+            <artifactId>groovy-all</artifactId>
             <version>${groovy.version}</version>
+            <type>pom</type>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -50,33 +51,36 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack</id>
+                        <id>unpack-dependencies</id>
                         <phase>process-resources</phase>
                         <goals>
-                            <goal>unpack</goal>
+                            <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.codehaus.groovy</groupId>
-                                    <artifactId>groovy-json</artifactId>
-                                    <version>${groovy.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
+                            <includeGroupIds>org.codehaus.groovy</includeGroupIds>
+                            <excludeArtifactIds>groovy-all,groovy-test,groovy-test-junit5,groovy-testng</excludeArtifactIds>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <inherited>true</inherited>
+                <extensions>true</extensions>
+                <version>5.1.1</version>
                 <configuration>
                     <archive>
-                        <manifestFile>${project.build.directory}/classes/META-INF/MANIFEST.MF</manifestFile>
+                        <addMavenDescriptor>false</addMavenDescriptor>
                     </archive>
+                    <instructions>
+                        <Bundle-Name>ESB Groovy Runtime All</Bundle-Name>
+                        <Bundle-SymbolicName>groovy-all</Bundle-SymbolicName>
+                        <Bundle-Version>${groovy.version}</Bundle-Version>
+                        <Import-Package>*;resolution:=optional;-split-package:=first</Import-Package>
+                        <Main-class>groovy.ui.GroovyMain</Main-class>
+                    </instructions>
                 </configuration>
             </plugin>
         </plugins>

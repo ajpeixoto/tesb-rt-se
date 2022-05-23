@@ -369,27 +369,9 @@
 	<!-- the guava version for cxf-rs-description-swagger2 -->
 	<bundle>mvn:com.google.guava/guava/27.0-jre</bundle>
 
-	<!-- the groovy version -->
-    <!-- start-level is the same as camel-groovy feature -->
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-ant/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-cli-commons/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-cli-picocli/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-console/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-datetime/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-docgenerator/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-groovydoc/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-groovysh/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-jmx/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-json/${groovy-json.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-jsr223/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-macro/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-nio/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-servlet/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-sql/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-swing/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-templates/${groovy.version}</bundle>
-    <bundle start-level="50">mvn:org.codehaus.groovy/groovy-xml/${groovy.version}</bundle>
+	<!-- the custom ESB groovy-all version -->
+    <!-- overrides all groovy bundles declared in camel-groovy -->
+    <bundle start-level="50">mvn:org.talend.esb/groovy-all/${groovy-all.version}</bundle>
   </feature>
 
   <feature name='tesb-keystore-configs' version='${original.version}'>
