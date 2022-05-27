@@ -139,8 +139,8 @@
         <spring-legacy.features.tesb.version>4.2.11.20220422</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
-        <camel.version>3.11.1</camel.version>
-        <camel.features.tesb.version>3.11.1.20220422</camel.features.tesb.version>
+        <camel.version>3.14.3</camel.version>
+        <camel.features.tesb.version>3.14.3.20220610</camel.features.tesb.version>
         <cxf.version>3.4.4</cxf.version>
         <cxf-rt-features-logging.tesb.version>3.4.4.20220520</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.4.4.20220520</cxf.features.tesb.version>
