@@ -67,7 +67,7 @@
         <cryptacular.version>1.2.4</cryptacular.version>
         <commons-codec.version>1.15</commons-codec.version>
         <ant.version>1.9.16</ant.version>
-        <spring.version>5.2.18.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
 
         <!-- Test dependencies -->
         <junit.version>4.13.1</junit.version>

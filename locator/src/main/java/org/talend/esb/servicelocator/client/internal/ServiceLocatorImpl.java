@@ -34,7 +34,7 @@ import javax.inject.Named;
 import javax.xml.namespace.QName;
 
 import org.apache.zookeeper.ZooKeeper;
-import org.ops4j.pax.cdi.api.OsgiServiceProvider;
+// import org.ops4j.pax.cdi.api.OsgiServiceProvider;
 import org.springframework.beans.factory.annotation.Value;
 
 import org.talend.esb.servicelocator.client.Endpoint;
@@ -63,7 +63,7 @@ import org.talend.esb.servicelocator.client.internal.zk.ZKBackend;
  * clients can be looked up.
  * </ul>
  */
-@OsgiServiceProvider(classes={ServiceLocator.class,ExpiredEndpointCollector.class})
+// @OsgiServiceProvider(classes={ServiceLocator.class,ExpiredEndpointCollector.class})
 @Named
 public class ServiceLocatorImpl implements ServiceLocator, ExpiredEndpointCollector {
 

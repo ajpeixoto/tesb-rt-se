@@ -366,10 +366,10 @@
     <bundle>mvn:com.google.guava/failureaccess/${guava.failureaccess.version}</bundle>
     <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
 
-	<!-- the guava version for cxf-rs-description-swagger2 -->
-	<bundle>mvn:com.google.guava/guava/27.0-jre</bundle>
+    <!-- the guava version for cxf-rs-description-swagger2 -->
+    <bundle>mvn:com.google.guava/guava/27.0-jre</bundle>
 
-	<!-- the custom ESB groovy-all version -->
+    <!-- the custom ESB groovy-all version -->
     <!-- overrides all groovy bundles declared in camel-groovy -->
     <bundle start-level="50">mvn:org.talend.esb/groovy-all/${groovy-all.version}</bundle>
   </feature>

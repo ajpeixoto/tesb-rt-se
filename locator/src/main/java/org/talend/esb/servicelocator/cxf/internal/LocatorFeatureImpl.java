@@ -39,13 +39,13 @@ import org.apache.cxf.endpoint.Endpoint;
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.feature.AbstractFeature;
 import org.apache.cxf.interceptor.InterceptorProvider;
-import org.ops4j.pax.cdi.api.OsgiServiceProvider;
+// import org.ops4j.pax.cdi.api.OsgiServiceProvider;
 import org.talend.esb.servicelocator.client.SLProperties;
 import org.talend.esb.servicelocator.client.SLPropertiesImpl;
 import org.talend.esb.servicelocator.client.SLPropertiesMatcher;
 import org.talend.esb.servicelocator.cxf.LocatorFeature;
 
-@OsgiServiceProvider(classes=LocatorFeature.class)
+// @OsgiServiceProvider(classes=LocatorFeature.class)
 @Named("locatorFeature")
 @Singleton
 public class LocatorFeatureImpl extends AbstractFeature implements LocatorFeature {

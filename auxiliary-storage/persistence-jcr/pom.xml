@@ -98,6 +98,12 @@
             <version>${jackrabbit.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>${tika-core.version}</version>
+        </dependency>
+
 <!-- ====================================================================================== -->
 
         <dependency>

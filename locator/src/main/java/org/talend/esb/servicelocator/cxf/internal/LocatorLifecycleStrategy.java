@@ -14,14 +14,14 @@ import org.apache.camel.support.LifecycleStrategySupport;
 import org.apache.camel.util.CamelContextHelper;
 import org.apache.cxf.Bus;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
-import org.ops4j.pax.cdi.api.OsgiServiceProvider;
+// import org.ops4j.pax.cdi.api.OsgiServiceProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Add a lifecyclestrategy behaviour for associating camelcontext to bus in locatorRegistar and stop all servers when camelcontext stops.
  */
-@OsgiServiceProvider(classes = LifecycleStrategy.class)
+// @OsgiServiceProvider(classes = LifecycleStrategy.class)
 @Named("locatorLifecycleStrategy")
 @Singleton
 public class LocatorLifecycleStrategy extends LifecycleStrategySupport {

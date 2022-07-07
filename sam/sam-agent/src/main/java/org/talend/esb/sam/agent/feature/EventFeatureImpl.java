@@ -37,7 +37,7 @@ import org.apache.cxf.message.Message;
 import org.apache.cxf.ws.addressing.MAPAggregator;
 import org.apache.cxf.ws.addressing.WSAddressingFeature;
 import org.apache.cxf.ws.addressing.soap.MAPCodec;
-import org.ops4j.pax.cdi.api.OsgiServiceProvider;
+// import org.ops4j.pax.cdi.api.OsgiServiceProvider;
 import org.springframework.beans.factory.annotation.Value;
 
 import org.talend.esb.sam.agent.eventproducer.EventProducerInterceptor;
@@ -48,7 +48,7 @@ import org.talend.esb.sam.agent.queue.EventQueue;
 import org.talend.esb.sam.agent.wiretap.WireTapIn;
 import org.talend.esb.sam.agent.wiretap.WireTapOut;
 
-@OsgiServiceProvider(classes=EventFeature.class)
+// @OsgiServiceProvider(classes=EventFeature.class)
 @Named("eventFeature")
 @Singleton
 public class EventFeatureImpl extends AbstractFeature implements EventFeature{

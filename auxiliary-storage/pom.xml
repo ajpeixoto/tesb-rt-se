@@ -58,7 +58,7 @@
         <!-- persistence -->
         <jcr-version>2.0</jcr-version>
         <jackrabbit.version>2.18.6</jackrabbit.version>
-        <tika-core.version>1.24.1</tika-core.version>
+        <tika-core.version>1.28.4</tika-core.version>
 
     </properties>
 

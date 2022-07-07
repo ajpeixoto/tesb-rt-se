@@ -101,4 +101,6 @@
         <property name="isBspCompliant" value="${ws-security.is-bsp-compliant}" />
     </bean>
 
+    <service ref="eventFeature" interface="org.talend.esb.sam.agent.feature.EventFeature"/>
+
 </blueprint>

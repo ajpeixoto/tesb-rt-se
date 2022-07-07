@@ -41,19 +41,30 @@
         <activemq.tesb.version>5.15.15</activemq.tesb.version>
         <pax-logging.tesb.version>1.11.15</pax-logging.tesb.version>
         <!-- version updates from the patch -->
-        <standard.features.tesb.version>4.2.7.tesb11</standard.features.tesb.version>
-        <enterprise.features.tesb.version>4.2.7.tesb3</enterprise.features.tesb.version>
+        <standard.features.tesb.version>4.2.7.tesb12</standard.features.tesb.version>
+        <enterprise.features.tesb.version>4.2.7.tesb4</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
-        <framework.features.tesb.version>4.2.7.tesb4</framework.features.tesb.version>
-        <spring.features.tesb.version>4.2.7.tesb3</spring.features.tesb.version>
-        <apache-cxf.features.tesb.version>3.3.11.tesb2</apache-cxf.features.tesb.version>
-        <apache-cxf-xkms.features.tesb.version>3.3.11.tesb2</apache-cxf-xkms.features.tesb.version>
+        <framework.features.tesb.version>4.2.7.tesb5</framework.features.tesb.version>
+        <spring.features.tesb.version>4.2.7.tesb5</spring.features.tesb.version>
+        <apache-cxf.features.tesb.version>3.4.7.tesb1</apache-cxf.features.tesb.version>
+        <apache-cxf-xkms.features.tesb.version>3.4.7.tesb1</apache-cxf-xkms.features.tesb.version>
         <apache-camel.features.tesb.version>2.25.4.tesb1</apache-camel.features.tesb.version>
-        <pax-web.features.tesb.version>7.2.21.tesb2</pax-web.features.tesb.version>
+        <pax-web.features.tesb.version>7.2.29.tesb1</pax-web.features.tesb.version>
         <activemq.features.tesb.version>5.15.15.tesb4</activemq.features.tesb.version>
         <hibernate-validator.features.tesb.version>6.0.17.Final.tesb2</hibernate-validator.features.tesb.version>
         <jobserver.version>7.3.1.20220207_1020_patch</jobserver.version>
         <tdm.version>7.3.1.20220408</tdm.version>
+
+        <karaf-maven-plugin.version>4.2.12</karaf-maven-plugin.version>
+        <pax-cdi.features.tesb.version>1.1.4</pax-cdi.features.tesb.version>
+        <pax-jdbc.features.tesb.version>1.4.0</pax-jdbc.features.tesb.version>
+        <pax-jms.features.tesb.version>1.0.5</pax-jms.features.tesb.version>
+        <pax-transx.features.tesb.version>0.4.4</pax-transx.features.tesb.version>
+        <jpa.features.tesb.version>2.7.2</jpa.features.tesb.version>
+        <openjpa.features.tesb.version>3.0.0</openjpa.features.tesb.version>
+        <decanter.features.tesb.version>2.2.0.tesb2</decanter.features.tesb.version>
+        <hibernate.features.tesb.version>5.2.17.Final</hibernate.features.tesb.version>
+        <hapi-fhir.features.tesb.version>3.5.0</hapi-fhir.features.tesb.version>
     </properties>
 
     <dependencies>
@@ -104,7 +115,8 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>${karaf.version}</version>
+                <version>${karaf-maven-plugin.version}</version>
+                <extensions>true</extensions>
                 <executions>
                     <execution>
                         <id>custom-features</id>
@@ -137,7 +149,7 @@
                                 <descriptor>mvn:org.apache.karaf.features/enterprise-legacy/${enterprise-legacy.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/framework/${framework.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.jclouds.karaf/jclouds-karaf/${jclouds.version}/xml/features</descriptor>
-                                <descriptor>mvn:org.apache.karaf.decanter/apache-karaf-decanter/${decanter.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.decanter/apache-karaf-decanter/${decanter.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.web/pax-web-features/${pax-web.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.cxf.karaf/apache-cxf/${apache-cxf.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.cxf.services.xkms/cxf-services-xkms-features/${apache-cxf-xkms.features.tesb.version}/xml</descriptor>
@@ -145,359 +157,25 @@
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${apache-camel.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.talend.esb/features/${project.version}/xml</descriptor>
                                 <descriptor>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${project.version}/xml</descriptor>
+
+                                <descriptor>mvn:org.hibernate.validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.ops4j.pax.cdi/pax-cdi-features/${pax-cdi.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.ops4j.pax.jms/pax-jms-features/${pax-jms.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.ops4j.pax.transx/pax-transx-features/${pax-transx.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.aries.jpa/jpa-features/${jpa.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.openjpa/openjpa-features/${openjpa.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.features.tesb.version}/xml/features-core</descriptor>
+                                <descriptor>mvn:org.hibernate/hibernate-osgi/${hibernate.features.tesb.version}/xml/karaf</descriptor>
+                                <descriptor>mvn:ca.uhn.hapi.fhir.karaf/hapi-fhir/${hapi-fhir.features.tesb.version}/xml/features</descriptor>
                             </descriptors>
                             <features>
-                                <!-- Core Features -->
-                                <feature>framework</feature>
-                                <feature>framework-logback</feature>
-                                <feature>spring-aspects/5.1.9.RELEASE_1</feature>
-                                <feature>spring-instrument/5.1.9.RELEASE_1</feature>
-                                <feature>spring-messaging/5.1.9.RELEASE_1</feature>
-                                <feature>spring-websocket/5.1.9.RELEASE_1</feature>
-                                <feature>spring-security/5.1.5.RELEASE_1</feature>
-                                <feature>jetty</feature>
-                                <feature>webconsole</feature>
-                                <feature>eventadmin</feature>
-                                <feature>wrap</feature>
-                                <feature>wrapper</feature>
-                                <feature>transaction</feature>
-                                <feature>jpa</feature>
-                                <feature>jndi</feature>
-                                <feature>jms</feature>
-                                <feature>aries-blueprint-spring</feature>
-                                <feature>config</feature>
-                                <!-- ActiveMQ Features -->
-                                <feature>activemq</feature>
-                                <feature>activemq-blueprint</feature>
-                                <feature>activemq-broker</feature>
-                                <feature>activemq-camel</feature>
-                                <!-- CXF Features -->
-                                <feature>cxf/${cxf.version}</feature>
-                                <feature>cxf-abdera/${cxf.version}</feature>
-                                <feature>cxf-commands/${cxf.version}</feature>
-                                <feature>cxf-rs-description-swagger2/${cxf.version}</feature>
-                                <feature>cxf-sts/${cxf.version}</feature>
-                                <feature>cxf-wsn/${cxf.version}</feature>
-                                <feature>cxf-xjc-runtime/${cxf.version}</feature>
-                                <feature>wss4j/${wss4j.version}</feature>
-                                <!-- Camel Features -->
-                                <feature>camel</feature>
-                                <feature>camel-core</feature>
-                                <feature>camel-catalog</feature>
-                                <feature>camel-blueprint</feature>
-                                <feature>camel-spring</feature>
-                                <feature>camel-scr</feature>
-                                <feature>camel-ahc</feature>
-                                <feature>camel-ahc-ws</feature>
-                                <feature>camel-amqp</feature>
-                                <feature>camel-apns</feature>
-                                <feature>camel-asn1</feature>
-                                <feature>camel-asterisk</feature>
-                                <feature>camel-atmosphere-websocket</feature>
-                                <feature>camel-atom</feature>
-                                <feature>camel-atomix</feature>
-                                <feature>camel-avro</feature>
-                                <feature>camel-aws</feature>
-<!--                                 <feature>camel-azure</feature> -->
-                                <feature>camel-bam</feature>
-                                <feature>camel-base64</feature>
-                                <feature>camel-bean-validator</feature>
-                                <feature>camel-beanio</feature>
-                                <feature>camel-beanstalk</feature>
-                                <feature>camel-barcode</feature>
-                                <feature>camel-bindy</feature>
-                                <feature>camel-boon</feature>
-                                <feature>camel-box</feature>
-                                <feature>camel-braintree</feature>
-                                <feature>camel-cache</feature>
-                                <feature>camel-caffeine</feature>
-                                <feature>camel-cassandraql</feature>
-                                <feature>camel-castor</feature>
-<!--                                <feature>camel-cdi</feature-->
-                                <feature>camel-chronicle</feature>
-                                <feature>camel-chunk</feature>
-                                <feature>camel-cm-sms</feature>
-                                <feature>camel-cmis</feature>
-                                <feature>camel-coap</feature>
-                                <feature>camel-cometd</feature>
-                                <feature>camel-consul</feature>
-                                <feature>camel-context</feature>
-                                <feature>camel-couchdb</feature>
-                                <feature>camel-couchbase</feature>
-                                <feature>camel-crypto</feature>
-                                <feature>camel-crypto-cms</feature>
-                                <feature>camel-csv</feature>
-                                <feature>camel-cxf</feature>
-                                <feature>camel-digitalocean</feature>
-                                <feature>camel-disruptor</feature>
-                                <feature>camel-dns</feature>
-                                <feature>camel-docker</feature>
-                                <feature>camel-drill</feature>
-                                <feature>camel-dozer</feature>
-                                <feature>camel-dropbox</feature>
-                                <feature>camel-ehcache</feature>
-                                <feature>camel-elsql</feature>
-                                <feature>camel-elasticsearch</feature>
-                                <feature>camel-etcd</feature>
-                                <feature>camel-eventadmin</feature>
-                                <feature>camel-exec</feature>
-                                <feature>camel-facebook</feature>
-                                <feature>camel-fastjson</feature>
-                                <feature>camel-fhir</feature>
-                                <feature>camel-flatpack</feature>
-                                <feature>camel-fop</feature>
-                                <feature>camel-freemarker</feature>
-                                <feature>camel-ftp</feature>
-                                <feature>camel-ganglia</feature>
-                                <feature>camel-geocoder</feature>
-                                <feature>camel-git</feature>
-                                <feature>camel-github</feature>
-                                <feature>camel-google-calendar</feature>
-                                <feature>camel-google-drive</feature>
-                                <feature>camel-google-mail</feature>
-                                <feature>camel-google-pubsub</feature>
-                                <feature>camel-grape</feature>
-                                <feature>camel-grpc</feature>
-                                <feature>camel-gson</feature>
-                                <feature>camel-guava-eventbus</feature>
-                                <feature>camel-guice</feature>
-                                <feature>camel-hawtdb</feature>
-                                <feature>camel-hazelcast</feature>
-                                <feature>camel-hdfs</feature>
-                                <feature>camel-hdfs2</feature>
-                                <feature>camel-headersmap</feature>
-                                <feature>camel-hipchat</feature>
-                                <feature>camel-hessian</feature>
-                                <feature>camel-hl7</feature>
-                                <feature>camel-http</feature>
-                                <feature>camel-http4</feature>
-                                <feature>camel-hystrix</feature>
-                                <feature>camel-ibatis</feature>
-                                <feature>camel-ical</feature>
-                                <feature>camel-iec60870</feature>
-<!--                                 <feature>camel-ignite</feature> -->
-                                <feature>camel-infinispan</feature>
-                                <feature>camel-irc</feature>
-                                <feature>camel-ironmq</feature>
-                                <feature>camel-jackson</feature>
-                                <feature>camel-jacksonxml</feature>
-                                <feature>camel-jasypt</feature>
-                                <feature>camel-jaxb</feature>
-                                <feature>camel-jbpm</feature>
-                                <feature>camel-jcache</feature>
-                                <feature>camel-jclouds</feature>
-                                <feature>camel-jcr</feature>
-                                <feature>camel-jdbc</feature>
-                                <feature>camel-jetty9</feature>
-                                <feature>camel-jetty</feature>
-                                <feature>camel-jgroups</feature>
-                                <feature>camel-jibx</feature>
-                                <feature>camel-jing</feature>
-                                <feature>camel-jms</feature>
-                                <feature>camel-jmx</feature>
-                                <feature>camel-jolt</feature>
-                                <feature>camel-johnzon</feature>
-                                <feature>camel-josql</feature>
-                                <feature>camel-jpa</feature>
-                                <feature>camel-jsch</feature>
-<!--                                 <feature>camel-json-validator</feature> -->
-                                <feature>camel-jsonpath</feature>
-                                <feature>camel-jt400</feature>
-                                <feature>camel-juel</feature>
-                                <feature>camel-jxpath</feature>
-                                <feature>camel-kafka</feature>
-                                <feature>camel-kestrel</feature>
-                                <feature>camel-krati</feature>
-                                <feature>camel-kubernetes</feature>
-                                <feature>camel-kura</feature>
-                                <feature>camel-ldap</feature>
-                                <feature>camel-ldif</feature>
-                                <feature>camel-linkedin</feature>
-                                <feature>camel-leveldb</feature>
-                                <feature>camel-leveldb-java</feature>
-                                <feature>camel-lucene</feature>
-                                <feature>camel-lumberjack</feature>
-                                <feature>camel-lzf</feature>
-                                <feature>camel-mail</feature>
-                                <feature>camel-master</feature>
-                                <feature>camel-metrics</feature>
-                                <feature>camel-milo</feature>
-                                <feature>camel-mina</feature>
-                                <feature>camel-mina2</feature>
-                                <feature>camel-mllp</feature>
-                                <feature>camel-mongodb</feature>
-                                <feature>camel-mongodb-gridfs</feature>
-                                <feature>camel-mqtt</feature>
-                                <feature>camel-msv</feature>
-                                <feature>camel-mustache</feature>
-                                <feature>camel-mvel</feature>
-                                <feature>camel-mybatis</feature>
-                                <feature>camel-nagios</feature>
-                                <feature>camel-nats</feature>
-                                <feature>camel-netty</feature>
-                                <feature>camel-netty-http</feature>
-                                <feature>camel-netty4</feature>
-                                <feature>camel-netty4-http</feature>
-                                <feature>camel-ognl</feature>
-                                <feature>camel-olingo2</feature>
-                                <feature>camel-openshift</feature>
-                                <feature>camel-optaplanner</feature>
-                                <feature>camel-openstack</feature>
-                                <feature>camel-opentracing</feature>
-                                <feature>camel-paho</feature>
-                                <feature>camel-paxlogging</feature>
-                                <feature>camel-pdf</feature>
-                                <feature>camel-pgevent</feature>
-                                <feature>camel-printer</feature>
-                                <feature>camel-protobuf</feature>
-                                <feature>camel-pubnub</feature>
-                                <feature>camel-quartz</feature>
-                                <feature>camel-quartz2</feature>
-                                <feature>camel-quickfix</feature>
-                                <feature>camel-rabbitmq</feature>
-                                <feature>camel-reactive-streams</feature>
-                                <feature>camel-reactor</feature>
-                                <feature>camel-restlet</feature>
-                                <feature>camel-restlet-jackson</feature>
-                                <feature>camel-restlet-gson</feature>
-                                <feature>camel-rmi</feature>
-                                <feature>camel-routebox</feature>
-                                <feature>camel-rss</feature>
-                                <feature>camel-rx</feature>
-                                <feature>camel-sap-netweaver</feature>
-                                <feature>camel-salesforce</feature>
-                                <feature>camel-saxon</feature>
-                                <feature>camel-scala</feature>
-                                <feature>camel-schematron</feature>
-                                <feature>camel-script-jruby</feature>
-                                <feature>camel-script-javascript</feature>
-                                <feature>camel-script</feature>
-                                <feature>camel-servicenow</feature>
-                                <feature>camel-servlet</feature>
-                                <feature>camel-servletlistener</feature>
-                                <feature>camel-shiro</feature>
-                                <feature>camel-sip</feature>
-                                <feature>camel-sjms</feature>
-                                <feature>camel-sjms2</feature>
-                                <feature>camel-slack</feature>
-                                <feature>camel-smpp</feature>
-                                <feature>camel-snakeyaml</feature>
-                                <feature>camel-snmp</feature>
-                                <feature>camel-soap</feature>
-                                <feature>camel-solr</feature>
-                                <feature>camel-spark-rest</feature>
-                                <feature>camel-splunk</feature>
-                                <feature>camel-spring-batch</feature>
-                                <feature>camel-spring-ldap</feature>
-                                <feature>camel-spring-redis</feature>
-                                <feature>camel-spring-security</feature>
-                                <feature>camel-spring-ws</feature>
-                                <feature>camel-sql</feature>
-                                <feature>camel-ssh</feature>
-                                <feature>camel-stax</feature>
-                                <feature>camel-stream</feature>
-                                <feature>camel-stomp</feature>
-                                <feature>camel-string-template</feature>
-                                <feature>camel-swagger</feature>
-                                <feature>camel-swagger-java</feature>
-                                <feature>camel-syslog</feature>
-                                <feature>camel-tagsoup</feature>
-                                <feature>camel-tarfile</feature>
-                                <feature>camel-test</feature>
-                                <feature>camel-test-karaf</feature>
-                                <feature>camel-test-spring</feature>
-                                <feature>camel-thrift</feature>
-                                <feature>camel-tika</feature>
-                                <feature>camel-twilio</feature>
-                                <feature>camel-twitter</feature>
-                                <feature>camel-undertow</feature>
-                                <feature>camel-univocity-parsers</feature>
-                                <feature>camel-urlrewrite</feature>
-                                <feature>camel-vertx</feature>
-                                <feature>camel-velocity</feature>
-                                <feature>camel-weather</feature>
-                                <feature>camel-websocket</feature>
-                                <feature>camel-xmlbeans</feature>
-                                <feature>camel-xmlrpc</feature>
-                                <feature>camel-xmlsecurity</feature>
-                                <feature>camel-xmpp</feature>
-                                <feature>camel-xstream</feature>
-                                <feature>camel-yammer</feature>
-                                <feature>camel-zendesk</feature>
-                                <feature>camel-zipfile</feature>
-                                <feature>camel-zipkin</feature>
-                                <feature>camel-zookeeper</feature>
-<!--                                <feature>camel-zookeeper-master</feature>  -->
-                                <!-- Decanter Features -->
-                                <feature>decanter-collector-log</feature>
-                                <feature>decanter-collector-log-socket</feature>
-                                <feature>decanter-collector-file</feature>
-                                <feature>decanter-collector-jmx</feature>
-                                <feature>decanter-collector-camel</feature>
-                                <feature>decanter-collector-rest</feature>
-                                <feature>decanter-collector-system</feature>
-                                <feature>decanter-collector-eventadmin</feature>
-                                <feature>decanter-collector-jms</feature>
-                                <feature>decanter-collector-socket</feature>
-                                <feature>decanter-collector-mqtt</feature>
-                                <feature>decanter-appender-log</feature>
-                                <feature>decanter-appender-elasticsearch</feature>
-                                <feature>decanter-appender-elasticsearch-jest</feature>
-                                <feature>decanter-appender-file</feature>
-                                <feature>decanter-appender-jdbc</feature>
-                                <feature>decanter-appender-jms</feature>
-                                <feature>decanter-appender-camel</feature>
-                                <feature>decanter-appender-kafka</feature>
-                                <feature>decanter-appender-mqtt</feature>
-                                <feature>decanter-appender-redis</feature>
-                                <feature>decanter-appender-rest</feature>
-                                <feature>decanter-appender-mongodb</feature>
-                                <feature>decanter-alerting-log</feature>
-                                <feature>decanter-alerting-email</feature>
-                                <!-- TESB Features -->
-                                <feature>tesb-sam-agent</feature>
-                                <feature>tesb-datasource-derby</feature>
-                                <feature>tesb-datasource-h2</feature>
-                                <feature>tesb-datasource-mysql</feature>
-                                <feature>tesb-datasource-oracle</feature>
-                                <feature>tesb-datasource-db2</feature>
-                                <feature>tesb-datasource-postgresql</feature>
-                                <feature>tesb-datasource-sqlserver</feature>
-                                <feature>tesb-derby-starter</feature>
-                                <feature>tesb-sam-server</feature>
-                                <feature>tesb-sam-service-rest</feature>
-                                <feature>tesb-sam-service-soap</feature>
-                                <feature>tesb-locator-client</feature>
-                                <feature>tesb-locator-soap-service</feature>
-                                <feature>tesb-locator-rest-service</feature>
-                                <feature>tesb-locator-commands</feature>
-                                <feature>tesb-locator-monitor</feature>
-                                <feature>talend-job-api</feature>
-                                <feature>talend-job-controller</feature>
-                                <feature>tesb-zookeeper-server</feature>
-                                <feature>tesb-sts</feature>
-                                <feature>camel-talendjob</feature>
-                                <feature>tesb-encryptor-command</feature>
-                                <feature>tesb-policy-compression</feature>
-                                <feature>tesb-policy-correlationid</feature>
-                                <feature>tesb-policy-samenable</feature>
-                                <feature>tesb-policy-transformation</feature>
-                                <feature>request-callback</feature>
-                                <feature>transport-jms</feature>
-                                <!-- Talend Camel enhancements -->
-                                <feature>camel-core-talend</feature>
-                                <!-- Aux features -->
-                                <feature>jackrabbit-aux-bundles</feature>
-                                <feature>tesb-aux-common</feature>
-                                <feature>tesb-aux-client-rest</feature>
-                                <feature>tesb-aux-persistence</feature>
-                                <feature>tesb-aux-service-rest</feature>
-                                <feature>tesb-aux-server</feature>
-                                <feature>tesb-aux</feature>
-                                <!-- Hibersap feature -->
-                                <feature>talend-sap-hibersap</feature>
+                                <!-- list of features to ignore -->
+                                <feature>^(?!(camel-cdi|cxf-jaxrs-cdi|camel-ignite|camel-json-validator|camel-zookeeper-master|pax-jms-artemis|activemq-camel|pax-cdi)$).*</feature>
                             </features>
                             <repository>target/features-repo</repository>
+                            <addTransitiveFeatures>false</addTransitiveFeatures>
+                            <resolveDefinedRepositoriesRecursively>false</resolveDefinedRepositoriesRecursively>
                         </configuration>
                     </execution>
                 </executions>
@@ -589,7 +267,7 @@
                                 <artifactItem>
                                     <groupId>org.apache.karaf.features</groupId>
                                     <artifactId>framework</artifactId>
-                                    <version>${karaf.version}</version>
+                                    <version>${framework.features.tesb.version}</version>
                                     <type>xml</type>
                                     <classifier>features</classifier>
                                     <outputDirectory>target/dependencies</outputDirectory>
@@ -667,6 +345,15 @@
                                     <destFileName>pax-web-features-${pax-web.version}-features.xml</destFileName>
                                 </artifactItem>
                                 <artifactItem>
+                                    <groupId>org.ops4j.pax.cdi</groupId>
+                                    <artifactId>pax-cdi-features</artifactId>
+                                    <version>${pax-cdi.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>pax-cdi-features-${pax-cdi.version}-features.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
                                     <groupId>org.apache.cxf</groupId>
                                     <artifactId>cxf-core</artifactId>
                                     <version>${cxf.version}</version>
@@ -731,7 +418,7 @@
                                 <artifactItem>
                                      <groupId>com.fasterxml.jackson.core</groupId>
                                      <artifactId>jackson-databind</artifactId>
-                                     <version>${jackson.version}</version>
+                                     <version>${jackson-databind.version}</version>
                                      <type>jar</type>
                                      <outputDirectory>target/dependencies</outputDirectory>
                                 </artifactItem>
@@ -1172,105 +859,105 @@
                                     <groupId>org.apache.karaf</groupId>
                                     <artifactId>apache-karaf</artifactId>
                                     <version>${karaf.version}</version>
-									<type>tar.gz</type>
-									<outputDirectory>target/dependencies/apache-karaf</outputDirectory>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-					<execution>
-						<id>unpack-camel</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.apache.camel</groupId>
-									<artifactId>apache-camel</artifactId>
-									<version>${camel.version}</version>
-									<type>tar.gz</type>
-									<outputDirectory>target/dependencies/camel</outputDirectory>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-					<execution>
-						<id>unpack-cxf</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.apache.cxf</groupId>
-									<artifactId>apache-cxf</artifactId>
-									<version>${cxf.version}</version>
-									<type>tar.gz</type>
-									<outputDirectory>target/dependencies/cxf</outputDirectory>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-					<execution>
-						<id>unpack-zookeeper</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.apache.zookeeper</groupId>
-									<artifactId>zookeeper</artifactId>
-									<version>${zookeeper.version}</version>
-									<type>tar.gz</type>
-									<outputDirectory>target/dependencies/zookeeper</outputDirectory>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-					<execution>
-						<id>unpack-activemq</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
+                                    <type>tar.gz</type>
+                                    <outputDirectory>target/dependencies/apache-karaf</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-camel</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.camel</groupId>
+                                    <artifactId>apache-camel</artifactId>
+                                    <version>${camel.version}</version>
+                                    <type>tar.gz</type>
+                                    <outputDirectory>target/dependencies/camel</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-cxf</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.cxf</groupId>
+                                    <artifactId>apache-cxf</artifactId>
+                                    <version>${cxf.version}</version>
+                                    <type>tar.gz</type>
+                                    <outputDirectory>target/dependencies/cxf</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-zookeeper</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.zookeeper</groupId>
+                                    <artifactId>zookeeper</artifactId>
+                                    <version>${zookeeper.version}</version>
+                                    <type>tar.gz</type>
+                                    <outputDirectory>target/dependencies/zookeeper</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-activemq</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
                             <!-- must be decompressed twice as apache-activemq tar.gz/zip contents are different -->
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.apache.activemq</groupId>
-									<artifactId>apache-activemq</artifactId>
-									<version>${activemq.version}</version>
-									<type>tar.gz</type>
-									<classifier>bin</classifier>
-									<outputDirectory>target/dependencies/activemq-unix</outputDirectory>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.apache.activemq</groupId>
-									<artifactId>apache-activemq</artifactId>
-									<version>${activemq.version}</version>
-									<type>zip</type>
-									<classifier>bin</classifier>
-									<outputDirectory>target/dependencies/activemq-win</outputDirectory>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.8</version>
-				<executions>
-					<execution>
-						<id>collect-add-ons</id>
-						<phase>generate-resources</phase>
-						<configuration>
-							<target>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.activemq</groupId>
+                                    <artifactId>apache-activemq</artifactId>
+                                    <version>${activemq.version}</version>
+                                    <type>tar.gz</type>
+                                    <classifier>bin</classifier>
+                                    <outputDirectory>target/dependencies/activemq-unix</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.activemq</groupId>
+                                    <artifactId>apache-activemq</artifactId>
+                                    <version>${activemq.version}</version>
+                                    <type>zip</type>
+                                    <classifier>bin</classifier>
+                                    <outputDirectory>target/dependencies/activemq-win</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>collect-add-ons</id>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <target>
                                 <patternset id="no.sources.javadoc">
                                     <exclude name="**/target/*-sources.*" />
                                     <exclude name="**/target/*-javadoc.*" />
@@ -1403,14 +1090,26 @@
                                     <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/7.2.11/xml/features&lt;"
                                                    value="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features&lt;"/>
                                 </replace>
-                                 <!-- patch for pax-logging-*-->
-                                 <replaceregexp byline="true"
+                                <!-- patch for pax-logging-*-->
+                                <replaceregexp byline="true"
                                         match="^(\s*mvn\\:org\.ops4j\.pax\.logging/pax-logging-\w+/)[-._0-9]+(\s*=.*)$"
                                         replace="\1${pax-logging.tesb.version}\2">
                                     <fileset dir="target/dependencies/apache-karaf/apache-karaf-${karaf.version}/etc/">
                                         <include name="startup.properties"/>
                                     </fileset>
-                                 </replaceregexp>
+                                </replaceregexp>
+                                <replaceregexp byline="true"
+                                        match="^(\s*mvn\\:org\.ops4j\.pax\.url/pax-url-\w+/)[-._0-9]+(\s*=.*)$"
+                                        replace="\1${pax-url-classpath.version}\2">
+                                    <fileset dir="target/dependencies/apache-karaf/apache-karaf-${karaf.version}/etc/">
+                                        <include name="startup.properties"/>
+                                    </fileset>
+                                </replaceregexp>
+                                <replace file="target/dependencies/apache-karaf/apache-karaf-${karaf.version}/etc/startup.properties">
+                                    <replacefilter
+                                        token="mvn\:org.apache.karaf.features/org.apache.karaf.features.core/${karaf.version} = 15"
+                                        value="mvn\:org.apache.karaf.features/org.apache.karaf.features.core/${karaf.version} = 15${line.separator}mvn\:com.fasterxml.jackson.core/jackson-core/${jackson.version} = 30${line.separator}mvn\:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version} = 30${line.separator}mvn\:com.fasterxml.jackson.core/jackson-annotations/${jackson.version} = 30${line.separator}mvn\:org.ops4j.pax.logging/pax-logging-log4j2-extra/${pax-logging.tesb.version} = 30"/>
+                                </replace>
                                 <replace file="target/dependencies/apache-camel-${camel.version}-features.xml">
                                     <replacefilter
                                         token="apache-cxf/3.2.10/xml/features"
@@ -1463,7 +1162,7 @@
                                         value="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-databind/2.9.9.3"
-                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}"/>
+                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.9"
                                         value="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"/>
@@ -1642,7 +1341,7 @@
                                         value="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-databind/2.9.10"
-                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}"/>
+                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.10"
                                         value="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"/>
@@ -1681,7 +1380,7 @@
                                         value="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-databind/2.9.9"
-                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}"/>
+                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.9"
                                         value="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"/>
@@ -1693,7 +1392,7 @@
                                         value="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-databind/2.9.9"
-                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}"/>
+                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.9"
                                         value="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"/>
@@ -1718,7 +1417,7 @@
                                         value="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-databind/2.9.9"
-                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}"/>
+                                        value="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}"/>
                                     <replacefilter
                                         token="mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.9"
                                         value="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"/>
@@ -1744,6 +1443,11 @@
                                     <replacefilter
                                         token="&gt;mvn:org.apache.karaf.decanter.collector/org.apache.karaf.decanter.collector.jms/${decanter.version}/cfg&lt;"
                                         value="&gt;mvn:org.apache.karaf.decanter.collector/org.apache.karaf.decanter.collector.jms/${decanter.version}.tesb1/cfg&lt;"/>
+                                </replace>
+                                <replace file="target/dependencies/pax-cdi-features-${pax-cdi.version}-features.xml">
+                                    <replacefilter
+                                        token="&gt;mvn:javax.annotation/javax.annotation-api/1.3.2&lt;"
+                                        value="&gt;mvn:jakarta.annotation/jakarta.annotation-api/1.3.5&lt;"/>
                                 </replace>
                             </target>
                         </configuration>
@@ -1812,30 +1516,69 @@
                             <goal>run</goal>
                         </goals>
                     </execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>bin</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptors>
-								<descriptor>src/main/descriptors/assembly.xml</descriptor>
-							</descriptors>
-							<appendAssemblyId>false</appendAssemblyId>
-							<tarLongFileMode>gnu</tarLongFileMode>
+                    <!-- need to keep this as repository features still contain <repository> dependencies -->
+                    <execution>
+                        <id>clean-fork-patched-versions</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target name="Rename and relocate all fork patch-versioned files">
+                                <!-- rename all occurrences of paths having .tesb (from forks) -->
+                                <move todir="target/features-repo">
+                                    <fileSet dir="target/features-repo"/>
+                                    <regexpmapper
+                                            from="^(.*)\.tesb[0-9]+(.*)\.tesb[0-9]+(.*)\.(xml|cfg)$"
+                                            to="\1\2\3.\4" />
+                                </move>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>clean-empty-dirs</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target name="Clean empty dirs">
+                                <delete includeemptydirs="true" verbose="false">
+                                    <fileset dir="target/features-repo">
+                                        <patternset>
+                                            <include name="**/*" />
+                                        </patternset>
+                                        <type type="dir" />
+                                        <size value="0" when="equal" />
+                                    </fileset>
+                                </delete>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>bin</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/assembly.xml</descriptor>
+                            </descriptors>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <tarLongFileMode>gnu</tarLongFileMode>
                             <finalName>TESB_SE-V${packages.version}</finalName>
                             <formats>${assembly.formats}</formats>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
