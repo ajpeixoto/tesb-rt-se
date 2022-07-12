@@ -144,8 +144,8 @@
         <cxf.version>3.4.4</cxf.version>
         <cxf-rt-features-logging.tesb.version>3.4.4.20220520</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.4.4.20220520</cxf.features.tesb.version>
-        <spring.version>5.3.18</spring.version>
-        <spring.security.version>5.6.2</spring.security.version>
+        <spring.version>5.3.21</spring.version>
+        <spring.security.version>5.6.4</spring.security.version>
         <pax-web.version>7.2.29</pax-web.version>
         <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
         <activemq.version>5.16.4</activemq.version>
@@ -291,7 +291,7 @@
         <swagger.version>2.1.9</swagger.version>
         <syncope.version>2.1.9</syncope.version>
         <taglibs.version>1.2.5</taglibs.version>
-        <tika.version>1.27</tika.version>
+        <tika.version>1.28.4</tika.version>
         <velocity.version>2.3</velocity.version>
         <woodstox.version>4.1.5</woodstox.version>
         <xbean-blueprint.version>4.18</xbean-blueprint.version>
