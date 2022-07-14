@@ -181,7 +181,7 @@
         <guava.version>30.1.1-jre</guava.version>
         <guava.failureaccess.version>1.0.1</guava.failureaccess.version>
         <groovy.version>2.5.14</groovy.version>
-        <groovy-all.version>${groovy.version}.20220610</groovy-all.version>
+        <groovy-all.version>${groovy.version}.20220705</groovy-all.version>
         <sshd-core.version>2.7.0</sshd-core.version>
         <apache-xmlsec.version>2.1.7</apache-xmlsec.version>
         <xstream.version>1.4.19</xstream.version>
@@ -702,6 +702,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
+                <module>groovy</module>
                 <module>talend-esb</module>
             </modules>
         </profile>
@@ -721,25 +722,25 @@
             </modules>
             <properties>
                 <original.version>7.3.1</original.version>
-                <features.version>7.3.1.20220610</features.version>
-                <auxiliary-storage-features.version>7.3.1.20220601</auxiliary-storage-features.version>
-                <auxiliary-storage-client.version>7.3.1.20210618</auxiliary-storage-client.version>
-                <auxiliary-storage-service-rest.version>7.3.1.20220211</auxiliary-storage-service-rest.version>
-                <auxiliary-storage-rest-security.version>7.3.1.20210618</auxiliary-storage-rest-security.version>
-                <sts-config.version>7.3.1.20220408</sts-config.version>
-                <job-controller.version>7.3.1.20220408</job-controller.version>
-                <request-callback.version>7.3.1.20220304</request-callback.version>
-                <sam-agent.version>7.3.1.20220408</sam-agent.version>
-                <sam-server.version>7.3.1.20210723</sam-server.version>
-                <sam-service-rest.version>7.3.1.20210723</sam-service-rest.version>
-                <sam-service-soap.version>7.3.1.20220408</sam-service-soap.version>
-                <security-common.version>7.3.1.20220408</security-common.version>
-                <cxf-crypto-config.version>7.3.1.20210618</cxf-crypto-config.version>
-                <correlationid-policy.version>7.3.1.20220304</correlationid-policy.version>
-                <locator-soap-service.version>7.3.1.20220408</locator-soap-service.version>
-                <cxf-sts-war.version>7.3.1.20220408</cxf-sts-war.version>
-                <text-encryptor.version>7.3.1.20220408</text-encryptor.version>
-                <groovy-all.version>${groovy.version}.20220610</groovy-all.version>
+                <features.version>7.3.1.20220705</features.version>
+                <auxiliary-storage-features.version>7.3.1.20220705</auxiliary-storage-features.version>
+                <auxiliary-storage-client.version>7.3.1.20220705</auxiliary-storage-client.version>
+                <auxiliary-storage-service-rest.version>7.3.1.20220705</auxiliary-storage-service-rest.version>
+                <auxiliary-storage-rest-security.version>7.3.1.20220705</auxiliary-storage-rest-security.version>
+                <sts-config.version>7.3.1.20220705</sts-config.version>
+                <job-controller.version>7.3.1.20220705</job-controller.version>
+                <request-callback.version>7.3.1.20220705</request-callback.version>
+                <sam-agent.version>7.3.1.20220705</sam-agent.version>
+                <sam-server.version>7.3.1.20220705</sam-server.version>
+                <sam-service-rest.version>7.3.1.20220705</sam-service-rest.version>
+                <sam-service-soap.version>7.3.1.20220705</sam-service-soap.version>
+                <security-common.version>7.3.1.20220705</security-common.version>
+                <cxf-crypto-config.version>7.3.1.20220705</cxf-crypto-config.version>
+                <correlationid-policy.version>7.3.1.20220705</correlationid-policy.version>
+                <locator-soap-service.version>7.3.1.20220705</locator-soap-service.version>
+                <cxf-sts-war.version>7.3.1.20220705</cxf-sts-war.version>
+                <text-encryptor.version>7.3.1.20220705</text-encryptor.version>
+                <groovy-all.version>${groovy.version}.20220705</groovy-all.version>
             </properties>
         </profile>
     </profiles>
