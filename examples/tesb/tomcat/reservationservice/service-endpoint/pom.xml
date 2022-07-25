@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.talend.esb.examples.tomcat</groupId>
         <artifactId>reservationservice</artifactId>
-        <version>7.3.1.20220705</version>
+        <version>7.3.1.R2022-07-RT</version>
         <relativePath>..</relativePath>
     </parent>
     

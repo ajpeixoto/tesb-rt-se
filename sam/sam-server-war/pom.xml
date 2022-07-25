@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.talend.esb</groupId>
         <artifactId>sam-parent</artifactId>
-        <version>7.3.1.20220705</version>
+        <version>7.3.1.R2022-07-RT</version>
     </parent>
 
     <name>Talend ESB :: SAM :: Server War</name>
