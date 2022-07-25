@@ -16,12 +16,12 @@
 	<name>Talend ESB :: Locator :: Monitor</name>
 	<description>Service Locator Monitor</description>
 	<packaging>bundle</packaging>
-	<version>8.0.1.20220601</version>
+	<version>8.0.1.R2022-07-RT</version>
 
 	<parent>
 		<groupId>org.talend.esb</groupId>
 		<artifactId>bom</artifactId>
-		<version>8.0.1.20220601</version>
+		<version>8.0.1.R2022-07-RT</version>
         <relativePath>../bom</relativePath>
 	</parent>
 

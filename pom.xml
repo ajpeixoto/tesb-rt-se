@@ -10,7 +10,7 @@
     <groupId>org.talend.esb</groupId>
     <artifactId>esb-parent</artifactId>
     <packaging>pom</packaging>
-    <version>8.0.1.20220601</version>
+    <version>8.0.1.R2022-07-RT</version>
     <name>Talend ESB :: Parent</name>
     <description>
         Talend ESB SE bundles Service Factory and Integration Factory,

@@ -32,7 +32,7 @@
         <dependency>
 			<groupId>org.talend.esb.job</groupId>
 			<artifactId>org.talend.esb.job.controller</artifactId>
-			<version>8.0.1.20220601</version>
+			<version>8.0.1.R2022-07-RT</version>
         </dependency>
     </dependencies-->
 

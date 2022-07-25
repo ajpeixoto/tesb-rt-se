@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.talend.esb.examples.locator.service</groupId>
         <artifactId>locator-soap-service-demo</artifactId>
-        <version>8.0.1.20220601</version>
+        <version>8.0.1.R2022-07-RT</version>
         <relativePath>..</relativePath>
     </parent>
 

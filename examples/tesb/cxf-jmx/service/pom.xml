@@ -9,14 +9,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cxf-jmx-service</artifactId>
-    <version>8.0.1.20220601</version>
+    <version>8.0.1.R2022-07-RT</version>
     <name>Talend ESB Runtime::CXF JMX Example Service</name>
     <packaging>bundle</packaging>
 
     <parent>
         <groupId>org.talend.esb.examples</groupId>
         <artifactId>cxf-jmx</artifactId>
-        <version>8.0.1.20220601</version>
+        <version>8.0.1.R2022-07-RT</version>
         <relativePath>..</relativePath>
     </parent>
 

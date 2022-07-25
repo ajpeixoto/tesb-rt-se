@@ -8,7 +8,7 @@
     <groupId>org.talend.esb</groupId>
     <artifactId>bom-common</artifactId>
     <packaging>pom</packaging>
-    <version>8.0.1.20220601</version>
+    <version>8.0.1.R2022-07-RT</version>
     <name>Talend ESB :: BOM Common</name>
     <description>
         Talend ESB SE bundles Service Factory and Integration Factory,
@@ -96,7 +96,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <targetJdk>1.8</targetJdk>
 
-        <original.version>8.0.1.20220601</original.version>
+        <original.version>8.0.1.R2022-07-RT</original.version>
 
         <!-- final packages version -->
         <packages.version>${original.version}</packages.version>
@@ -2008,26 +2008,26 @@
         <profile>
             <id>patch</id>
             <properties>
-                <original.version>8.0.1.20220601</original.version>
-                <esb.features.version>8.0.1.20220601</esb.features.version>
-                <ds-service-db2.version>8.0.1.20220601</ds-service-db2.version>
-                <ds-service-derby.version>8.0.1.20220601</ds-service-derby.version>
-                <ds-service-h2.version>8.0.1.20220601</ds-service-h2.version>
-                <ds-service-mysql.version>8.0.1.20220601</ds-service-mysql.version>
-                <ds-service-mysql-8.version>8.0.1.20220601</ds-service-mysql-8.version>
-                <ds-service-oracle.version>8.0.1.20220601</ds-service-oracle.version>
-                <ds-service-postgresql.version>8.0.1.20220601</ds-service-postgresql.version>
-                <ds-service-sqlserver.version>8.0.1.20220601</ds-service-sqlserver.version>
-                <org.talend.esb.job.controller.version>8.0.1.20220601</org.talend.esb.job.controller.version>
-                <locator-soap-service.version>8.0.1.20220601</locator-soap-service.version>
-                <sam-agent.version>8.0.1.20220601</sam-agent.version>
-                <sam-service-soap.version>8.0.1.20220601</sam-service-soap.version>
-                <org.talend.esb.sts.config.version>8.0.1.20220601</org.talend.esb.sts.config.version>
-                <cxf-sts-war.version>8.0.1.20220601</cxf-sts-war.version>
-                <security-common.version>8.0.1.20220601</security-common.version>
-                <text-encryptor.version>8.0.1.20220601</text-encryptor.version>
-                <atom-rest-client.version>8.0.1.20220601</atom-rest-client.version>
-                <request-callback.version>8.0.1.20220601</request-callback.version>
+                <original.version>8.0.1.R2022-07-RT</original.version>
+                <esb.features.version>8.0.1.R2022-07-RT</esb.features.version>
+                <ds-service-db2.version>8.0.1.R2022-07-RT</ds-service-db2.version>
+                <ds-service-derby.version>8.0.1.R2022-07-RT</ds-service-derby.version>
+                <ds-service-h2.version>8.0.1.R2022-07-RT</ds-service-h2.version>
+                <ds-service-mysql.version>8.0.1.R2022-07-RT</ds-service-mysql.version>
+                <ds-service-mysql-8.version>8.0.1.R2022-07-RT</ds-service-mysql-8.version>
+                <ds-service-oracle.version>8.0.1.R2022-07-RT</ds-service-oracle.version>
+                <ds-service-postgresql.version>8.0.1.R2022-07-RT</ds-service-postgresql.version>
+                <ds-service-sqlserver.version>8.0.1.R2022-07-RT</ds-service-sqlserver.version>
+                <org.talend.esb.job.controller.version>8.0.1.R2022-07-RT</org.talend.esb.job.controller.version>
+                <locator-soap-service.version>8.0.1.R2022-07-RT</locator-soap-service.version>
+                <sam-agent.version>8.0.1.R2022-07-RT</sam-agent.version>
+                <sam-service-soap.version>8.0.1.R2022-07-RT</sam-service-soap.version>
+                <org.talend.esb.sts.config.version>8.0.1.R2022-07-RT</org.talend.esb.sts.config.version>
+                <cxf-sts-war.version>8.0.1.R2022-07-RT</cxf-sts-war.version>
+                <security-common.version>8.0.1.R2022-07-RT</security-common.version>
+                <text-encryptor.version>8.0.1.R2022-07-RT</text-encryptor.version>
+                <atom-rest-client.version>8.0.1.R2022-07-RT</atom-rest-client.version>
+                <request-callback.version>8.0.1.R2022-07-RT</request-callback.version>
             </properties>
         </profile>
     </profiles>

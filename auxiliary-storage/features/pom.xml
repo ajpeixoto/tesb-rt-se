@@ -14,14 +14,14 @@
     <modelVersion>4.0.0</modelVersion>
 
 	<artifactId>auxiliary-storage-features</artifactId>
-	<version>8.0.1.20220601</version>
+	<version>8.0.1.R2022-07-RT</version>
 	<packaging>pom</packaging>
 	<name>Talend ESB :: Auxiliary Storage :: Features </name>
 
 	<parent>
 		<groupId>org.talend.esb.auxiliary.storage</groupId>
 		<artifactId>auxiliary-storage-parent</artifactId>
-		<version>8.0.1.20220601</version>
+		<version>8.0.1.R2022-07-RT</version>
 	</parent>
 
     <build>

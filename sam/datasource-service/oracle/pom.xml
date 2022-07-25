@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.talend.esb</groupId>
         <artifactId>datasource-service</artifactId>
-        <version>8.0.1.20220601</version>
+        <version>8.0.1.R2022-07-RT</version>
     </parent>
 
     <name>Talend ESB :: SAM :: Datasource :: Oracle</name>

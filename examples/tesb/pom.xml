@@ -8,14 +8,14 @@
 
     <groupId>org.talend.esb.examples</groupId>
     <artifactId>talend-esb-examples</artifactId>
-    <version>8.0.1.20220601</version>
+    <version>8.0.1.R2022-07-RT</version>
     <name>Talend ESB Runtime :: Examples</name>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>org.talend.esb.examples</groupId>
         <artifactId>talend-esb-examples-parent</artifactId>
-        <version>8.0.1.20220601</version>
+        <version>8.0.1.R2022-07-RT</version>
     </parent>
 
     <modules>
