@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.talend.esb</groupId>
         <artifactId>sam-parent</artifactId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2022-09-RT</version>
     </parent>
 
     <modules>
