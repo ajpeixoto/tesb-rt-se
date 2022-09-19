@@ -46,9 +46,9 @@
         <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
         <framework.features.tesb.version>4.2.7.tesb5</framework.features.tesb.version>
         <spring.features.tesb.version>4.2.7.tesb5</spring.features.tesb.version>
-        <apache-cxf.features.tesb.version>3.4.7.tesb1</apache-cxf.features.tesb.version>
+        <apache-cxf.features.tesb.version>3.4.7.tesb2</apache-cxf.features.tesb.version>
         <apache-cxf-xkms.features.tesb.version>3.4.7.tesb1</apache-cxf-xkms.features.tesb.version>
-        <apache-camel.features.tesb.version>2.25.4.tesb1</apache-camel.features.tesb.version>
+        <apache-camel.features.tesb.version>2.25.4.tesb2</apache-camel.features.tesb.version>
         <pax-web.features.tesb.version>7.2.29.tesb1</pax-web.features.tesb.version>
         <activemq.features.tesb.version>5.15.15.tesb4</activemq.features.tesb.version>
         <hibernate-validator.features.tesb.version>6.0.17.Final.tesb2</hibernate-validator.features.tesb.version>
