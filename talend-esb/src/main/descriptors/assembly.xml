@@ -400,6 +400,9 @@
                 <include>system/README</include>
                 <include>system/**/*.jar</include>
             </includes>
+            <excludes>
+                <exclude>system/org/ops4j/pax/logging/**</exclude>
+            </excludes>
         </fileSet>
     </fileSets>
 
