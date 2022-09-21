@@ -254,9 +254,9 @@
                 <exclude>bin/**</exclude>
                 <exclude>LICENSE</exclude>
                 <exclude>NOTICE</exclude>
-                <exclude>activemq-all-5.15.10.jar</exclude>
-                <exclude>lib/activemq-broker-5.15.10.jar</exclude>
-                <exclude>lib/activemq-client-5.15.10.jar</exclude>
+                <exclude>activemq-all-${activemq.version}.jar</exclude>
+                <exclude>lib/activemq-broker-${activemq.version}.jar</exclude>
+                <exclude>lib/activemq-client-${activemq.version}.jar</exclude>
             </excludes>
         </fileSet>
 
@@ -392,9 +392,9 @@
                 <exclude>org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml</exclude>
                 <exclude>org/apache/karaf/config/org.apache.karaf.config.core/${karaf.version}/**</exclude>
                 <exclude>org/ops4j/pax/web/**/7.2.11/**</exclude>
-                <exclude>org/apache/activemq/activemq-osgi/5.15.10/**</exclude>
-                <exclude>org/apache/activemq/activemq-web-console/5.15.10/**</exclude>
-                <exclude>org/apache/activemq/activemq-karaf/5.15.10/activemq-karaf-5.15.10.jar</exclude>
+                <exclude>org/apache/activemq/activemq-osgi/${activemq.version}/**</exclude>
+                <exclude>org/apache/activemq/activemq-web-console/${activemq.version}/**</exclude>
+                <exclude>org/apache/activemq/activemq-karaf/${activemq.version}/activemq-karaf-${activemq.version}.jar</exclude>
                 <!-- patch for cxf-rt-rs-service-description-swagger (TESB-29278) -->
                 <exclude>org/apache/cxf/cxf-rt-rs-service-description-swagger/**</exclude>
             </excludes>
@@ -739,11 +739,11 @@
             <outputDirectory>./container/system/org/apache/activemq/activemq-osgi/${activemq.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
         </file>
-        <file>
+        <!-- <file>
             <source>${basedir}/target/dependencies/activemq-web-console-${activemq.tesb.version}.war</source>
             <outputDirectory>./container/system/org/apache/activemq/activemq-web-console/${activemq.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
-        </file>
+        </file> -->
         <file>
             <source>${basedir}/target/dependencies/pax-logging-log4j2-${pax-logging.tesb.version}.jar</source>
             <outputDirectory>./container/system/org/ops4j/pax/logging/pax-logging-log4j2/${pax-logging.tesb.version}/</outputDirectory>

@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
-            <version>${camel.version}</version>
+            <version>${camel-core.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.sun</groupId>
