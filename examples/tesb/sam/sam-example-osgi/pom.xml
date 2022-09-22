@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.talend.esb.examples</groupId>
         <artifactId>sam-examples</artifactId>
-        <version>7.3.2-SNAPSHOT</version>
+        <version>7.3.1.R2022-09-RT</version>
     </parent>
 
     <name>Service Activity Monitoring :: Example Service OSGi</name>

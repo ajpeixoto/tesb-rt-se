@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.talend.esb.examples</groupId>
         <artifactId>rent-a-car</artifactId>
-        <version>7.3.2-SNAPSHOT</version>
+        <version>7.3.1.R2022-09-RT</version>
     </parent>
     
     <modules>
