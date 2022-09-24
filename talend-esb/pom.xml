@@ -1556,6 +1556,24 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>clean-obsolete</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <skip>false</skip>
+                            <target name="Clean obsolete dependencies">
+                                <delete includeemptydirs="true" verbose="false" failonerror="false">
+                                    <fileset dir="target/features-repo/com/fasterxml/jackson" includes="**/2.6.1/**,**/2.11.3/**" />
+                                    <fileset dir="target/features-repo/org/eclipse/jetty/aggregate" />
+                                    <fileset dir="target/features-repo/org/yaml/snakeyaml/1.17" />
+                                    <fileset dir="target/features-repo/org/springframework" />
+                                </delete>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>clean-empty-dirs</id>
                         <phase>prepare-package</phase>
                         <goals>
