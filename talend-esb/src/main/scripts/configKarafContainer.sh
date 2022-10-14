@@ -24,10 +24,12 @@ echo
 echo "JMX Management configuration (PID: org.apache.karaf.management.cfg)"
 config:edit --force org.apache.karaf.management
 echo "rmiRegistryPort = $1"
-config:property-set rmiRegistryPort $1
+config:property-set rmiRegistryHost \$\{env:ORG_APACHE_KARAF_MANAGEMENT_RMIREGISTRHOST:-\$\{ORG_APACHE_KARAF_MANAGEMENT_RMIREGISTRYHOST:-0.0.0.0\}\}
+config:property-set rmiRegistryPort \$\{env:ORG_APACHE_KARAF_MANAGEMENT_RMIREGISTRYPORT:-\$\{ORG_APACHE_KARAF_MANAGEMENT_RMIREGISTRYPORT:-$1\}\}
 echo "rmiServerPort = $2"
-config:property-set rmiServerPort $2
-config:property-set serviceUrl service:jmx:rmi://\${rmiServerHost}:\${rmiServerPort}/jndi/rmi://\${rmiRegistryHost}:\${rmiRegistryPort}/karaf-\${karaf.name}
+config:property-set rmiServerHost \$\{env:ORG_APACHE_KARAF_MANAGEMENT_RMISERVERHOST:-\$\{ORG_APACHE_KARAF_MANAGEMENT_RMISERVERHOST:-0.0.0.0\}\}
+config:property-set rmiServerPort \$\{env:ORG_APACHE_KARAF_MANAGEMENT_RMISERVERPORT:-\$\{ORG_APACHE_KARAF_MANAGEMENT_RMISERVERPORT:-$2\}\}
+config:property-set serviceUrl service:jmx:rmi://\$\{rmiServerHost\}:\$\{rmiServerPort\}/jndi/rmi://\$\{rmiRegistryHost\}:\$\{rmiRegistryPort\}/karaf-\$\{karaf.name\}
 config:update
 
 echo
