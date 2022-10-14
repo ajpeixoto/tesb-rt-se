@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.talend.esb.examples</groupId>
         <artifactId>talend-esb-examples</artifactId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2022-10-RT</version>
     </parent>
 
 	<modules>

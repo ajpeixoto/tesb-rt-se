@@ -21,13 +21,13 @@
     <parent>
         <artifactId>bom</artifactId>
         <groupId>org.talend.esb</groupId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2022-10-RT</version>
         <relativePath>../bom</relativePath>
     </parent>
 
     <groupId>org.talend.esb.auxiliary.storage</groupId>
     <artifactId>auxiliary-storage-parent</artifactId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2022-10-RT</version>
     <packaging>pom</packaging>
     <name>Talend ESB :: Auxiliary Storage :: Parent</name>
 
