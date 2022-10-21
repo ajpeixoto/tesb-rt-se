@@ -54,7 +54,9 @@ public class STSClientUtils implements STSClientCreator {
     public STSClientUtils(Map<String, Object> stsProperties, Map<String, Object> stsPropertiesOverride) {
         this.stsProperties = stsProperties;
         this.stsPropertiesOverride = stsPropertiesOverride;
-        instance = this;
+        if (hasTokenService()) {
+            instance = this;
+        }
     }
 
     // for registry
@@ -120,6 +122,10 @@ public class STSClientUtils implements STSClientCreator {
         }
     }
 
+    public static void clearSingleton() {
+        instance = null;
+    }
+
     private static STSClient createClient(Bus bus, Map<String, Object> stsProps) {
         final STSClient stsClient = new STSClient(bus);
         stsClient.setServiceQName(new QName(
@@ -166,17 +172,31 @@ public class STSClientUtils implements STSClientCreator {
     }
 
     private Map<String, Object> getMergedStsProperties() {
+        Map<String, Object> stsProps = stsProperties;
+        if (!hasTokenService() && instance != null) {
+            stsProps = instance.stsProperties;
+        }
         if (stsPropertiesOverride == null) {
-            if (stsProperties == null) {
+            if (stsProps == null) {
                 return new HashMap<String, Object>();
             }
-            return new HashMap<String, Object>(stsProperties);
+            return new HashMap<String, Object>(stsProps);
         }
-        if (stsProperties == null) {
+        if (stsProps == null) {
             return new HashMap<String, Object>(stsPropertiesOverride);
         }
-        Map<String, Object> props = new HashMap<String, Object>(stsProperties);
+        Map<String, Object> props = new HashMap<String, Object>(stsProps);
         props.putAll(stsPropertiesOverride);
         return props;
+    }
+
+    private boolean hasTokenService() {
+        if (stsProperties != null && stsProperties.get(STS_SERVICE_NAME) != null) {
+            return true;
+        }
+        if (stsPropertiesOverride != null && stsPropertiesOverride.get(STS_SERVICE_NAME) != null) {
+            return true;
+        }
+        return false;
     }
 }

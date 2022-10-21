@@ -24,6 +24,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -211,6 +212,7 @@ public class Event implements Serializable {
      *
      * @return the custom info
      */
+    @XmlElement
     public Map<String, String> getCustomInfo() {
         return customInfo;
     }

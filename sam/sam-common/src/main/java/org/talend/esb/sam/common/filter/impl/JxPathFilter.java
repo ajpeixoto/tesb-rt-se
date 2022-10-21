@@ -19,10 +19,18 @@
  */
 package org.talend.esb.sam.common.filter.impl;
 
-import org.apache.commons.jxpath.JXPathContext;
-import org.apache.commons.jxpath.Pointer;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+
 import org.talend.esb.sam.common.event.Event;
 import org.talend.esb.sam.common.spi.EventFilter;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 /**
  * The Class JxPathFilter.
@@ -60,9 +68,24 @@ public class JxPathFilter implements EventFilter {
      */
     @Override
     public boolean filter(Event event) {
-        JXPathContext context = JXPathContext.newContext(event);
-        Pointer pointer = context.getPointer(expression);
-        return (Boolean)pointer.getValue();
+        try {
+            JAXBContext ctx = JAXBContext.newInstance(Event.class);
+            Marshaller msh = ctx.createMarshaller();
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true); // never forget this!
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.newDocument();
+            msh.marshal(event, doc);
+            Node node = doc.getDocumentElement();
+            XPathFactory xpathfactory = XPathFactory.newInstance();
+            XPath xpath = xpathfactory.newXPath();
+            Boolean result = (Boolean) xpath.evaluate(expression, node, XPathConstants.BOOLEAN);
+            return result == null ? false : result.booleanValue();
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new RuntimeException("Exception caught during XPath filter evaluation: ", e);
+        }
     }
 
 }

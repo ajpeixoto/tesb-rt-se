@@ -2,19 +2,23 @@ package org.talend.esb.policy.correlation.impl;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import javax.activation.DataSource;
+import javax.xml.namespace.NamespaceContext;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
-import org.apache.commons.jxpath.JXPathContext;
-import org.apache.commons.jxpath.JXPathException;
 import org.apache.cxf.databinding.DataWriter;
 import org.apache.cxf.io.CachedOutputStream;
 import org.apache.cxf.message.Exchange;
@@ -241,41 +245,65 @@ public class XPathProcessor extends BareOutInterceptor {
 		
 		Map<String, String> resultMap = new HashMap<String, String>();
 	
-		JXPathContext messageContext = JXPathContext.newContext(body);
+	    XPathFactory xpathfactory = XPathFactory.newInstance();
+	    XPath xpath = xpathfactory.newXPath();
 		
-		if(namespaces!=null){
-			for (XpathNamespace namespace : namespaces) {
-				String prefix = namespace.getPrefix();
-				String uri = namespace.getUri();
-				if(null != uri && null != prefix){
-					messageContext.registerNamespace(prefix, uri);
-				}
-				
-			}	
+		if(namespaces != null){
+		    xpath.setNamespaceContext(new NamespaceContext() {
+
+                @Override
+                public String getNamespaceURI(String prefix) {
+                    for (XpathNamespace nsp : namespaces) {
+                        if (prefix.equals(nsp.getPrefix()) && nsp.getUri() != null) {
+                            return nsp.getUri();
+                        }
+                    }
+                    return null;
+                }
+
+                @Override
+                public String getPrefix(String namespaceURI) {
+                    for (XpathNamespace nsp : namespaces) {
+                        if (namespaceURI.equals(nsp.getUri()) && nsp.getPrefix() != null) {
+                            return nsp.getPrefix();
+                        }
+                    }
+                    return null;
+                }
+
+                @SuppressWarnings("rawtypes")
+                @Override
+                public Iterator getPrefixes(String namespaceURI) {
+                    List<String> result = new ArrayList<String>();
+                    for (XpathNamespace nsp : namespaces) {
+                        if (namespaceURI.equals(nsp.getUri()) && nsp.getPrefix() != null) {
+                            result.add(nsp.getPrefix());
+                        }
+                    }
+                    return result.iterator();
+                }
+		        
+		    });
 		}
 
 		for (XpathPart part : parts) {
 			
 			try {
-				JXPathContext.compile(part.getXpath());
-			} catch (JXPathException ex) {
-				throw new RuntimeException("Validation of XPATH expression"
-						+ "{ name: " + part.getName() + "; xpath: "
-						+ part.getXpath() + " } failed", ex);
-			}
-
-			try {
-				Object val = messageContext.getValue(part.getXpath());
-				String result = (val==null)?null:val.toString();
-				resultMap.put(part.getXpath(), val.toString());
+			    String val = xpath.evaluate(part.getXpath(), body);
+				String result = val == null ? null : val;
+				resultMap.put(part.getXpath(), result);
 
 				
-				if((result==null || result.isEmpty()) && !part.isOptional()){
+				if((result == null || result.isEmpty()) && !part.isOptional()) {
 					throw new RuntimeException(
 							"Can not evaluate Xpath expression" + "{ name: "
 									+ part.getName() + "; xpath: "
 									+ part.getXpath() + " }");						
 				}
+            } catch (XPathExpressionException ex) {
+                throw new RuntimeException("Validation of XPATH expression"
+                        + "{ name: " + part.getName() + "; xpath: "
+                        + part.getXpath() + " } failed", ex);
 			} catch (RuntimeException ex) {
 				if (!part.isOptional()) {
 					throw new RuntimeException(

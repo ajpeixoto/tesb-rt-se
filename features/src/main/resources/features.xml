@@ -44,6 +44,11 @@
         <bundle start-level="30">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson-datatype-jsr310.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson-jaxrs.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson-jaxrs.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:javax.transaction/javax.transaction-api/${javax.transaction-api.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:javax.enterprise/cdi-api/${cdi-api.version}</bundle>
     </feature>
 
     <!-- forces latest bundle to be installed to avoid conflicts between versions -->
@@ -100,7 +105,7 @@
         <bundle start-level="30" dependency="true">mvn:org.eclipse.jdt.core.compiler/ecj/4.5.1</bundle>
         <bundle start-level="30" dependency="true">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
         <bundle dependency="true">mvn:org.ops4j.pax.web/pax-web-jsp/${pax-web.version}</bundle>
-        <bundle dependency="true">mvn:commons-jxpath/commons-jxpath/${commons-jxpath.version}</bundle>
+        <!-- <bundle dependency="true">mvn:commons-jxpath/commons-jxpath/${commons-jxpath.version}</bundle> -->
         <bundle>mvn:org.talend.esb/sam-common/${project.version}</bundle>
     </feature>
 
@@ -391,7 +396,7 @@
         <bundle start-level="30" dependency="true">mvn:org.eclipse.jdt.core.compiler/ecj/4.5.1</bundle>
         <bundle start-level="30" dependency="true">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
         <bundle dependency="true">mvn:org.ops4j.pax.web/pax-web-jsp/${pax-web.version}</bundle>
-        <bundle dependency="true">mvn:commons-jxpath/commons-jxpath/${commons-jxpath.version}</bundle>
+        <!-- <bundle dependency="true">mvn:commons-jxpath/commons-jxpath/${commons-jxpath.version}</bundle> -->
         <bundle>mvn:org.talend.esb.policies/correlationid-policy/${project.version}</bundle>
     </feature>
 
