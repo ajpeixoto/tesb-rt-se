@@ -50,7 +50,8 @@ public class JxPathFilterTest {
         checkFiltered("eventType='FAULT_IN'", event);
         checkFiltered("content='test' and eventType='FAULT_IN'", event);
         checkFiltered("content='test' and eventType='FAULT_IN'", event);
-        checkFiltered("content='test' and eventType='FAULT_IN' and customInfo/key1='value1'", event);
+        // checkFiltered("content='test' and eventType='FAULT_IN' and customInfo/key1='value1'", event);
+        checkFiltered("content='test' and eventType='FAULT_IN' and customInfo/entry/key='key1' and customInfo/entry/value='value1'", event);
 
         checkFiltered("messageInfo/flowId='urn:flowid' and messageInfo/operationName='{namespace}opname'", event);
     }

@@ -19,16 +19,30 @@
  */
 package org.talend.esb.sam.common.filter.impl;
 
-import org.apache.commons.jxpath.JXPathContext;
-import org.apache.commons.jxpath.Pointer;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+
 import org.talend.esb.sam.common.event.Event;
 import org.talend.esb.sam.common.spi.EventFilter;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 /**
  * The Class JxPathFilter.
  */
 public class JxPathFilter implements EventFilter {
-    String expression;
+
+    private String expression;
+    private JAXBContext context = initJAXBContext();
+    private DocumentBuilder builder = initDocumentBuilder();
+    private XPathFactory xpathfactory = initXPathFactory();
 
     /**
      * Instantiates a new jx path filter.
@@ -60,9 +74,58 @@ public class JxPathFilter implements EventFilter {
      */
     @Override
     public boolean filter(Event event) {
-        JXPathContext context = JXPathContext.newContext(event);
-        Pointer pointer = context.getPointer(expression);
-        return (Boolean)pointer.getValue();
+        try {
+            Marshaller msh = initMarshaller();
+            Document doc = initDocument();
+            msh.marshal(event, doc);
+            Node node = doc.getDocumentElement();
+            XPath xpath = initXPath();
+            Boolean result = (Boolean) xpath.evaluate(expression, node, XPathConstants.BOOLEAN);
+            return result == null ? false : result.booleanValue();
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new RuntimeException("Exception caught during XPath filter evaluation: ", e);
+        }
     }
 
+    private Marshaller initMarshaller() throws JAXBException {
+        synchronized (context) {
+            return context.createMarshaller();
+        }
+    }
+
+    private Document initDocument() {
+        synchronized (builder) {
+            return builder.newDocument();
+        }
+    }
+
+    private XPath initXPath() {
+        synchronized (xpathfactory) {
+            return xpathfactory.newXPath();
+        }
+    }
+
+    private static JAXBContext initJAXBContext() {
+        try {
+            return JAXBContext.newInstance(Event.class);
+        } catch (JAXBException e) {
+            throw new RuntimeException("Exception caught initializing JAXB context for Event class. ", e);
+        }
+    }
+
+    private static DocumentBuilder initDocumentBuilder() {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true); // never forget this!
+            return factory.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            throw new RuntimeException("Exception caught setting up document builder. ", e);
+        }
+    }
+
+    private static XPathFactory initXPathFactory() {
+        return XPathFactory.newInstance();
+    }
 }
