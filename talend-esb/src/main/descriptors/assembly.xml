@@ -36,6 +36,7 @@
                 <exclude>ojdbc/**</exclude>
                 <exclude>com/ibm/db2/**</exclude>
                 <exclude>com/microsoft/sqlserver/**</exclude>
+                <exclude>com/h2database/h2/**</exclude>
             </excludes>
         </fileSet>
 
@@ -305,7 +306,7 @@
             <fileMode>0644</fileMode>
             <directoryMode>777</directoryMode>
         </fileSet>
-        
+
         <!-- Copy additional libs endorsed & jdk9plus -->
         <fileSet>
             <directory>target/container/lib</directory>
@@ -405,6 +406,26 @@
             </excludes>
         </fileSet>
     </fileSets>
+
+    <files>
+        <file>
+            <source>${basedir}/target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/apache/karaf/decanter/apache-karaf-decanter/${decanter.features.tesb.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/ops4j/pax/jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/h2-${h2.version}.jar</source>
+            <outputDirectory>./container/system/com/h2database/h2/${h2.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+    </files>
 
     <dependencySets>
         <dependencySet>
