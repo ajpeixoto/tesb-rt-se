@@ -121,7 +121,7 @@
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.features.tesb.version}/xml/features</descriptor>
 
                                 <descriptor>mvn:org.hibernate.validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/xml/features</descriptor>
-<!--                                <descriptor>mvn:org.ops4j.pax.cdi/pax-cdi-features/${pax-cdi-features.features.tesb.version}/xml/features</descriptor>-->
+                                <!-- <descriptor>mvn:org.ops4j.pax.cdi/pax-cdi-features/${pax-cdi-features.features.tesb.version}/xml/features</descriptor> -->
                                 <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.jms/pax-jms-features/${pax-jms-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.transx/pax-transx-features/${pax-transx-features.tesb.version}/xml/features</descriptor>
@@ -204,6 +204,32 @@
                                     <type>pom</type>
                                     <outputDirectory>target/dependencies/bom-common</outputDirectory>
                                     <destFileName>pom.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.karaf.decanter</groupId>
+                                    <artifactId>apache-karaf-decanter</artifactId>
+                                    <version>${decanter.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.ops4j.pax.jdbc</groupId>
+                                    <artifactId>pax-jdbc-features</artifactId>
+                                    <version>${pax-jdbc-features.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.h2database</groupId>
+                                    <artifactId>h2</artifactId>
+                                    <version>${h2.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>h2-${h2.version}.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -514,6 +540,42 @@
                         </goals>
                     </execution>
                     <execution>
+                        <id>patch-features-files</id>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <target>
+                                <replace file="target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml">
+                                    <replacefilter
+                                        token="jackson-databind/2.12.0&lt;"
+                                        value="jackson-databind/${jackson-databind.version}&lt;"/>
+                                    <replacefilter
+                                        token="/2.12.0&lt;"
+                                        value="/${jackson.version}&lt;"/>
+                                    <replacefilter
+                                        token="jackson-databind/2.9.8&lt;"
+                                        value="jackson-databind/${jackson-databind.version}&lt;"/>
+                                    <replacefilter
+                                        token="/2.9.8&lt;"
+                                        value="/${jackson.version}&lt;"/>
+                                    <replacefilter
+                                        token="/4.1.45.Final&lt;"
+                                        value="/${netty.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:com.google.guava/guava/25.1-jre&lt;"
+                                        value="&gt;mvn:com.google.guava/guava/${guava.version}&lt;"/>
+                                </replace>
+                                <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
+                                    <replacefilter
+                                        token="&gt;mvn:com.h2database/h2/1.4.200&lt;"
+                                        value="&gt;mvn:com.h2database/h2/${h2.version}&lt;"/>
+                                </replace>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
                         <id>convert-snapshot-file-names</id>
                         <phase>process-resources</phase>
                         <configuration>
@@ -592,7 +654,7 @@
                             </target>
                         </configuration>
                     </execution>
-                 </executions>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -605,7 +667,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <!--                            <skipAssembly>true</skipAssembly>-->
+                            <!-- <skipAssembly>true</skipAssembly> -->
                             <descriptors>
                                 <descriptor>src/main/descriptors/assembly.xml</descriptor>
                             </descriptors>
