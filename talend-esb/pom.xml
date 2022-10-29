@@ -376,6 +376,15 @@
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>cxf-rt-transports-http-${cxf.version}.jar</destFileName>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>ca.uhn.hapi.fhir.karaf</groupId>
+                                    <artifactId>hapi-fhir</artifactId>
+                                    <version>${hapi-fhir.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>hapi-fhir-${hapi-fhir.features.tesb.version}-features.xml</destFileName>
+                                </artifactItem>
                                 <!-- patch for decanter bundles (TESB-24788) -->
                                 <artifactItem>
                                     <groupId>org.apache.karaf.decanter</groupId>
@@ -1468,6 +1477,11 @@
                                     <replacefilter
                                         token="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/3.2.4_1&lt;"
                                         value="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/${cglib.bundle.version}&lt;"/>
+                                </replace>
+                                <replace file="target/dependencies/hapi-fhir-${hapi-fhir.features.tesb.version}-features.xml">
+                                    <replacefilter
+                                        token="&gt;mvn:org.apache.commons/commons-text/1.4&lt;"
+                                        value="&gt;mvn:org.apache.commons/commons-text/${commons-text.version}&lt;"/>
                                 </replace>
                             </target>
                         </configuration>
