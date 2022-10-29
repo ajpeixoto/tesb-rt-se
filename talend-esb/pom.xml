@@ -117,15 +117,15 @@
                                 <descriptor>mvn:org.ops4j.pax.web/pax-web-features/${pax-web.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.features.tesb.version}/xml/features</descriptor>
 
-                                <descriptor>mvn:org.apache.jclouds.karaf/jclouds-karaf/${jclouds.features.tesb.version}/xml/features</descriptor>
+                                <!-- <descriptor>mvn:org.apache.jclouds.karaf/jclouds-karaf/${jclouds.features.tesb.version}/xml/features</descriptor> -->
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.features.tesb.version}/xml/features</descriptor>
 
                                 <descriptor>mvn:org.hibernate.validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/xml/features</descriptor>
                                 <!-- <descriptor>mvn:org.ops4j.pax.cdi/pax-cdi-features/${pax-cdi-features.features.tesb.version}/xml/features</descriptor> -->
-                                <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/xml/features</descriptor>
+                                <!-- <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/xml/features</descriptor> -->
                                 <descriptor>mvn:org.ops4j.pax.jms/pax-jms-features/${pax-jms-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.ops4j.pax.transx/pax-transx-features/${pax-transx-features.tesb.version}/xml/features</descriptor>
-                                <descriptor>mvn:org.apache.karaf.decanter/apache-karaf-decanter/${decanter.features.tesb.version}/xml/features</descriptor>
+                                <!-- <descriptor>mvn:org.apache.karaf.decanter/apache-karaf-decanter/${decanter.features.tesb.version}/xml/features</descriptor> -->
                                 <descriptor>mvn:org.apache.aries.jpa/jpa-features/${jpa-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.openjpa/openjpa-features/${openjpa-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/enterprise/${enterprise.features.tesb.version}/xml/features</descriptor>
@@ -142,6 +142,10 @@
                                 <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${project.version}/xml</descriptor>
                                 <descriptor>mvn:org.talend.esb/features/${esb.features.version}/xml</descriptor>
+
+                                <descriptor>file:${basedir}/target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</descriptor>
+                                <descriptor>file:${basedir}/target/dependencies/jclouds-karaf-${jclouds.features.tesb.version}-features.xml</descriptor>
+                                <descriptor>file:${basedir}/target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</descriptor>
 
                                 <!-- Non Maven features aren't copied to system -->
                                 <descriptor>${project.build.outputDirectory}/additional-bundles.xml</descriptor>
@@ -215,6 +219,15 @@
                                     <destFileName>apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</destFileName>
                                 </artifactItem>
                                 <artifactItem>
+                                    <groupId>org.apache.jclouds.karaf</groupId>
+                                    <artifactId>jclouds-karaf</artifactId>
+                                    <version>${jclouds.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>jclouds-karaf-${jclouds.features.tesb.version}-features.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
                                     <groupId>org.ops4j.pax.jdbc</groupId>
                                     <artifactId>pax-jdbc-features</artifactId>
                                     <version>${pax-jdbc-features.features.tesb.version}</version>
@@ -223,14 +236,14 @@
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</destFileName>
                                 </artifactItem>
-                                <artifactItem>
+                                <!-- <artifactItem>
                                     <groupId>com.h2database</groupId>
                                     <artifactId>h2</artifactId>
                                     <version>${h2.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>h2-${h2.version}.jar</destFileName>
-                                </artifactItem>
+                                </artifactItem> -->
                             </artifactItems>
                         </configuration>
                     </execution>
@@ -563,6 +576,14 @@
                                     <replacefilter
                                         token="&gt;mvn:com.google.guava/guava/25.1-jre&lt;"
                                         value="&gt;mvn:com.google.guava/guava/${guava.version}&lt;"/>
+                                </replace>
+                                <replace file="target/dependencies/jclouds-karaf-${jclouds.features.tesb.version}-features.xml">
+                                    <replacefilter
+                                        token="&gt;mvn:com.google.guava/guava/18.0&lt;"
+                                        value="&gt;mvn:com.google.guava/guava/${guava.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.yaml/snakeyaml/1.17&lt;"
+                                        value="&gt;mvn:org.yaml/snakeyaml/${snakeyaml.version}&lt;"/>
                                 </replace>
                                 <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
                                     <replacefilter
