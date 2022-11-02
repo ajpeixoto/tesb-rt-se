@@ -32,13 +32,22 @@ import org.slf4j.LoggerFactory;
 public class NetworkActivator implements BundleActivator {
 
     private static final Logger LOG = LoggerFactory.getLogger(NetworkActivator.class);
+    private static final String DERBY_PORT_PROPERTY = "org.talend.esb.derby.port";
+    private static final int DEFAULT_PORT = 1527;
+
+    private static final String PORT_FALLBACK_MESSAGE = "System property " + DERBY_PORT_PROPERTY
+            + " not set, using default port " + DEFAULT_PORT + ". ";
+    private static final String PORT_ERROR_MESSAGE = "System property " + DERBY_PORT_PROPERTY
+            + " has an illegal port value of {}, using default port " + DEFAULT_PORT + ". ";
+    private static final String PORT_CONFIGURED_MESSAGE = "System property " + DERBY_PORT_PROPERTY
+            + " is applied, setting Derby port to {}. ";
 
     private NetworkServerControl server;
 
     public void start(BundleContext context) throws Exception {
         LOG.info("Starting internal Derby DB...");
 
-        server = new NetworkServerControl(InetAddress.getByAddress(new byte[] { 0, 0, 0, 0 }), 1527);
+        server = new NetworkServerControl(InetAddress.getByAddress(new byte[] { 0, 0, 0, 0 }), resolveDerbyPort());
         server.start(null);
 
         // if it already exists nothing should happen
@@ -52,7 +61,7 @@ public class NetworkActivator implements BundleActivator {
             DriverManager.getConnection(getDerbyJDBC_Shutdown("db"));
         } catch (SQLException e) {
             if (!"08006".equals(e.getSQLState())) {
-                LOG.error("Exception during shutting db down.", e);
+                LOG.error("Exception during db shutdown. ", e);
             }
         }
 
@@ -67,4 +76,18 @@ public class NetworkActivator implements BundleActivator {
         return "jdbc:derby:" + databaseName + ";shutdown=true";
     }
 
+    private static int resolveDerbyPort() {
+        Integer value = Integer.getInteger(DERBY_PORT_PROPERTY);
+        if (value == null) {
+            LOG.info(PORT_FALLBACK_MESSAGE);
+            return DEFAULT_PORT;
+        }
+        int result = value.intValue();
+        if (result < 1 || result > 65535) {
+            LOG.warn(PORT_ERROR_MESSAGE, result);
+            return DEFAULT_PORT;
+        }
+        LOG.info(PORT_CONFIGURED_MESSAGE, result);
+        return result;
+    }
 }
