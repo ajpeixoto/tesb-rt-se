@@ -63,7 +63,6 @@ public class STSClientUtilsTest {
 		String password = "password";
 
 		try {
-		    STSClientUtils.clearSingleton();
 		    STSClient client = new STSClientUtils(new HashMap<String, Object>()).newSTSClient(BUS, username, password);
 		    assertTrue("STS client creation should have failed for " + client, false);
 		} catch (IllegalArgumentException e) {
