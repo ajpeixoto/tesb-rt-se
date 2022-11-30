@@ -185,7 +185,7 @@
         <guava.failureaccess.version>1.0.1</guava.failureaccess.version>
         <groovy.version>2.5.14</groovy.version>
         <groovy-all.version>${groovy.version}.20220920</groovy-all.version>
-        <sshd-core.version>2.7.0</sshd-core.version>
+        <sshd-core.version>2.9.2</sshd-core.version>
         <apache-xmlsec.version>2.1.7</apache-xmlsec.version>
         <xstream.version>1.4.19</xstream.version>
         <jcommander.version>1.75</jcommander.version>
