@@ -2037,25 +2037,25 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1</original.version>
-                <esb.features.version>8.0.1.20220915</esb.features.version>
-                <ds-service-db2.version>8.0.1.20220915</ds-service-db2.version>
-                <ds-service-derby.version>8.0.1.20220915</ds-service-derby.version>
-                <ds-service-h2.version>8.0.1.20220915</ds-service-h2.version>
-                <ds-service-mysql.version>8.0.1.20220915</ds-service-mysql.version>
-                <ds-service-mysql-8.version>8.0.1.20220915</ds-service-mysql-8.version>
-                <ds-service-oracle.version>8.0.1.20220915</ds-service-oracle.version>
-                <ds-service-postgresql.version>8.0.1.20220915</ds-service-postgresql.version>
-                <ds-service-sqlserver.version>8.0.1.20220915</ds-service-sqlserver.version>
-                <org.talend.esb.job.controller.version>8.0.1.20220915</org.talend.esb.job.controller.version>
-                <locator-soap-service.version>8.0.1.20220915</locator-soap-service.version>
-                <sam-agent.version>8.0.1.20220915</sam-agent.version>
-                <sam-service-soap.version>8.0.1.20220915</sam-service-soap.version>
-                <org.talend.esb.sts.config.version>8.0.1.20220915</org.talend.esb.sts.config.version>
-                <cxf-sts-war.version>8.0.1.20220915</cxf-sts-war.version>
-                <security-common.version>8.0.1.20220915</security-common.version>
-                <text-encryptor.version>8.0.1.20220915</text-encryptor.version>
-                <atom-rest-client.version>8.0.1.20220915</atom-rest-client.version>
-                <request-callback.version>8.0.1.20220915</request-callback.version>
+                <esb.features.version>8.0.1-SNAPSHOT</esb.features.version>
+                <ds-service-db2.version>8.0.1-SNAPSHOT</ds-service-db2.version>
+                <ds-service-derby.version>8.0.1-SNAPSHOT</ds-service-derby.version>
+                <ds-service-h2.version>8.0.1-SNAPSHOT</ds-service-h2.version>
+                <ds-service-mysql.version>8.0.1-SNAPSHOT</ds-service-mysql.version>
+                <ds-service-mysql-8.version>8.0.1-SNAPSHOT</ds-service-mysql-8.version>
+                <ds-service-oracle.version>8.0.1-SNAPSHOT</ds-service-oracle.version>
+                <ds-service-postgresql.version>8.0.1-SNAPSHOT</ds-service-postgresql.version>
+                <ds-service-sqlserver.version>8.0.1-SNAPSHOT</ds-service-sqlserver.version>
+                <org.talend.esb.job.controller.version>8.0.1-SNAPSHOT</org.talend.esb.job.controller.version>
+                <locator-soap-service.version>8.0.1-SNAPSHOT</locator-soap-service.version>
+                <sam-agent.version>8.0.1-SNAPSHOT</sam-agent.version>
+                <sam-service-soap.version>8.0.1-SNAPSHOT</sam-service-soap.version>
+                <org.talend.esb.sts.config.version>8.0.1-SNAPSHOT</org.talend.esb.sts.config.version>
+                <cxf-sts-war.version>8.0.1-SNAPSHOT</cxf-sts-war.version>
+                <security-common.version>8.0.1-SNAPSHOT</security-common.version>
+                <text-encryptor.version>8.0.1-SNAPSHOT</text-encryptor.version>
+                <atom-rest-client.version>8.0.1-SNAPSHOT</atom-rest-client.version>
+                <request-callback.version>8.0.1-SNAPSHOT</request-callback.version>
             </properties>
         </profile>
     </profiles>
