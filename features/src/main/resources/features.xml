@@ -265,7 +265,7 @@
 
     <feature name='tesb-derby-starter' version='${original.version}'>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/${derby.servicemix.version}</bundle>
-        <bundle>mvn:org.talend.esb/derby-starter/${original.version}</bundle>
+        <bundle>mvn:org.talend.esb/derby-starter/${derby-starter.version}</bundle>
     </feature>
 
     <feature name='tesb-zookeeper' version='${original.version}'>

@@ -14,6 +14,11 @@
     </parent>
 
     <name>Talend ESB :: SAM :: Derby Starter</name>
+    <version>${revision}</version>
+
+    <properties>
+        <revision>${derby-starter.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>
