@@ -5,6 +5,7 @@
 
     <groupId>org.talend.esb</groupId>
     <artifactId>derby-starter</artifactId>
+    <version>${revision}</version>
     <packaging>bundle</packaging>
 
     <parent>
@@ -14,6 +15,10 @@
     </parent>
 
     <name>Talend ESB :: SAM :: Derby Starter</name>
+
+    <properties>
+        <revision>${derby-starter.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>
