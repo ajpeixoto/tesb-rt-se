@@ -107,6 +107,7 @@
 
         <!-- esb features versions -->
         <esb.features.version>${original.version}</esb.features.version>
+        <auxiliary-storage.features.version>${original.version}</auxiliary-storage.features.version>
         <ds-service-db2.version>${original.version}</ds-service-db2.version>
         <ds-service-derby.version>${original.version}</ds-service-derby.version>
         <ds-service-h2.version>${original.version}</ds-service-h2.version>
@@ -290,7 +291,7 @@
         <rome.version>1.15.0</rome.version>
         <slf4j.version>1.7.36</slf4j.version>
         <snakeyaml.version>1.33</snakeyaml.version>
-        <sshd-osgi.version>2.5.1</sshd-osgi.version>
+        <sshd-osgi.version>2.9.2</sshd-osgi.version>
         <stax2-api.version>4.2.1</stax2-api.version>
         <swagger.version>2.1.9</swagger.version>
         <syncope.version>2.1.9</syncope.version>
@@ -2038,9 +2039,10 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2022-10-RT</original.version>
-                <esb.features.version>8.0.1.20221129</esb.features.version>
-                <security-common.version>8.0.1.20221129</security-common.version>
-                <derby-starter.version>8.0.1.20221129</derby-starter.version>
+                <esb.features.version>8.0.1.R2022-11-PT</esb.features.version>
+                <auxiliary-storage.features.version>8.0.1.R2022-11-PT</auxiliary-storage.features.version>
+                <security-common.version>8.0.1.R2022-11-PT</security-common.version>
+                <derby-starter.version>8.0.1.R2022-11-PT</derby-starter.version>
             </properties>
         </profile>
     </profiles>
