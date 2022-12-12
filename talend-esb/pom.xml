@@ -1583,6 +1583,7 @@
                                     <fileset dir="target/features-repo/org/eclipse/jetty/aggregate" />
                                     <fileset dir="target/features-repo/org/yaml/snakeyaml/1.17" />
                                     <fileset dir="target/features-repo/org/springframework" />
+                                    <fileset dir="target/features-repo/org/apache/commons/commons-text/1.4" />
                                 </delete>
                             </target>
                         </configuration>
