@@ -323,7 +323,8 @@
         <feature>jasypt-encryption</feature>
         <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>
         <bundle>mvn:org.talend.cxf/crypto-config/${original.version}</bundle>
-        <bundle start-level='50'>mvn:org.talend.esb/security-common/${security-common.version}</bundle>
+        <!-- must be started later because require some config file from job controller to be correctly started -->
+        <bundle start-level='51'>mvn:org.talend.esb/security-common/${security-common.version}</bundle>
     </feature>
 
     <feature name="tesb-encryptor-command" version="${original.version}">
