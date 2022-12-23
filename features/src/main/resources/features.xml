@@ -23,7 +23,7 @@
   <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
   <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
   <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
-  <repository>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${original.version}/xml</repository>
+  <repository>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${auxiliary-storage-features.version}/xml</repository>
 
   <feature name='tesb-sam-common' version='${original.version}'>
     <bundle dependency="true">mvn:org.apache.commons/commons-lang3/${commons-lang3.version}</bundle>
@@ -372,6 +372,8 @@
     <!-- the custom ESB groovy-all version -->
     <!-- overrides all groovy bundles declared in camel-groovy -->
     <bundle start-level="50">mvn:org.talend.esb/groovy-all/${groovy-all.version}</bundle>
+
+    <bundle start-level="25">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.version}</bundle>
   </feature>
 
   <feature name='tesb-keystore-configs' version='${original.version}'>

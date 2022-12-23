@@ -146,6 +146,7 @@
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-jxpath.version>1.3</commons-jxpath.version>
         <commons-text.version>1.10.0</commons-text.version>
+        <commons-httpclient.version>3.1_7</commons-httpclient.version>
         <jdom.bundle.version>1.1_4</jdom.bundle.version>
         <jdom2.version>2.0.6.1</jdom2.version>
         <osgi.core.version>6.0.0</osgi.core.version>
@@ -764,9 +765,9 @@
             </modules>
             <properties>
                 <original.version>7.3.1.R2022-09-RT</original.version>
-                <features.version>7.3.1.20221129</features.version>
-                <auxiliary-storage-features.version>7.3.1.20221129</auxiliary-storage-features.version>
-                <derby-starter.version>7.3.1.20221129</derby-starter.version>
+                <features.version>7.3.1.R2022-11-PT</features.version>
+                <auxiliary-storage-features.version>7.3.1.R2022-11-PT</auxiliary-storage-features.version>
+                <derby-starter.version>7.3.1.R2022-11-PT</derby-starter.version>
             </properties>
         </profile>
     </profiles>
