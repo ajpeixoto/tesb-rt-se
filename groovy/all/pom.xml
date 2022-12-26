@@ -80,6 +80,15 @@
                         <Bundle-Version>${groovy.version}</Bundle-Version>
                         <Import-Package>*;resolution:=optional;-split-package:=first</Import-Package>
                         <Main-class>groovy.ui.GroovyMain</Main-class>
+                        <Include-Resource>
+                            META-INF/dgminfo=target/classes/META-INF/dgminfo,
+                            META-INF/LICENSE=target/classes/META-INF/LICENSE,
+                            META-INF/NOTICE=target/classes/META-INF/NOTICE,
+                            META-INF/services=target/classes/META-INF/services,
+                            META-INF/groovy=target/classes/META-INF/groovy,
+                            META-INF/groovy-release-info.properties=target/classes/META-INF/groovy-release-info.properties,
+                            META-INF/licenses=target/classes/META-INF/licenses
+                        </Include-Resource>
                     </instructions>
                 </configuration>
             </plugin>
