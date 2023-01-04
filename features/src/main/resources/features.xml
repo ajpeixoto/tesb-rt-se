@@ -35,7 +35,7 @@
         <bundle start-level="30">mvn:org.apache.commons/commons-pool2/${commons-pool2.version}</bundle>
         <bundle start-level="30">mvn:com.zaxxer/HikariCP-java7/${hikaricp.version}</bundle>
         <bundle start-level="30">mvn:org.quartz-scheduler/quartz/${quartz.version}</bundle>
-        <bundle start-level="30">mvn:net.sf.ehcache/ehcache/${ehcache.version}</bundle>
+        <bundle start-level="30">mvn:org.ehcache/ehcache/${ehcache.version}</bundle>
         <bundle start-level="30">mvn:jaxen/jaxen/${jaxen.bundle.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
         <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}</bundle>
