@@ -133,25 +133,25 @@
 
         <!-- karaf version -->
         <karaf.version>4.2.11</karaf.version>
-        <standard.features.tesb.version>4.2.11.20221129</standard.features.tesb.version>
+        <standard.features.tesb.version>4.2.11.20221230</standard.features.tesb.version>
         <framework.features.tesb.version>4.2.11.20221129</framework.features.tesb.version>
-        <enterprise.features.tesb.version>4.2.11.20221020</enterprise.features.tesb.version>
+        <enterprise.features.tesb.version>4.2.11.20221230</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.11.20220318</enterprise-legacy.features.tesb.version>
-        <spring.features.tesb.version>4.2.11.20221020</spring.features.tesb.version>
-        <spring-legacy.features.tesb.version>4.2.11.20221020</spring-legacy.features.tesb.version>
+        <spring.features.tesb.version>4.2.11.20221230</spring.features.tesb.version>
+        <spring-legacy.features.tesb.version>4.2.11.20221230</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
-        <camel.features.tesb.version>3.11.1.20221129</camel.features.tesb.version>
-        <cxf.version>3.4.4</cxf.version>
-        <cxf-rt-features-logging.tesb.version>3.4.4.20220520</cxf-rt-features-logging.tesb.version>
-        <cxf.features.tesb.version>3.4.4.20221114</cxf.features.tesb.version>
+        <camel.features.tesb.version>3.11.1.20221230</camel.features.tesb.version>
+        <cxf.version>3.4.10</cxf.version>
+        <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
+        <cxf.features.tesb.version>3.4.10.20221230</cxf.features.tesb.version>
         <spring.version>5.3.21</spring.version>
         <spring.security.version>5.6.9</spring.security.version>
         <pax-web.version>7.2.30</pax-web.version>
-        <pax-web.features.tesb.version>7.2.30.20220915</pax-web.features.tesb.version>
+        <pax-web.features.tesb.version>7.2.30.20221230</pax-web.features.tesb.version>
         <activemq.version>5.16.4</activemq.version>
-        <activemq.features.tesb.version>5.16.4.20221020</activemq.features.tesb.version>
+        <activemq.features.tesb.version>5.16.4.20221230</activemq.features.tesb.version>
         <decanter.version>2.7.0</decanter.version>
         <decanter.features.tesb.version>${decanter.version}</decanter.features.tesb.version>
         <jclouds.version>2.1.2</jclouds.version>
@@ -194,7 +194,7 @@
         <commons-text.version>1.10.0</commons-text.version>
         <concurrent.version>1.3.4_1</concurrent.version>
         <cryptacular.version>1.2.4</cryptacular.version>
-        <cxf.build-utils.version>3.4.3</cxf.build-utils.version>
+        <cxf.build-utils.version>3.4.4</cxf.build-utils.version>
         <cxf.xjc-utils.version>3.3.1</cxf.xjc-utils.version>
         <derby.servicemix.version>10.14.2.0_2</derby.servicemix.version>
         <dom4j.bundle.version>2.1.3_1</dom4j.bundle.version>
@@ -217,11 +217,11 @@
         <httpcore.version>4.4.14</httpcore.version>
         <ibatis-sqlmap.bundle.version>2.3.4.726_4</ibatis-sqlmap.bundle.version>
         <jackrabbit.version>2.18.6</jackrabbit.version>
-        <jackson-dataformat-yaml.version>2.13.4</jackson-dataformat-yaml.version>
-        <jackson-datatype-jsr310.version>2.13.4</jackson-datatype-jsr310.version>
-        <jackson-jaxrs.version>2.13.4</jackson-jaxrs.version>
-        <jackson.version>2.13.4</jackson.version>
-        <jackson-databind.version>2.13.4.2</jackson-databind.version>
+        <jackson-dataformat-yaml.version>2.14.1</jackson-dataformat-yaml.version>
+        <jackson-datatype-jsr310.version>2.14.1</jackson-datatype-jsr310.version>
+        <jackson-jaxrs.version>2.14.1</jackson-jaxrs.version>
+        <jackson.version>2.14.1</jackson.version>
+        <jackson-databind.version>2.14.1</jackson-databind.version>
         <jakarta.annotation-api.version>1.3.5</jakarta.annotation-api.version>
         <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
         <jakarta.xml.bind-api.version>2.3.2</jakarta.xml.bind-api.version>
@@ -241,8 +241,8 @@
         <jdom.version>2.0.6.1</jdom.version>
         <jdom.bundle.version>2.0.6_1</jdom.bundle.version>
         <jest.version>2.0.3</jest.version>
-        <jettison.version>1.5.1</jettison.version>
-        <jetty.version>9.4.48.v20220622</jetty.version>
+        <jettison.version>1.5.3</jettison.version>
+        <jetty.version>9.4.49.v20220914</jetty.version>
         <jlibs.version>2.2.3</jlibs.version>
         <joda-time.version>2.10.6</joda-time.version>
         <jolokia.version>1.6.2</jolokia.version>
@@ -260,7 +260,7 @@
         <lombok.version>1.18.22</lombok.version>
         <metrics-core.version>3.2.6</metrics-core.version>
         <mina-core.version>2.1.4</mina-core.version>
-        <netty.version>4.1.77.Final</netty.version>
+        <netty.version>4.1.85.Final</netty.version>
         <org.apache.aries.spifly.dynamic.bundle.version>1.3.2</org.apache.aries.spifly.dynamic.bundle.version>
         <org.apache.aries.util.version>1.1.3</org.apache.aries.util.version>
         <org.apache.felix.configadmin.version>1.9.20</org.apache.felix.configadmin.version>
@@ -692,7 +692,7 @@
             <dependency>
                 <groupId>org.apache.cxf.build-utils</groupId>
                 <artifactId>cxf-buildtools</artifactId>
-                <version>${cxf.version}</version>
+                <version>${cxf.build-utils.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.cxf.karaf</groupId>
@@ -1780,7 +1780,7 @@
                         <dependency>
                             <groupId>org.apache.cxf.build-utils</groupId>
                             <artifactId>cxf-buildtools</artifactId>
-                            <version>${cxf.version}</version>
+                            <version>${cxf.build-utils.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -1893,7 +1893,7 @@
                         <dependency>
                             <groupId>org.apache.cxf.build-utils</groupId>
                             <artifactId>cxf-buildtools</artifactId>
-                            <version>${cxf.version}</version>
+                            <version>${cxf.build-utils.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -2047,8 +2047,8 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2022-10-RT</original.version>
-                <esb.features.version>8.0.1.R2022-11-PT</esb.features.version>
-                <auxiliary-storage.features.version>8.0.1.R2022-11-PT</auxiliary-storage.features.version>
+                <esb.features.version>8.0.1.R2023-01-PT</esb.features.version>
+                <auxiliary-storage.features.version>8.0.1.R2023-01-PT</auxiliary-storage.features.version>
                 <security-common.version>8.0.1.R2022-11-PT</security-common.version>
                 <derby-starter.version>8.0.1.R2022-11-PT</derby-starter.version>
             </properties>
