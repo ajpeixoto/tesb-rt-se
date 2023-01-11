@@ -113,7 +113,7 @@
         <configfile finalname="/etc/org.talend.esb.sam.agent.cfg">mvn:org.talend.esb/sam-agent/${sam-agent.version}/cfg/org.talend.esb.sam.agent</configfile>
         <configfile finalname="/etc/org.talend.esb.sam.agent.client.ut.policy">mvn:org.talend.esb/sam-agent/${sam-agent.version}/policy/org.talend.esb.sam.agent.client.ut</configfile>
         <configfile finalname="/etc/org.talend.esb.sam.agent.client.saml.policy">mvn:org.talend.esb/sam-agent/${sam-agent.version}/policy/org.talend.esb.sam.agent.client.saml</configfile>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <feature>tesb-sam-common</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
         <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
@@ -252,7 +252,7 @@
 
     <feature name='tesb-sam-server' version='${original.version}'>
         <configfile finalname="/etc/org.talend.esb.sam.server.cfg">mvn:org.talend.esb/sam-server/${original.version}/cfg/org.talend.esb.sam.server</configfile>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <feature>tesb-sam-common</feature>
         <feature version='[5.2,6)'>spring-jdbc</feature>
         <bundle dependency="true">mvn:commons-pool/commons-pool/${commons-pool.version}</bundle>
@@ -276,13 +276,13 @@
     </feature>
 
     <feature name='tesb-locator-client' version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <feature prerequisite='true'>tesb-zookeeper</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
         <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
         <bundle dependency="true">mvn:javax.enterprise/cdi-api/1.2</bundle>
         <bundle dependency="true">mvn:org.ops4j.pax.cdi/pax-cdi-api/${pax-cdi.version}</bundle>
-        <bundle>mvn:org.apache.cxf/cxf-rt-features-clustering/${cxf.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.cxf/cxf-rt-features-clustering/${cxf.version}</bundle>
         <bundle start-level='51'>mvn:org.talend.esb/locator/${original.version}</bundle>
     </feature>
 
@@ -338,7 +338,7 @@
     </feature>
 
     <feature name="talend-job-dependencies" version="${original.version}">
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.dom4j/${dom4j.bundle.version}</bundle>
         <bundle dependency="true">mvn:jaxen/jaxen/${jaxen.bundle.version}</bundle>
     </feature>
@@ -374,7 +374,7 @@
     <feature name="tesb-sts" version="${original.version}">
         <configfile finalname="/etc/keystores/stsKeystore.properties">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${org.talend.esb.sts.config.version}/properties/stsKeystore</configfile>
         <configfile finalname="/etc/keystores/stsstore.jks">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${org.talend.esb.sts.config.version}/jks/stsstore</configfile>
-        <feature version="${cxf.version}">cxf-sts</feature>
+        <feature version="${cxf.version.range}">cxf-sts</feature>
         <bundle>mvn:org.talend.cxf/crypto-config/${original.version}</bundle>
         <bundle>mvn:org.talend.esb.sts/org.talend.esb.sts.config/${org.talend.esb.sts.config.version}</bundle>
     </feature>
@@ -386,12 +386,12 @@
     </feature>
 
     <feature name='tesb-policy-compression' version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <bundle>mvn:org.talend.esb.policies/compression-policy/${original.version}</bundle>
     </feature>
 
     <feature name='tesb-policy-correlationid' version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <bundle dependency="true" start-level="30">mvn:commons-beanutils/commons-beanutils/${commons-beanutils.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.bundle.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:org.eclipse.jdt.core.compiler/ecj/4.5.1</bundle>
@@ -402,30 +402,30 @@
     </feature>
 
     <feature name='tesb-policy-transformation' version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <bundle>mvn:org.talend.esb.policies/transformation-policy/${original.version}</bundle>
     </feature>
 
     <feature name='tesb-policy-validation' version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <bundle>mvn:org.talend.esb.policies/validation-policy/${original.version}</bundle>
     </feature>
 
     <feature name='tesb-policy-samenable' version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <feature version='${original.version}'>tesb-sam-agent</feature>
         <bundle>mvn:org.talend.esb.policies/samenabling-policy/${original.version}</bundle>
     </feature>
 
     <feature name="request-callback" version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <feature version='${original.version}'>tesb-aux-common</feature>
         <feature version='${original.version}'>tesb-aux-client-rest</feature>
         <bundle>mvn:org.talend.esb.mep/request-callback/${request-callback.version}</bundle>
     </feature>
 
     <feature name="transport-jms" version='${original.version}'>
-        <feature version='${cxf.version}'>cxf</feature>
+        <feature version='${cxf.version.range}'>cxf</feature>
         <bundle>mvn:org.talend.esb/transport-jms/${original.version}</bundle>
     </feature>
 
