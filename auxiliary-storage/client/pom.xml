@@ -18,14 +18,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>auxiliary-storage-client-rest</artifactId>
-    <version>8.0.1-SNAPSHOT</version>
+    <version>8.0.1.R2023-01-RT</version>
     <packaging>bundle</packaging>
     <name>Talend ESB :: Auxiliary Storage :: REST client </name>
 
     <parent>
         <groupId>org.talend.esb.auxiliary.storage</groupId>
         <artifactId>auxiliary-storage-parent</artifactId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2023-01-RT</version>
     </parent>
 
     <dependencies>
