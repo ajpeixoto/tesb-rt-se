@@ -544,6 +544,12 @@
                 <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.glassfish.jaxb</groupId>
+                        <artifactId>jaxb-runtime</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.abdera</groupId>
@@ -1992,14 +1998,6 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <repositories>
-        <repository>
-            <id>netbeans</id>
-            <name>NetBeans</name>
-            <url>https://netbeans.apidesign.org/maven2/</url>
-        </repository>
-    </repositories>
 
     <distributionManagement>
         <repository>
