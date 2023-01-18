@@ -37,7 +37,7 @@
 
     <feature name='tesb-aux-common' version='${original.version}'>
         <!--External dependency -->
-        <feature version='${cxf-version-range}'>cxf-rs-security-xml</feature>
+        <feature version='${cxf.version.range}'>cxf-rs-security-xml</feature>
 
         <bundle>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-common/${original.version}</bundle>
         <bundle>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-rest-security/${auxiliary-storage-rest-security.version}</bundle>

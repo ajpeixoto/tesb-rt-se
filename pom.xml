@@ -120,7 +120,8 @@
         <org.apache.karaf.config.core.tesb.version>4.2.7.tesb1</org.apache.karaf.config.core.tesb.version>
         <cxf-rt-rs-service-description-swagger.tesb.version>3.4.7</cxf-rt-rs-service-description-swagger.tesb.version>
         <packages.version>${project.version}</packages.version>
-        <cxf.version>3.4.7</cxf.version>
+        <cxf.version>3.4.10</cxf.version>
+        <cxf.version.range>[3.4,4.0)</cxf.version.range>
         <camel.version>2.25.4</camel.version>
         <camel-core.version>2.25.4.20220920</camel-core.version>
         <activemq.version>5.15.15</activemq.version>
@@ -151,14 +152,14 @@
         <jdom2.version>2.0.6.1</jdom2.version>
         <osgi.core.version>6.0.0</osgi.core.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
-        <jetty.version>9.4.48.v20220622</jetty.version>
+        <jetty.version>9.4.49.v20220914</jetty.version>
         <pax-web.version>7.2.30</pax-web.version>
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
         <cglib.bundle.version>3.3.0_1</cglib.bundle.version>
         <ibatis-sqlmap.bundle.version>2.3.4.726_4</ibatis-sqlmap.bundle.version>
         <jolokia.version>1.6.2</jolokia.version>
         <h2database.version>1.3.165</h2database.version>
-        <jettison.version>1.5.1</jettison.version>
+        <jettison.version>1.5.3</jettison.version>
         <jasypt.version>1.9.3_1</jasypt.version>
         <bouncycastle.version>1.69</bouncycastle.version>
         <hibersap.version>1.2.0</hibersap.version>
@@ -177,8 +178,8 @@
         <reload4j.version>1.2.19</reload4j.version>
         <log4j2.version>2.17.1</log4j2.version>
         <javax-annotation.version>1.3.1</javax-annotation.version>
-        <jackson.version>2.13.4</jackson.version>
-        <jackson-databind.version>2.13.4.2</jackson-databind.version>
+        <jackson.version>2.14.1</jackson.version>
+        <jackson-databind.version>2.14.1</jackson-databind.version>
         <qpid-jms.version>0.11.1</qpid-jms.version>
         <fastjson.version>1.2.37_1</fastjson.version>
         <sparkjava-core.version>2.6.0_1</sparkjava-core.version>
@@ -765,9 +766,9 @@
             </modules>
             <properties>
                 <original.version>7.3.1.R2022-09-RT</original.version>
-                <features.version>7.3.1.R2022-11-PT</features.version>
-                <auxiliary-storage-features.version>7.3.1.R2022-11-PT</auxiliary-storage-features.version>
-                <derby-starter.version>7.3.1.R2022-11-PT</derby-starter.version>
+                <features.version>7.3.1.R2023-01-PT</features.version>
+                <auxiliary-storage-features.version>7.3.1.R2023-01-PT</auxiliary-storage-features.version>
+                <derby-starter.version>7.3.1.R2023-01-PT</derby-starter.version>
             </properties>
         </profile>
     </profiles>

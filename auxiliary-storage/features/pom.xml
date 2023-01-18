@@ -13,20 +13,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>auxiliary-storage-features</artifactId>
-	<packaging>pom</packaging>
-	<name>Talend ESB :: Auxiliary Storage :: Features </name>
+    <artifactId>auxiliary-storage-features</artifactId>
+    <packaging>pom</packaging>
+    <name>Talend ESB :: Auxiliary Storage :: Features </name>
     <version>${revision}</version>
 
-	<parent>
-		<groupId>org.talend.esb.auxiliary.storage</groupId>
-		<artifactId>auxiliary-storage-parent</artifactId>
-		<version>7.3.2-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.talend.esb.auxiliary.storage</groupId>
+        <artifactId>auxiliary-storage-parent</artifactId>
+        <version>7.3.2-SNAPSHOT</version>
+    </parent>
 
     <properties>
         <revision>${auxiliary-storage-features.version}</revision>
-        <cxf-version-range>[${cxf.version},3.5)</cxf-version-range>
     </properties>
 
     <build>

@@ -41,16 +41,16 @@
         <activemq.tesb.version>5.15.15</activemq.tesb.version>
         <pax-logging.tesb.version>1.11.17</pax-logging.tesb.version>
         <!-- version updates from the patch -->
-        <standard.features.tesb.version>4.2.7.tesb13</standard.features.tesb.version>
-        <enterprise.features.tesb.version>4.2.7.tesb5</enterprise.features.tesb.version>
+        <standard.features.tesb.version>4.2.7.tesb14</standard.features.tesb.version>
+        <enterprise.features.tesb.version>4.2.7.tesb6</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
         <framework.features.tesb.version>4.2.7.tesb6</framework.features.tesb.version>
-        <spring.features.tesb.version>4.2.7.tesb6</spring.features.tesb.version>
-        <apache-cxf.features.tesb.version>3.4.7.tesb3</apache-cxf.features.tesb.version>
-        <apache-cxf-xkms.features.tesb.version>3.4.7.tesb1</apache-cxf-xkms.features.tesb.version>
-        <apache-camel.features.tesb.version>2.25.4.tesb4</apache-camel.features.tesb.version>
-        <pax-web.features.tesb.version>7.2.30.tesb1</pax-web.features.tesb.version>
-        <activemq.features.tesb.version>5.15.15.tesb6</activemq.features.tesb.version>
+        <spring.features.tesb.version>4.2.7.tesb7</spring.features.tesb.version>
+        <apache-cxf.features.tesb.version>3.4.10.tesb1</apache-cxf.features.tesb.version>
+        <apache-cxf-xkms.features.tesb.version>3.4.10.tesb1</apache-cxf-xkms.features.tesb.version>
+        <apache-camel.features.tesb.version>2.25.4.tesb5</apache-camel.features.tesb.version>
+        <pax-web.features.tesb.version>7.2.30.tesb2</pax-web.features.tesb.version>
+        <activemq.features.tesb.version>5.15.15.tesb7</activemq.features.tesb.version>
         <hibernate-validator.features.tesb.version>6.0.17.Final.tesb2</hibernate-validator.features.tesb.version>
         <jobserver.version>7.3.1.20220207_1020_patch</jobserver.version>
         <tdm.version>7.3.1.20220408</tdm.version>
@@ -62,7 +62,7 @@
         <pax-transx.features.tesb.version>0.4.4</pax-transx.features.tesb.version>
         <jpa.features.tesb.version>2.7.2</jpa.features.tesb.version>
         <openjpa.features.tesb.version>3.0.0</openjpa.features.tesb.version>
-        <decanter.features.tesb.version>2.2.0.tesb4</decanter.features.tesb.version>
+        <decanter.features.tesb.version>2.2.0.tesb5</decanter.features.tesb.version>
         <hibernate.features.tesb.version>5.2.17.Final</hibernate.features.tesb.version>
         <hapi-fhir.features.tesb.version>3.5.0</hapi-fhir.features.tesb.version>
     </properties>
@@ -1089,6 +1089,8 @@
                                         token="mvn:org.apache.karaf.config/org.apache.karaf.config.core/${karaf.version}&lt;"
                                         value="mvn:org.apache.karaf.config/org.apache.karaf.config.core/${org.apache.karaf.config.core.tesb.version}&lt;"/>
                                     <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/7.2.11/xml/features&lt;"
+                                                   value="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features&lt;"/>
+                                    <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/7.2.30.tesb2/xml/features&lt;"
                                                    value="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features&lt;"/>
                                     <replacefilter>
                                         <replacetoken>feature name="pax-http-service" description="Pax-Web OSGi HTTP Service" version="7.2.11"</replacetoken>
