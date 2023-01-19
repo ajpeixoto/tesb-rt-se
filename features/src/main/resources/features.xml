@@ -367,7 +367,7 @@
     <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
 
     <!-- the guava version for cxf-rs-description-swagger2 -->
-    <bundle>mvn:com.google.guava/guava/27.0-jre</bundle>
+    <!-- <bundle>mvn:com.google.guava/guava/${guava.version}</bundle> -->
 
     <!-- the custom ESB groovy-all version -->
     <!-- overrides all groovy bundles declared in camel-groovy -->
