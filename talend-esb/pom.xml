@@ -231,6 +231,14 @@
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>apache-cxf-${cxf.version}-features.xml</destFileName>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.cxf.services.xkms</groupId>
+                                    <artifactId>cxf-services-xkms-features</artifactId>
+                                    <version>${apache-cxf-xkms.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>cxf-services-xkms-features-${cxf.version}.xml</destFileName>
+                                </artifactItem>
                                 <!-- patch for xalan and xerces version -->
                                 <!--artifactItem>
                                     <groupId>org.apache.servicemix.bundles</groupId>
@@ -362,7 +370,8 @@
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>pax-jdbc-features-${pax-jdbc.version}-features.xml</destFileName>
                                 </artifactItem>
-                                <artifactItem>
+                                <!-- CXF bundle replacement disabled for CXF 3.4.10 -->
+                                <!-- <artifactItem>
                                     <groupId>org.apache.cxf</groupId>
                                     <artifactId>cxf-core</artifactId>
                                     <version>${cxf.version}</version>
@@ -375,7 +384,7 @@
                                     <version>${cxf.version}</version>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>cxf-rt-transports-http-${cxf.version}.jar</destFileName>
-                                </artifactItem>
+                                </artifactItem> -->
                                 <artifactItem>
                                     <groupId>ca.uhn.hapi.fhir.karaf</groupId>
                                     <artifactId>hapi-fhir</artifactId>
@@ -1090,7 +1099,7 @@
                                         value="mvn:org.apache.karaf.config/org.apache.karaf.config.core/${org.apache.karaf.config.core.tesb.version}&lt;"/>
                                     <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/7.2.11/xml/features&lt;"
                                                    value="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features&lt;"/>
-                                    <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/7.2.30.tesb2/xml/features&lt;"
+                                    <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.features.tesb.version}/xml/features&lt;"
                                                    value="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features&lt;"/>
                                     <replacefilter>
                                         <replacetoken>feature name="pax-http-service" description="Pax-Web OSGi HTTP Service" version="7.2.11"</replacetoken>
@@ -1387,6 +1396,12 @@
                                     <replacefilter
                                             token="mvn:org.apache.cxf/cxf-rt-rs-service-description-swagger/${cxf.version}&lt;"
                                             value="mvn:org.apache.cxf/cxf-rt-rs-service-description-swagger/${cxf-rt-rs-service-description-swagger.tesb.version}&lt;"/>
+                                </replace>
+                                <replace file="target/dependencies/cxf-services-xkms-features-${cxf.version}.xml">
+                                    <replacefilter>
+                                        <replacetoken>&lt;repository&gt;mvn:org.apache.cxf.karaf/apache-cxf/${apache-cxf.features.tesb.version}/xml/features&lt;/repository&gt;</replacetoken>
+                                        <replacevalue>&lt;repository&gt;mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features&lt;/repository&gt;</replacevalue>
+                                    </replacefilter>
                                 </replace>
                                 <!-- patch the cxf-jackson feature (TESB-27214/CXF-8155) -->
                                 <replaceregexp byline="false" flags="gim"

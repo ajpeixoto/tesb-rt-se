@@ -362,6 +362,7 @@
                 <exclude>org/apache/zookeeper/zookeeper/3.4.8/**</exclude>
                 <!-- workaround for CXF features descriptor -->
                 <exclude>org/apache/cxf/karaf/apache-cxf/**</exclude>
+                <exclude>org/apache/cxf/services/xkms/cxf-services-xkms-features/${cxf.version}/cxf-services-xkms-features-${cxf.version}.xml</exclude>
                 <!-- workaround for wrong version of transitive CXF Features -->
                 <exclude>org/apache/cxf/**/3.2.7/**</exclude>
                 <!-- patch for xalan and xerces version -->
@@ -381,9 +382,9 @@
                 <exclude>com/fasterxml/jackson/core/jackson-databind/2.9.8/**</exclude>
                 <exclude>com/fasterxml/jackson/*/*/2.9.*/**</exclude>
                 <exclude>org/apache/servicemix/bundles/org.apache.servicemix.bundles.xstream/1.4.8_1/**</exclude>
-                <!-- patch for cxf-core, cxf-rt-transports-http (TESB-23159, TESB-23464) -->
-                <exclude>org/apache/cxf/cxf-core/**</exclude>
-                <exclude>org/apache/cxf/cxf-rt-transports-http/**</exclude>
+                <!-- patch for cxf-core, cxf-rt-transports-http (TESB-23159, TESB-23464) - disabled for CXF 3.4.10 -->
+                <!-- <exclude>org/apache/cxf/cxf-core/**</exclude>
+                <exclude>org/apache/cxf/cxf-rt-transports-http/**</exclude> -->
                 <!-- patch for decanter bundles (TESB-24788) -->
                 <exclude>org/apache/karaf/decanter/apache-karaf-decanter/${decanter.version}/apache-karaf-decanter-${decanter.version}-features.xml</exclude>
                 <exclude>org/apache/karaf/decanter/appender/org.apache.karaf.decanter.appender.jms/${decanter.version}/**</exclude>
@@ -496,9 +497,9 @@
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>${basedir}/target/dependencies/apache-cxf-${cxf.version}-features.xml</source>
-            <outputDirectory>./container/system/org/apache/cxf/karaf/apache-cxf/${cxf.version}/</outputDirectory>
-            <destName>apache-cxf-${cxf.version}-features.xml</destName>
+            <source>${basedir}/target/dependencies/cxf-services-xkms-features-${cxf.version}.xml</source>
+            <outputDirectory>./container/system/org/apache/cxf/services/xkms/cxf-services-xkms-features/${cxf.version}/</outputDirectory>
+            <destName>cxf-services-xkms-features-${cxf.version}.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
@@ -580,8 +581,8 @@
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
-        <!-- patch for cxf-core, cxf-rt-transports-http (TESB-23159, TESB-23464) -->
-        <file>
+        <!-- patch for cxf-core, cxf-rt-transports-http (TESB-23159, TESB-23464) - disabled for CXF 3.4.10 -->
+        <!-- <file>
             <source>${basedir}/target/dependencies/cxf-core-${cxf.version}.jar</source>
             <outputDirectory>./container/system/org/apache/cxf/cxf-core/${cxf.version}/</outputDirectory>
             <fileMode>0644</fileMode>
@@ -590,7 +591,7 @@
             <source>${basedir}/target/dependencies/cxf-rt-transports-http-${cxf.version}.jar</source>
             <outputDirectory>./container/system/org/apache/cxf/cxf-rt-transports-http/${cxf.version}/</outputDirectory>
             <fileMode>0644</fileMode>
-        </file>
+        </file> -->
         <!-- patch for decanter bundles (TESB-24788) -->
         <file>
             <source>${basedir}/target/dependencies/apache-karaf-decanter-${decanter.version}-features.xml</source>
