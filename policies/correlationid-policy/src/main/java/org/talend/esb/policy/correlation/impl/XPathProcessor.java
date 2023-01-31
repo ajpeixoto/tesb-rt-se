@@ -47,6 +47,7 @@ public class XPathProcessor extends BareOutInterceptor {
    	public static String ORIGINAL_OUT_STREAM_CTX_PROPERTY_NAME = 
 			"org.talend.correlation.id.original.out.stream"; 
 
+    private XPathFactory xpathfactory = initXPathFactory();
 	private ByteArrayOutputStream buffer;
 	private XMLStreamWriter xmlWriter;
 	private Message message;
@@ -244,9 +245,7 @@ public class XPathProcessor extends BareOutInterceptor {
 			List<XpathNamespace> namespaces,  Node body){
 		
 		Map<String, String> resultMap = new HashMap<String, String>();
-	
-	    XPathFactory xpathfactory = XPathFactory.newInstance();
-	    XPath xpath = xpathfactory.newXPath();
+	    XPath xpath = initXPath();
 		
 		if(namespaces != null){
 		    xpath.setNamespaceContext(new NamespaceContext() {
@@ -317,4 +316,14 @@ public class XPathProcessor extends BareOutInterceptor {
 		
 		return  resultMap;
 	}
+
+    private XPath initXPath() {
+        synchronized (xpathfactory) {
+            return xpathfactory.newXPath();
+        }
+    }
+
+    private static XPathFactory initXPathFactory() {
+        return XPathFactory.newInstance();
+    }
 }

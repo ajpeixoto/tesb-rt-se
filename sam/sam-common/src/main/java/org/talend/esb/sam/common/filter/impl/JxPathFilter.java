@@ -20,9 +20,11 @@
 package org.talend.esb.sam.common.filter.impl;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
@@ -36,7 +38,11 @@ import org.w3c.dom.Node;
  * The Class JxPathFilter.
  */
 public class JxPathFilter implements EventFilter {
-    String expression;
+
+    private String expression;
+    private JAXBContext context = initJAXBContext();
+    private DocumentBuilder builder = initDocumentBuilder();
+    private XPathFactory xpathfactory = initXPathFactory();
 
     /**
      * Instantiates a new jx path filter.
@@ -69,16 +75,11 @@ public class JxPathFilter implements EventFilter {
     @Override
     public boolean filter(Event event) {
         try {
-            JAXBContext ctx = JAXBContext.newInstance(Event.class);
-            Marshaller msh = ctx.createMarshaller();
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(true); // never forget this!
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.newDocument();
+            Marshaller msh = initMarshaller();
+            Document doc = initDocument();
             msh.marshal(event, doc);
             Node node = doc.getDocumentElement();
-            XPathFactory xpathfactory = XPathFactory.newInstance();
-            XPath xpath = xpathfactory.newXPath();
+            XPath xpath = initXPath();
             Boolean result = (Boolean) xpath.evaluate(expression, node, XPathConstants.BOOLEAN);
             return result == null ? false : result.booleanValue();
         } catch (RuntimeException e) {
@@ -88,4 +89,44 @@ public class JxPathFilter implements EventFilter {
         }
     }
 
+    private Marshaller initMarshaller() throws JAXBException {
+        synchronized (context) {
+            return context.createMarshaller();
+        }
+    }
+
+    private Document initDocument() {
+        synchronized (builder) {
+            return builder.newDocument();
+        }
+    }
+
+    private XPath initXPath() {
+        synchronized (xpathfactory) {
+            return xpathfactory.newXPath();
+        }
+    }
+
+    private static JAXBContext initJAXBContext() {
+        try {
+            return JAXBContext.newInstance(Event.class);
+        } catch (JAXBException e) {
+            throw new RuntimeException("Exception caught initializing JAXB context for Event class. ", e);
+        }
+    }
+
+    private static DocumentBuilder initDocumentBuilder() {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true); // never forget this!
+            factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            return factory.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            throw new RuntimeException("Exception caught setting up document builder. ", e);
+        }
+    }
+
+    private static XPathFactory initXPathFactory() {
+        return XPathFactory.newInstance();
+    }
 }

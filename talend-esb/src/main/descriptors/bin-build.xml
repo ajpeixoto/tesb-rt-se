@@ -43,6 +43,7 @@
         <echo message="&#10;SET &quot;EXTRA_JAVA_OPTS=%EXTRA_JAVA_OPTS% -Dzookeeper.admin.enableServer=${zookeeper.admin.enableServer} -Dzookeeper.admin.serverPort=${zookeeper.admin.serverPort}&quot;"
               file="target/container/bin/setenv.bat"
               append="true" />
+        
         <echo message="File inc: add default JAVA_MIN_MEM and JAVA_MAX_MEM" />
         <replaceregexp byline="false" flags="gim"
                        match="setupDefaults\(\) \{"
@@ -62,6 +63,7 @@
                 <include name="inc" />
             </fileset>
         </replaceregexp>
+        
         <echo message="File trun: add -Xms and -Xmx" />
         <replaceregexp byline="false" flags="gim"
                        match="(run\(\) \{)"
@@ -70,20 +72,24 @@
                 <include name="trun" />
             </fileset>
         </replaceregexp>
+        
         <echo message="Files trun, start, stop: add setsecenv execution" />
         <replaceregexp byline="false" flags="is"
                        match=".+if.+?setenv.+?fi"
-                       replace="\0&#10;if [ -f &quot;&#36;{DIRNAME}/setsecenv&quot; ]; then&#10;. &quot;&#36;{DIRNAME}/setsecenv&quot;&#10;fi">
+                       replace="\0&#10;if [ -f &quot;&#36;{DIRNAME}/setsecenv&quot; ]; then&#10;
+  . &quot;&#36;{DIRNAME}/setsecenv&quot;&#10;fi">
             <fileset dir="target/container/bin">
                 <include name="trun" />
                 <include name="start" />
                 <include name="stop" />
             </fileset>
         </replaceregexp>
+        
         <echo message="Files trun.bat, start.bat, stop.bat: add setsecenv execution" />
         <replaceregexp byline="false" flags="is"
                        match=".+if.+?setenv.bat.+?\)"
-                       replace="\0&#10;if exist &quot;%DIRNAME%setsecenv.bat&quot; (&#10;call &quot;%DIRNAME%setsecenv.bat&quot;&#10;)">
+                       replace="\0&#10;if exist &quot;%DIRNAME%setsecenv.bat&quot; (&#10;
+  call &quot;%DIRNAME%setsecenv.bat&quot;&#10;)">
             <fileset dir="target/container/bin">
                 <include name="trun.bat" />
                 <include name="start.bat" />
