@@ -119,6 +119,7 @@
         <org.talend.esb.job.controller.version>${original.version}</org.talend.esb.job.controller.version>
         <locator-soap-service.version>${original.version}</locator-soap-service.version>
         <sam-agent.version>${original.version}</sam-agent.version>
+        <sam-common.version>${original.version}</sam-common.version>
         <sam-service-soap.version>${original.version}</sam-service-soap.version>
         <derby-starter.version>${original.version}</derby-starter.version>
         <org.talend.esb.sts.config.version>${original.version}</org.talend.esb.sts.config.version>
@@ -2052,8 +2053,9 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2022-10-RT</original.version>
-                <esb.features.version>8.0.1.R2023-01-PT</esb.features.version>
+                <esb.features.version>8.0.1.R2023-02-PT</esb.features.version>
                 <auxiliary-storage.features.version>8.0.1.R2023-01-PT</auxiliary-storage.features.version>
+                <sam-common.version>8.0.1.R2023-02-PT</sam-common.version>
                 <security-common.version>8.0.1.R2022-11-PT</security-common.version>
                 <derby-starter.version>8.0.1.R2022-11-PT</derby-starter.version>
             </properties>

@@ -119,6 +119,7 @@ public class JxPathFilter implements EventFilter {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true); // never forget this!
+            factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
             return factory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
             throw new RuntimeException("Exception caught setting up document builder. ", e);

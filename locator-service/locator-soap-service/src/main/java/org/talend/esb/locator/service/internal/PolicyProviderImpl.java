@@ -57,7 +57,7 @@ public class PolicyProviderImpl implements PolicyProvider {
 
         if (EsbSecurity.NO == esbSecurity)
             return;
-        
+
         Bus currentBus = locatorEndpoint.getBus();
         policyBuilder = currentBus.getExtension(PolicyBuilder.class);
 
