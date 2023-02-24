@@ -209,6 +209,9 @@
                 <exclude>system/org/apache/karaf/features/spring-legacy/${karaf.version}/spring-legacy-${karaf.version}-features.xml</exclude>
                 <exclude>system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml</exclude>
                 <exclude>system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml</exclude>
+                <!-- to exclude old groovy-all bundle -->
+                <exclude>system/org/hibernate/validator/hibernate-validator-osgi-karaf-features/6.0.17.Final/**</exclude>
+                <exclude>system/org/codehaus/groovy/groovy-all/2.4.12/**</exclude>
                 <exclude>system/org/apache/karaf/config/org.apache.karaf.config.core/${karaf.version}/**</exclude>
                 <exclude>system/org/ops4j/pax/web/pax-web-features/7.2.11/**</exclude>
                 <exclude>system/org/ops4j/pax/logging/**</exclude>
@@ -398,6 +401,9 @@
                 <exclude>org/apache/activemq/activemq-karaf/${activemq.version}/activemq-karaf-${activemq.version}.jar</exclude>
                 <!-- patch for cxf-rt-rs-service-description-swagger (TESB-29278) -->
                 <exclude>org/apache/cxf/cxf-rt-rs-service-description-swagger/**</exclude>
+                <!-- to exclude old groovy-all bundle -->
+                <exclude>org/hibernate/validator/hibernate-validator-osgi-karaf-features/6.0.17.Final/**</exclude>
+                <exclude>org/codehaus/groovy/groovy-all/2.4.12/**</exclude>
             </excludes>
         </fileSet>
         <!-- Woraround for xjc-utils version (TESB-21746) -->
