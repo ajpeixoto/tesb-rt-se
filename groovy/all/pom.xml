@@ -34,6 +34,12 @@
             <version>${groovy.version}</version>
             <type>pom</type>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>groovy-testng</artifactId>
+                    <groupId>org.codehaus.groovy</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     
