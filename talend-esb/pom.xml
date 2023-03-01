@@ -125,11 +125,19 @@
                                 <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/enterprise/${enterprise.features.tesb.version}/xml/features</descriptor>
 
-                                <!--
+                                <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.features/spring/${spring.features.tesb.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.talend.esb/features/${esb.features.version}/xml</descriptor>
+
+                                <descriptor>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${project.version}/xml</descriptor>
+                                <descriptor>${project.build.outputDirectory}/additional-bundles.xml</descriptor>
+
+                                <!--
+
 
  <descriptor>mvn:org.apache.openjpa/openjpa-features/${openjpa-features.features.tesb.version}/xml/features</descriptor>
-<descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.features.tesb.version}/xml/features</descriptor>
+
 
                                 <descriptor>mvn:org.hibernate.validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/xml/features</descriptor>
 
@@ -145,14 +153,14 @@
                                 -->
                                 <!-- repository with dependencies already declared above -->
                                 <!--
-                                <descriptor>mvn:org.apache.karaf.features/spring/${spring.features.tesb.version}/xml/features</descriptor>
+                                <
                                <descriptor>mvn:org.apache.karaf.features/spring-legacy/${spring-legacy.features.tesb.version}/xml/features</descriptor>
                                -->
                                 <!-- repository with dependencies -->
                                 <!--
                                 <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.features.tesb.version}/xml/features-core</descriptor>
                                <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.features.tesb.version}/xml/features</descriptor>
-                               <descriptor>mvn:org.talend.esb.auxiliary.storage/auxiliary-storage-features/${project.version}/xml</descriptor>
+
                                <descriptor>mvn:org.talend.esb/features/${esb.features.version}/xml</descriptor>
                                -->
                                 <!-- Non Maven features aren't copied to system -->

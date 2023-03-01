@@ -265,7 +265,7 @@
 
     <feature name='tesb-zookeeper' version='${original.version}'>
         <!-- fork additional feature -->
-        <feature>camel-zookeeper-core</feature>
+        <feature>camel-zookeeper</feature>
         <configfile finalname="/etc/org.talend.esb.locator.server.cfg">mvn:org.talend.esb/org.talend.esb.locator.server/${original.version}/cfg</configfile>
         <bundle start-level='50'>mvn:org.talend.esb/org.talend.esb.locator.auth/${original.version}</bundle>
     </feature>

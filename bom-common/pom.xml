@@ -140,7 +140,7 @@
 
         <!-- core libraries versions -->
         <camel.version>3.20.2</camel.version>
-        <camel.features.tesb.version>3.20.2.20230131</camel.features.tesb.version>
+        <camel.features.tesb.version>3.20.2</camel.features.tesb.version>
         <cxf.version>3.5.5</cxf.version>
         <cxf-rt-features-logging.tesb.version>3.5.5</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.5.5.20230201</cxf.features.tesb.version>
