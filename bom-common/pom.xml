@@ -230,7 +230,7 @@
         <jquery-ui.version>1.13.2</jquery-ui.version>
         <json-api.version>1.1</json-api.version>
         <json-simple.version>1.1.1</json-simple.version>
-        <json-smart.version>2.4.7</json-smart.version>
+        <json-smart.version>2.4.9</json-smart.version>
         <jsonevent-layout.version>1.7</jsonevent-layout.version>
         <jstl-api.version>1.2</jstl-api.version>
         <jstl-impl.version>1.2</jstl-impl.version>
