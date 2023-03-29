@@ -190,8 +190,9 @@
         <groovy-all.version>${groovy.version}.20221226</groovy-all.version>
         <sshd-core.version>2.9.2</sshd-core.version>
         <apache-xmlsec.version>2.1.7</apache-xmlsec.version>
-        <xstream.version>1.4.19</xstream.version>
+        <xstream.version>1.4.20</xstream.version>
         <jcommander.version>1.75</jcommander.version>
+        <commons-net.version>3.9.0</commons-net.version>
 
         <cxf.build-utils.version>3.4.3</cxf.build-utils.version>
         <cxf.xjc-utils.version>3.3.0</cxf.xjc-utils.version>
@@ -398,6 +399,11 @@
                 <groupId>com.beust</groupId>
                 <artifactId>jcommander</artifactId>
                 <version>${jcommander.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
             </dependency>
 
             <dependency>
