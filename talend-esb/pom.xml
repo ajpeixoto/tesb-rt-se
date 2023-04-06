@@ -686,6 +686,7 @@
                                     <fileset dir="target/features-repo/io/netty/netty-transport" includes="**/4.1.79.Final/**,**/4.1.85.Final/**" />
                                     <fileset dir="target/features-repo/io/netty/netty-codec-socks" includes="**/4.1.79.Final/**,**/4.1.85.Final/**" />
                                     <fileset dir="target/features-repo/io/netty/netty-codec" includes="**/4.1.79.Final/**,**/4.1.85.Final/**" />
+                                    <fileset dir="target/features-repo/org/codehaus/jettison/jettison" includes="**/1.5.3/**" />
                                 </delete>
                             </target>
                         </configuration>

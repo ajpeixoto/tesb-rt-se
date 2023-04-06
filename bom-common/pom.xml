@@ -244,7 +244,7 @@
         <jdom.version>2.0.6.1</jdom.version>
         <jdom.bundle.version>2.0.6_1</jdom.bundle.version>
         <jest.version>2.0.3</jest.version>
-        <jettison.version>1.5.3</jettison.version>
+        <jettison.version>1.5.4</jettison.version>
         <jetty.version>9.4.49.v20220914</jetty.version>
         <jlibs.version>2.2.3</jlibs.version>
         <joda-time.version>2.10.6</joda-time.version>

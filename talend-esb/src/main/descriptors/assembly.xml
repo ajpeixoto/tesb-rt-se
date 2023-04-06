@@ -53,6 +53,7 @@
                 <exclude>etc/**</exclude>
                 <exclude>release_notes.txt</exclude>
                 <exclude>lib/commons-collections-3.2.1.jar</exclude>
+                <exclude>lib/jettison-1.5.3.jar</exclude>
                 <exclude>lib/endorsed/**</exclude>
                 <!--exclude>lib/jaxb-*.jar</exclude-->
                 <exclude>lib/saaj*.jar</exclude>
