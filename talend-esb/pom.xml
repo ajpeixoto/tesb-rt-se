@@ -671,7 +671,6 @@
                                     <fileset dir="target/features-repo/org/eclipse/jetty/aggregate" />
                                     <fileset dir="target/features-repo/org/yaml/snakeyaml/1.17" />
                                     <fileset dir="target/features-repo/org/springframework" />
-                                    <fileset dir="target/features-repo/org/springframework" />
                                     <fileset dir="target/features-repo/io/netty/netty-codec-http2" includes="**/4.1.79.Final/**" />
                                     <fileset dir="target/features-repo/io/netty/netty-transport-classes-epoll" includes="**/4.1.79.Final/**" />
                                     <fileset dir="target/features-repo/io/netty/netty-common" includes="**/4.1.79.Final/**,**/4.1.85.Final/**" />

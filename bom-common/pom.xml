@@ -138,8 +138,8 @@
         <framework.features.tesb.version>4.2.11.20221129</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.2.11.20221230</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.11.20220318</enterprise-legacy.features.tesb.version>
-        <spring.features.tesb.version>4.2.11.20221230</spring.features.tesb.version>
-        <spring-legacy.features.tesb.version>4.2.11.20221230</spring-legacy.features.tesb.version>
+        <spring.features.tesb.version>4.2.11.20230406</spring.features.tesb.version>
+        <spring-legacy.features.tesb.version>4.2.11.20230406</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
@@ -148,7 +148,7 @@
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.4.10.20230322</cxf.features.tesb.version>
         <cxf.version.range>[3.4,4)</cxf.version.range>
-        <spring.version>5.3.21</spring.version>
+        <spring.version>5.3.26</spring.version>
         <spring.security.version>5.6.9</spring.security.version>
         <pax-web.version>7.2.30</pax-web.version>
         <pax-web.features.tesb.version>7.2.30.20221230</pax-web.features.tesb.version>
