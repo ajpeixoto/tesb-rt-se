@@ -258,7 +258,6 @@
         <jstl-api.version>1.2</jstl-api.version>
         <jstl-impl.version>1.2</jstl-impl.version>
         <junit.version>4.13.1</junit.version>
-        <log4j.version>1.2.17</log4j.version>
         <reload4j.version>1.2.19</reload4j.version>
         <lombok.version>1.18.22</lombok.version>
         <metrics-core.version>3.2.6</metrics-core.version>
@@ -521,11 +520,6 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>${log4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.reload4j</groupId>
