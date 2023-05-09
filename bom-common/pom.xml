@@ -134,7 +134,7 @@
 
         <!-- karaf version -->
         <karaf.version>4.2.11</karaf.version>
-        <standard.features.tesb.version>4.2.11.20221230</standard.features.tesb.version>
+        <standard.features.tesb.version>4.2.11.20230905</standard.features.tesb.version>
         <framework.features.tesb.version>4.2.11.20221129</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.2.11.20221230</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.11.20220318</enterprise-legacy.features.tesb.version>
@@ -143,7 +143,7 @@
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
-        <camel.features.tesb.version>3.11.1.20230330</camel.features.tesb.version>
+        <camel.features.tesb.version>3.11.1.20230905</camel.features.tesb.version>
         <cxf.version>3.4.10</cxf.version>
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.4.10.20230322</cxf.features.tesb.version>
@@ -151,7 +151,7 @@
         <spring.version>5.3.26</spring.version>
         <spring.security.version>5.6.9</spring.security.version>
         <pax-web.version>7.2.30</pax-web.version>
-        <pax-web.features.tesb.version>7.2.30.20221230</pax-web.features.tesb.version>
+        <pax-web.features.tesb.version>7.2.30.20230509</pax-web.features.tesb.version>
         <activemq.version>5.16.4</activemq.version>
         <activemq.features.tesb.version>5.16.4.20230330</activemq.features.tesb.version>
         <decanter.version>2.7.0</decanter.version>
@@ -245,7 +245,7 @@
         <jdom.bundle.version>2.0.6_1</jdom.bundle.version>
         <jest.version>2.0.3</jest.version>
         <jettison.version>1.5.4</jettison.version>
-        <jetty.version>9.4.49.v20220914</jetty.version>
+        <jetty.version>9.4.51.v20230217</jetty.version>
         <jlibs.version>2.2.3</jlibs.version>
         <joda-time.version>2.10.6</joda-time.version>
         <jolokia.version>1.6.2</jolokia.version>
