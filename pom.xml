@@ -125,7 +125,7 @@
         <camel.version>2.25.4</camel.version>
         <camel-core.version>2.25.4.20220920</camel-core.version>
         <activemq.version>5.15.15</activemq.version>
-        <spring.version>5.3.26</spring.version>
+        <spring.version>5.3.27</spring.version>
         <spring.bundle.version>5.3.25_1</spring.bundle.version>
         <spring.version.range>[5.2,6)</spring.version.range>
         <karaf.version>4.2.7</karaf.version>
@@ -152,7 +152,7 @@
         <jdom2.version>2.0.6.1</jdom2.version>
         <osgi.core.version>6.0.0</osgi.core.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
-        <jetty.version>9.4.49.v20220914</jetty.version>
+        <jetty.version>9.4.51.v20230217</jetty.version>
         <pax-web.version>7.2.30</pax-web.version>
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
         <cglib.bundle.version>3.3.0_1</cglib.bundle.version>
