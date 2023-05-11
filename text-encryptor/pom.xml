@@ -17,6 +17,10 @@
         <version>8.8.8-SNAPSHOT</version>
         <relativePath>../bom</relativePath>
     </parent>
+    
+    <properties>
+        <revision>${text-encryptor.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>

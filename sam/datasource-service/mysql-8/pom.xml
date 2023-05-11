@@ -7,6 +7,7 @@
     <groupId>org.talend.esb</groupId>
     <artifactId>ds-service-mysql-8</artifactId>
     <packaging>bundle</packaging>
+    <version>${revision}</version>
 
     <parent>
         <groupId>org.talend.esb</groupId>
@@ -15,6 +16,10 @@
     </parent>
 
     <name>Talend ESB :: SAM :: Datasource :: MySQL8</name>
+    
+    <properties>
+        <revision>${ds-service-mysql-8.version}</revision>
+    </properties>
     
     <build>
         <plugins>

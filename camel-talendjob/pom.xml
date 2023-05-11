@@ -32,7 +32,6 @@
         <dependency>
             <groupId>org.talend.esb.job</groupId>
             <artifactId>org.talend.esb.job.api</artifactId>
-            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
 

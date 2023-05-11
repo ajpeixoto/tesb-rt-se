@@ -18,12 +18,17 @@
     <artifactId>org.talend.esb.sts.config</artifactId>
     <packaging>bundle</packaging>
     <name>Talend ESB :: STS :: Config</name>
+    <version>${revision}</version>
 
     <parent>
         <groupId>org.talend.esb</groupId>
         <artifactId>sts</artifactId>
         <version>8.8.8-SNAPSHOT</version>
     </parent>
+    
+    <properties>
+        <revision>${org.talend.esb.sts.config.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>

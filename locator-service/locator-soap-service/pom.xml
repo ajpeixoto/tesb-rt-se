@@ -10,6 +10,7 @@
 	<artifactId>locator-soap-service</artifactId>
 	<name>Talend ESB :: Locator :: Service :: SOAP Service</name>
 	<packaging>bundle</packaging>
+    <version>${revision}</version>
 
 	<parent>
 		<groupId>org.talend.esb.locator.service</groupId>
@@ -17,6 +18,10 @@
 		<version>8.8.8-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
+    
+    <properties>
+        <revision>${locator-soap-service.version}</revision>
+    </properties>
 
 	<dependencies>
 		<dependency>

@@ -14,6 +14,11 @@
     <packaging>bundle</packaging>
     <name>Talend ESB :: Request-Callback</name>
     <description>Decoupled request-callback message exchange pattern support through correlated one-way exchanges</description>
+    <version>${revision}</version>
+    
+    <properties>
+        <revision>${request-callback.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>
