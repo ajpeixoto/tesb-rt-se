@@ -2050,7 +2050,7 @@
                 <esb.features.version>8.0.1.R2023-02-PT</esb.features.version>
                 <auxiliary-storage.features.version>8.0.1.R2023-01-PT</auxiliary-storage.features.version>
                 <sam-common.version>8.0.1.R2023-02-PT</sam-common.version>
-                <security-common.version>8.0.1.R2022-11-PT</security-common.version>
+                <security-common.version>8.0.1.R2023-06-PT</security-common.version>
                 <derby-starter.version>8.0.1.R2022-11-PT</derby-starter.version>
             </properties>
         </profile>
