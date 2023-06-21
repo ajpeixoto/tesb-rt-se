@@ -27,8 +27,6 @@ rem
 set TESB_AMQ_GUI_USER_NAME=${org.talend.script.ctesb}
 set TESB_AUXSTORE_AUTHENTICATION_USERNAME=${org.talend.script.ckar}
 set TESB_AUXSTORE_SAML_USERNAME=${org.talend.script.ctad}
-set TESB_EVENTLOGGING_JMS_USERNAME=${org.talend.script.ctad}
-set TESB_EVENTLOGGING_REST_USERNAME=${org.talend.script.ctad}
 set TESB_LOCATOR_AUTHENTICATION_USERNAME=${org.talend.script.ctesb}
 set TESB_REGISTRY_AUTHENTICATION_USERNAME=${org.talend.script.ckar}
 set TESB_REGISTRY_SAML_USERNAME=${org.talend.script.ctad}
@@ -39,8 +37,6 @@ set TESB_TIDM_USERNAME=${org.talend.script.cadm}
 set TESB_AMQ_GUI_USER_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctesb}
 set TESB_AUXSTORE_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ckar}
 set TESB_AUXSTORE_SAML_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
-set TESB_EVENTLOGGING_JMS_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
-set TESB_EVENTLOGGING_REST_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
 set TESB_LOCATOR_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctesb}
 set TESB_REGISTRY_AUTHENTICATION_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ckar}
 set TESB_REGISTRY_SAML_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.ctad}
@@ -55,5 +51,3 @@ set TESB_CLIENT_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}
 set TESB_CLIENT_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.cclik}${org.talend.script.cps}
 set TESB_SERVICE_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.csrvs}${org.talend.script.cps}
 set TESB_SERVICE_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.csrvk}${org.talend.script.cps}
-set TESB_EVENTLOGGING_AGENT_KEYSTORE_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.canf}
-set TESB_EVENTLOGGING_AGENT_KEY_${org.talend.script.cprefix}${org.talend.script.cinfix}${org.talend.script.cpostfix}=${org.talend.script.canf}
