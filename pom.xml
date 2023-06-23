@@ -183,7 +183,7 @@
         <fastjson.version>1.2.37_1</fastjson.version>
         <sparkjava-core.version>2.6.0_1</sparkjava-core.version>
         <mustache-compiler.version>0.9.5_1</mustache-compiler.version>
-        <guava.version>31.0.1-jre</guava.version>
+        <guava.version>32.0.1-jre</guava.version>
         <guava.failureaccess.version>1.0.1</guava.failureaccess.version>
         <groovy.version>2.5.14</groovy.version>
         <groovy-all.version>${groovy.version}.20221226</groovy-all.version>
@@ -771,7 +771,7 @@
             </modules>
             <properties>
                 <original.version>7.3.1.R2022-09-RT</original.version>
-                <features.version>7.3.1.R2023-01-PT</features.version>
+                <features.version>7.3.1.R2023-07-PT</features.version>
                 <auxiliary-storage-features.version>7.3.1.R2023-01-PT</auxiliary-storage-features.version>
                 <derby-starter.version>7.3.1.R2023-01-PT</derby-starter.version>
             </properties>

@@ -46,7 +46,7 @@
         <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
         <framework.features.tesb.version>4.2.7.tesb6</framework.features.tesb.version>
         <spring.features.tesb.version>4.2.7.tesb8</spring.features.tesb.version>
-        <apache-cxf.features.tesb.version>3.4.10.tesb2</apache-cxf.features.tesb.version>
+        <apache-cxf.features.tesb.version>3.4.10.tesb3</apache-cxf.features.tesb.version>
         <apache-cxf-xkms.features.tesb.version>3.4.10.tesb1</apache-cxf-xkms.features.tesb.version>
         <apache-camel.features.tesb.version>2.25.4.tesb10</apache-camel.features.tesb.version>
         <pax-web.features.tesb.version>7.2.30.tesb3</pax-web.features.tesb.version>
@@ -62,7 +62,7 @@
         <pax-transx.features.tesb.version>0.4.4</pax-transx.features.tesb.version>
         <jpa.features.tesb.version>2.7.2</jpa.features.tesb.version>
         <openjpa.features.tesb.version>3.0.0</openjpa.features.tesb.version>
-        <decanter.features.tesb.version>2.2.0.tesb5</decanter.features.tesb.version>
+        <decanter.features.tesb.version>2.2.0.tesb6</decanter.features.tesb.version>
         <hibernate.features.tesb.version>5.2.17.Final</hibernate.features.tesb.version>
         <hapi-fhir.features.tesb.version>3.5.0</hapi-fhir.features.tesb.version>
     </properties>
