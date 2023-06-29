@@ -579,9 +579,6 @@
                                 </replace>
                                 <replace file="target/dependencies/jclouds-karaf-${jclouds.features.tesb.version}-features.xml">
                                     <replacefilter
-                                        token="&gt;mvn:com.google.guava/guava/18.0&lt;"
-                                        value="&gt;mvn:com.google.guava/guava/${guava.version}&lt;"/>
-                                    <replacefilter
                                         token="&gt;mvn:org.yaml/snakeyaml/1.17&lt;"
                                         value="&gt;mvn:org.yaml/snakeyaml/${snakeyaml.version}&lt;"/>
                                 </replace>
