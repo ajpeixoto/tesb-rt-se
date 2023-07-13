@@ -52,7 +52,7 @@
         <pax-web.features.tesb.version>7.2.30.tesb3</pax-web.features.tesb.version>
         <activemq.features.tesb.version>5.15.15.tesb8</activemq.features.tesb.version>
         <hibernate-validator.features.tesb.version>6.0.17.Final.tesb2</hibernate-validator.features.tesb.version>
-        <jobserver.version>7.3.1.20220207_1020_patch</jobserver.version>
+        <jobserver.version>7.3.1.20230712_0928_patch</jobserver.version>
         <tdm.version>7.3.1.20220408</tdm.version>
 
         <karaf-maven-plugin.version>4.2.12</karaf-maven-plugin.version>
