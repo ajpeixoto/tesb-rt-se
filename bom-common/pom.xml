@@ -143,10 +143,10 @@
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
-        <camel.features.tesb.version>3.11.1.20230627</camel.features.tesb.version>
+        <camel.features.tesb.version>3.11.1.20230718</camel.features.tesb.version>
         <cxf.version>3.4.10</cxf.version>
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
-        <cxf.features.tesb.version>3.4.10.20230623</cxf.features.tesb.version>
+        <cxf.features.tesb.version>3.4.10.20230718</cxf.features.tesb.version>
         <cxf.version.range>[3.4,4)</cxf.version.range>
         <spring.version>5.3.27</spring.version>
         <spring.security.version>5.6.9</spring.security.version>
@@ -262,7 +262,7 @@
         <lombok.version>1.18.22</lombok.version>
         <metrics-core.version>3.2.6</metrics-core.version>
         <mina-core.version>2.1.4</mina-core.version>
-        <netty.version>4.1.86.Final</netty.version>
+        <netty.version>4.1.94.Final</netty.version>
         <org.apache.aries.spifly.dynamic.bundle.version>1.3.2</org.apache.aries.spifly.dynamic.bundle.version>
         <org.apache.aries.util.version>1.1.3</org.apache.aries.util.version>
         <org.apache.felix.configadmin.version>1.9.20</org.apache.felix.configadmin.version>
