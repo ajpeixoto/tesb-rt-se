@@ -2047,7 +2047,7 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2022-10-RT</original.version>
-                <esb.features.version>8.0.1.R2023-07-PT</esb.features.version>
+                <esb.features.version>8.0.1.R2023-08-PT</esb.features.version>
                 <auxiliary-storage.features.version>8.0.1.R2023-01-PT</auxiliary-storage.features.version>
                 <sam-common.version>8.0.1.R2023-02-PT</sam-common.version>
                 <security-common.version>8.0.1.R2023-06-PT</security-common.version>
