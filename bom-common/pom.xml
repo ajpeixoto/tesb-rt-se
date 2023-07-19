@@ -134,7 +134,7 @@
 
         <!-- karaf version -->
         <karaf.version>4.2.11</karaf.version>
-        <standard.features.tesb.version>4.2.11.20230905</standard.features.tesb.version>
+        <standard.features.tesb.version>4.2.11.20230719</standard.features.tesb.version>
         <framework.features.tesb.version>4.2.11.20221129</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.2.11.20221230</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>4.2.11.20220318</enterprise-legacy.features.tesb.version>
@@ -143,7 +143,7 @@
 
         <!-- core libraries versions -->
         <camel.version>3.11.1</camel.version>
-        <camel.features.tesb.version>3.11.1.20230718</camel.features.tesb.version>
+        <camel.features.tesb.version>3.11.1.20230719</camel.features.tesb.version>
         <cxf.version>3.4.10</cxf.version>
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.4.10.20230718</cxf.features.tesb.version>
@@ -175,7 +175,7 @@
         <apache-mime4j-core.version>0.8.3</apache-mime4j-core.version>
         <aries.version>1.0.0</aries.version>
         <awaitility.version>3.1.6</awaitility.version>
-        <bouncycastle.version>1.69</bouncycastle.version>
+        <bouncycastle.version>1.74</bouncycastle.version>
         <brave.version>5.13.3</brave.version>
         <c3p0.bundle.version>0.9.5.5_1</c3p0.bundle.version>
         <cdi-api.version>2.0.SP1</cdi-api.version>
@@ -303,6 +303,7 @@
         <woodstox.version>4.1.5</woodstox.version>
         <xbean-blueprint.version>4.18</xbean-blueprint.version>
         <xmlParserAPIs.version>2.0.2</xmlParserAPIs.version>
+        <wss4j.version>2.3.3</wss4j.version>
         <zipkin-reporter.version>2.16.3</zipkin-reporter.version>
         <zipkin.version>2.23.2</zipkin.version>
         <apache-xmlsec.version>2.2.3</apache-xmlsec.version>
@@ -1102,6 +1103,17 @@
                 <version>${tika.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.wss4j</groupId>
+                <artifactId>wss4j-ws-security-common</artifactId>
+                <version>${wss4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>bcprov-jdk15on</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.xbean</groupId>
                 <artifactId>xbean-blueprint</artifactId>
                 <version>${xbean-blueprint.version}</version>
@@ -1123,7 +1135,7 @@
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk15on</artifactId>
+                <artifactId>bcprov-jdk18on</artifactId>
                 <version>${bouncycastle.version}</version>
             </dependency>
             <dependency>

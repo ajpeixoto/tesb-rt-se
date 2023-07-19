@@ -63,6 +63,7 @@
                 <exclude>lib/geronimo-ws-metadata**</exclude>
                 <exclude>lib/geronimo-jaxws**</exclude>
                 <exclude>lib/guava*.jar</exclude>
+                <exclude>lib/bcprov-jdk*.jar</exclude>
                 <exclude>lib/activemq**</exclude>
                 <exclude>samples/**</exclude>
             </excludes>
