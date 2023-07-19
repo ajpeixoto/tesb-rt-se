@@ -237,14 +237,14 @@
   <feature name="tesb-security-common" version="${original.version}">
     <feature>cxf-rs-security-xml</feature>
     <feature>jasypt-encryption</feature>
-    <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>
+    <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk18on/${bouncycastle.version}</bundle>
     <bundle>mvn:org.talend.cxf/crypto-config/${cxf-crypto-config.version}</bundle>
     <bundle start-level='50'>mvn:org.talend.esb/security-common/${security-common.version}</bundle>
   </feature>
 
   <feature name="tesb-encryptor-command" version="${original.version}">
     <feature>jasypt-encryption</feature>
-    <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version}</bundle>
+    <bundle dependency='true'>mvn:org.bouncycastle/bcprov-jdk18on/${bouncycastle.version}</bundle>
     <bundle start-level='50'>mvn:org.talend.esb/text-encryptor/${text-encryptor.version}</bundle>
   </feature>
 
