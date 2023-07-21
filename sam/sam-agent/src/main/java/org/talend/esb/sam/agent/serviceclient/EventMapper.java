@@ -79,7 +79,7 @@ public final class EventMapper {
      */
     private static DataHandler getDataHandlerForString(Event event) {
         try {
-            return new DataHandler(new ByteDataSource(event.getContent().getBytes("UTF-8")));
+            return new DataHandler(new ByteDataSource(event.getContent().getBytes("UTF-8"),"text/plain"));
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }

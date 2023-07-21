@@ -211,6 +211,7 @@ public class SingleBusLocatorRegistrar implements ServerLifeCycleListener, Servi
         try {
             CXFEndpointProvider epp = registeredServers.get(server);
             locatorClient.unregister(epp);
+            registeredServers.remove(server);
         } catch (ServiceLocatorException e) {
             if (LOG.isLoggable(Level.SEVERE)) {
                 LOG.log(Level.SEVERE, "ServiceLocator Exception thrown during unregister endpoint. ", e);

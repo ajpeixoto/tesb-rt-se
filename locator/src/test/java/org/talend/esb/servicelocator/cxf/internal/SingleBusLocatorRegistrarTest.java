@@ -43,6 +43,7 @@ import org.apache.cxf.endpoint.ServerLifeCycleManager;
 import org.apache.cxf.endpoint.ServerRegistry;
 import org.apache.cxf.ws.policy.PolicyEngine;
 import org.easymock.Capture;
+import org.easymock.CaptureType;
 import org.easymock.EasyMockSupport;
 import org.junit.Test;
 import org.talend.esb.servicelocator.client.ServiceLocator;
@@ -287,7 +288,7 @@ public class SingleBusLocatorRegistrarTest extends EasyMockSupport {
     }
 
     private Capture<ServerLifeCycleListener> addServerLifeCycleManager(Bus bus) {
-        Capture<ServerLifeCycleListener> slclCapture = new Capture<ServerLifeCycleListener>();
+        Capture<ServerLifeCycleListener> slclCapture = Capture.newInstance(CaptureType.LAST);
 
         ServerLifeCycleManager slcm = createMock(ServerLifeCycleManager.class);
         slcm.registerListener(capture(slclCapture));

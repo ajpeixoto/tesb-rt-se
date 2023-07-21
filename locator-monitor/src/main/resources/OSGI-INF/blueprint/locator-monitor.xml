@@ -31,9 +31,10 @@
 
     <reference id="serviceLocator" interface="org.talend.esb.servicelocator.client.ServiceLocator" />
 
-    <bean id="locator-monitor" class="org.talend.esb.servicelocator.monitor.LocatorMonitor">
-        <argument index="0" ref="serviceLocator" />
-        <argument index="1" value="${scanIntervall}" />
+    <bean id="locator-monitor" class="org.talend.esb.servicelocator.monitor.LocatorMonitor"
+            init-method="start" destroy-method="stop">
+        <property name="scanInterval" value="${scanIntervall}" />
+        <property name="serviceLocator" ref="serviceLocator" />
     </bean>
 
 </blueprint>

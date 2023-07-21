@@ -8,7 +8,7 @@
     <artifactId>text-encryptor</artifactId>
     <name>Talend ESB :: Encryptor :: Commands</name>
     <description>Encryptor Commands</description>
-    <version>8.8.8-SNAPSHOT</version>
+    <version>${revision}</version>
 
 
     <parent>
@@ -29,7 +29,7 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
+            <artifactId>bcprov-jdk18on</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.shell</groupId>

@@ -62,6 +62,8 @@
                 <exclude>lib/geronimo-stax-api**</exclude>
                 <exclude>lib/geronimo-ws-metadata**</exclude>
                 <exclude>lib/geronimo-jaxws**</exclude>
+                <exclude>lib/guava*.jar</exclude>
+                <exclude>lib/bcprov-jdk*.jar</exclude>
                 <exclude>lib/activemq**</exclude>
                 <exclude>samples/**</exclude>
             </excludes>
@@ -410,6 +412,12 @@
 
     <files>
         <file>
+            <source>${basedir}/target/dependencies/pax-web-features-${pax-web.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/ops4j/pax/web/pax-web-features/${pax-web.features.tesb.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
             <source>${basedir}/target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</source>
             <outputDirectory>./container/system/org/apache/karaf/decanter/apache-karaf-decanter/${decanter.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
@@ -424,6 +432,12 @@
         <file>
             <source>${basedir}/target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</source>
             <outputDirectory>./container/system/org/ops4j/pax/jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/openjpa-features-${openjpa-features.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/apache/openjpa/openjpa-features/${openjpa-features.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>

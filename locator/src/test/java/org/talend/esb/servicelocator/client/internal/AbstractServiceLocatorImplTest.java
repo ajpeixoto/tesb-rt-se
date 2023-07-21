@@ -41,6 +41,7 @@ import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Id;
 import org.apache.zookeeper.data.Stat;
 import org.easymock.Capture;
+import org.easymock.CaptureType;
 import org.easymock.EasyMockSupport;
 import org.easymock.IExpectationSetters;
 import org.junit.Before;
@@ -55,7 +56,7 @@ public class AbstractServiceLocatorImplTest extends EasyMockSupport {
 
     PostConnectAction pcaMock;
 
-    Capture<byte[]> contentCapture = new Capture<byte[]>();
+    Capture<byte[]> contentCapture = Capture.newInstance(CaptureType.LAST);
 
     boolean withAuthentication;
 
