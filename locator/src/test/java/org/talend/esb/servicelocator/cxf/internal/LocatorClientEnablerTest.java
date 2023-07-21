@@ -33,6 +33,7 @@ import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.endpoint.ConduitSelector;
 import org.apache.cxf.endpoint.Endpoint;
 import org.easymock.Capture;
+import org.easymock.CaptureType;
 import org.junit.Before;
 import org.junit.Test;
 import org.talend.esb.servicelocator.client.ServiceLocator;
@@ -58,7 +59,7 @@ public class LocatorClientEnablerTest {
     public void enableClient() {
         ServiceLocator sl = createMock(ServiceLocator.class);
 
-        Capture<LocatorTargetSelector> capturedSelector = new Capture<LocatorTargetSelector>();
+        Capture<LocatorTargetSelector> capturedSelector = Capture.newInstance(CaptureType.LAST);
 
         Client client = createMock(Client.class);
         expect(client.getConduitSelector()).andStubReturn(conduitSelector);

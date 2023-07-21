@@ -104,6 +104,25 @@
             <artifactId>slf4j-simple</artifactId>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>	
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.xerial.snappy</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>${snappy.version}</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -118,13 +137,13 @@
                          conflicts of exported packages org.apache.zookeeper.server.persistence by both bundles
                          org.apache.zookeeper and org.apache.zookeper-jute -->
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>*;resolution:=optional</Import-Package>
+                        <!-- <Import-Package>org.talend.esb.locator.server.auth,org.apache.zookeeper.server.auth,*;resolution:=optional</Import-Package> -->
                         <Export-Package />
-                        <Private-Package>
+                        <!-- <Private-Package>
                             org.talend.esb.locator.*,
                             org.apache.zookeeper.*,
                             org.apache.jute.*
-                        </Private-Package>
+                        </Private-Package> -->
                     </instructions>
                 </configuration>
             </plugin>

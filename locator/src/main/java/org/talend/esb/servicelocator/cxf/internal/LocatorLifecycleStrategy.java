@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Endpoint;
-import org.apache.camel.component.cxf.CxfEndpoint;
 import org.apache.camel.component.cxf.jaxrs.CxfRsEndpoint;
+import org.apache.camel.component.cxf.jaxws.CxfEndpoint;
 import org.apache.camel.spi.LifecycleStrategy;
 import org.apache.camel.support.LifecycleStrategySupport;
 import org.apache.camel.support.CamelContextHelper;

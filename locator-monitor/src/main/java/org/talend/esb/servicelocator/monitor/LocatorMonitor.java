@@ -53,49 +53,63 @@ public class LocatorMonitor {
     }
 
     public static final String MONITORING = "Monitoring";
-
     public static final String EVENT_CATEGORY = "eventCategory";
-
     public static final String ADDRESS = "address";
-
     public static final String ACTIVE = "active";
-
     public static final String LAST_TIME_STARTED = "lastTimeStarted";
-
     public static final String LAST_TIME_STOPPED = "lastTimeStopped";
-
     public static final String MDC_PROPERTY_PREFIX = "sl.property.";
-
     public static final String COUNT = "count";
-
     public static final String PROTOCOL = "protocol";
-
     public static final String SERVICE_QNAME = "service.qname";
-
     public static final String TRANSPORT = "transport.type";
-
     private static final Logger LOG = LoggerFactory.getLogger(LocatorMonitor.class);
-
     private static final Marker SERVICES = MarkerFactory.getMarker("SERVICES");
     private static final Marker SERVICE_INFO = MarkerFactory.getMarker("SERVICE_INFO");
     private static final Marker ENDPOINTS = MarkerFactory.getMarker("ENDPOINTS");
     private static final Marker ENDPOINT_INFO = MarkerFactory.getMarker("ENDPOINT_INFO");
-    
-    private static final String SLFJ_MARKER = "slf4j.marker"; 
+    private static final String SLFJ_MARKER = "slf4j.marker";
+    private static final int DEFAULT_INTERVAL = 60;
+    private static final int START_DELAY = 1;
 
+    private ScheduledExecutorService scheduler;
     /**
      * Number in seconds to request SL for active/inactive services. Default is 10 seconds.
      */
-    private int scanIntervall = 60;
+    private ServiceLocator serviceLocator;
+    private int scanInterval;
 
-    private ServiceLocator sl;
+    public LocatorMonitor() {
+        scanInterval = DEFAULT_INTERVAL;
+    }
 
-    private int startDelay = 1;
-
-    public LocatorMonitor(ServiceLocator sl, int scanIntervall) {
-        this.sl = sl;
-        this.scanIntervall = scanIntervall;
+    public void start() {
         startScanning();
+    }
+
+    public void stop() {
+        stopScanning();
+    }
+
+    public int getScanInterval() {
+        return scanInterval;
+    }
+
+    public void setScanInterval(int scanInterval) {
+        if (scanInterval > 0) {
+            this.scanInterval = scanInterval;
+        } else {
+            LOG.warn("Invalid scan interval of '{}', falling back to default of {} seconds.",
+                    scanInterval, DEFAULT_INTERVAL);
+            this.scanInterval = DEFAULT_INTERVAL;
+        }
+    }
+    public ServiceLocator getServiceLocator() {
+        return serviceLocator;
+    }
+
+    public void setServiceLocator(ServiceLocator serviceLocator) {
+        this.serviceLocator = serviceLocator;
     }
 
     private String[] addPropertiesToMDC(SLProperties properties) {
@@ -131,11 +145,18 @@ public class LocatorMonitor {
         return timeStampStr;
     }
 
-    private void startScanning() {
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    private synchronized void startScanning() {
+        if (scheduler != null) {
+            return;
+        }
+        scheduler = Executors.newScheduledThreadPool(1);
         scheduler.scheduleWithFixedDelay(new Runnable() {
             @Override
             public void run() {
+                ServiceLocator sl = serviceLocator;
+                if (sl == null) {
+                    return;
+                }
                 MDC.put(EVENT_CATEGORY, MONITORING);
                 try {
                     if (sl != null) {
@@ -238,7 +259,14 @@ public class LocatorMonitor {
                 }
                 MDC.remove(EVENT_CATEGORY);
             }
-        }, startDelay, scanIntervall, TimeUnit.SECONDS);
+        }, START_DELAY, scanInterval, TimeUnit.SECONDS);
     }
 
+    private synchronized void stopScanning() {
+        if (scheduler == null) {
+            return;
+        }
+        scheduler.shutdown();
+        scheduler = null;
+    }
 }

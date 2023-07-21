@@ -23,32 +23,33 @@
     <!-- install specific bundles being optional dependencies, to avoid cascading refreshes -->
     <!-- don't declare jboss-logging, as it's provided already by pax-logging-api -->
     <feature name='talend-common-optionals' version='${original.version}'>
-        <bundle start-level="30">mvn:commons-cli/commons-cli/${commons-cli.version}</bundle>
-        <bundle start-level="30">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
-        <bundle start-level="30">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
-        <bundle start-level="30">mvn:jakarta.validation/jakarta.validation-api/${jakarta.validation-api.version}</bundle>
-        <bundle start-level="30">mvn:jakarta.annotation/jakarta.annotation-api/${jakarta.annotation-api.version}</bundle>
-        <bundle start-level="30">mvn:org.apache.tika/tika-core/${tika.version}</bundle>
-        <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/${org.apache.servicemix.bundles.ant.version}</bundle>
-        <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/${derby.servicemix.version}</bundle>
-        <bundle start-level="30">mvn:commons-pool/commons-pool/${commons-pool.version}</bundle>
-        <bundle start-level="30">mvn:org.apache.commons/commons-pool2/${commons-pool2.version}</bundle>
-        <bundle start-level="30">mvn:com.zaxxer/HikariCP-java7/${hikaricp.version}</bundle>
-        <bundle start-level="30">mvn:org.quartz-scheduler/quartz/${quartz.version}</bundle>
-        <bundle start-level="30">mvn:org.ehcache/ehcache/${ehcache.version}</bundle>
-        <bundle start-level="30">mvn:jaxen/jaxen/${jaxen.bundle.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson-dataformat-yaml.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson-datatype-jsr310.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson-jaxrs.version}</bundle>
-        <bundle start-level="30">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson-jaxrs.version}</bundle>
-        <bundle start-level="30" dependency="true">mvn:javax.transaction/javax.transaction-api/${javax.transaction-api.version}</bundle>
+        <feature version='[4.4,5)'>scr</feature>
+        <bundle start-level="30" dependency="true">mvn:commons-cli/commons-cli/${commons-cli.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:jakarta.validation/jakarta.validation-api/${jakarta.validation-api.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:jakarta.annotation/jakarta.annotation-api/${jakarta.annotation-api.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/${org.apache.servicemix.bundles.ant.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/${derby.servicemix.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:commons-pool/commons-pool/${commons-pool.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:org.apache.commons/commons-pool2/${commons-pool2.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.zaxxer/HikariCP-java7/${hikaricp.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:org.quartz-scheduler/quartz/${quartz.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:org.ehcache/ehcache/${ehcache.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:jaxen/jaxen/${jaxen.bundle.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson-dataformat-yaml.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${jackson-datatype-jsr310.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson-jaxrs.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson-jaxrs.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:org.xerial.snappy/snappy-java/${snappy.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:javax.transaction/javax.transaction-api/${javax.transaction-api.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:javax.el/javax.el-api/${javax.el.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:javax.enterprise/cdi-api/${cdi-api.version}</bundle>
+        <bundle start-level="30" dependency="true">mvn:net.java.dev.jna/jna/${jna.version}</bundle>
     </feature>
 
     <!-- forces latest bundle to be installed to avoid conflicts between versions -->
@@ -117,7 +118,7 @@
         <feature>tesb-sam-common</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
         <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
-        <bundle dependency="true">mvn:javax.enterprise/cdi-api/1.2</bundle>
+        <bundle dependency="true">mvn:javax.enterprise/cdi-api/${cdi-api.version}</bundle>
         <bundle dependency="true">mvn:org.ops4j.pax.cdi/pax-cdi-api/${pax-cdi.version}</bundle>
         <bundle>mvn:org.talend.cxf/crypto-config/${original.version}</bundle>
         <bundle>mvn:org.talend.esb/sam-agent/${sam-agent.version}</bundle>
@@ -270,7 +271,7 @@
 
     <feature name='tesb-zookeeper' version='${original.version}'>
         <!-- fork additional feature -->
-        <feature>camel-zookeeper-core</feature>
+        <feature>camel-zookeeper</feature>
         <configfile finalname="/etc/org.talend.esb.locator.server.cfg">mvn:org.talend.esb/org.talend.esb.locator.server/${original.version}/cfg</configfile>
         <bundle start-level='50'>mvn:org.talend.esb/org.talend.esb.locator.auth/${original.version}</bundle>
     </feature>
@@ -280,7 +281,7 @@
         <feature prerequisite='true'>tesb-zookeeper</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${org.apache.servicemix.bundles.javax-inject.version}</bundle>
         <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/${javax.interceptor-api.version}</bundle>
-        <bundle dependency="true">mvn:javax.enterprise/cdi-api/1.2</bundle>
+        <bundle dependency="true">mvn:javax.enterprise/cdi-api/${cdi-api.version}</bundle>
         <bundle dependency="true">mvn:org.ops4j.pax.cdi/pax-cdi-api/${pax-cdi.version}</bundle>
         <bundle dependency="true">mvn:org.apache.cxf/cxf-rt-features-clustering/${cxf.version}</bundle>
         <bundle start-level='51'>mvn:org.talend.esb/locator/${original.version}</bundle>
@@ -451,6 +452,10 @@
         <configfile finalname="/etc/org.talend.esb.sam.service.soap.keystore.cfg">mvn:org.talend.esb.sam.service/sam-service-soap/${sam-service-soap.version}/cfg/org.talend.esb.sam.service.soap.keystore</configfile>
         <configfile finalname="/etc/org.talend.esb.sam.agent.keystore.cfg">mvn:org.talend.esb/sam-agent/${sam-agent.version}/cfg/org.talend.esb.sam.agent.keystore</configfile>
         <configfile finalname="/etc/org.talend.esb.sts.keystore.cfg">mvn:org.talend.esb.sts/org.talend.esb.sts.config/${org.talend.esb.sts.config.version}/cfg/org.talend.esb.sts.keystore</configfile>
+    </feature>
+
+    <feature name='pax-http-jetty' version='${pax-web.version}'>
+        <feature version="${pax-web.version}">pax-web-http-jetty</feature>
     </feature>
 
 </features>

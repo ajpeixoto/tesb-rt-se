@@ -45,6 +45,7 @@ import javax.xml.namespace.QName;
 
 import org.junit.Assert;
 import org.easymock.Capture;
+import org.easymock.CaptureType;
 import org.easymock.EasyMockSupport;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -299,7 +300,7 @@ public class ServiceLocatorImplTest extends EasyMockSupport {
     public void updateTimetolive() throws Exception {
         final int ttl = 95;
 
-        Capture<Date> dateCap = new Capture<Date>();
+        Capture<Date> dateCap = Capture.newInstance(CaptureType.LAST);
 
         expect(backend.connect()).andReturn(rootNode);
         expect(rootNode.getServiceNode(SERVICE_QNAME_1)).andReturn(serviceNode);
@@ -375,7 +376,7 @@ public class ServiceLocatorImplTest extends EasyMockSupport {
         List<String> l = new ArrayList<String>();
         l.add("superEndpointName");
 
-        Capture<Date> dateCap = new Capture<Date>();
+        Capture<Date> dateCap = Capture.newInstance(CaptureType.LAST);
 
         expect(backend.connect()).andStubReturn(rootNode);
         expect(rootNode.getServiceNode(SERVICE_QNAME_1)).andStubReturn(serviceNode);

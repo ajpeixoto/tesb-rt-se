@@ -45,6 +45,7 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.data.Stat;
 import org.easymock.Capture;
+import org.easymock.CaptureType;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -78,7 +79,7 @@ public class RegisterEndpointProviderTest extends AbstractServiceLocatorImplTest
     @Test
     public void registerServiceExistsEndpointExistsCheckLastTimes() throws Exception {
         Endpoint endpoint = create(SERVICE_QNAME_1, ENDPOINT_1);
-        Capture<Long> lastTimeStartedCapture = new Capture<Long>();
+        Capture<Long> lastTimeStartedCapture = Capture.newInstance(CaptureType.LAST);
 
         serviceExists(SERVICE_PATH_1);
         endpointExists(ENDPOINT_PATH_11);
@@ -251,7 +252,7 @@ public class RegisterEndpointProviderTest extends AbstractServiceLocatorImplTest
     public void unregister() throws Exception {
         Endpoint endpoint = create(SERVICE_QNAME_1, ENDPOINT_1, BindingType.JAXRS, TransportType.HTTP);
 
-        Capture<Long> lastTimeStoppedCapture = new Capture<Long>();
+        Capture<Long> lastTimeStoppedCapture = Capture.newInstance(CaptureType.LAST);
 
         endpointExists(ENDPOINT_PATH_11);
         getData(ENDPOINT_PATH_11, OLD_DATA);

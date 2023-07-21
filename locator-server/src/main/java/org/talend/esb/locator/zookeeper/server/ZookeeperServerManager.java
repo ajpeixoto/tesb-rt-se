@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.zookeeper.metrics.MetricsProvider;
 import org.apache.zookeeper.server.admin.AdminServer.AdminServerException;
 
 public class ZookeeperServerManager implements ZookeeperServer {
@@ -25,7 +26,7 @@ public class ZookeeperServerManager implements ZookeeperServer {
 
         Dictionary<?, ?> dict = properties;
 
-        LOG.info("Staring up ZooKeeper server");
+        LOG.info("Starting up ZooKeeper server");
 
         if (dict == null) {
             LOG.info("Ignoring configuration update because updated configuration is empty.");
@@ -72,6 +73,9 @@ public class ZookeeperServerManager implements ZookeeperServer {
                     }
                 }
             });
+            //set classloader for thread to be the zookeeper classloader to allow it to load MetricClasses
+            ClassLoader bundleClassLoader = MetricsProvider.class.getClassLoader();
+            zkMainThread.setContextClassLoader(bundleClassLoader);
             zkMainThread.start();
 
             LOG.info("Applied configuration update :" + props);
@@ -89,6 +93,11 @@ public class ZookeeperServerManager implements ZookeeperServer {
             } catch (InterruptedException e) {
                 // ignore
             }
+            if (zkMainThread.isAlive()) {
+                LOG.warning("Enforcing termination of zookeeper server thread.");
+                zkMainThread.interrupt();
+            }
+            zkMainThread.setContextClassLoader(null);
             main = null;
             zkMainThread = null;
         }
