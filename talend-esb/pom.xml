@@ -636,11 +636,20 @@
                                         token="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/1_1&lt;"
                                         value="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/${javax.inject.bundle.version}&lt;"/>
                                     <replacefilter
+                                        token="&gt;mvn:org.bouncycastle/bcpkix-jdk15on/1.51&lt;"
+                                        value="&gt;mvn:org.bouncycastle/bcpkix-jdk18on/${bouncycastle.version}&lt;/bundle&gt;&#10;        &lt;bundle dependency='true'&gt;mvn:org.bouncycastle/bcutil-jdk18on/${bouncycastle.version}&lt;"/>
+                                    <replacefilter
                                         token="-jdk15on/1.51&lt;"
                                         value="-jdk18on/${bouncycastle.version}&lt;"/>
                                     <replacefilter
-                                        token="&gt;mvn:com.google.code.gson/gson/2.5&lt;"
-                                        value="&gt;mvn:com.google.code.gson/gson/${gson.version}&lt;"/>
+                                        token="&gt;mvn:com.google.guava/guava/18.0&lt;"
+                                        value="&gt;mvn:com.google.guava/guava/${guava.version}&lt;"/>
+                                    <replacefilter
+                                        token="bundle dependency='true'&gt;mvn:com.google.code.gson/gson/2.5&lt;"
+                                        value="bundle&gt;wrap:mvn:com.google.code.gson/gson/${gson-jclouds.version}$overwrite=merge&amp;amp;Export-Package=com.google.gson.*;version=${gson-jclouds.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.apache.jclouds/jclouds-core/${jclouds.features.tesb.version}&lt;"
+                                        value="&gt;wrap:mvn:org.apache.jclouds/jclouds-core/${jclouds.features.tesb.version}$overwrite=merge&amp;amp;Import-Package=com.google.common.*;version='${guava-jclouds.version-range}',com.google.gson.*;version='${gson-jclouds.version-range}',*&lt;"/>
                                 </replace>
                                 <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
                                     <replacefilter

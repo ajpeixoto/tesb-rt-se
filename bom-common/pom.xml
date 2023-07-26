@@ -187,7 +187,7 @@
         <commons-codec.version>1.15</commons-codec.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-collections4.version>4.4</commons-collections4.version>
-        <commons-compress.version>1.21</commons-compress.version>
+        <commons-compress.version>1.22</commons-compress.version>
         <commons-dbcp.bundle.version>1.4_3</commons-dbcp.bundle.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <commons-io.version>2.11.0</commons-io.version>
@@ -210,8 +210,12 @@
         <geronimo-servlet_3.0_spec.version>1.0</geronimo-servlet_3.0_spec.version>
         <geronimo-ws-metadata_2.0_spec.version>1.1.3</geronimo-ws-metadata_2.0_spec.version>
         <groovy.version>3.0.8</groovy.version>
-        <gson.version>2.9.1</gson.version>
+        <gson.version>2.10.1</gson.version>
+        <gson-jclouds.version>2.9.1</gson-jclouds.version>
+        <gson-jclouds.version-range>(2.9,2.10)</gson-jclouds.version-range>
         <guava.version>32.1.1-jre</guava.version>
+        <guava-jclouds.version>32.1.1-jre</guava-jclouds.version>
+        <guava-jclouds.version-range>[18.0,40.0)</guava-jclouds.version-range>
         <h2.version>2.2.220</h2.version>
         <herasaf.version>1.0.4.RELEASE</herasaf.version>
         <hibernate-jpa-2.1-api.version>1.0.0.Final</hibernate-jpa-2.1-api.version>
