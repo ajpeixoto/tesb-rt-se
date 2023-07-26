@@ -5,7 +5,7 @@
 	<parent>
 		<artifactId>esb-policies</artifactId>
 		<groupId>org.talend.esb.policies</groupId>
-		<version>8.0.1-SNAPSHOT</version>
+		<version>8.0.1.20230726</version>
 	</parent>
 
 	<artifactId>compression-policy</artifactId>
