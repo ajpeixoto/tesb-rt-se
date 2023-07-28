@@ -165,7 +165,7 @@
         <openjpa-features.features.tesb.version>3.2.2</openjpa-features.features.tesb.version>
         <pax-cdi-features.features.tesb.version>1.1.4</pax-cdi-features.features.tesb.version>
         <pax-jdbc-features.features.tesb.version>1.5.5</pax-jdbc-features.features.tesb.version>
-        <pax-jms-features.features.tesb.version>1.1.2</pax-jms-features.features.tesb.version>
+        <pax-jms-features.features.tesb.version>1.1.3</pax-jms-features.features.tesb.version>
         <pax-transx-features.tesb.version>0.5.3</pax-transx-features.tesb.version>
         <zookeeper.version>3.7.1</zookeeper.version>
         <karaf.jaas.modules.tesb.version>${karaf.version}</karaf.jaas.modules.tesb.version>
@@ -210,6 +210,7 @@
         <geronimo-servlet_3.0_spec.version>1.0</geronimo-servlet_3.0_spec.version>
         <geronimo-ws-metadata_2.0_spec.version>1.1.3</geronimo-ws-metadata_2.0_spec.version>
         <groovy.version>3.0.8</groovy.version>
+        <groovy2.version>2.4.21</groovy2.version>
         <gson.version>2.10.1</gson.version>
         <gson-jclouds.version>2.9.1</gson-jclouds.version>
         <gson-jclouds.version-range>(2.9,2.10)</gson-jclouds.version-range>
@@ -223,8 +224,8 @@
         <hibersap.version>1.2.0</hibersap.version>
         <hikaricp.version>2.4.13</hikaricp.version>
         <httpasyncclient-osgi.version>4.1.5</httpasyncclient-osgi.version>
-        <httpclient.version>4.5.13</httpclient.version>
-        <httpcore.version>4.4.15</httpcore.version>
+        <httpclient.version>4.5.14</httpclient.version>
+        <httpcore.version>4.4.16</httpcore.version>
         <ibatis-sqlmap.bundle.version>2.3.4.726_4</ibatis-sqlmap.bundle.version>
         <jackrabbit.version>2.20.9</jackrabbit.version>
         <jackson-dataformat-yaml.version>2.14.3</jackson-dataformat-yaml.version>
