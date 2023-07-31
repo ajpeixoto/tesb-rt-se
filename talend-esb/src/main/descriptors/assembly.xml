@@ -430,6 +430,12 @@
             <lineEnding>unix</lineEnding>
         </file>
         <file>
+            <source>${basedir}/target/dependencies/hibernate-validator-osgi-karaf-features-${hibernate-validator.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/hibernate/validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
             <source>${basedir}/target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</source>
             <outputDirectory>./container/system/org/ops4j/pax/jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>

@@ -120,7 +120,7 @@
                                 <!-- <descriptor>mvn:org.apache.jclouds.karaf/jclouds-karaf/${jclouds.features.tesb.version}/xml/features</descriptor> -->
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.features.tesb.version}/xml/features</descriptor>
 
-                                <descriptor>mvn:org.hibernate.validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/xml/features</descriptor>
+                                <!-- <descriptor>mvn:org.hibernate.validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/xml/features</descriptor> -->
                                 <!-- <descriptor>mvn:org.ops4j.pax.cdi/pax-cdi-features/${pax-cdi-features.features.tesb.version}/xml/features</descriptor> -->
                                 <!-- <descriptor>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/xml/features</descriptor> -->
                                 <descriptor>mvn:org.ops4j.pax.jms/pax-jms-features/${pax-jms-features.features.tesb.version}/xml/features</descriptor>
@@ -147,6 +147,7 @@
                                 <descriptor>file:${basedir}/target/dependencies/pax-web-features-${pax-web.features.tesb.version}-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/dependencies/jclouds-karaf-${jclouds.features.tesb.version}-features.xml</descriptor>
+                                <descriptor>file:${basedir}/target/dependencies/hibernate-validator-osgi-karaf-features-${hibernate-validator.features.tesb.version}-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/dependencies/openjpa-features-${openjpa-features.features.tesb.version}-features.xml</descriptor>
 
@@ -238,6 +239,15 @@
                                     <classifier>features</classifier>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>jclouds-karaf-${jclouds.features.tesb.version}-features.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.hibernate.validator</groupId>
+                                    <artifactId>hibernate-validator-osgi-karaf-features</artifactId>
+                                    <version>${hibernate-validator.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>hibernate-validator-osgi-karaf-features-${hibernate-validator.features.tesb.version}-features.xml</destFileName>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.ops4j.pax.jdbc</groupId>
@@ -650,6 +660,23 @@
                                     <replacefilter
                                         token="&gt;mvn:org.apache.jclouds/jclouds-core/${jclouds.features.tesb.version}&lt;"
                                         value="&gt;wrap:mvn:org.apache.jclouds/jclouds-core/${jclouds.features.tesb.version}$overwrite=merge&amp;amp;Import-Package=com.google.common.*;version='${guava-jclouds.version-range}',com.google.gson.*;version='${gson-jclouds.version-range}',*&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.apache.httpcomponents/httpclient-osgi/4.3.4&lt;"
+                                        value="&gt;mvn:org.apache.httpcomponents/httpclient-osgi/${httpclient.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.apache.httpcomponents/httpcore-osgi/4.3.2&lt;"
+                                        value="&gt;mvn:org.apache.httpcomponents/httpcore-osgi/${httpcore.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.codehaus.groovy/groovy/2.4.4&lt;"
+                                        value="&gt;mvn:org.codehaus.groovy/groovy/${groovy2.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.codehaus.groovy/groovy-jsr223/2.4.4&lt;"
+                                        value="&gt;mvn:org.codehaus.groovy/groovy-jsr223/${groovy2.version}&lt;"/>
+                                </replace>
+                                <replace file="target/dependencies/hibernate-validator-osgi-karaf-features-${hibernate-validator.features.tesb.version}-features.xml">
+                                    <replacefilter
+                                        token="&gt;mvn:org.codehaus.groovy/groovy-all/2.4.12&lt;"
+                                        value="&gt;mvn:org.codehaus.groovy/groovy-all/${groovy2.version}&lt;"/>
                                 </replace>
                                 <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
                                     <replacefilter
