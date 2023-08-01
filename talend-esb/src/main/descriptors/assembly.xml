@@ -173,6 +173,7 @@
                 <exclude>dist-maven/**</exclude>
                 <exclude>bin/*.sh</exclude>
                 <exclude>bin/zkServer.*</exclude>
+                <exclude>lib/jackson-*.jar</exclude>
             </excludes>
             <directoryMode>755</directoryMode>
             <fileMode>0644</fileMode>
@@ -405,6 +406,7 @@
                 <include>system/**/*.jar</include>
             </includes>
             <excludes>
+                <exclude>lib/boot/org.apache.karaf.main-*.jar</exclude>
                 <exclude>system/org/ops4j/pax/logging/**</exclude>
             </excludes>
         </fileSet>
@@ -423,12 +425,12 @@
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
-        <file>
+        <!-- <file>
             <source>${basedir}/target/dependencies/jclouds-karaf-${jclouds.features.tesb.version}-features.xml</source>
             <outputDirectory>./container/system/org/apache/jclouds/karaf/jclouds-karaf/${jclouds.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
-        </file>
+        </file> -->
         <file>
             <source>${basedir}/target/dependencies/hibernate-validator-osgi-karaf-features-${hibernate-validator.features.tesb.version}-features.xml</source>
             <outputDirectory>./container/system/org/hibernate/validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/</outputDirectory>
@@ -452,6 +454,21 @@
             <outputDirectory>./container/system/com/h2database/h2/${h2.version}/</outputDirectory>
             <fileMode>0644</fileMode>
         </file> -->
+        <file>
+            <source>${basedir}/target/features-repo/com/fasterxml/jackson/core/jackson-core/${jackson.version}/jackson-core-${jackson.version}.jar</source>
+            <outputDirectory>./zookeeper/lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/features-repo/com/fasterxml/jackson/core/jackson-annotations/${jackson.version}/jackson-annotations-${jackson.version}.jar</source>
+            <outputDirectory>./zookeeper/lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/features-repo/com/fasterxml/jackson/core/jackson-databind/${jackson-databind.version}/jackson-databind-${jackson-databind.version}.jar</source>
+            <outputDirectory>./zookeeper/lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
     </files>
 
     <dependencySets>
