@@ -125,8 +125,8 @@
         <camel.version>2.25.4</camel.version>
         <camel-core.version>2.25.4.20220920</camel-core.version>
         <activemq.version>5.15.15</activemq.version>
-        <spring.version>5.3.27</spring.version>
-        <spring.bundle.version>5.3.25_1</spring.bundle.version>
+        <spring.version>5.3.29</spring.version>
+        <spring.bundle.version>5.3.28_1</spring.bundle.version>
         <spring.version.range>[5.2,6)</spring.version.range>
         <karaf.version>4.2.7</karaf.version>
         <decanter.version>2.2.0</decanter.version>
