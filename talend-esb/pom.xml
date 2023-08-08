@@ -821,17 +821,14 @@
                                 </replace>
                                 <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
                                     <replacefilter
-                                        token="&gt;mvn:com.h2database/h2/1.4.200&lt;"
+                                        token="&gt;mvn:com.h2database/h2/2.2.220&lt;"
                                         value="&gt;mvn:com.h2database/h2/${h2.version}&lt;"/>
                                     <replacefilter
-                                        token="&gt;mvn:com.h2database/h2/2.1.210&lt;"
-                                        value="&gt;mvn:com.h2database/h2/${h2.version}&lt;"/>
-                                    <replacefilter
-                                        token="&gt;mvn:org.xerial/sqlite-jdbc/3.36.0.3&lt;"
-                                        value="&gt;mvn:org.xerial/sqlite-jdbc/${sqlite-jdbc.version}&lt;"/>
-                                    <replacefilter
-                                        token="&gt;mvn:org.postgresql/postgresql/42.3.7&lt;"
+                                        token="&gt;mvn:org.postgresql/postgresql/42.6.0&lt;"
                                         value="&gt;mvn:org.postgresql/postgresql/${postgresql-jdbc.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.xerial/sqlite-jdbc/3.42.0.0&lt;"
+                                        value="&gt;mvn:org.xerial/sqlite-jdbc/${sqlite-jdbc.version}&lt;"/>
                                 </replace>
                                 <replace file="target/dependencies/openjpa-features-${openjpa-features.features.tesb.version}-features.xml">
                                     <replacefilter
