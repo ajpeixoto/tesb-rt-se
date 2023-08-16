@@ -7,14 +7,14 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>bom</artifactId>
     <packaging>pom</packaging>
-    <version>8.0.1-SNAPSHOT</version>
+    <version>8.0.1.R2023-08-RT</version>
     <name>Talend ESB :: BOM</name>
     
     <parent>
         <groupId>org.talend.esb</groupId>
         <artifactId>bom-common</artifactId>
         <relativePath>../bom-common</relativePath>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2023-08-RT</version>
     </parent>
 
 </project>

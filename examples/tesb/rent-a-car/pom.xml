@@ -16,14 +16,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rent-a-car</artifactId>
-    <version>8.0.1-SNAPSHOT</version>
+    <version>8.0.1.R2023-08-RT</version>
     <name>Talend ESB Runtime Examples :: Rent-a-Car</name>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>org.talend.esb.examples</groupId>
         <artifactId>talend-esb-examples</artifactId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2023-08-RT</version>
     </parent>
 
     <modules>

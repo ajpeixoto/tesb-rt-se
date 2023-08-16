@@ -6,7 +6,7 @@
         <relativePath>..</relativePath>
         <groupId>org.talend.esb.examples.ebook</groupId>
         <artifactId>ebook</artifactId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2023-08-RT</version>
     </parent>
 
     <artifactId>ebook-model</artifactId>
