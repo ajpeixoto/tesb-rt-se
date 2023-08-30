@@ -135,17 +135,17 @@
         <!-- karaf version -->
         <karaf.version>4.4.3</karaf.version>
         <karaf-launcher.version>4.4.3.20230726</karaf-launcher.version>
-        <specs.features.tesb.version>4.4.3.20230131</specs.features.tesb.version>
-        <standard.features.tesb.version>4.4.3.20230131</standard.features.tesb.version>
+        <specs.features.tesb.version>4.4.3.20230726</specs.features.tesb.version>
+        <standard.features.tesb.version>4.4.3.20230726</standard.features.tesb.version>
         <framework.features.tesb.version>4.4.3</framework.features.tesb.version>
-        <enterprise.features.tesb.version>4.4.3.20230131</enterprise.features.tesb.version>
+        <enterprise.features.tesb.version>4.4.3.20230726</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>invalid</enterprise-legacy.features.tesb.version>
-        <spring.features.tesb.version>4.4.3.20230131</spring.features.tesb.version>
-        <spring-legacy.features.tesb.version>4.4.3.20230131</spring-legacy.features.tesb.version>
+        <spring.features.tesb.version>4.4.3.20230726</spring.features.tesb.version>
+        <spring-legacy.features.tesb.version>4.4.3.20230726</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
         <camel.version>3.20.6</camel.version>
-        <camel.features.tesb.version>3.20.6.20230530</camel.features.tesb.version>
+        <camel.features.tesb.version>3.20.6.20230726</camel.features.tesb.version>
         <cxf.version>3.5.6</cxf.version>
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.5.6.20230530</cxf.features.tesb.version>
@@ -257,7 +257,7 @@
         <jaxen.bundle.version>1.2.0</jaxen.bundle.version>
         <jcr.version>2.0</jcr.version>
         <jdom.version>2.0.6.1</jdom.version>
-        <jdom.bundle.version>2.0.6_1</jdom.bundle.version>
+        <jdom.bundle.version>2.0.6.1_1</jdom.bundle.version>
         <jest.version>2.0.3</jest.version>
         <jettison.version>1.5.4</jettison.version>
         <jetty.version>9.4.51.v20230217</jetty.version>
@@ -314,7 +314,7 @@
         <slf4j.version>1.7.36</slf4j.version>
         <slf4j.osgi.version>2.0.0</slf4j.osgi.version>
         <snakeyaml.version>1.33</snakeyaml.version>
-        <snappy.version>1.1.10.1</snappy.version>
+        <snappy.version>1.1.10.3</snappy.version>
         <sqlite-jdbc.version>3.42.0.0</sqlite-jdbc.version>
         <sshd-osgi.version>2.10.0</sshd-osgi.version>
         <stax2-api.version>4.2.1</stax2-api.version>
@@ -2135,12 +2135,12 @@
         <profile>
             <id>patch</id>
             <properties>
-                <original.version>8.0.1.R2022-10-RT</original.version>
-                <esb.features.version>8.0.1.R2023-08-PT</esb.features.version>
-                <auxiliary-storage.features.version>8.0.1.R2023-01-PT</auxiliary-storage.features.version>
-                <sam-common.version>8.0.1.R2023-02-PT</sam-common.version>
-                <security-common.version>8.0.1.R2023-06-PT</security-common.version>
-                <derby-starter.version>8.0.1.R2022-11-PT</derby-starter.version>
+                <original.version>8.0.1.R2023-08-RT</original.version>
+                <esb.features.version>8.0.1.R2023-08-RT</esb.features.version>
+                <auxiliary-storage.features.version>8.0.1.R2023-08-RT</auxiliary-storage.features.version>
+                <sam-common.version>8.0.1.R2023-08-RT</sam-common.version>
+                <security-common.version>8.0.1.R2023-08-RT</security-common.version>
+                <derby-starter.version>8.0.1.R2023-08-RT</derby-starter.version>
             </properties>
         </profile>
     </profiles>
