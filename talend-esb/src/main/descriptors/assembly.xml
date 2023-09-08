@@ -411,6 +411,8 @@
             <excludes>
                 <exclude>lib/boot/org.apache.karaf.main-*.jar</exclude>
                 <exclude>system/org/ops4j/pax/logging/**</exclude>
+                <exclude>system/org/bouncycastle/**</exclude>
+                <exclude>system/org/apache/sshd/**</exclude>
             </excludes>
         </fileSet>
     </fileSets>

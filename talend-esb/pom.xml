@@ -746,6 +746,15 @@
                                     <replacefilter
                                         token="&gt;mvn:com.fasterxml.jackson.core/jackson-databind/2.14.2&lt;"
                                         value="&gt;mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.bouncycastle/bcprov-jdk18on/1.73&lt;"
+                                        value="&gt;mvn:org.bouncycastle/bcprov-jdk18on/${bouncycastle.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.bouncycastle/bcpkix-jdk18on/1.73&lt;"
+                                        value="&gt;mvn:org.bouncycastle/bcpkix-jdk18on/${bouncycastle.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.bouncycastle/bcutil-jdk18on/1.73&lt;"
+                                        value="&gt;mvn:org.bouncycastle/bcutil-jdk18on/${bouncycastle.version}&lt;"/>
                                 </replace>
                                 <replace file="target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml">
                                     <replacefilter
