@@ -65,6 +65,7 @@
                 <exclude>lib/guava*.jar</exclude>
                 <exclude>lib/bcprov-jdk*.jar</exclude>
                 <exclude>lib/activemq**</exclude>
+                <exclude>lib/spring*.jar</exclude>
                 <exclude>samples/**</exclude>
             </excludes>
             <directoryMode>755</directoryMode>
@@ -228,6 +229,9 @@
                 <exclude>bin/**</exclude>
                 <exclude>LICENSE</exclude>
                 <exclude>NOTICE</exclude>
+                <exclude>lib/optional/spring*.jar</exclude>
+                <exclude>lib/optional/jettison*.jar</exclude>
+                <exclude>lib/web/spring*.jar</exclude>
             </excludes>
         </fileSet>
 
@@ -469,6 +473,102 @@
         <file>
             <source>${basedir}/target/features-repo/com/fasterxml/jackson/core/jackson-databind/${jackson-databind.version}/jackson-databind-${jackson-databind.version}.jar</source>
             <outputDirectory>./zookeeper/lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        
+        <!-- activemq lib optional-->
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-aop-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-beans-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-context-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-core-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-expression-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-jms-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-oxm-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-tx-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/jettison-${jettison.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        
+        <!-- activemq lib web-->
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/web/spring-web-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/web/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/web/spring-webmvc-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/web/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        
+        <!-- cxf lib -->
+        <file>
+            <source>${basedir}/target/dependencies/cxf/apache-cxf-${cxf.version}/lib/spring-aop-${spring.version}.jar</source>
+            <outputDirectory>./lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/cxf/apache-cxf-${cxf.version}/lib/spring-beans-${spring.version}.jar</source>
+            <outputDirectory>./lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/cxf/apache-cxf-${cxf.version}/lib/spring-context-${spring.version}.jar</source>
+            <outputDirectory>./lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/cxf/apache-cxf-${cxf.version}/lib/spring-core-${spring.version}.jar</source>
+            <outputDirectory>./lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/cxf/apache-cxf-${cxf.version}/lib/spring-expression-${spring.version}.jar</source>
+            <outputDirectory>./lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/cxf/apache-cxf-${cxf.version}/lib/spring-jcl-${spring.version}.jar</source>
+            <outputDirectory>./lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/cxf/apache-cxf-${cxf.version}/lib/spring-web-${spring.version}.jar</source>
+            <outputDirectory>./lib/</outputDirectory>
             <fileMode>0644</fileMode>
         </file>
     </files>
