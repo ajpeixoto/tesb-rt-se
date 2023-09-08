@@ -230,6 +230,7 @@
                 <exclude>LICENSE</exclude>
                 <exclude>NOTICE</exclude>
                 <exclude>lib/optional/spring*.jar</exclude>
+                <exclude>lib/optional/jettison*.jar</exclude>
                 <exclude>lib/web/spring*.jar</exclude>
             </excludes>
         </fileSet>
@@ -513,6 +514,11 @@
         </file>
         <file>
             <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-tx-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/jettison-${jettison.version}.jar</source>
             <outputDirectory>./activemq/lib/optional/</outputDirectory>
             <fileMode>0644</fileMode>
         </file>

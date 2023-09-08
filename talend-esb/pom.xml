@@ -406,6 +406,11 @@
                                     <artifactId>spring-tx</artifactId>
                                     <version>${spring.version}</version>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codehaus.jettison</groupId>
+                                    <artifactId>jettison</artifactId>
+                                    <version>${jettison.version}</version>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
