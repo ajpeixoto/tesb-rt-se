@@ -174,7 +174,11 @@
                 <exclude>dist-maven/**</exclude>
                 <exclude>bin/*.sh</exclude>
                 <exclude>bin/zkServer.*</exclude>
+                <exclude>lib/*LICENSE.txt</exclude>
                 <exclude>lib/jackson-*.jar</exclude>
+                <exclude>lib/jetty-*-9.4.43.v20210629.jar</exclude>
+                <exclude>lib/netty-*-4.1.76.Final.jar</exclude>
+                <exclude>lib/snappy-java-1.1.7.7.jar</exclude>
             </excludes>
             <directoryMode>755</directoryMode>
             <fileMode>0644</fileMode>
@@ -232,6 +236,8 @@
                 <exclude>lib/optional/spring*.jar</exclude>
                 <exclude>lib/optional/jettison*.jar</exclude>
                 <exclude>lib/web/spring*.jar</exclude>
+                <exclude>lib/web/jetty-*-9.4.50.v20221201.jar</exclude>
+                <exclude>lib/camel/**</exclude>
             </excludes>
         </fileSet>
 
