@@ -523,11 +523,6 @@
             <outputDirectory>./activemq/lib/optional/</outputDirectory>
             <fileMode>0644</fileMode>
         </file>
-        <file>
-            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/jettison-${jettison.version}.jar</source>
-            <outputDirectory>./activemq/lib/optional/</outputDirectory>
-            <fileMode>0644</fileMode>
-        </file>
         
         <!-- activemq lib web-->
         <file>

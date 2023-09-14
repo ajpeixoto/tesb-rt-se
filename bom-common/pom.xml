@@ -2136,8 +2136,8 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2023-08-RT</original.version>
-                <esb.features.version>8.0.1.R2023-08-RT</esb.features.version>
-                <auxiliary-storage.features.version>8.0.1.R2023-08-RT</auxiliary-storage.features.version>
+                <esb.features.version>8.0.1.R2023-09-PT</esb.features.version>
+                <auxiliary-storage.features.version>8.0.1.R2023-09-PT</auxiliary-storage.features.version>
                 <sam-common.version>8.0.1.R2023-08-RT</sam-common.version>
                 <security-common.version>8.0.1.R2023-08-RT</security-common.version>
                 <derby-starter.version>8.0.1.R2023-08-RT</derby-starter.version>
