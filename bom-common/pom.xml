@@ -136,30 +136,28 @@
         <karaf.version>4.4.3</karaf.version>
         <karaf-launcher.version>4.4.3.20230726</karaf-launcher.version>
         <specs.features.tesb.version>4.4.3.20230726</specs.features.tesb.version>
-        <standard.features.tesb.version>4.4.3.20230726</standard.features.tesb.version>
+        <standard.features.tesb.version>4.4.3.20230915</standard.features.tesb.version>
         <framework.features.tesb.version>4.4.3</framework.features.tesb.version>
-        <enterprise.features.tesb.version>4.4.3.20230726</enterprise.features.tesb.version>
+        <enterprise.features.tesb.version>4.4.3.20230915</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>invalid</enterprise-legacy.features.tesb.version>
         <spring.features.tesb.version>4.4.3.20230726</spring.features.tesb.version>
-        <spring-legacy.features.tesb.version>4.4.3.20230726</spring-legacy.features.tesb.version>
+        <spring-legacy.features.tesb.version>invalid</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
         <camel.version>3.20.6</camel.version>
-        <camel.features.tesb.version>3.20.6.20230726</camel.features.tesb.version>
+        <camel.features.tesb.version>3.20.6.20230915</camel.features.tesb.version>
         <cxf.version>3.5.6</cxf.version>
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
-        <cxf.features.tesb.version>3.5.6.20230530</cxf.features.tesb.version>
+        <cxf.features.tesb.version>3.5.6.20230915</cxf.features.tesb.version>
         <cxf.version.range>[3.5,4)</cxf.version.range>
         <spring.version>5.3.29</spring.version>
         <spring.security.version>5.7.10</spring.security.version>
-        <pax-web.version>8.0.20</pax-web.version>
-        <pax-web.features.tesb.version>8.0.20</pax-web.features.tesb.version>
+        <pax-web.version>8.0.22</pax-web.version>
+        <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
         <activemq.version>5.17.4</activemq.version>
-        <activemq.features.tesb.version>5.17.4.20230530</activemq.features.tesb.version>
+        <activemq.features.tesb.version>5.17.4.20230915</activemq.features.tesb.version>
         <decanter.version>2.9.0</decanter.version>
         <decanter.features.tesb.version>${decanter.version}</decanter.features.tesb.version>
-        <!-- <jclouds.version>2.5.0</jclouds.version> -->
-        <jclouds.features.tesb.version>2.1.2</jclouds.features.tesb.version>
         <hibernate-validator.version>7.0.2.Final</hibernate-validator.version>
         <hibernate-validator.features.tesb.version>${hibernate-validator.version}</hibernate-validator.features.tesb.version>
         <jpa-features.features.tesb.version>2.7.3</jpa-features.features.tesb.version>
@@ -178,7 +176,7 @@
         <apache-xmlsec.version>2.3.0</apache-xmlsec.version>
         <aries.version>1.0.0</aries.version>
         <awaitility.version>4.2.0</awaitility.version>
-        <bouncycastle.version>1.74</bouncycastle.version>
+        <bouncycastle.version>1.76</bouncycastle.version>
         <brave.version>5.13.3</brave.version>
         <c3p0.bundle.version>0.9.5.5_1</c3p0.bundle.version>
         <cdi-api.version>2.0.SP1</cdi-api.version>
@@ -188,7 +186,7 @@
         <commons-codec.version>1.15</commons-codec.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-collections4.version>4.4</commons-collections4.version>
-        <commons-compress.version>1.22</commons-compress.version>
+        <commons-compress.version>1.24.0</commons-compress.version>
         <commons-dbcp.bundle.version>1.4_3</commons-dbcp.bundle.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <commons-io.version>2.11.0</commons-io.version>
@@ -260,7 +258,7 @@
         <jdom.bundle.version>2.0.6.1_1</jdom.bundle.version>
         <jest.version>2.0.3</jest.version>
         <jettison.version>1.5.4</jettison.version>
-        <jetty.version>9.4.51.v20230217</jetty.version>
+        <jetty.version>9.4.52.v20230823</jetty.version>
         <jlibs.version>2.2.3</jlibs.version>
         <jna.version>5.13.0</jna.version>
         <joda-time.version>2.11.1</joda-time.version>
@@ -322,6 +320,7 @@
         <syncope.version>2.1.9</syncope.version>
         <taglibs.version>1.2.5</taglibs.version>
         <tika.version>2.6.0</tika.version>
+        <undertow.version>2.3.8.Final</undertow.version>
         <velocity.version>2.3</velocity.version>
         <woodstox.core.version>6.4.0</woodstox.core.version>
         <woodstox.version>4.4.1</woodstox.version>
@@ -2136,7 +2135,7 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2023-08-RT</original.version>
-                <esb.features.version>8.0.1.R2023-09-PT</esb.features.version>
+                <esb.features.version>8.0.1.R2023-10-PT</esb.features.version>
                 <auxiliary-storage.features.version>8.0.1.R2023-09-PT</auxiliary-storage.features.version>
                 <sam-common.version>8.0.1.R2023-08-RT</sam-common.version>
                 <security-common.version>8.0.1.R2023-08-RT</security-common.version>

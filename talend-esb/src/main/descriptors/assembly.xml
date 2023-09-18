@@ -66,6 +66,8 @@
                 <exclude>lib/bcprov-jdk*.jar</exclude>
                 <exclude>lib/activemq**</exclude>
                 <exclude>lib/spring*.jar</exclude>
+                <exclude>lib/jetty-*-9.4.51.v20230217.jar</exclude>
+                <exclude>lib/undertow-*-2.2.20.Final.jar</exclude>
                 <exclude>samples/**</exclude>
             </excludes>
             <directoryMode>755</directoryMode>
@@ -426,32 +428,38 @@
 
     <files>
         <file>
+            <source>${basedir}/target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/apache/karaf/decanter/apache-karaf-decanter/${decanter.features.tesb.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
             <source>${basedir}/target/dependencies/pax-web-features-${pax-web.features.tesb.version}-features.xml</source>
             <outputDirectory>./container/system/org/ops4j/pax/web/pax-web-features/${pax-web.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>${basedir}/target/dependencies/apache-karaf-decanter-${decanter.features.tesb.version}-features.xml</source>
-            <outputDirectory>./container/system/org/apache/karaf/decanter/apache-karaf-decanter/${decanter.features.tesb.version}/</outputDirectory>
+            <source>${basedir}/target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/ops4j/pax/jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
-        <!-- <file>
-            <source>${basedir}/target/dependencies/jclouds-karaf-${jclouds.features.tesb.version}-features.xml</source>
-            <outputDirectory>./container/system/org/apache/jclouds/karaf/jclouds-karaf/${jclouds.features.tesb.version}/</outputDirectory>
+        <file>
+            <source>${basedir}/target/dependencies/pax-jms-features-${pax-jms-features.features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/ops4j/pax/jms/pax-jms-features/${pax-jms-features.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
-        </file> -->
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/pax-transx-features-${pax-transx-features.tesb.version}-features.xml</source>
+            <outputDirectory>./container/system/org/ops4j/pax/transx/pax-transx-features/${pax-transx-features.tesb.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
         <file>
             <source>${basedir}/target/dependencies/hibernate-validator-osgi-karaf-features-${hibernate-validator.features.tesb.version}-features.xml</source>
             <outputDirectory>./container/system/org/hibernate/validator/hibernate-validator-osgi-karaf-features/${hibernate-validator.features.tesb.version}/</outputDirectory>
-            <fileMode>0644</fileMode>
-            <lineEnding>unix</lineEnding>
-        </file>
-        <file>
-            <source>${basedir}/target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml</source>
-            <outputDirectory>./container/system/org/ops4j/pax/jdbc/pax-jdbc-features/${pax-jdbc-features.features.tesb.version}/</outputDirectory>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
@@ -520,6 +528,11 @@
         </file>
         <file>
             <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/spring-tx-${spring.version}.jar</source>
+            <outputDirectory>./activemq/lib/optional/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/activemq-unix/apache-activemq-${activemq.version}/lib/optional/jettison-${jettison.version}.jar</source>
             <outputDirectory>./activemq/lib/optional/</outputDirectory>
             <fileMode>0644</fileMode>
         </file>
