@@ -96,5 +96,17 @@
             </fileset>
         </replaceregexp>
 
+        <echo message="Files client, client.bat: update sshd library version in classpath" />
+        <replace file="target/container/bin/client">
+            <replacefilter
+                token="2.9.2"
+                value="${sshd-osgi.version}"/>
+        </replace>
+        <replace file="target/container/bin/client.bat">
+            <replacefilter
+                token="2.9.2"
+                value="${sshd-osgi.version}"/>
+        </replace>
+
     </target>
 </project>
