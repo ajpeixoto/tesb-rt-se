@@ -275,6 +275,14 @@
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>h2-${h2.version}.jar</destFileName>
                                 </artifactItem> -->
+                                <artifactItem>
+                                    <groupId>org.apache.karaf</groupId>
+                                    <artifactId>org.apache.karaf.client</artifactId>
+                                    <version>${karaf-client.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>org.apache.karaf.client-${karaf-client.version}.jar</destFileName>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>

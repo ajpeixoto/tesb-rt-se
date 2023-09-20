@@ -422,6 +422,8 @@
                 <exclude>system/org/ops4j/pax/logging/**</exclude>
                 <exclude>system/org/bouncycastle/**</exclude>
                 <exclude>system/org/apache/sshd/**</exclude>
+                <exclude>system/org/apache/karaf/org.apache.karaf.client/**</exclude>
+                <exclude>system/org/apache/karaf/shell/org.apache.karaf.shell.ssh/**</exclude>
             </excludes>
         </fileSet>
     </fileSets>
@@ -474,6 +476,11 @@
             <outputDirectory>./container/system/com/h2database/h2/${h2.version}/</outputDirectory>
             <fileMode>0644</fileMode>
         </file> -->
+        <file>
+            <source>${basedir}/target/dependencies/org.apache.karaf.client-${karaf-client.version}.jar</source>
+            <outputDirectory>./container/system/org/apache/karaf/org.apache.karaf.client/${karaf-client.version}/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
         <file>
             <source>${basedir}/target/features-repo/com/fasterxml/jackson/core/jackson-core/${jackson.version}/jackson-core-${jackson.version}.jar</source>
             <outputDirectory>./zookeeper/lib/</outputDirectory>
