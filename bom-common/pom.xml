@@ -2135,12 +2135,12 @@
         <profile>
             <id>patch</id>
             <properties>
-                <original.version>8.0.1.R2023-08-RT</original.version>
-                <esb.features.version>8.0.1.R2023-10-PT</esb.features.version>
-                <auxiliary-storage.features.version>8.0.1.R2023-09-PT</auxiliary-storage.features.version>
-                <sam-common.version>8.0.1.R2023-08-RT</sam-common.version>
-                <security-common.version>8.0.1.R2023-08-RT</security-common.version>
-                <derby-starter.version>8.0.1.R2023-08-RT</derby-starter.version>
+                <original.version>8.0.1.R2023-08-NOPATCH</original.version>
+                <esb.features.version>8.0.1.R2023-10-NOPATCH</esb.features.version>
+                <auxiliary-storage.features.version>8.0.1.R2023-09-NOPATCH</auxiliary-storage.features.version>
+                <sam-common.version>8.0.1.R2023-08-NOPATCH</sam-common.version>
+                <security-common.version>8.0.1.R2023-08-NOPATCH</security-common.version>
+                <derby-starter.version>8.0.1.R2023-08-NOPATCH</derby-starter.version>
             </properties>
         </profile>
     </profiles>
