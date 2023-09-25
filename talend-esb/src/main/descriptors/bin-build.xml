@@ -107,8 +107,8 @@
         </replace>
         <replace file="target/container/bin/client.bat">
             <replacefilter
-                token="org.apache.karaf.client/4.4.3/org.apache.karaf.client-4.4.3.jar"
-                value="org.apache.karaf.client/${karaf-client.version}/org.apache.karaf.client-${karaf-client.version}.jar"/>
+                token="org.apache.karaf.client\4.4.3\org.apache.karaf.client-4.4.3.jar"
+                value="org.apache.karaf.client\${karaf-client.version}\org.apache.karaf.client-${karaf-client.version}.jar"/>
             <replacefilter
                 token="2.9.2"
                 value="${sshd-osgi.version}"/>
