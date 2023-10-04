@@ -277,6 +277,7 @@
         <lombok.version>1.18.22</lombok.version>
         <metrics-core.version>4.2.14</metrics-core.version>
         <mina-core.version>2.1.6</mina-core.version>
+        <mssql-jdbc.version>12.4.0.jre11</mssql-jdbc.version>
         <netty.version>4.1.94.Final</netty.version>
         <oak-jackrabbit-api.version>1.48.0</oak-jackrabbit-api.version>
         <!-- <opensaml.version>3.4.6</opensaml.version> -->

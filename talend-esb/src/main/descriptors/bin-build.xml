@@ -123,7 +123,7 @@
         </replaceregexp>
 
         <echo message="Files trun add-opens package" />
-        <property name="linesToAddLinux">                  --add-opens java.rmi/sun.rmi.transport.tcp=ALL-UNNAMED \\\\
+        <property name="linesToAddLinux">                    --add-opens java.rmi\/sun.rmi.transport.tcp=ALL-UNNAMED \\\\
                     --add-opens java.base\/java.io=ALL-UNNAMED \\\\
                     --add-opens java.base\/java.lang.invoke=ALL-UNNAMED \\\\
                     --add-opens java.base\/java.lang.reflect=ALL-UNNAMED \\\\
