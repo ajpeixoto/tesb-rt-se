@@ -610,11 +610,11 @@
                                     <artifactId>jetty-io</artifactId>
                                     <version>${jetty.version}</version>
                                 </artifactItem>
-                                <artifactItem>
+                                <!-- <artifactItem>
                                     <groupId>org.eclipse.jetty</groupId>
                                     <artifactId>jetty-rewrite</artifactId>
                                     <version>${jetty.version}</version>
-                                </artifactItem>
+                                </artifactItem> -->
                                 <artifactItem>
                                     <groupId>org.eclipse.jetty</groupId>
                                     <artifactId>jetty-security</artifactId>
@@ -685,11 +685,11 @@
                                     <artifactId>netty-transport-native-unix-common</artifactId>
                                     <version>${netty.version}</version>
                                 </artifactItem>
-                                <artifactItem>
+                                <!-- <artifactItem>
                                     <groupId>org.xerial.snappy</groupId>
                                     <artifactId>snappy-java</artifactId>
                                     <version>${snappy.version}</version>
-                                </artifactItem>
+                                </artifactItem> -->
                             </artifactItems>
                         </configuration>
                     </execution>
@@ -1008,6 +1008,9 @@
                                     <replacefilter
                                         token="2.2.26.Final"
                                         value="${undertow.version}"/>
+                                    <replacefilter
+                                        token="9.4.52.v20230823"
+                                        value="${jetty.version}"/>
                                 </replace>
                                 <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
                                     <replacefilter

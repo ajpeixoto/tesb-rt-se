@@ -167,7 +167,7 @@
         <pax-jdbc-features.features.tesb.version>1.5.6</pax-jdbc-features.features.tesb.version>
         <pax-jms-features.features.tesb.version>1.1.3</pax-jms-features.features.tesb.version>
         <pax-transx-features.tesb.version>0.5.4</pax-transx-features.tesb.version>
-        <zookeeper.version>3.7.1</zookeeper.version>
+        <zookeeper.version>3.7.2</zookeeper.version>
         <karaf.jaas.modules.tesb.version>${karaf.version}</karaf.jaas.modules.tesb.version>
 
         <!-- dependencies versions -->
@@ -259,7 +259,7 @@
         <jdom.bundle.version>2.0.6.1_1</jdom.bundle.version>
         <jest.version>2.0.3</jest.version>
         <jettison.version>1.5.4</jettison.version>
-        <jetty.version>9.4.52.v20230823</jetty.version>
+        <jetty.version>9.4.53.v20231009</jetty.version>
         <jlibs.version>2.2.3</jlibs.version>
         <jna.version>5.13.0</jna.version>
         <joda-time.version>2.11.1</joda-time.version>
@@ -278,7 +278,7 @@
         <metrics-core.version>4.2.14</metrics-core.version>
         <mina-core.version>2.1.6</mina-core.version>
         <mssql-jdbc.version>12.4.0.jre11</mssql-jdbc.version>
-        <netty.version>4.1.94.Final</netty.version>
+        <netty.version>4.1.100.Final</netty.version>
         <netty-tcnative-classes.version>2.0.46.Final</netty-tcnative-classes.version>
         <oak-jackrabbit-api.version>1.48.0</oak-jackrabbit-api.version>
         <!-- <opensaml.version>3.4.6</opensaml.version> -->
@@ -315,7 +315,7 @@
         <slf4j.version>1.7.36</slf4j.version>
         <slf4j.osgi.version>2.0.0</slf4j.osgi.version>
         <snakeyaml.version>1.33</snakeyaml.version>
-        <snappy.version>1.1.10.4</snappy.version>
+        <snappy.version>1.1.10.5</snappy.version>
         <sqlite-jdbc.version>3.42.0.0</sqlite-jdbc.version>
         <sshd-osgi.version>2.10.0</sshd-osgi.version>
         <stax2-api.version>4.2.1</stax2-api.version>

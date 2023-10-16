@@ -179,7 +179,9 @@
                 <exclude>lib/*LICENSE.txt</exclude>
                 <exclude>lib/jackson-*.jar</exclude>
                 <exclude>lib/jetty-*-9.4.43.v20210629.jar</exclude>
+                <exclude>lib/jetty-*-9.4.52.v20230823.jar</exclude>
                 <exclude>lib/netty-*-4.1.76.Final.jar</exclude>
+                <exclude>lib/netty-*-4.1.94.Final.jar</exclude>
                 <exclude>lib/snappy-java-1.1.7.7.jar</exclude>
             </excludes>
             <directoryMode>755</directoryMode>
