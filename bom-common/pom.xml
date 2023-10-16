@@ -299,7 +299,7 @@
         <org.apache.servicemix.bundles.wsdl4j.version>1.6.3_1</org.apache.servicemix.bundles.wsdl4j.version>
         <org.apache.servicemix.bundles.xstream.version>1.4.19_1</org.apache.servicemix.bundles.xstream.version>
         <org.apache.servicemix.specs.jaxrs-api-2.1.version>2.9.1</org.apache.servicemix.specs.jaxrs-api-2.1.version>
-        <org.json>20230227</org.json>
+        <org.json>20231013</org.json>
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
         <osgi.core.version>6.0.0</osgi.core.version>
