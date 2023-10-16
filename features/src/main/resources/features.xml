@@ -69,6 +69,7 @@
         <bundle start-level="30">mvn:io.netty/netty-transport-native-kqueue/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-transport-native-unix-common/${netty.version}</bundle>
         <bundle start-level="30">mvn:io.netty/netty-transport/${netty.version}</bundle>
+        <bundle start-level="30">mvn:io.netty/netty-tcnative-classes/${netty-tcnative-classes.version}</bundle>
         <bundle start-level="30">mvn:io.swagger.core.v3/swagger-annotations/${swagger.version}</bundle>
         <bundle start-level="30">mvn:io.swagger.core.v3/swagger-core/${swagger.version}</bundle>
         <bundle start-level="30">mvn:io.swagger.core.v3/swagger-models/${swagger.version}</bundle>
