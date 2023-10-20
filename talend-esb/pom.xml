@@ -988,13 +988,13 @@
                                 </replace>
                                 <replace file="target/dependencies/pax-web-features-${pax-web.features.tesb.version}-features.xml">
                                     <replacefilter
-                                        token="&gt;mvn:com.fasterxml.jackson.core/jackson-annotations/2.15.2&lt;"
+                                        token="&gt;mvn:com.fasterxml.jackson.core/jackson-annotations/2.15.3&lt;"
                                         value="&gt;mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}&lt;"/>
                                     <replacefilter
-                                        token="&gt;mvn:com.fasterxml.jackson.core/jackson-core/2.15.2&lt;"
+                                        token="&gt;mvn:com.fasterxml.jackson.core/jackson-core/2.15.3&lt;"
                                         value="&gt;mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}&lt;"/>
                                     <replacefilter
-                                        token="&gt;mvn:com.fasterxml.jackson.core/jackson-databind/2.15.2&lt;"
+                                        token="&gt;mvn:com.fasterxml.jackson.core/jackson-databind/2.15.3&lt;"
                                         value="&gt;mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind.version}&lt;"/>
                                     <replacefilter
                                         token="&gt;mvn:org.bouncycastle/bcprov-jdk18on/1.76&lt;"
@@ -1006,11 +1006,8 @@
                                         token="&gt;mvn:org.bouncycastle/bcutil-jdk18on/1.76&lt;"
                                         value="&gt;mvn:org.bouncycastle/bcutil-jdk18on/${bouncycastle.version}&lt;"/>
                                     <replacefilter
-                                        token="2.2.26.Final"
+                                        token="2.2.28.Final"
                                         value="${undertow.version}"/>
-                                    <replacefilter
-                                        token="9.4.52.v20230823"
-                                        value="${jetty.version}"/>
                                 </replace>
                                 <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
                                     <replacefilter
