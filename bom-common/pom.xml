@@ -8,7 +8,7 @@
     <groupId>org.talend.esb</groupId>
     <artifactId>bom-common</artifactId>
     <packaging>pom</packaging>
-    <version>8.0.1-SNAPSHOT</version>
+    <version>8.0.1.R2023-10-RT</version>
     <name>Talend ESB :: BOM Common</name>
     <description>
         Talend ESB SE bundles Service Factory and Integration Factory,
@@ -96,7 +96,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <targetJdk>11</targetJdk>
 
-        <original.version>8.0.1-SNAPSHOT</original.version>
+        <original.version>8.0.1.R2023-10-RT</original.version>
 
         <!-- final packages version -->
         <packages.version>${original.version}</packages.version>

@@ -5,7 +5,7 @@
     <parent>
         <artifactId>bom</artifactId>
         <groupId>org.talend.esb</groupId>
-        <version>8.0.1-SNAPSHOT</version>
+        <version>8.0.1.R2023-10-RT</version>
         <relativePath>../bom</relativePath>
     </parent>
 
