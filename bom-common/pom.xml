@@ -137,7 +137,7 @@
         <karaf-launcher.version>4.4.3.20230726</karaf-launcher.version>
         <karaf-client.version>4.4.3.20230915</karaf-client.version>
         <specs.features.tesb.version>4.4.3.20230726</specs.features.tesb.version>
-        <standard.features.tesb.version>4.4.3.20230915</standard.features.tesb.version>
+        <standard.features.tesb.version>4.4.3.20231016</standard.features.tesb.version>
         <framework.features.tesb.version>4.4.3</framework.features.tesb.version>
         <enterprise.features.tesb.version>4.4.3.20230915</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>invalid</enterprise-legacy.features.tesb.version>
@@ -153,7 +153,7 @@
         <cxf.version.range>[3.5,4)</cxf.version.range>
         <spring.version>5.3.29</spring.version>
         <spring.security.version>5.7.10</spring.security.version>
-        <pax-web.version>8.0.22</pax-web.version>
+        <pax-web.version>8.0.23</pax-web.version>
         <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
         <activemq.version>5.17.4</activemq.version>
         <activemq.features.tesb.version>5.17.4.20230915</activemq.features.tesb.version>
@@ -323,7 +323,7 @@
         <syncope.version>2.1.9</syncope.version>
         <taglibs.version>1.2.5</taglibs.version>
         <tika.version>2.6.0</tika.version>
-        <undertow.version>2.3.8.Final</undertow.version>
+        <undertow.version>2.2.28.Final</undertow.version>
         <velocity.version>2.3</velocity.version>
         <woodstox.core.version>6.4.0</woodstox.core.version>
         <woodstox.version>4.4.1</woodstox.version>
