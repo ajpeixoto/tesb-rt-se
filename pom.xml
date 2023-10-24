@@ -152,7 +152,7 @@
         <jdom2.version>2.0.6.1</jdom2.version>
         <osgi.core.version>6.0.0</osgi.core.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
-        <jetty.version>9.4.51.v20230217</jetty.version>
+        <jetty.version>9.4.53.v20231009</jetty.version>
         <pax-web.version>7.2.30</pax-web.version>
         <oscache.bundle.version>2.4_5</oscache.bundle.version>
         <cglib.bundle.version>3.3.0_1</cglib.bundle.version>
