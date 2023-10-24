@@ -323,7 +323,7 @@
         <syncope.version>2.1.9</syncope.version>
         <taglibs.version>1.2.5</taglibs.version>
         <tika.version>2.6.0</tika.version>
-        <undertow.version>2.3.8.Final</undertow.version>
+        <undertow.version>2.2.28.Final</undertow.version>
         <velocity.version>2.3</velocity.version>
         <woodstox.core.version>6.4.0</woodstox.core.version>
         <woodstox.version>4.4.1</woodstox.version>

@@ -1012,16 +1012,16 @@
                                 <replace file="target/dependencies/pax-jdbc-features-${pax-jdbc-features.features.tesb.version}-features.xml">
                                     <replacefilter
                                         token="&lt;bundle&gt;mvn:com.h2database/h2/2.2.220&lt;/bundle&gt;"
-                                        value="&lt;bundle dependency=&quot;true&quot;&gt;mvn:com.h2database/h2/${h2.version}&lt;/bundle&gt;"/>
+                                        value="&lt;bundle&gt;mvn:com.h2database/h2/${h2.version}&lt;/bundle&gt;"/>
                                     <replacefilter
                                         token="&lt;bundle&gt;mvn:org.postgresql/postgresql/42.6.0&lt;/bundle&gt;"
-                                        value="&lt;bundle dependency=&quot;true&quot;&gt;mvn:org.postgresql/postgresql/${postgresql-jdbc.version}&lt;/bundle&gt;"/>
+                                        value="&lt;bundle&gt;mvn:org.postgresql/postgresql/${postgresql-jdbc.version}&lt;/bundle&gt;"/>
                                     <replacefilter
                                         token="&lt;bundle&gt;mvn:org.xerial/sqlite-jdbc/3.42.0.0&lt;/bundle&gt;"
-                                        value="&lt;bundle dependency=&quot;true&quot;&gt;mvn:org.xerial/sqlite-jdbc/${sqlite-jdbc.version}&lt;/bundle&gt;"/>
+                                        value="&lt;bundle&gt;mvn:org.xerial/sqlite-jdbc/${sqlite-jdbc.version}&lt;/bundle&gt;"/>
                                     <replacefilter
                                         token="&lt;bundle&gt;mvn:com.microsoft.sqlserver/mssql-jdbc/12.3.1.jre8-preview&lt;/bundle&gt;"
-                                        value="&lt;bundle dependency=&quot;true&quot;&gt;mvn:com.microsoft.sqlserver/mssql-jdbc/${mssql-jdbc.version}&lt;/bundle&gt;"/>
+                                        value="&lt;bundle&gt;mvn:com.microsoft.sqlserver/mssql-jdbc/${mssql-jdbc.version}&lt;/bundle&gt;"/>
                                     <replacefilter
                                         token="&lt;feature name=&quot;pax-jdbc-pool-narayana&quot;"
                                         value="&lt;!--&#10;    &lt;feature name=&quot;pax-jdbc-pool-narayana&quot;"/>
