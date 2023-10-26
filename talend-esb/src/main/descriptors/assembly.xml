@@ -68,6 +68,7 @@
                 <exclude>lib/spring*.jar</exclude>
                 <exclude>lib/jetty-*-9.4.51.v20230217.jar</exclude>
                 <exclude>lib/undertow-*-2.2.20.Final.jar</exclude>
+                <exclude>lib/xmlsec-2.3.0.jar</exclude>
                 <exclude>samples/**</exclude>
             </excludes>
             <directoryMode>755</directoryMode>
