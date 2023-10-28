@@ -136,6 +136,8 @@
         <karaf.version>4.4.3</karaf.version>
         <karaf-launcher.version>4.4.3.20230726</karaf-launcher.version>
         <karaf-client.version>4.4.3.20230915</karaf-client.version>
+        <karaf-shell.version>4.4.3.20230915</karaf-shell.version>
+        <karaf-wrapper.version>4.4.3.20230925</karaf-wrapper.version>
         <specs.features.tesb.version>4.4.3.20230726</specs.features.tesb.version>
         <standard.features.tesb.version>4.4.3.20231016</standard.features.tesb.version>
         <framework.features.tesb.version>4.4.3</framework.features.tesb.version>
