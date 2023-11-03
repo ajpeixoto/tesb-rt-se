@@ -138,12 +138,12 @@
         <karaf-client.version>4.4.3.20230915</karaf-client.version>
         <karaf-shell.version>4.4.3.20230915</karaf-shell.version>
         <karaf-wrapper.version>4.4.3.20230925</karaf-wrapper.version>
-        <specs.features.tesb.version>4.4.3.20230726</specs.features.tesb.version>
-        <standard.features.tesb.version>4.4.3.20231016</standard.features.tesb.version>
+        <specs.features.tesb.version>4.4.3.20231031</specs.features.tesb.version>
+        <standard.features.tesb.version>4.4.3.20231031</standard.features.tesb.version>
         <framework.features.tesb.version>4.4.3</framework.features.tesb.version>
-        <enterprise.features.tesb.version>4.4.3.20230915</enterprise.features.tesb.version>
+        <enterprise.features.tesb.version>4.4.3.20231031</enterprise.features.tesb.version>
         <enterprise-legacy.features.tesb.version>invalid</enterprise-legacy.features.tesb.version>
-        <spring.features.tesb.version>4.4.3.20230726</spring.features.tesb.version>
+        <spring.features.tesb.version>4.4.3.20231031</spring.features.tesb.version>
         <spring-legacy.features.tesb.version>invalid</spring-legacy.features.tesb.version>
 
         <!-- core libraries versions -->
@@ -153,12 +153,13 @@
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.5.6.20231024</cxf.features.tesb.version>
         <cxf.version.range>[3.5,4)</cxf.version.range>
-        <spring.version>5.3.29</spring.version>
+        <spring.version>5.3.30</spring.version>
         <spring.security.version>5.7.10</spring.security.version>
         <pax-web.version>8.0.23</pax-web.version>
         <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
-        <activemq.version>5.17.4</activemq.version>
-        <activemq.features.tesb.version>5.17.4.20230915</activemq.features.tesb.version>
+        <activemq.version>5.17.6</activemq.version>
+        <activemq.features.tesb.version>5.17.6.20231031</activemq.features.tesb.version>
+        <activemq-osgi.tesb.version>5.17.6.20231031</activemq-osgi.tesb.version>
         <decanter.version>2.9.0</decanter.version>
         <decanter.features.tesb.version>${decanter.version}</decanter.features.tesb.version>
         <hibernate-validator.version>7.0.2.Final</hibernate-validator.version>
@@ -192,7 +193,7 @@
         <commons-compress.version>1.24.0</commons-compress.version>
         <commons-dbcp.bundle.version>1.4_3</commons-dbcp.bundle.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
-        <commons-io.version>2.11.0</commons-io.version>
+        <commons-io.version>2.14.0</commons-io.version>
         <commons-jxpath.version>1.3</commons-jxpath.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
