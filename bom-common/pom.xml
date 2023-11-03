@@ -330,7 +330,8 @@
         <velocity.version>2.3</velocity.version>
         <woodstox.core.version>6.4.0</woodstox.core.version>
         <woodstox.version>4.4.1</woodstox.version>
-        <xbean-blueprint.version>4.18</xbean-blueprint.version>
+        <xbean.version>4.24</xbean.version>
+        <xbean-blueprint.version>4.24</xbean-blueprint.version>
         <xerces.version>2.12.2</xerces.version>
         <xmlParserAPIs.version>2.0.2</xmlParserAPIs.version>
         <wss4j.version>2.3.3</wss4j.version>

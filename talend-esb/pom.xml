@@ -1065,6 +1065,9 @@
                                     <replacefilter
                                         token="&gt;mvn:org.apache.commons/commons-pool2/2.9.0&lt;"
                                         value="&gt;mvn:org.apache.commons/commons-pool2/${commons-pool2.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.apache.xbean/xbean-asm9-shaded/4.20&lt;"
+                                        value="&gt;mvn:org.apache.xbean/xbean-asm9-shaded/${xbean.version}&lt;"/>
                                 </replace>
                             </target>
                         </configuration>
