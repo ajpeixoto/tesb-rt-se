@@ -985,6 +985,9 @@
                                         token="&gt;mvn:com.sun.mail/javax.mail/1.6.2&lt;"
                                         value="&gt;mvn:com.sun.mail/jakarta.mail/${javax.mail.version}&lt;"/>
                                     <replacefilter
+                                        token="&gt;mvn:commons-io/commons-io/2.7&lt;"
+                                        value="&gt;mvn:commons-io/commons-io/${commons-io.version}&lt;"/>
+                                    <replacefilter
                                         token="&lt;feature name=&quot;decanter-appender-cassandra-core&quot;"
                                         value="&lt;!--&#10;    &lt;feature name=&quot;decanter-appender-cassandra-core&quot;"/>
                                     <replacefilter
@@ -1036,6 +1039,9 @@
                                 </replace>
                                 <replace file="target/dependencies/pax-jms-features-${pax-jms-features.features.tesb.version}-features.xml">
                                     <replacefilter
+                                        token="&gt;mvn:org.apache.activemq/activemq-osgi/5.16.6&lt;"
+                                        value="&gt;mvn:org.apache.activemq/activemq-osgi/${activemq-osgi.tesb.version}&lt;"/>
+                                    <replacefilter
                                         token="&lt;feature name=&quot;pax-jms-pool-narayana&quot;"
                                         value="&lt;!--&#10;    &lt;feature name=&quot;pax-jms-pool-narayana&quot;"/>
                                     <replacefilter
@@ -1059,6 +1065,9 @@
                                     <replacefilter
                                         token="&gt;mvn:org.apache.commons/commons-pool2/2.9.0&lt;"
                                         value="&gt;mvn:org.apache.commons/commons-pool2/${commons-pool2.version}&lt;"/>
+                                    <replacefilter
+                                        token="&gt;mvn:org.apache.xbean/xbean-asm9-shaded/4.20&lt;"
+                                        value="&gt;mvn:org.apache.xbean/xbean-asm9-shaded/${xbean.version}&lt;"/>
                                 </replace>
                             </target>
                         </configuration>
