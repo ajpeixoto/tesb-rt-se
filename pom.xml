@@ -124,7 +124,7 @@
         <cxf.version.range>[3.4,4.0)</cxf.version.range>
         <camel.version>2.25.4</camel.version>
         <camel-core.version>2.25.4.20220920</camel-core.version>
-        <activemq.version>5.15.15</activemq.version>
+        <activemq.version>5.15.16</activemq.version>
         <spring.version>5.3.29</spring.version>
         <spring.bundle.version>5.3.28_1</spring.bundle.version>
         <spring.version.range>[5.2,6)</spring.version.range>
@@ -166,6 +166,7 @@
         <javax.el.version>3.0.0</javax.el.version>
         <pax-cdi.version>1.1.4</pax-cdi.version>
         <pax-jdbc.version>1.4.0</pax-jdbc.version>
+        <pax-jms.version>1.0.5</pax-jms.version>
         <quartz.version>2.3.2</quartz.version>
         <c3p0.bundle.version>0.9.5.4_1</c3p0.bundle.version>
         <hikaricp.version>2.4.13</hikaricp.version>
@@ -188,7 +189,7 @@
         <groovy.version>2.5.14</groovy.version>
         <groovy-all.version>${groovy.version}.20221226</groovy-all.version>
         <sshd-core.version>2.9.2</sshd-core.version>
-        <apache-xmlsec.version>2.1.7</apache-xmlsec.version>
+        <apache-xmlsec.version>2.2.6</apache-xmlsec.version>
         <xstream.version>1.4.20</xstream.version>
         <jcommander.version>1.75</jcommander.version>
         <commons-net.version>3.9.0</commons-net.version>
@@ -784,7 +785,7 @@
             </modules>
             <properties>
                 <original.version>7.3.1.R2022-09-RT</original.version>
-                <features.version>7.3.1.R2023-08-PT</features.version>
+                <features.version>7.3.1.R2023-11-PT</features.version>
                 <auxiliary-storage-features.version>7.3.1.R2023-01-PT</auxiliary-storage-features.version>
                 <derby-starter.version>7.3.1.R2023-01-PT</derby-starter.version>
             </properties>

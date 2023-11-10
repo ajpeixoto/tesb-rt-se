@@ -38,7 +38,7 @@
         <tag_label />
         <!-- used for assembly & dependency type, overwritten by dev-unix-assembly-only & dev-win-assembly-only profiles -->
         <assembly.formats>tar.gz,zip</assembly.formats>
-        <activemq.tesb.version>5.15.15</activemq.tesb.version>
+        <activemq.tesb.version>5.15.16</activemq.tesb.version>
         <pax-logging.tesb.version>1.11.17</pax-logging.tesb.version>
         <!-- version updates from the patch -->
         <standard.features.tesb.version>4.2.7.tesb16</standard.features.tesb.version>
@@ -46,11 +46,11 @@
         <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
         <framework.features.tesb.version>4.2.7.tesb6</framework.features.tesb.version>
         <spring.features.tesb.version>4.2.7.tesb9</spring.features.tesb.version>
-        <apache-cxf.features.tesb.version>3.4.10.tesb5</apache-cxf.features.tesb.version>
+        <apache-cxf.features.tesb.version>3.4.10.tesb6</apache-cxf.features.tesb.version>
         <apache-cxf-xkms.features.tesb.version>3.4.10.tesb1</apache-cxf-xkms.features.tesb.version>
-        <apache-camel.features.tesb.version>2.25.4.tesb14</apache-camel.features.tesb.version>
+        <apache-camel.features.tesb.version>2.25.4.tesb15</apache-camel.features.tesb.version>
         <pax-web.features.tesb.version>7.2.30.tesb4</pax-web.features.tesb.version>
-        <activemq.features.tesb.version>5.15.15.tesb9</activemq.features.tesb.version>
+        <activemq.features.tesb.version>5.15.16.tesb1</activemq.features.tesb.version>
         <hibernate-validator.features.tesb.version>6.0.17.Final.tesb2</hibernate-validator.features.tesb.version>
         <jobserver.version>7.3.1.20230712_0928_patch</jobserver.version>
         <tdm.version>7.3.1.20220408</tdm.version>
@@ -369,6 +369,15 @@
                                     <classifier>features</classifier>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>pax-jdbc-features-${pax-jdbc.version}-features.xml</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.ops4j.pax.jms</groupId>
+                                    <artifactId>pax-jms-features</artifactId>
+                                    <version>${pax-jms.features.tesb.version}</version>
+                                    <type>xml</type>
+                                    <classifier>features</classifier>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>pax-jms-features-${pax-jms.version}-features.xml</destFileName>
                                 </artifactItem>
                                 <!-- CXF bundle replacement disabled for CXF 3.4.10 -->
                                 <!-- <artifactItem>
@@ -1494,6 +1503,11 @@
                                     <replacefilter
                                         token="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/3.2.4_1&lt;"
                                         value="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/${cglib.bundle.version}&lt;"/>
+                                </replace>
+                                <replace file="target/dependencies/pax-jms-features-${pax-jms.version}-features.xml">
+                                    <replacefilter
+                                        token="&gt;mvn:org.apache.activemq/activemq-osgi/5.15.3&lt;"
+                                        value="&gt;mvn:org.apache.activemq/activemq-osgi/${activemq.version}&lt;"/>
                                 </replace>
                                 <replace file="target/dependencies/hapi-fhir-${hapi-fhir.features.tesb.version}-features.xml">
                                     <replacefilter
