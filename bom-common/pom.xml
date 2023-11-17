@@ -48,46 +48,28 @@
 
     <developers>
         <developer>
-            <id>jgreffe</id>
-            <name>Julien Greffe</name>
-            <email>jgreffe@talend.com</email>
-            <timezone>GMT+1</timezone>
-        </developer>
-        <developer>
-            <id>amattes</id>
+            <id>andreasmattes</id>
             <name>Andreas Mattes</name>
-            <email>amattes@talend.com</email>
+            <email>andreas.mattes@qlik.com</email>
             <timezone>GMT+1</timezone>
         </developer>
         <developer>
             <id>xldai</id>
             <name>Xilai Dai</name>
-            <email>xldai@talend.com</email>
+            <email>xilai.ldai@qlik.com</email>
             <timezone>GMT+8</timezone>
         </developer>
         <developer>
-            <id>vromaniuk</id>
-            <name>Volodymyr Romaniuk</name>
-            <email>vromaniuk@talend.com</email>
-            <timezone>GMT+2</timezone>
+            <id>fra2p0</id>
+            <name>Francois de Parscau</name>
+            <email>francois.deparscau@qlik.com</email>
+            <timezone>GMT+1</timezone>
         </developer>
         <developer>
-            <id>mirom</id>
-            <name>Roman Minko</name>
-            <email>rnminko@gmail.com</email>
-            <timezone>GMT+2</timezone>
-        </developer>
-        <developer>
-            <id>aosadchiy</id>
-            <name>Alexander Osadchiy</name>
-            <email>Alexander.G.Osadchiy@gmail.com</email>
-            <timezone>GMT+2</timezone>
-        </developer>
-        <developer>
-            <id>ilazebny</id>
-            <name>Igor Lazebny</name>
-            <email>ilazebny@talend.com</email>
-            <timezone>GMT+2</timezone>
+            <id>stataru8</id>
+            <name>Stefan Tataru</name>
+            <email>stefan.tataru@qlik.com</email>
+            <timezone>GMT+0</timezone>
         </developer>
     </developers>
 
@@ -125,6 +107,7 @@
         <org.talend.esb.sts.config.version>${original.version}</org.talend.esb.sts.config.version>
         <cxf-sts-war.version>${original.version}</cxf-sts-war.version>
         <security-common.version>${original.version}</security-common.version>
+        <talend-sapjco3.version>${original.version}</talend-sapjco3.version>
         <text-encryptor.version>${original.version}</text-encryptor.version>
         <atom-rest-client.version>${original.version}</atom-rest-client.version>
         <request-callback.version>${original.version}</request-callback.version>
@@ -1728,6 +1711,30 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <pluginManagement>
