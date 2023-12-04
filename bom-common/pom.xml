@@ -131,17 +131,17 @@
 
         <!-- core libraries versions -->
         <camel.version>3.20.6</camel.version>
-        <camel.features.tesb.version>3.20.6.20231024</camel.features.tesb.version>
+        <camel.features.tesb.version>3.20.6.20231201</camel.features.tesb.version>
         <cxf.version>3.5.6</cxf.version>
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
-        <cxf.features.tesb.version>3.5.6.20231024</cxf.features.tesb.version>
+        <cxf.features.tesb.version>3.5.6.20231201</cxf.features.tesb.version>
         <cxf.version.range>[3.5,4)</cxf.version.range>
         <spring.version>5.3.30</spring.version>
         <spring.security.version>5.7.10</spring.security.version>
         <pax-web.version>8.0.23</pax-web.version>
         <pax-web.features.tesb.version>${pax-web.version}</pax-web.features.tesb.version>
         <activemq.version>5.17.6</activemq.version>
-        <activemq.features.tesb.version>5.17.6.20231031</activemq.features.tesb.version>
+        <activemq.features.tesb.version>5.17.6.20231204</activemq.features.tesb.version>
         <activemq-osgi.tesb.version>5.17.6.20231031</activemq-osgi.tesb.version>
         <decanter.version>2.9.0</decanter.version>
         <decanter.features.tesb.version>${decanter.version}</decanter.features.tesb.version>
@@ -264,7 +264,7 @@
         <metrics-core.version>4.2.14</metrics-core.version>
         <mina-core.version>2.1.6</mina-core.version>
         <mssql-jdbc.version>12.4.0.jre11</mssql-jdbc.version>
-        <netty.version>4.1.100.Final</netty.version>
+        <netty.version>4.1.101.Final</netty.version>
         <netty-tcnative-classes.version>2.0.46.Final</netty-tcnative-classes.version>
         <oak-jackrabbit-api.version>1.48.0</oak-jackrabbit-api.version>
         <!-- <opensaml.version>3.4.6</opensaml.version> -->
@@ -2149,7 +2149,7 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2023-10-RT</original.version>
-                <esb.features.version>8.0.1.R2023-11-PT</esb.features.version>
+                <esb.features.version>8.0.1.R2023-12-PT</esb.features.version>
                 <auxiliary-storage.features.version>8.0.1.R2023-11-PT</auxiliary-storage.features.version>
                 <sam-common.version>8.0.1.R2023-10-RT</sam-common.version>
                 <security-common.version>8.0.1.R2023-10-RT</security-common.version>
