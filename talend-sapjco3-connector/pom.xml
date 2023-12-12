@@ -7,7 +7,7 @@
 
     <groupId>org.talend.esb.sap</groupId>
     <artifactId>talend-sapjco3-connector</artifactId>
-    <version>5.5.1</version>
+    <version>${revision}</version>
     <packaging>bundle</packaging>
     <name>Talend SAPJCo3 Connector</name>
 
@@ -21,6 +21,7 @@
     <properties>
         <!-- as current version is a release and not snapshot, we avoid deployment -->
         <maven.deploy.skip>true</maven.deploy.skip>
+        <revision>${talend-sapjco3.version}</revision>
     </properties>
 
     <dependencies>
