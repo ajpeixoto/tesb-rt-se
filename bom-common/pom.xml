@@ -187,7 +187,7 @@
         <cryptacular.version>1.2.5</cryptacular.version>
         <cxf.build-utils.version>3.4.4</cxf.build-utils.version>
         <cxf.xjc-utils.version>3.3.1</cxf.xjc-utils.version>
-        <derby.version>10.17.1.0</derby.version>
+        <derby.version>10.14.2.0</derby.version>
         <derby.servicemix.version>10.14.2.0_2</derby.servicemix.version>
         <dom4j.bundle.version>2.1.3_1</dom4j.bundle.version>
         <easymock.version>5.1.0</easymock.version>
