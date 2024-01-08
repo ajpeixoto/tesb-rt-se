@@ -121,6 +121,11 @@
                 <include name="trun.bat" />
             </fileset>
         </replaceregexp>
+        <replace file="target/container/bin/trun.bat">
+            <replacefilter
+                token="--add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED"
+                value="--add-opens=java.base/sun.net.www.protocol.https=ALL-UNNAMED"/>
+        </replace>
 
         <echo message="Files trun add-opens package" />
         <property name="linesToAddLinux">                    --add-opens java.rmi\/sun.rmi.transport.tcp=ALL-UNNAMED \\\\
@@ -146,7 +151,11 @@
                 <include name="trun" />
             </fileset>
         </replaceregexp>
-
+        <replace file="target/container/bin/trun">
+            <replacefilter
+                token="--add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED"
+                value="--add-opens=java.base/sun.net.www.protocol.https=ALL-UNNAMED"/>
+        </replace>
 
         <echo message="Files client, client.bat: update sshd library version in classpath" />
         <replace file="target/container/bin/client">

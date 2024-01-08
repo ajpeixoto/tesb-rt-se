@@ -19,3 +19,5 @@ derby.log
 # IntelliJ IDEA
 *.i??
 .idea/
+
+.flattened-pom.xml
