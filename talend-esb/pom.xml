@@ -46,6 +46,7 @@
         <enterprise-legacy.features.tesb.version>4.2.7.tesb1</enterprise-legacy.features.tesb.version>
         <framework.features.tesb.version>4.2.7.tesb6</framework.features.tesb.version>
         <spring.features.tesb.version>4.2.7.tesb9</spring.features.tesb.version>
+        <spring-legacy.features.tesb.version>4.2.7.tesb7</spring-legacy.features.tesb.version>
         <apache-cxf.features.tesb.version>3.4.10.tesb6</apache-cxf.features.tesb.version>
         <apache-cxf-xkms.features.tesb.version>3.4.10.tesb1</apache-cxf-xkms.features.tesb.version>
         <apache-camel.features.tesb.version>2.25.4.tesb15</apache-camel.features.tesb.version>
@@ -144,7 +145,7 @@
                             <descriptors>
                                 <descriptor>mvn:org.apache.karaf.features/standard/${standard.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/spring/${spring.features.tesb.version}/xml/features</descriptor>
-                                <descriptor>file:${basedir}/target/dependencies/spring-legacy-${karaf.version}-features.xml</descriptor>
+                                <descriptor>mvn:org.apache.karaf.features/spring-legacy/${spring-legacy.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/enterprise/${enterprise.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/enterprise-legacy/${enterprise-legacy.features.tesb.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.karaf.features/framework/${framework.features.tesb.version}/xml/features</descriptor>
@@ -329,7 +330,7 @@
                                 <artifactItem>
                                     <groupId>org.apache.karaf.features</groupId>
                                     <artifactId>spring-legacy</artifactId>
-                                    <version>${karaf.version}</version>
+                                    <version>${spring-legacy.features.tesb.version}</version>
                                     <classifier>features</classifier>
                                     <type>xml</type>
                                     <outputDirectory>target/dependencies</outputDirectory>
@@ -1124,13 +1125,6 @@
                                         <replacetoken>mvn:org.ops4j.pax.logging/pax-logging-log4j2/1.11.2&lt;</replacetoken>
                                         <replacevalue>mvn:org.ops4j.pax.logging/pax-logging-log4j2/${pax-logging.tesb.version}&lt;</replacevalue>
                                     </replacefilter>
-                                </replace>
-                                <replace file="target/dependencies/spring-legacy-${karaf.version}-features.xml">
-                                    <replacefilter token="mvn:org.ops4j.pax.web/pax-web-features/7.2.11/xml/features&lt;"
-                                                   value="mvn:org.ops4j.pax.web/pax-web-features/${pax-web.version}/xml/features&lt;"/>
-                                    <replacefilter
-                                        token="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/3.2.9_1&lt;"
-                                        value="&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/${cglib.bundle.version}&lt;"/>
                                 </replace>
                                 <!-- patch for pax-logging-*-->
                                 <replaceregexp byline="true"
