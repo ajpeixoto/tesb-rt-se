@@ -785,9 +785,9 @@
             </modules>
             <properties>
                 <original.version>7.3.1.R2022-09-RT</original.version>
-                <features.version>7.3.1.R2023-11-PT</features.version>
+                <features.version>7.3.1.R2024-01-PT</features.version>
                 <auxiliary-storage-features.version>7.3.1.R2023-01-PT</auxiliary-storage-features.version>
-                <derby-starter.version>7.3.1.R2023-01-PT</derby-starter.version>
+                <derby-starter.version>7.3.1.R2024-01-PT</derby-starter.version>
             </properties>
         </profile>
     </profiles>
