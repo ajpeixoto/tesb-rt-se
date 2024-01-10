@@ -32,9 +32,18 @@ import org.slf4j.LoggerFactory;
 public class NetworkActivator implements BundleActivator {
 
     private static final Logger LOG = LoggerFactory.getLogger(NetworkActivator.class);
+    private static final String DERBY_HOST_PROPERTY = "org.talend.esb.derby.host";
     private static final String DERBY_PORT_PROPERTY = "org.talend.esb.derby.port";
+    private static final byte[] LOCAL_HOST = { 127, 0, 0, 1 };
+    private static final byte[] ALL_HOSTS = { 0, 0, 0, 0 };
     private static final int DEFAULT_PORT = 1527;
 
+    private static final String HOST_FALLBACK_MESSAGE = "System property " + DERBY_HOST_PROPERTY
+            + " not set, using default host \"127.0.0.1\". ";
+    private static final String HOST_ERROR_MESSAGE = "System property " + DERBY_HOST_PROPERTY
+            + " has an unsupported value of {}, using default host \"127.0.0.1\". ";
+    private static final String HOST_CONFIGURED_MESSAGE = "System property " + DERBY_HOST_PROPERTY
+            + " is applied, setting Derby host to {}. ";
     private static final String PORT_FALLBACK_MESSAGE = "System property " + DERBY_PORT_PROPERTY
             + " not set, using default port " + DEFAULT_PORT + ". ";
     private static final String PORT_ERROR_MESSAGE = "System property " + DERBY_PORT_PROPERTY
@@ -47,7 +56,7 @@ public class NetworkActivator implements BundleActivator {
     public void start(BundleContext context) throws Exception {
         LOG.info("Starting internal Derby DB...");
 
-        server = new NetworkServerControl(InetAddress.getByAddress(new byte[] { 0, 0, 0, 0 }), resolveDerbyPort());
+        server = new NetworkServerControl(InetAddress.getByAddress(resolveDerbyHost()), resolveDerbyPort());
         server.start(null);
 
         // if it already exists nothing should happen
@@ -74,6 +83,25 @@ public class NetworkActivator implements BundleActivator {
 
     private static String getDerbyJDBC_Shutdown(String databaseName) {
         return "jdbc:derby:" + databaseName + ";shutdown=true";
+    }
+
+    private static byte[] resolveDerbyHost() {
+        String value = System.getProperty(DERBY_HOST_PROPERTY);
+        if (value == null) {
+            LOG.info(HOST_FALLBACK_MESSAGE);
+            return LOCAL_HOST;
+        }
+        byte[] result = null;
+        if (value.equals("127.0.0.1")) {
+            result = LOCAL_HOST;
+        } else if (value.equals("0.0.0.0")) {
+            result = ALL_HOSTS;
+        } else {
+            LOG.warn(HOST_ERROR_MESSAGE, value);
+            return LOCAL_HOST;
+        }
+        LOG.info(HOST_CONFIGURED_MESSAGE, value);
+        return result;
     }
 
     private static int resolveDerbyPort() {

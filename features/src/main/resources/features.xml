@@ -301,7 +301,7 @@
 
     <feature name='tesb-zookeeper-server' version='${original.version}'>
         <feature>tesb-zookeeper</feature>
-        <bundle>mvn:org.talend.esb/org.talend.esb.locator.server/${original.version}</bundle>
+        <bundle start-level='52'>mvn:org.talend.esb/org.talend.esb.locator.server/${original.version}</bundle>
     </feature>
 
     <feature name='tesb-locator-soap-service' version='${original.version}'>

@@ -2149,11 +2149,11 @@
             <id>patch</id>
             <properties>
                 <original.version>8.0.1.R2023-10-RT</original.version>
-                <esb.features.version>8.0.1.R2023-12-PT</esb.features.version>
+                <esb.features.version>8.0.1.R2024-01-PT</esb.features.version>
                 <auxiliary-storage.features.version>8.0.1.R2023-11-PT</auxiliary-storage.features.version>
                 <sam-common.version>8.0.1.R2023-10-RT</sam-common.version>
                 <security-common.version>8.0.1.R2023-10-RT</security-common.version>
-                <derby-starter.version>8.0.1.R2023-10-RT</derby-starter.version>
+                <derby-starter.version>8.0.1.R2024-01-PT</derby-starter.version>
             </properties>
         </profile>
     </profiles>
