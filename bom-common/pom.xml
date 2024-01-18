@@ -104,6 +104,7 @@
         <sam-common.version>${original.version}</sam-common.version>
         <sam-service-soap.version>${original.version}</sam-service-soap.version>
         <derby-starter.version>${original.version}</derby-starter.version>
+        <locator-server.version>${original.version}</locator-server.version>
         <org.talend.esb.sts.config.version>${original.version}</org.talend.esb.sts.config.version>
         <cxf-sts-war.version>${original.version}</cxf-sts-war.version>
         <security-common.version>${original.version}</security-common.version>
@@ -2154,6 +2155,7 @@
                 <sam-common.version>8.0.1.R2023-10-RT</sam-common.version>
                 <security-common.version>8.0.1.R2023-10-RT</security-common.version>
                 <derby-starter.version>8.0.1.R2024-01-PT</derby-starter.version>
+                <locator-server.version>8.0.1.R2024-01-PT</locator-server.version>
             </properties>
         </profile>
     </profiles>
