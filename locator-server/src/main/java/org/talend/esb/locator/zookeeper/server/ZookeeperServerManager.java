@@ -61,6 +61,11 @@ public class ZookeeperServerManager implements ZookeeperServer {
             }
         }
 
+        //set context classloader to be the zookeeper classloader to allow it to load MetricClasses
+        Thread currentThread = Thread.currentThread();
+        ClassLoader zkClassLoader = MetricsProvider.class.getClassLoader();
+        ClassLoader oldClassLoader = currentThread.getContextClassLoader();
+        currentThread.setContextClassLoader(zkClassLoader);
         try {
             main = ZookeeperServerImpl.getZookeeperServer(props);
 
@@ -74,13 +79,14 @@ public class ZookeeperServerManager implements ZookeeperServer {
                 }
             });
             //set classloader for thread to be the zookeeper classloader to allow it to load MetricClasses
-            ClassLoader bundleClassLoader = MetricsProvider.class.getClassLoader();
-            zkMainThread.setContextClassLoader(bundleClassLoader);
+            zkMainThread.setContextClassLoader(zkClassLoader);
             zkMainThread.start();
 
             LOG.info("Applied configuration update :" + props);
         } catch (Exception th) {
             LOG.log(Level.SEVERE, "Problem applying configuration update: " + props, th);
+        } finally {
+            currentThread.setContextClassLoader(oldClassLoader);
         }
     }
 

@@ -104,6 +104,7 @@
         <sam-common.version>${original.version}</sam-common.version>
         <sam-service-soap.version>${original.version}</sam-service-soap.version>
         <derby-starter.version>${original.version}</derby-starter.version>
+        <locator-server.version>${original.version}</locator-server.version>
         <org.talend.esb.sts.config.version>${original.version}</org.talend.esb.sts.config.version>
         <cxf-sts-war.version>${original.version}</cxf-sts-war.version>
         <security-common.version>${original.version}</security-common.version>
@@ -131,7 +132,7 @@
 
         <!-- core libraries versions -->
         <camel.version>3.20.6</camel.version>
-        <camel.features.tesb.version>3.20.6.20231207</camel.features.tesb.version>
+        <camel.features.tesb.version>3.20.6.20240122</camel.features.tesb.version>
         <cxf.version>3.5.6</cxf.version>
         <cxf-rt-features-logging.tesb.version>${cxf.version}</cxf-rt-features-logging.tesb.version>
         <cxf.features.tesb.version>3.5.6.20231201</cxf.features.tesb.version>
@@ -298,6 +299,7 @@
         <postgresql-jdbc.version>42.6.0</postgresql-jdbc.version>
         <quartz.version>2.3.2</quartz.version>
         <rome.version>1.18.0</rome.version>
+        <shiro.version>1.13.0</shiro.version>
         <slf4j.version>1.7.36</slf4j.version>
         <slf4j.osgi.version>2.0.0</slf4j.osgi.version>
         <snakeyaml.version>1.33</snakeyaml.version>
@@ -2154,6 +2156,7 @@
                 <sam-common.version>8.0.1.R2023-10-NOPATCH</sam-common.version>
                 <security-common.version>8.0.1.R2023-10-NOPATCH</security-common.version>
                 <derby-starter.version>8.0.1.R2023-10-NOPATCH</derby-starter.version>
+                <locator-server.version>8.0.1.R2023-10-NOPATCH</locator-server.version>
             </properties>
         </profile>
     </profiles>

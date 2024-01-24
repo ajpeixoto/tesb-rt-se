@@ -19,6 +19,7 @@
     <artifactId>org.talend.esb.locator.server</artifactId>
     <packaging>bundle</packaging>
     <name>Talend ESB :: Locator :: Server</name>
+    <version>${revision}</version>
 
     <parent>
         <groupId>org.talend.esb</groupId>
@@ -26,6 +27,10 @@
         <version>8.8.8-SNAPSHOT</version>
         <relativePath>../bom</relativePath>
     </parent>
+
+    <properties>
+        <revision>${locator-server.version}</revision>
+    </properties>
 
     <dependencies>
         <dependency>
